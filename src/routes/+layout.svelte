@@ -4,6 +4,7 @@
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import { ScrollSmoother } from 'gsap/ScrollSmoother';
+	import Cursor from '$lib/Cursor.svelte';
 
 	let { children } = $props();
 
@@ -20,6 +21,28 @@
 			normalizeScroll: true
 		});
 
+		gsap.to('#bg-layer-hard', {
+			yPercent: -10,
+			ease: 'none',
+			scrollTrigger: {
+				trigger: '#smooth-content',
+				start: 'top top',
+				end: 'bottom bottom',
+				scrub: true
+			}
+		});
+
+		gsap.to('#bg-layer-soft', {
+			yPercent: -20,
+			ease: 'none',
+			scrollTrigger: {
+				trigger: '#smooth-content',
+				start: 'top top',
+				end: 'bottom bottom',
+				scrub: true
+			}
+		});
+
 		ScrollTrigger.refresh();
 	});
 
@@ -33,9 +56,14 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
+<Cursor />
 <div id="smooth-wrapper">
 	<div id="smooth-content">
-		{@render children()}
+		<div id="bg-layer-hard" style="background-image: url('/bordel/bordel-hard.svg');"></div>
+		<div id="bg-layer-soft" style="background-image: url('/bordel/bordel-soft.svg');"></div>
+		<div class="page-content">
+			{@render children()}
+		</div>
 	</div>
 </div>
 
@@ -66,7 +94,7 @@
 	}
 
 	:global(:root) {
-		--black: #1D1D1B;
+		--black: #1d1d1b;
 		--white: #f6f6f6;
 
 		--zl-red: #db0812;
@@ -92,6 +120,35 @@
 		color: var(--white);
 		margin: 0;
 		overflow: hidden;
+	}
+
+	#bg-layer-hard,
+	#bg-layer-soft {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+
+		background-repeat: repeat;
+		background-size: auto;
+		pointer-events: none;
+
+		transform: scale(1.05);
+		transform-origin: center;
+	}
+
+	#bg-layer-hard {
+		opacity: 0.3;
+		mix-blend-mode: soft-light;
+	}
+
+	#bg-layer-soft {
+		opacity: 0.15;
+		mix-blend-mode: overlay;
+	}
+
+	.page-content {
+		position: relative;
+		z-index: 1;
 	}
 
 	:global(html, body) {
