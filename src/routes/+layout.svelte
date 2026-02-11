@@ -84,15 +84,6 @@
 		font-display: swap;
 	}
 
-	:global(html) {
-		font-family:
-			'Inter',
-			system-ui,
-			-apple-system,
-			BlinkMacSystemFont,
-			sans-serif;
-	}
-
 	:global(:root) {
 		--black: #1d1d1b;
 		--white: #f6f6f6;
@@ -103,6 +94,17 @@
 		--stage-blue: #124a99;
 
 		--general-px: 3rem;
+
+		/* vw = px value / 19.2 */
+		/* rem = px value / 16 */
+		--text-16: calc(8px + (0.926vw * 0.35));
+		--text-20: calc(10px + (1.157vw * 0.25));
+		--text-24: calc(12px + (1.389vw * 0.15));
+		--text-32: calc(16px + (1.852vw * 0.15));
+		--text-36: calc(18px + (2.083vw * 0.15));
+		--text-48: calc(24px + (2.083vw * 0.15));
+		--text-64: calc(32px + (3.704vw * 0.15));
+		--text-96: calc(48px + (5.556vw * 0.15));
 	}
 
 	:global(body) {
@@ -120,6 +122,23 @@
 		color: var(--white);
 		margin: 0;
 		overflow: hidden;
+	}
+
+	:global(html) {
+		font-family:
+			'Inter',
+			system-ui,
+			-apple-system,
+			BlinkMacSystemFont,
+			sans-serif;
+	}
+
+	:global(html, body) {
+		height: 100%;
+	}
+
+	:global(h2){
+		font-size: var(--text-64);
 	}
 
 	#bg-layer-hard,
@@ -149,10 +168,6 @@
 	.page-content {
 		position: relative;
 		z-index: 1;
-	}
-
-	:global(html, body) {
-		height: 100%;
 	}
 
 	#smooth-wrapper {
