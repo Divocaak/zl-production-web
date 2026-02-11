@@ -56,7 +56,7 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<Cursor />
+<!-- URGENT <Cursor /> -->
 <div id="smooth-wrapper">
 	<div id="smooth-content">
 		<div id="bg-layer-hard" style="background-image: url('/bordel/bordel-hard.svg');"></div>
