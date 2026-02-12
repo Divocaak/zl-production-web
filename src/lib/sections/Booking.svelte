@@ -2,7 +2,7 @@
 	import { onDestroy, onMount } from 'svelte';
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
-	import HanddrawnLink from '$lib/HanddrawnLink.svelte';
+	import HanddrawnLink from '$lib/buttons/HanddrawnLink.svelte';
 	import LogoHeading from '$lib/LogoHeading.svelte';
 	import SectionWrapper from './SectionWrapper.svelte';
 

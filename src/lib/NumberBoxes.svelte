@@ -112,7 +112,9 @@
 	.number {
 		position: relative;
 		z-index: 1;
-		font-size: 2rem;
+		font-size: 4rem;
+		font-weight: bolder;
+		color: var(--tech-yellow)
 	}
 
 	.description {

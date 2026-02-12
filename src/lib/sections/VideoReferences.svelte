@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
-	import HanddrawnLink from '$lib/HanddrawnLink.svelte';
+	import HanddrawnLink from '$lib/buttons/HanddrawnLink.svelte';
 
 	import splash0 from '$lib/assets/splashes/0.svg?raw';
 	import splash2 from '$lib/assets/splashes/2.svg?raw';
@@ -43,7 +43,7 @@
 	});
 </script>
 
-<section bind:this={horizontalSection} class="horizontal-section">
+<section bind:this={horizontalSection} class="horizontal-section" id="reference">
 	<div class="bg-wrapper">
 		<div class="svg-wrapper svg0">{@html splash0}</div>
 		<div class="svg-wrapper svg2">{@html splash2}</div>

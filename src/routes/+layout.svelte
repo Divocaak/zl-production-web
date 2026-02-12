@@ -5,6 +5,7 @@
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import { ScrollSmoother } from 'gsap/ScrollSmoother';
 	import Cursor from '$lib/Cursor.svelte';
+	import Footer from '$lib/sections/Footer.svelte';
 
 	let { children } = $props();
 
@@ -43,6 +44,7 @@
 			}
 		});
 
+		ScrollTrigger.config({ ignoreMobileResize: true });
 		ScrollTrigger.refresh();
 	});
 
@@ -63,6 +65,7 @@
 		<div id="bg-layer-soft" style="background-image: url('/bordel/bordel-soft.svg');"></div>
 		<div class="page-content">
 			{@render children()}
+			<Footer />
 		</div>
 	</div>
 </div>
