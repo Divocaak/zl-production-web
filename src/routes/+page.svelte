@@ -1,5 +1,5 @@
 <script>
-	import Hero from '$lib/Hero.svelte';
+	import Hero from '$lib/sections/Hero.svelte';
 	import About from '$lib/sections/About.svelte';
 	import Booking from '$lib/sections/Booking.svelte';
 	import Equipment from '$lib/sections/Equipment.svelte';

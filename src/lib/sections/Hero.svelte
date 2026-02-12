@@ -1,20 +1,21 @@
 <script>
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
-	import splash0 from '$lib/assets/splashes/0.svg?raw';
-	import splash1 from '$lib/assets/splashes/1.svg?raw';
-	import splash2 from '$lib/assets/splashes/2.svg?raw';
-	import splash3 from '$lib/assets/splashes/3.svg?raw';
-	import splash4 from '$lib/assets/splashes/4.svg?raw';
 
 	gsap.registerPlugin(ScrollTrigger);
 
 	let loadingOverlay;
 	let container;
 	let maskSvg;
-	let logo;
-	let tagline;
+	let triggerHero = false;
+
+	import splash0 from '$lib/assets/splashes/0.svg?raw';
+	import splash1 from '$lib/assets/splashes/1.svg?raw';
+	import splash2 from '$lib/assets/splashes/2.svg?raw';
+	import splash3 from '$lib/assets/splashes/3.svg?raw';
+	import splash4 from '$lib/assets/splashes/4.svg?raw';
+	import LoadingAndContent from '$lib/sections/hero/LoadingAndContent.svelte';
 
 	const splashes = [splash0, splash1, splash2, splash3, splash4];
 	const transforms = [
@@ -27,12 +28,10 @@
 
 	function resizeMask() {
 		if (!maskSvg || !container) return;
-
 		const w = container.offsetWidth;
 		const h = container.offsetHeight;
 
 		maskSvg.setAttribute('viewBox', `0 0 ${w} ${h}`);
-
 		const rect = maskSvg.querySelector('#splash-mask rect');
 		if (rect) {
 			rect.setAttribute('width', w);
@@ -46,6 +45,10 @@
 			const py = y * h;
 			g.setAttribute('transform', `translate(${px} ${py}) scale(${scale})`);
 		});
+	}
+
+	function extractInner(svg) {
+		return svg.replace(/<svg[^>]*>/, '').replace('</svg>', '');
 	}
 
 	onMount(() => {
@@ -72,14 +75,11 @@
 							scrub: true,
 							invalidateOnRefresh: true
 						},
-						modifiers: {
-							y: (y) => Math.min(0, parseFloat(y)) + 'px'
-						}
+						modifiers: { y: (y) => Math.min(0, parseFloat(y)) + 'px' }
 					}
 				);
 			});
 
-			// subtle splash animation
 			const splashGroups = maskSvg.querySelectorAll('.splash');
 			splashGroups.forEach((g, i) => {
 				gsap.to(g, {
@@ -92,27 +92,7 @@
 				});
 			});
 
-			const heroTimeline = gsap.timeline({
-				delay: 1,
-				ease: 'power2.out',
-				onStart: () => {
-					gsap.to(loadingOverlay, { opacity: 0, duration: 0.3 });
-				}
-			});
-
-			heroTimeline.from(logo, { autoAlpha: 0, scale: 1, duration: 1 });
-			const text = 'Žijeme ve světe speciálních eventů';
-			tagline.innerHTML = text
-				.split('')
-				.map((char) => `<span>${char}</span>`)
-				.join('');
-			const letters = tagline.querySelectorAll('span');
-			heroTimeline.from(letters, {
-				opacity: 0,
-				y: 10,
-				stagger: 0.05, // delay between each letter
-				duration: 0.4
-			});
+			triggerHero = true;
 		}, container);
 
 		return () => {
@@ -120,22 +100,14 @@
 			window.removeEventListener('resize', resizeMask);
 		};
 	});
-
-	function extractInner(svg) {
-		return svg.replace(/<svg[^>]*>/, '').replace('</svg>', '');
-	}
 </script>
-
-<div id="loading-overlay" bind:this={loadingOverlay}>
-	<div class="loading-dot"></div>
-</div>
 
 <div class="masked-parallax">
 	<svg class="mask-svg" bind:this={maskSvg} preserveAspectRatio="xMidYMid slice">
 		<defs>
 			<mask id="splash-mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
 				<rect fill="black" />
-				{#each splashes as splash, i}
+				{#each splashes as splash}
 					<g fill="white" class="splash">
 						{@html extractInner(splash)}
 					</g>
@@ -152,46 +124,10 @@
 		<img src="/homepage/landing/v1.png" alt="" class="layer" />
 	</div>
 
-	<div class="hero-content">
-		<img src="/logos/logo-horizontal-dark.svg" alt="Logo" class="logo" bind:this={logo} />
-		<p class="tagline" bind:this={tagline}></p>
-	</div>
+	<LoadingAndContent trigger={triggerHero} />
 </div>
 
 <style>
-	#loading-overlay {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
-		background: linear-gradient(180deg, #111, #222);
-		z-index: 9999;
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.loading-dot {
-		width: 20px;
-		height: 20px;
-		border-radius: 50%;
-		background: var(--zl-red);
-		animation: pulse 1s infinite alternate;
-	}
-
-	@keyframes pulse {
-		from {
-			opacity: 0.3;
-			transform: scale(0.8);
-		}
-		to {
-			opacity: 1;
-			transform: scale(1.2);
-		}
-	}
-
 	.masked {
 		mask: url(#splash-mask);
 		-webkit-mask: url(#splash-mask);
@@ -222,50 +158,11 @@
 		position: absolute;
 		inset: 0;
 		width: 100%;
-
 		height: 120%;
-		top: 0;
-
 		object-fit: cover;
 		will-change: transform;
 		pointer-events: none;
-
 		backface-visibility: hidden;
 		transform: translateZ(0);
-	}
-
-	.hero-content {
-		position: absolute;
-		top: 30%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		text-align: center;
-		pointer-events: none;
-		z-index: 10;
-
-		width: 100%;
-	}
-
-	.logo {
-		display: block;
-		max-width: 70%;
-		width: 100%;
-		margin: 0 auto;
-
-		filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
-	}
-
-	.tagline {
-		position: absolute;
-		top: 120%;
-		left: 50%;
-		transform: translateX(-50%);
-
-		margin-top: 1rem;
-		font-size: 1.5rem;
-		letter-spacing: 0.05em;
-		white-space: pre;
-
-		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 	}
 </style>
