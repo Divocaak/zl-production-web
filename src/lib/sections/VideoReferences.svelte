@@ -68,25 +68,25 @@
 		width: 100%;
 		height: 100vh;
 	}
-    
-    .content{
-        position: absolute;
-        inset: 0;
-        overflow: hidden;
-        text-align: center;
-    
-        display: flex;
-        flex-direction: column;
-        justify-content: center;   
-        z-index: 20;
-    }
+
+	.content {
+		position: absolute;
+		inset: 0;
+		overflow: hidden;
+		text-align: center;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		z-index: 20;
+	}
 
 	.horizontal-container {
 		display: flex;
 		gap: 2rem;
 		height: 50%;
 
-        padding: 2rem 0;
+		padding: 2rem 0;
 	}
 
 	.card {
@@ -96,16 +96,24 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		
-        border-radius: 6px;
+
+		border-radius: 6px;
 		user-select: none;
 		touch-action: pan-x;
 	}
 
 	.bg-wrapper {
+		/* position: absolute;
+		inset: 0;
+		pointer-events: none; */
+
 		position: absolute;
 		inset: 0;
 		pointer-events: none;
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.svg-wrapper {
@@ -114,27 +122,26 @@
 
 		fill: var(--zl-red);
 
-		padding: 0;
-		margin: 0;
+		width: 80vw; /* scales with viewport width */
+		height: auto;
+
+		/* use transforms for offsets */
+		transform-origin: center;
 	}
 
 	:global(.svg-wrapper:nth-of-type(1)) {
-		width: 800px;
-		height: auto;
-		top: 0px;
-		left: -200px;
+		top: -20%;
+		left: -25%;
+		transform: scale(.8);
 	}
-
+	
 	:global(.svg-wrapper:nth-of-type(2)) {
-		width: 900px;
-		height: auto;
-		/* top: 10%; */
-		left: 200px;
+		top: -20%;
+		transform: scale(.8);
 	}
-
+	
 	:global(.svg-wrapper:nth-of-type(3)) {
-		transform: scale(0.6);
-		top: -350px;
-		left: 15%;
+		left: 35%;
+		transform: scale(0.8) rotate(-5deg);
 	}
 </style>

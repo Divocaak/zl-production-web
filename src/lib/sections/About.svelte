@@ -67,6 +67,7 @@
 	</div>
 </SectionWrapper>
 
+<!-- TODO create reusable flex layout -->
 <style>
 	.wrapper {
 		display: flex;

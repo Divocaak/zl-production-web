@@ -59,6 +59,7 @@
 </svelte:head>
 
 <!-- URGENT <Cursor /> -->
+<!-- BUG gsap optimalization pagewide -->
 <div id="smooth-wrapper">
 	<div id="smooth-content">
 		<div id="bg-layer-hard" style="background-image: url('/bordel/bordel-hard.svg');"></div>
@@ -140,7 +141,7 @@
 		height: 100%;
 	}
 
-	:global(h2){
+	:global(h2) {
 		font-size: var(--text-64);
 	}
 
