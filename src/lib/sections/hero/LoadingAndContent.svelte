@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { gsap } from 'gsap';
 	export let trigger = false;
 
@@ -9,21 +9,30 @@
 
 	const text = 'Žijeme ve světe speciálních eventů';
 
-	function animateHero() {
+	async function animateHero() {
+		await tick();
+
+		if (!loadingOverlay || !logo || !tagline) return;
+
 		const heroTimeline = gsap.timeline({
 			delay: 0.2,
 			ease: 'power2.out',
 			onStart: () => {
-				gsap.to(loadingOverlay, { opacity: 0, duration: 0.3 });
+				gsap.to(loadingOverlay, {
+					opacity: 0,
+					duration: 0.3
+				});
 			}
 		});
 
-		heroTimeline.from(logo, { autoAlpha: 0, scale: 1, duration: 1 });
+		heroTimeline.from(logo, { autoAlpha: 0, scale: 0.8, duration: 1, ease: 'power2.out' });
+
 		tagline.innerHTML = text
 			.split('')
 			.map((char) => `<span>${char}</span>`)
 			.join('');
 		const letters = tagline.querySelectorAll('span');
+
 		heroTimeline.from(letters, {
 			opacity: 0,
 			y: 10,
@@ -32,17 +41,14 @@
 		});
 	}
 
-	// run animation once the trigger turns true
 	$: if (trigger) {
 		animateHero();
 	}
 </script>
 
-{#if !trigger}
-	<div id="loading-overlay" bind:this={loadingOverlay}>
-		<div class="loading-dot"></div>
-	</div>
-{/if}
+<div id="loading-overlay" bind:this={loadingOverlay}>
+	<div class="loading-dot"></div>
+</div>
 
 <div class="hero-content">
 	<img src="/logos/logo-horizontal-dark.svg" alt="Logo" bind:this={logo} class="logo" />
@@ -58,9 +64,14 @@
 		height: 100vh;
 		background: linear-gradient(180deg, #111, #222);
 		z-index: 9999;
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
+		pointer-events: all;
+		opacity: 1;
+		transition: opacity 0.8s ease;
 	}
 
 	.loading-dot {
@@ -84,13 +95,18 @@
 
 	.hero-content {
 		position: absolute;
-		top: 30%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+		inset: 0;
+
 		text-align: center;
 		pointer-events: none;
 		z-index: 10;
+
 		width: 100%;
+		height: 100vh;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 
 	.logo {
@@ -102,10 +118,6 @@
 	}
 
 	.tagline {
-		position: absolute;
-		top: 120%;
-		left: 50%;
-		transform: translateX(-50%);
 		margin-top: 1rem;
 		font-size: 1.5rem;
 		letter-spacing: 0.05em;
