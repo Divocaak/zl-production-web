@@ -1,50 +1,52 @@
 <script>
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
+	export let trigger = false;
 
-	export let trigger;
-
-	let visible = true;
+	let loadingOverlay;
 	let logo;
 	let tagline;
-	let timeline;
 
-	const taglineText = 'Žijeme ve světe speciálních eventů';
+	const text = 'Žijeme ve světe speciálních eventů';
 
-	onMount(() => {
-		timeline = gsap.timeline({ paused: true, ease: 'power2.out' });
+	function animateHero() {
+		const heroTimeline = gsap.timeline({
+			delay: 0.2,
+			ease: 'power2.out',
+			onStart: () => {
+				gsap.to(loadingOverlay, { opacity: 0, duration: 0.3 });
+			}
+		});
 
-		timeline.from(logo, { autoAlpha: 0, scale: 1, duration: 1 });
-
+		heroTimeline.from(logo, { autoAlpha: 0, scale: 1, duration: 1 });
+		tagline.innerHTML = text
+			.split('')
+			.map((char) => `<span>${char}</span>`)
+			.join('');
 		const letters = tagline.querySelectorAll('span');
-		timeline.from(letters, {
+		heroTimeline.from(letters, {
 			opacity: 0,
 			y: 10,
 			stagger: 0.05,
 			duration: 0.4
 		});
-	});
+	}
 
-	$: if (trigger && timeline) {
-		gsap.to('#loading-overlay', { autoAlpha: 0, duration: 0.3 });
-		visible = false;
-		timeline.play();
+	// run animation once the trigger turns true
+	$: if (trigger) {
+		animateHero();
 	}
 </script>
 
-{#if visible}
-	<div id="loading-overlay">
+{#if !trigger}
+	<div id="loading-overlay" bind:this={loadingOverlay}>
 		<div class="loading-dot"></div>
 	</div>
 {/if}
 
 <div class="hero-content">
 	<img src="/logos/logo-horizontal-dark.svg" alt="Logo" bind:this={logo} class="logo" />
-	<p class="tagline" bind:this={tagline}>
-		{#each taglineText.split('') as char}
-			<span>{char}</span>
-		{/each}
-	</p>
+	<p class="tagline" bind:this={tagline}></p>
 </div>
 
 <style>
@@ -56,7 +58,6 @@
 		height: 100vh;
 		background: linear-gradient(180deg, #111, #222);
 		z-index: 9999;
-
 		display: flex;
 		align-items: center;
 		justify-content: center;
