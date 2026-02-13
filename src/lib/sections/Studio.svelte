@@ -4,7 +4,7 @@
 	import overlaySvgRaw from '$lib/assets/splashes/2.svg?raw';
 </script>
 
-<div class="marquee-wrapper">
+<div class="marquee-wrapper" id="studio">
 	<Marquee />
 	<div class="marquee-overlay">
 		{@html overlaySvgRaw}
@@ -18,6 +18,7 @@
 	</div>
 </div>
 
+<!-- TODO resp -->
 <style>
 	.marquee-wrapper {
 		position: relative;

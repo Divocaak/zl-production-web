@@ -44,6 +44,7 @@
 </script>
 
 <section bind:this={horizontalSection} class="horizontal-section" id="reference">
+	<!-- TODO make one svg -->
 	<div class="bg-wrapper">
 		<div class="svg-wrapper svg0">{@html splash0}</div>
 		<div class="svg-wrapper svg2">{@html splash2}</div>
@@ -62,6 +63,7 @@
 	</div>
 </section>
 
+<!-- TODO resp -->
 <style>
 	.horizontal-section {
 		position: relative;
@@ -103,10 +105,6 @@
 	}
 
 	.bg-wrapper {
-		/* position: absolute;
-		inset: 0;
-		pointer-events: none; */
-
 		position: absolute;
 		inset: 0;
 		pointer-events: none;
@@ -122,10 +120,9 @@
 
 		fill: var(--zl-red);
 
-		width: 80vw; /* scales with viewport width */
+		width: 80vw;
 		height: auto;
 
-		/* use transforms for offsets */
 		transform-origin: center;
 	}
 

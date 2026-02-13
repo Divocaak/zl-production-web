@@ -1,9 +1,35 @@
 <script>
+	import gsap from 'gsap';
+	import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+
+	gsap.registerPlugin(ScrollToPlugin);
+
 	export let href;
 	export let target = '_self';
+
+	// height of pinned section in pixels (adjust if you have sticky header or pinned GSAP section)
+	/* const pinnedOffset = 1500; */
+
+	function handleClick(event) {
+		if (href.startsWith('/#')) {
+			event.preventDefault();
+
+			const targetId = href.slice(2);
+			const el = document.getElementById(targetId);
+
+			if (!el) return;
+			const top = el.getBoundingClientRect().top + window.scrollY;// - pinnedOffset;
+
+			gsap.to(window, {
+				scrollTo: { y: top },
+				duration: 0.8,
+				ease: 'power1.out'
+			});
+		}
+	}
 </script>
 
-<a {href} {target} rel="noopener noreferrer" class="subtle-link">
+<a {href} {target} rel="noopener noreferrer" class="subtle-link" on:click={handleClick}>
 	<slot />
 </a>
 
@@ -21,7 +47,7 @@
 		opacity: 0.9;
 		transition: all 0.2s ease;
 
-        cursor: pointer;
+		cursor: pointer;
 	}
 
 	.subtle-link:hover {

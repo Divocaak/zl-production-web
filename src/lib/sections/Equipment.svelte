@@ -17,7 +17,7 @@
 		const splashes = document.querySelectorAll('#equipment .splash');
 		const columns = document.querySelectorAll('#equipment .section');
 		const partnerLogos = document.querySelectorAll('#equipment .section img:not(:first-child)');
-		const link = document.querySelector('#equipment HanddrawnLink');
+		const link = document.querySelector('#equipment .link');
 
 		const tl = gsap.timeline({ paused: true, defaults: { duration: 0.6, ease: 'power3.out' } });
 		tl.from(splashes, { scale: 0.8, opacity: 0, stagger: 0.2 });
@@ -100,10 +100,12 @@
 			<img src="logos/equipment/partners/novastar.svg" alt="novastar logo" />
 		</div>
 	</div>
-
-	<HanddrawnLink href="">Rent</HanddrawnLink>
+	<div class="link">
+		<HanddrawnLink href="">Rent</HanddrawnLink>
+	</div>
 </section>
 
+<!-- TODO resp -->
 <style>
 	#equipment {
 		height: 100vh;
@@ -160,5 +162,10 @@
 	.section img:not(:first-child) {
 		width: auto;
 		height: 48px;
+	}
+
+	.link{
+		width: 100%;
+		text-align: center;
 	}
 </style>

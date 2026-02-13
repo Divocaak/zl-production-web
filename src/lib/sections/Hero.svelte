@@ -11,8 +11,6 @@
 	}
 </script>
 
-<div class="masked-parallax">
-	<SplashMask bindMask={maskSvg} on:loaded={onMaskLoaded} />
-	<ParallaxLayers maskId="splash-mask" />
-	<LoadingAndContent trigger={triggerHero} />
-</div>
+<SplashMask bindMask={maskSvg} on:loaded={onMaskLoaded} />
+<ParallaxLayers maskId="splash-mask" />
+<LoadingAndContent trigger={triggerHero} />

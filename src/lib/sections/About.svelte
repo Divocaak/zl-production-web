@@ -6,6 +6,7 @@
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import LogoHeading from '$lib/LogoHeading.svelte';
+	import FlexContent from '$lib/FlexContent.svelte';
 
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -32,25 +33,31 @@
 			duration: 1,
 			ease: 'power2.out'
 		})
-		.from(paragraph, {
-			y: 50,
-			opacity: 0,
-			duration: 1,
-			ease: 'power2.out'
-		}, "+=0.2")
-		.from(sinceImg, {
-			y: 20,
-			opacity: 0,
-			duration: 1,
-			ease: 'power2.out'
-		}); 
+			.from(
+				paragraph,
+				{
+					y: 50,
+					opacity: 0,
+					duration: 1,
+					ease: 'power2.out'
+				},
+				'+=0.2'
+			)
+			.from(sinceImg, {
+				y: 20,
+				opacity: 0,
+				duration: 1,
+				ease: 'power2.out'
+			});
 	});
 </script>
 
 <SectionWrapper id="about">
-	<div class="wrapper">
-		<NumberBoxes />
-		<div class="content" bind:this={content}>
+	<FlexContent>
+		<div slot="left">
+			<NumberBoxes />
+		</div>
+		<div slot="right" class="content" bind:this={content}>
 			<LogoHeading src="/hashtags/stage-is-ours-dark.svg" alt="Stage Is Ours" />
 			<p>
 				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis sapien nunc, commodo et,
@@ -62,27 +69,24 @@
 				et, interdum suscipit, sollicitudin et, dolor. Cras elementum. Nulla pulvinar eleifend sem.
 				Fusce tellus odio, dapibus id fermentum quis, suscipit id erat.
 			</p>
-			<img src="/since.svg" alt="Since 2005" />
+			<img class="since" src="/since.svg" alt="Since 2005" />
 		</div>
-	</div>
+	</FlexContent>
+	<div class="wrapper"></div>
 </SectionWrapper>
 
-<!-- TODO create reusable flex layout -->
 <style>
-	.wrapper {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		gap: 2rem;
-	}
-
 	.content {
 		display: flex;
 		flex-direction: column;
-		width: 50%;
 	}
 
 	p {
 		padding: 2rem 0;
+	}
+
+	.since{
+		width: 50%;
+		margin: 0 auto;
 	}
 </style>

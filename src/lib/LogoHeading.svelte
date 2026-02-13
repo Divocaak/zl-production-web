@@ -1,15 +1,29 @@
 <script>
 	export let src;
 	export let alt = 'alternative desc';
-	export let width = '50%';
+	export let maxWidthPx = 700;
 </script>
 
-<img {src} {alt} style="width: {width}" />
+
+<div class="wrapper" style="--img-max-width: {maxWidthPx}px">
+	<img {src} {alt}/>
+</div>
 
 <style>
 	img {
-		margin: 0 auto;
-        position: relative;
+		display: block;
+		position: relative;
+		width: 100%;
 		z-index: 1;
+
+		max-width: var(--img-max-width);
+		height: auto;
+		margin-inline: auto;
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+	}
+	
+	.wrapper{
+		text-align: center;
+		width: 100%;
 	}
 </style>

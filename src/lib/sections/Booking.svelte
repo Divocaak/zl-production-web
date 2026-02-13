@@ -5,6 +5,7 @@
 	import HanddrawnLink from '$lib/buttons/HanddrawnLink.svelte';
 	import LogoHeading from '$lib/LogoHeading.svelte';
 	import SectionWrapper from './SectionWrapper.svelte';
+	import FlexContent from '$lib/FlexContent.svelte';
 
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -106,13 +107,9 @@
 			}
 		});
 
-		// Fade in logo doodle
-		tl.from(doodles[0], { opacity: 0, duration: 0.3 });
-		// Fade in masked image doodles with slight delay
-		tl.from(doodles[1], { opacity: 0, y: 20, duration: 0.4});
-		tl.from(doodles[2], { opacity: 0, y: 20, duration: .4 });
+		tl.from(doodles[0], { opacity: 0, y: 20, duration: 0.4});
+		tl.from(doodles[1], { opacity: 0, y: 20, duration: .4 });
 
-		// Fade and slide in text
 		textItems.forEach((el, i) => {
 			tl.from(el, { opacity: 0, y: 20, duration: 0.4 }, i * 0.2);
 		});
@@ -125,35 +122,37 @@
 </script>
 
 <SectionWrapper id="booking">
-    <!-- TODO export heading with doodle marks.svg -->
-	<LogoHeading src="/logos/zl-booking-dark.svg" alt="booking logo" width="25%" />
+	<LogoHeading src="/logos/zl-booking-dark.svg" alt="booking logo" maxWidthPx="550" />
 	<div class="wrapper" bind:this={sectionEl}>
-		<div class="content">
-			<p class="lead">
-				Kdo bude hrát na Vaší další akci <img src="/doodles/question.svg" alt="question mark" />
-			</p>
-			<p>
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam commodo dui eget wisi. Fusce
-				consectetuer risus a nunc. Aliquam ornare wisi eu metus. Donec iaculis gravida nulla.
-				Phasellus faucibus molestie nisl. Sed ut perspiciatis unde omnis iste natus error sit
-				voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-				inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Sed vel lectus.
-				Donec odio tempus molestie, porttitor ut, iaculis quis, sem. Etiam ligula pede, sagittis
-				quis, interdum ultricies, scelerisque eu. Nemo enim ipsam voluptatem quia voluptas sit
-				aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-				voluptatem sequi nesciunt. Aliquam erat volutpat. Nulla quis diam. Mauris tincidunt sem sed
-				arcu.
-			</p>
-			<HanddrawnLink href="https://www.zlbooking.cz/" target="_blank">Navštívit</HanddrawnLink>
-		</div>
-		<div class="masked-container">
-			<div class="mask">
-				<img bind:this={imgA} class="masked-image image-a" src={images[0]} alt="Booking band" />
-				<img bind:this={imgB} class="masked-image image-b" src={images[1]} alt="Booking band" />
+		<FlexContent>
+			<div slot="left" class="content">
+				<p class="lead">
+					Kdo bude hrát na Vaší další akci <img src="/doodles/question.svg" alt="question mark" />
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam commodo dui eget wisi. Fusce
+					consectetuer risus a nunc. Aliquam ornare wisi eu metus. Donec iaculis gravida nulla.
+					Phasellus faucibus molestie nisl. Sed ut perspiciatis unde omnis iste natus error sit
+					voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+					inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Sed vel lectus.
+					Donec odio tempus molestie, porttitor ut, iaculis quis, sem. Etiam ligula pede, sagittis
+					quis, interdum ultricies, scelerisque eu. Nemo enim ipsam voluptatem quia voluptas sit
+					aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+					voluptatem sequi nesciunt. Aliquam erat volutpat. Nulla quis diam. Mauris tincidunt sem sed
+					arcu.
+				</p>
+				<HanddrawnLink href="https://www.zlbooking.cz/" target="_blank">Navštívit</HanddrawnLink>
 			</div>
-			<img src="/doodles/arrow.svg" class="doodle" alt="" />
-			<img src="/doodles/heart.svg" class="doodle" alt="" />
-		</div>
+
+			<div slot="right" class="masked-container">
+				<div class="mask">
+					<img bind:this={imgA} class="masked-image image-a" src={images[0]} alt="Booking band" />
+					<img bind:this={imgB} class="masked-image image-b" src={images[1]} alt="Booking band" />
+				</div>
+				<img src="/doodles/arrow.svg" class="doodle" alt="" />
+				<img src="/doodles/heart.svg" class="doodle" alt="" />
+			</div>
+		</FlexContent>
 	</div>
 </SectionWrapper>
 
@@ -176,11 +175,10 @@
 	.content {
 		display: flex;
 		flex-direction: column;
-		width: 50%;
 	}
 
 	.lead {
-		font-size: 1.6rem;
+		font-size: var(--text-36);
 		line-height: 1.4;
 	}
 
@@ -192,7 +190,6 @@
 	}
 
 	.masked-container {
-		width: 50%;
 		aspect-ratio: 1 / 1;
 		position: relative;
 	}
@@ -238,5 +235,14 @@
 
 	.image-b {
 		opacity: 0;
+	}
+
+
+	/* iPad and smaller (≤ 1024px) */
+	@media (max-width: 1024px) {
+		.masked-container {
+			max-width: 70%;
+		margin: 0 auto;
+		}
 	}
 </style>

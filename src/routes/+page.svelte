@@ -9,10 +9,15 @@
 </script>
 
 <!-- TODO navbar -->
-<Hero />
+<!-- <Hero />
 <About />
 <VideoReferences />
 <Booking />
 <Studio />
 <Family />
-<Equipment />
+<Equipment /> -->
+
+<div style="height: 1000px">
+	das
+</div>
+asd

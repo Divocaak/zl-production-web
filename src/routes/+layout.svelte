@@ -6,6 +6,7 @@
 	import { ScrollSmoother } from 'gsap/ScrollSmoother';
 	import Cursor from '$lib/Cursor.svelte';
 	import Footer from '$lib/sections/Footer.svelte';
+	import Navbar from '$lib/Navbar.svelte';
 
 	let { children } = $props();
 
@@ -13,6 +14,7 @@
 
 	let smoother;
 
+	/* BUG scolling disabled on mobile */
 	onMount(() => {
 		smoother = ScrollSmoother.create({
 			wrapper: '#smooth-wrapper',
@@ -60,6 +62,7 @@
 
 <!-- URGENT <Cursor /> -->
 <!-- BUG gsap optimalization pagewide -->
+<Navbar />
 <div id="smooth-wrapper">
 	<div id="smooth-content">
 		<div id="bg-layer-hard" style="background-image: url('/bordel/bordel-hard.svg');"></div>
@@ -112,7 +115,16 @@
 	}
 
 	:global(body) {
+		background-color: var(--black);
+		color: var(--white);
 		margin: 0;
+		overflow: hidden;
+	}
+
+	:global(html, body) {
+		height: 100%;
+		margin: 0;
+
 		font-family:
 			'Inter',
 			system-ui,
@@ -121,28 +133,14 @@
 			sans-serif;
 		-webkit-font-smoothing: antialiased;
 		text-rendering: optimizeLegibility;
-
-		background-color: var(--black);
-		color: var(--white);
-		margin: 0;
-		overflow: hidden;
-	}
-
-	:global(html) {
-		font-family:
-			'Inter',
-			system-ui,
-			-apple-system,
-			BlinkMacSystemFont,
-			sans-serif;
-	}
-
-	:global(html, body) {
-		height: 100%;
 	}
 
 	:global(h2) {
 		font-size: var(--text-64);
+	}
+
+	:global(p) {
+		font-size: var(--text-24);
 	}
 
 	#bg-layer-hard,
