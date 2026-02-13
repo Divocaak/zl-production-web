@@ -1,5 +1,6 @@
 <script>
 	import { onMount, onDestroy } from 'svelte';
+	/* TODO optimalization */
 
 	const isLowPower =
 		typeof navigator !== 'undefined' &&

@@ -4,46 +4,52 @@
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import { ScrollSmoother } from 'gsap/ScrollSmoother';
+	import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 	import Cursor from '$lib/Cursor.svelte';
 	import Footer from '$lib/sections/Footer.svelte';
 	import Navbar from '$lib/Navbar.svelte';
 
 	let { children } = $props();
 
-	gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+	gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 
 	let smoother;
 
-	/* BUG scolling disabled on mobile */
+	/* TODO scolling disabled on mobile */
 	onMount(() => {
+		['/bordel/bordel-hard.svg', '/bordel/bordel-soft.svg'].forEach((src) => {
+			const img = new Image();
+			img.src = src;
+		});
+
+		if (window.innerWidth < 768) return;
+
 		smoother = ScrollSmoother.create({
 			wrapper: '#smooth-wrapper',
 			content: '#smooth-content',
-			smooth: 1.2,
-			effects: true,
-			normalizeScroll: true
+			smooth: 1.2, // adjust for performance vs feel
+			effects: true, // allows data-speed / data-lag on child elements
+			normalizeScroll: true, // fixes inconsistent scroll
+			smoothTouch: 0.7, // prevents huge lag on mobile
+			onUpdate: () => ScrollTrigger.update() // keeps ScrollTriggers in sync
 		});
 
-		gsap.to('#bg-layer-hard', {
-			yPercent: -10,
-			ease: 'none',
-			scrollTrigger: {
-				trigger: '#smooth-content',
-				start: 'top top',
-				end: 'bottom bottom',
-				scrub: true
-			}
-		});
+		const parallaxLayers = [
+			{ selector: '#bg-layer-hard', yPercent: -10 },
+			{ selector: '#bg-layer-soft', yPercent: -20 }
+		];
 
-		gsap.to('#bg-layer-soft', {
-			yPercent: -20,
-			ease: 'none',
-			scrollTrigger: {
-				trigger: '#smooth-content',
-				start: 'top top',
-				end: 'bottom bottom',
-				scrub: true
-			}
+		parallaxLayers.forEach(({ selector, yPercent }) => {
+			gsap.to(selector, {
+				yPercent,
+				ease: 'none',
+				scrollTrigger: {
+					trigger: '#smooth-content',
+					start: 'top top',
+					end: 'bottom bottom',
+					scrub: true
+				}
+			});
 		});
 
 		ScrollTrigger.config({ ignoreMobileResize: true });
@@ -61,7 +67,8 @@
 </svelte:head>
 
 <!-- URGENT <Cursor /> -->
-<!-- BUG gsap optimalization pagewide -->
+<!-- TODO fastScrollEnd: true in ScrollTriggers -->
+<!-- TODO everywhere where scrub:true, play and pause with scroll trigger -->
 <Navbar />
 <div id="smooth-wrapper">
 	<div id="smooth-content">
@@ -177,7 +184,9 @@
 		overflow: hidden;
 	}
 
-	#smooth-content {
+	#smooth-content,
+	#bg-layer-hard,
+	#bg-layer-soft {
 		will-change: transform;
 	}
 </style>

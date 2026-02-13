@@ -3,6 +3,8 @@
 	import { gsap } from 'gsap';
 	export let trigger = false;
 
+	/* BUG optimalization */
+
 	let loadingOverlay;
 	let logo;
 	let tagline;

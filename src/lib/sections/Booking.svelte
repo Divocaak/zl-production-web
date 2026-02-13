@@ -1,5 +1,5 @@
 <script>
-	import { onDestroy, onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import HanddrawnLink from '$lib/buttons/HanddrawnLink.svelte';
@@ -7,60 +7,58 @@
 	import SectionWrapper from './SectionWrapper.svelte';
 	import FlexContent from '$lib/FlexContent.svelte';
 
-	gsap.registerPlugin(ScrollTrigger);
-
-	let maskedImage;
 	let sectionEl;
-
+	let imgA, imgB;
 	let scrollY = 0;
-	let floatY = 0;
 	let floatX = 0;
-
-	let isActive = false;
-	let index = 0;
-	let intervalId;
-	let imgA;
-	let imgB;
+	let floatY = 0;
 	let active = 'A';
+	let index = 0;
+	let swapInterval;
+
 	const images = ['/booking/krystof.jpg', '/booking/dymytry.jpg', '/booking/partlova.jpg'];
+
+	let setXA, setYA, setXB, setYB;
+
+	const applyTransform = () => {
+		setXA(floatX);
+		setYA(scrollY + floatY);
+		setXB(floatX);
+		setYB(scrollY + floatY);
+	};
+
+	const swapImages = () => {
+		index = (index + 1) % images.length;
+		const nextImg = active === 'A' ? imgB : imgA;
+		const currentImg = active === 'A' ? imgA : imgB;
+
+		nextImg.src = images[index];
+		gsap.set(nextImg, { opacity: 0, scale: 1.05 });
+		gsap.to(nextImg, { opacity: 1, scale: 1, duration: 0.8, ease: 'power2.out' });
+		gsap.to(currentImg, { opacity: 0, duration: 0.8, ease: 'power2.out' });
+
+		active = active === 'A' ? 'B' : 'A';
+	};
 
 	onMount(() => {
 		if (!imgA || !imgB || !sectionEl) return;
 
-		const setXA = gsap.quickSetter(imgA, 'x', 'px');
-		const setYA = gsap.quickSetter(imgA, 'y', 'px');
-		const setXB = gsap.quickSetter(imgB, 'x', 'px');
-		const setYB = gsap.quickSetter(imgB, 'y', 'px');
+		images.forEach((src) => (new Image().src = src));
 
-		const applyTransform = () => {
-			setXA(floatX);
-			setYA(scrollY + floatY);
-			setXB(floatX);
-			setYB(scrollY + floatY);
-		};
+		setXA = gsap.quickSetter(imgA, 'x', 'px');
+		setYA = gsap.quickSetter(imgA, 'y', 'px');
+		setXB = gsap.quickSetter(imgB, 'x', 'px');
+		setYB = gsap.quickSetter(imgB, 'y', 'px');
 
-		ScrollTrigger.create({
-			trigger: sectionEl,
-			start: 'top bottom',
-			end: 'bottom top',
-			scrub: true,
-			onUpdate: (self) => {
-				scrollY = gsap.utils.interpolate(0, -80, self.progress);
-				applyTransform();
-			},
-			onEnter: () => (isActive = true),
-			onLeave: () => (isActive = false),
-			onEnterBack: () => (isActive = true),
-			onLeaveBack: () => (isActive = false)
-		});
-
-		gsap.to(
+		// ---------- FLOATING IMAGE ANIMATION (paused until visible) ----------
+		const floatAnim = gsap.to(
 			{},
 			{
 				duration: 12,
 				repeat: -1,
 				yoyo: true,
 				ease: 'sine.inOut',
+				paused: true,
 				onUpdate: () => {
 					floatY = Math.sin(gsap.ticker.time * 0.8) * 4;
 					floatX = Math.cos(gsap.ticker.time * 0.6) * 3;
@@ -69,54 +67,55 @@
 			}
 		);
 
-		intervalId = setInterval(() => {
-			if (!isActive) return;
+		// ---------- SCROLL-TRIGGER controlling visibility ----------
+		const st = ScrollTrigger.create({
+			trigger: sectionEl,
+			start: 'top bottom',
+			end: 'bottom top',
+			onEnter: () => {
+				floatAnim.play();
+				swapInterval = setInterval(swapImages, 4000);
+			},
+			onLeave: () => {
+				floatAnim.pause();
+				clearInterval(swapInterval);
+			},
+			onEnterBack: () => {
+				floatAnim.play();
+				swapInterval = setInterval(swapImages, 4000);
+			},
+			onLeaveBack: () => {
+				floatAnim.pause();
+				clearInterval(swapInterval);
+			},
+			onUpdate: (self) => {
+				scrollY = gsap.utils.interpolate(0, -80, self.progress);
+				applyTransform();
+			}
+		});
 
-			index = (index + 1) % images.length;
-			const nextImg = active === 'A' ? imgB : imgA;
-			const currentImg = active === 'A' ? imgA : imgB;
-			nextImg.src = images[index];
-
-			gsap.set(nextImg, { opacity: 0, scale: 1.05 });
-
-			gsap.to(nextImg, {
-				opacity: 1,
-				scale: 1,
-				duration: 0.8,
-				ease: 'power2.out'
-			});
-
-			gsap.to(currentImg, {
-				opacity: 0,
-				duration: 0.8,
-				ease: 'power2.out'
-			});
-
-			active = active === 'A' ? 'B' : 'A';
-		}, 4000);
-
+		// ---------- REVEAL TIMELINE ----------
 		const doodles = sectionEl.querySelectorAll('.doodle');
 		const textItems = sectionEl.querySelectorAll('.content, .lead');
 
 		const tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: sectionEl,
-				start: 'top 70%',
-				end: 'bottom 70%',
+				start: 'top 50%',
+				end: 'bottom 90%',
 				scrub: true
 			}
 		});
-
-		tl.from(doodles[0], { opacity: 0, y: 20, duration: 0.4});
-		tl.from(doodles[1], { opacity: 0, y: 20, duration: .4 });
-
-		textItems.forEach((el, i) => {
-			tl.from(el, { opacity: 0, y: 20, duration: 0.4 }, i * 0.2);
+		tl.from([...doodles, ...textItems], {
+			opacity: 0,
+			y: 20,
+			duration: 0.4,
+			stagger: 0.2
 		});
 	});
 
 	onDestroy(() => {
-		clearInterval(intervalId);
+		clearInterval(swapInterval);
 		ScrollTrigger.getAll().forEach((st) => st.kill());
 	});
 </script>
@@ -130,16 +129,16 @@
 					Kdo bude hrát na Vaší další akci <img src="/doodles/question.svg" alt="question mark" />
 				</p>
 				<p>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam commodo dui eget wisi. Fusce
-					consectetuer risus a nunc. Aliquam ornare wisi eu metus. Donec iaculis gravida nulla.
-					Phasellus faucibus molestie nisl. Sed ut perspiciatis unde omnis iste natus error sit
-					voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-					inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Sed vel lectus.
-					Donec odio tempus molestie, porttitor ut, iaculis quis, sem. Etiam ligula pede, sagittis
-					quis, interdum ultricies, scelerisque eu. Nemo enim ipsam voluptatem quia voluptas sit
-					aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-					voluptatem sequi nesciunt. Aliquam erat volutpat. Nulla quis diam. Mauris tincidunt sem sed
-					arcu.
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam commodo dui eget wisi.
+					Fusce consectetuer risus a nunc. Aliquam ornare wisi eu metus. Donec iaculis gravida
+					nulla. Phasellus faucibus molestie nisl. Sed ut perspiciatis unde omnis iste natus error
+					sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+					illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Sed vel
+					lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem. Etiam ligula pede,
+					sagittis quis, interdum ultricies, scelerisque eu. Nemo enim ipsam voluptatem quia
+					voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
+					ratione voluptatem sequi nesciunt. Aliquam erat volutpat. Nulla quis diam. Mauris
+					tincidunt sem sed arcu.
 				</p>
 				<HanddrawnLink href="https://www.zlbooking.cz/" target="_blank">Navštívit</HanddrawnLink>
 			</div>
@@ -162,6 +161,8 @@
 		width: 120px;
 		height: auto;
 		pointer-events: none;
+
+		will-change: transform, opacity;
 	}
 
 	.wrapper {
@@ -237,12 +238,11 @@
 		opacity: 0;
 	}
 
-
 	/* iPad and smaller (≤ 1024px) */
 	@media (max-width: 1024px) {
 		.masked-container {
 			max-width: 70%;
-		margin: 0 auto;
+			margin: 0 auto;
 		}
 	}
 </style>

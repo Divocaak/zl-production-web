@@ -2,7 +2,8 @@
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
-	gsap.registerPlugin(ScrollTrigger);
+
+	/* BUG optimalization */
 
 	export let bindContainer;
 	export let maskId = 'splash-mask';

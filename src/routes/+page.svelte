@@ -8,10 +8,13 @@
 	import VideoReferences from '$lib/sections/VideoReferences.svelte';
 </script>
 
-<Hero />
-<About />
-<VideoReferences />
-<Booking />
-<Studio />
-<Family />
-<Equipment />
+<div style="height:100vh"></div>
+<!-- <Hero /> -->
+<!-- <About /> -->
+<!-- <VideoReferences /> -->
+<!-- <Booking /> -->
+<!-- <Studio /> -->
+<!-- <Family /> -->
+<!-- <Equipment /> -->
+
+<div style="height:100vh"></div>

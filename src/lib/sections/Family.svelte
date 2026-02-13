@@ -8,8 +8,7 @@
 	import ScrollTrigger from 'gsap/ScrollTrigger';
 	import FlexContent from '$lib/FlexContent.svelte';
 
-	gsap.registerPlugin(ScrollTrigger);
-
+	/* BUG optimalization */
 	let sectionEl;
 	let contentEl;
 	let zoo0, zoo1, zoo2, zoo3, zoo4, zoo5, zoo6;

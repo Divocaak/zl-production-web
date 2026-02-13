@@ -4,8 +4,7 @@
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import HanddrawnLink from '$lib/buttons/HanddrawnLink.svelte';
 
-	gsap.registerPlugin(ScrollTrigger);
-
+	/* BUG optimalization */
 	let horizontalSection;
 	let horizontalContainer;
 

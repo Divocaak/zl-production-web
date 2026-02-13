@@ -8,6 +8,8 @@
 	import splash3 from '$lib/assets/splashes/3.svg?raw';
 	import splash4 from '$lib/assets/splashes/4.svg?raw';
 
+	/* BUG optimalization */
+
 	const splashes = [splash0, splash1, splash2, splash3, splash4];
 	const transforms = [
 		{ x: -0.1, y: -0.1, scale: 1 },

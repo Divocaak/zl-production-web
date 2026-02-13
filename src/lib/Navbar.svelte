@@ -1,13 +1,14 @@
 <script>
-	import { fade } from 'svelte/transition';
-	import { onMount } from 'svelte';
-
+	import { onDestroy, onMount, tick } from 'svelte';
 	import SubtleLink from './buttons/SubtleLink.svelte';
 	import splashSvgRaw from '$lib/assets/splashes/0.svg?raw';
 	import menuSplashSvgRaw from '$lib/assets/splashes/2.svg?raw';
 
 	let menuShown = false;
-	const toggleMenu = () => (menuShown = !menuShown);
+	const toggleMenu = async () => {
+		menuShown = !menuShown;
+		await tick();
+	};
 
 	let previousY = 0;
 	let navVisible = false;
@@ -15,7 +16,14 @@
 	let hasUserScrolled = false;
 	const ACTIVATION_THRESHOLD = 40;
 
+	let ticking = false;
+
 	onMount(() => {
+		['/assets/splashes/0.svg', '/assets/splashes/2.svg'].forEach((src) => {
+			const img = new Image();
+			img.src = src;
+		});
+
 		previousY = window.scrollY;
 
 		const handleScroll = () => {
@@ -29,50 +37,53 @@
 				return;
 			}
 
-			const scrollingUp = currentY < previousY;
-			const nearTop = currentY <= 10;
+			if (!ticking) {
+				requestAnimationFrame(() => {
+					const scrollingUp = currentY < previousY;
+					const nearTop = currentY <= 10;
 
-			navVisible = scrollingUp || nearTop;
-			previousY = currentY;
+					navVisible = scrollingUp || nearTop;
+					previousY = currentY;
+					ticking = false;
+				});
+				ticking = true;
+			}
 		};
 
 		window.addEventListener('scroll', handleScroll, { passive: true });
+
 		return () => window.removeEventListener('scroll', handleScroll);
 	});
 </script>
 
-{#if navVisible}
-	<nav transition:fade={{ duration: 250 }}>
-		<button class="menu-button" on:click={toggleMenu}>
-			<span class="splash" aria-hidden="true">
-				{@html splashSvgRaw}
-			</span>
+<nav class:visible={navVisible}>
+	<button class="menu-button" on:click={toggleMenu}>
+		<span class="splash" aria-hidden="true">{@html splashSvgRaw}</span>
 
-			{#if !menuShown}
-				<img transition:fade class="icon" src="/icons/hamburger.svg" alt="hamburger icon" />
-			{:else}
-				<img transition:fade class="icon" src="/icons/cross.svg" alt="close icon" />
-			{/if}
-		</button>
-		{#if menuShown}
-			<div class="small-nav-bg" transition:fade={{ duration: 200 }}>
-				<span class="splash" aria-hidden="true">
-					{@html menuSplashSvgRaw}
-				</span>
-				<div class="small-nav">
-					<SubtleLink on:click={toggleMenu} href="/#about">O nás</SubtleLink>
-					<SubtleLink on:click={toggleMenu} href="/#reference">Reference</SubtleLink>
-					<SubtleLink on:click={toggleMenu} href="/#booking">Booking</SubtleLink>
-					<SubtleLink on:click={toggleMenu} href="/#studio">Studio</SubtleLink>
-					<SubtleLink on:click={toggleMenu} href="/#family">Family</SubtleLink>
-					<SubtleLink on:click={toggleMenu} href="/#equipment">Technika</SubtleLink>
-				</div>
+		<img
+			class="icon"
+			src={menuShown ? '/icons/cross.svg' : '/icons/hamburger.svg'}
+			alt={menuShown ? 'close icon' : 'hamburger icon'}
+		/>
+	</button>
+
+	{#if menuShown}
+		<div class="small-nav-bg">
+			<span class="splash" aria-hidden="true">{@html menuSplashSvgRaw}</span>
+			<div class="small-nav">
+				<SubtleLink on:click={toggleMenu} href="/#about">O nás</SubtleLink>
+				<SubtleLink on:click={toggleMenu} href="/#reference">Reference</SubtleLink>
+				<SubtleLink on:click={toggleMenu} href="/#booking">Booking</SubtleLink>
+				<SubtleLink on:click={toggleMenu} href="/#studio">Studio</SubtleLink>
+				<SubtleLink on:click={toggleMenu} href="/#family">Family</SubtleLink>
+				<SubtleLink on:click={toggleMenu} href="/#equipment">Technika</SubtleLink>
 			</div>
-		{/if}
-	</nav>
-{/if}
+		</div>
+	{/if}
+</nav>
 
 <style>
+	/* --- Navbar Container --- */
 	nav {
 		position: fixed;
 		top: env(safe-area-inset-top);
@@ -86,38 +97,47 @@
 		width: calc(100% - 1rem);
 		padding: 0.5rem;
 		z-index: 1000;
+
+		transform: translateY(-100%);
+		opacity: 0;
+		transition:
+			transform 0.25s ease,
+			opacity 0.25s ease;
+		will-change: transform, opacity;
 	}
 
+	nav.visible {
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	/* --- Menu Button --- */
 	.menu-button {
 		all: unset;
 		position: relative;
 		cursor: pointer;
-
 		display: grid;
 		place-items: center;
 
 		width: 56px;
 		height: 56px;
-
 		touch-action: manipulation;
 	}
 
-	.splash {
+	.menu-button .splash {
 		position: absolute;
 		inset: -20%;
 		width: 140%;
 		height: 140%;
 		object-fit: contain;
-
 		pointer-events: none;
 		z-index: 0;
 
 		fill: var(--zl-red);
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
-	}
 
-	.menu-button .splash {
 		transform: rotate(90deg);
+		will-change: transform, opacity;
 	}
 
 	.menu-button .icon {
@@ -127,28 +147,31 @@
 		width: 28px;
 		height: 28px;
 		display: block;
+		transition: opacity 0.2s ease;
+		will-change: opacity;
 	}
 
+	/* --- Small Nav --- */
 	.small-nav-bg {
 		position: absolute;
-
 		top: 100%;
 		right: 3%;
 	}
 
-	.small-nav {
-		height: 100%;
-
-		display: flex;
-		flex-direction: column;
-        align-items: center;
-
-		font-size: 2rem;
-	}
-
 	.small-nav-bg .splash {
+		position: absolute;
 		inset: -60%;
 		width: 220%;
 		height: 220%;
+		pointer-events: none;
+		fill: var(--zl-red);
+	}
+
+	.small-nav {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-size: 2rem;
 	}
 </style>

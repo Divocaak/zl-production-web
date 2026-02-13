@@ -1,54 +1,39 @@
 <script>
 	import NumberBoxes from '$lib/NumberBoxes.svelte';
 	import SectionWrapper from './SectionWrapper.svelte';
-
-	import { onMount } from 'svelte';
-	import gsap from 'gsap';
-	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import LogoHeading from '$lib/LogoHeading.svelte';
 	import FlexContent from '$lib/FlexContent.svelte';
 
-	gsap.registerPlugin(ScrollTrigger);
+	import { onMount, onDestroy } from 'svelte';
+	import gsap from 'gsap';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 	let content;
+	let logoImg;
 
+	let tl;
 	onMount(() => {
-		if (!content) return; // make sure content exists
+		if (!content) return;
 
-		const headingImg = content.querySelector('img:first-of-type');
 		const paragraph = content.querySelector('p');
 		const sinceImg = content.querySelector('img:last-of-type');
 
 		const tl = gsap.timeline({
 			scrollTrigger: {
-				trigger: headingImg,
-				start: 'top center',
-				toggleActions: 'play none none none'
+				trigger: content,
+				start: 'top 60%',
+				end: 'bottom 90%',
+				scrub: true
 			}
 		});
+		tl.from(logoImg, { y: -50, autoAlpha: 0, duration: 1, ease: 'power2.out' })
+			.from(paragraph, { y: 50, autoAlpha: 0, duration: 1, ease: 'power2.out' }, '-=0.2')
+			.from(sinceImg, { y: 20, autoAlpha: 0, duration: 1, ease: 'power2.out' });
+	});
 
-		tl.from(headingImg, {
-			y: -50,
-			opacity: 0,
-			duration: 1,
-			ease: 'power2.out'
-		})
-			.from(
-				paragraph,
-				{
-					y: 50,
-					opacity: 0,
-					duration: 1,
-					ease: 'power2.out'
-				},
-				'+=0.2'
-			)
-			.from(sinceImg, {
-				y: 20,
-				opacity: 0,
-				duration: 1,
-				ease: 'power2.out'
-			});
+	onDestroy(() => {
+		tl?.kill();
+		ScrollTrigger.getAll().forEach((t) => t.kill());
 	});
 </script>
 
@@ -58,7 +43,9 @@
 			<NumberBoxes />
 		</div>
 		<div slot="right" class="content" bind:this={content}>
-			<LogoHeading src="/hashtags/stage-is-ours-dark.svg" alt="Stage Is Ours" />
+			<div bind:this={logoImg}>
+				<LogoHeading src="/hashtags/stage-is-ours-dark.svg" alt="Stage Is Ours" />
+			</div>
 			<p>
 				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis sapien nunc, commodo et,
 				interdum suscipit, sollicitudin et, dolor. Integer malesuada. Donec vitae arcu. Nullam eget
@@ -85,8 +72,14 @@
 		padding: 2rem 0;
 	}
 
-	.since{
+	.since {
 		width: 50%;
 		margin: 0 auto;
+	}
+
+	img,
+	p,
+	.content {
+		will-change: transform, opacity;
 	}
 </style>
