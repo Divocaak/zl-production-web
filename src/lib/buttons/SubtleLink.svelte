@@ -1,4 +1,5 @@
 <script>
+	import { createEventDispatcher } from 'svelte';
 	import gsap from 'gsap';
 	import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
@@ -7,10 +8,14 @@
 	export let href;
 	export let target = '_self';
 
+	const dispatch = createEventDispatcher();
+
 	// height of pinned section in pixels (adjust if you have sticky header or pinned GSAP section)
 	/* const pinnedOffset = 1500; */
 
 	function handleClick(event) {
+		// Always notify parent first (so menu can close instantly)
+		dispatch('click', event);
 		if (href.startsWith('/#')) {
 			event.preventDefault();
 
@@ -18,7 +23,7 @@
 			const el = document.getElementById(targetId);
 
 			if (!el) return;
-			const top = el.getBoundingClientRect().top + window.scrollY;// - pinnedOffset;
+			const top = el.getBoundingClientRect().top + window.scrollY; // - pinnedOffset;
 
 			gsap.to(window, {
 				scrollTo: { y: top },

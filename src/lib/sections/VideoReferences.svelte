@@ -4,10 +4,6 @@
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import HanddrawnLink from '$lib/buttons/HanddrawnLink.svelte';
 
-	import splash0 from '$lib/assets/splashes/0.svg?raw';
-	import splash2 from '$lib/assets/splashes/2.svg?raw';
-	import splash3 from '$lib/assets/splashes/3.svg?raw';
-
 	gsap.registerPlugin(ScrollTrigger);
 
 	let horizontalSection;
@@ -43,44 +39,35 @@
 	});
 </script>
 
-<section bind:this={horizontalSection} class="horizontal-section" id="reference">
-	<!-- TODO make one svg -->
-	<div class="bg-wrapper">
-		<div class="svg-wrapper svg0">{@html splash0}</div>
-		<div class="svg-wrapper svg2">{@html splash2}</div>
-		<div class="svg-wrapper svg3">{@html splash3}</div>
+<section bind:this={horizontalSection} id="reference">
+	<h2>Vybrané reference</h2>
+	<div class="horizontal-container" bind:this={horizontalContainer}>
+		{#each cards as card}
+			<div class="card" style="background-color: {card.color}">
+				{card.text}
+			</div>
+		{/each}
 	</div>
-	<div class="content">
-		<h2>Vybrané reference</h2>
-		<div class="horizontal-container" bind:this={horizontalContainer}>
-			{#each cards as card}
-				<div class="card" style="background-color: {card.color}">
-					{card.text}
-				</div>
-			{/each}
-		</div>
-		<HanddrawnLink inverted={true}>Všechny reference</HanddrawnLink>
-	</div>
+	<HanddrawnLink inverted={true}>Všechny reference</HanddrawnLink>
 </section>
 
-<!-- TODO resp -->
 <style>
-	.horizontal-section {
+	#reference {
 		position: relative;
 		width: 100%;
 		height: 100vh;
-	}
 
-	.content {
-		position: absolute;
-		inset: 0;
+		background-image: url('/reference-bg.svg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+
 		overflow: hidden;
 		text-align: center;
 
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		z-index: 20;
 	}
 
 	.horizontal-container {
@@ -102,43 +89,5 @@
 		border-radius: 6px;
 		user-select: none;
 		touch-action: pan-x;
-	}
-
-	.bg-wrapper {
-		position: absolute;
-		inset: 0;
-		pointer-events: none;
-		
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.svg-wrapper {
-		position: absolute;
-		z-index: 1;
-
-		fill: var(--zl-red);
-
-		width: 80vw;
-		height: auto;
-
-		transform-origin: center;
-	}
-
-	:global(.svg-wrapper:nth-of-type(1)) {
-		top: -20%;
-		left: -25%;
-		transform: scale(.8);
-	}
-	
-	:global(.svg-wrapper:nth-of-type(2)) {
-		top: -20%;
-		transform: scale(.8);
-	}
-	
-	:global(.svg-wrapper:nth-of-type(3)) {
-		left: 35%;
-		transform: scale(0.8) rotate(-5deg);
 	}
 </style>

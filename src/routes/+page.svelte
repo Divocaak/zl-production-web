@@ -8,16 +8,10 @@
 	import VideoReferences from '$lib/sections/VideoReferences.svelte';
 </script>
 
-<!-- TODO navbar -->
-<!-- <Hero />
+<Hero />
 <About />
 <VideoReferences />
 <Booking />
 <Studio />
 <Family />
-<Equipment /> -->
-
-<div style="height: 1000px">
-	das
-</div>
-asd
+<Equipment />
