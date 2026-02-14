@@ -165,6 +165,7 @@
 	});
 
 	onDestroy(() => {
+		if (typeof window === 'undefined') return;
 		window.removeEventListener('mousemove', handleMouseMove);
 		window.removeEventListener('resize', resize);
 		document.removeEventListener('visibilitychange', handleVisibility);

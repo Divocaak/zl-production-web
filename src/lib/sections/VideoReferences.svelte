@@ -31,6 +31,9 @@
 		await tick();
 		preloadCards();
 
+		const isMobile = window.innerWidth < 768;
+
+		if (isMobile) return;
 		requestAnimationFrame(() => {
 			tween = gsap.to(horizontalContainer, {
 				x: () => `-${getDistance()}px`,
@@ -122,5 +125,24 @@
 		will-change: transform, opacity;
 
 		transform: translateZ(0);
+	}
+
+	@media (max-width: 767px) {
+		.horizontal-container {
+			display: flex;
+			gap: 1rem;
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+			-webkit-overflow-scrolling: touch;
+			width: 100%;
+			padding: 1rem 0;
+		}
+
+		.card {
+			flex: 0 0 auto; /* prevent shrinking */
+			aspect-ratio: 16 / 9; /* preserve ratio */
+			scroll-snap-align: center;
+			/* width: calc(80vw);  */
+		}
 	}
 </style>

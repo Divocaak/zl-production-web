@@ -16,22 +16,27 @@
 
 	let smoother;
 
-	/* BUG scolling disabled on mobile */
 	onMount(() => {
-		if (window.innerWidth < 768) return;
+		const isMobile = window.innerWidth < 768;
 
-		smoother = ScrollSmoother.create({
-			wrapper: '#smooth-wrapper',
-			content: '#smooth-content',
-			smooth: 1.2, // adjust for performance vs feel
-			effects: true, // allows data-speed / data-lag on child elements
-			normalizeScroll: true, // fixes inconsistent scroll
-			smoothTouch: 0.7, // prevents huge lag on mobile
-			onUpdate: () => ScrollTrigger.update() // keeps ScrollTriggers in sync
-		});
+		if (!isMobile) {
+			smoother = ScrollSmoother.create({
+				wrapper: '#smooth-wrapper',
+				content: '#smooth-content',
+				smooth: 1.2, // adjust for performance vs feel
+				effects: true, // allows data-speed / data-lag on child elements
+				normalizeScroll: true, // fixes inconsistent scroll
+				smoothTouch: 0.7, // prevents huge lag on mobile
+				onUpdate: () => ScrollTrigger.update() // keeps ScrollTriggers in sync
+			});
 
-		ScrollTrigger.config({ ignoreMobileResize: true, fastScrollEnd: true });
-		ScrollTrigger.refresh();
+			ScrollTrigger.config({ ignoreMobileResize: true, fastScrollEnd: true });
+			ScrollTrigger.refresh();
+		} else {
+			// mobile fallback: remove overflow hidden
+			document.querySelector('#smooth-wrapper').style.overflow = 'auto';
+			document.querySelector('#smooth-wrapper').style.height = 'auto';
+		}
 	});
 
 	onDestroy(() => {
@@ -44,7 +49,7 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<Cursor />
+<!-- <Cursor /> -->
 <Navbar />
 <div id="smooth-wrapper">
 	<div id="smooth-content">
@@ -134,6 +139,17 @@
 	#smooth-wrapper {
 		height: 100vh;
 		overflow: hidden;
+	}
+
+	@media (max-width: 767px) {
+		:global(body){
+			overflow: auto;
+		}
+
+		#smooth-wrapper {
+			overflow: auto;
+			height: auto;
+		}
 	}
 
 	#smooth-content {
