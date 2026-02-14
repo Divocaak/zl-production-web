@@ -8,6 +8,7 @@
 	import Cursor from '$lib/Cursor.svelte';
 	import Footer from '$lib/sections/Footer.svelte';
 	import Navbar from '$lib/Navbar.svelte';
+	import BackgroundTexture from '$lib/BackgroundTexture.svelte';
 
 	let { children } = $props();
 
@@ -15,13 +16,8 @@
 
 	let smoother;
 
-	/* TODO scolling disabled on mobile */
+	/* BUG scolling disabled on mobile */
 	onMount(() => {
-		['/bordel/bordel-hard.svg', '/bordel/bordel-soft.svg'].forEach((src) => {
-			const img = new Image();
-			img.src = src;
-		});
-
 		if (window.innerWidth < 768) return;
 
 		smoother = ScrollSmoother.create({
@@ -34,25 +30,7 @@
 			onUpdate: () => ScrollTrigger.update() // keeps ScrollTriggers in sync
 		});
 
-		const parallaxLayers = [
-			{ selector: '#bg-layer-hard', yPercent: -10 },
-			{ selector: '#bg-layer-soft', yPercent: -20 }
-		];
-
-		parallaxLayers.forEach(({ selector, yPercent }) => {
-			gsap.to(selector, {
-				yPercent,
-				ease: 'none',
-				scrollTrigger: {
-					trigger: '#smooth-content',
-					start: 'top top',
-					end: 'bottom bottom',
-					scrub: true
-				}
-			});
-		});
-
-		ScrollTrigger.config({ ignoreMobileResize: true });
+		ScrollTrigger.config({ ignoreMobileResize: true, fastScrollEnd: true });
 		ScrollTrigger.refresh();
 	});
 
@@ -66,17 +44,12 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<!-- URGENT <Cursor /> -->
-<!-- TODO fastScrollEnd: true in ScrollTriggers -->
-<!-- TODO everywhere where scrub:true, play and pause with scroll trigger OR use scrub: .5 -->
+<Cursor />
 <Navbar />
 <div id="smooth-wrapper">
 	<div id="smooth-content">
-		<!-- TODO optimize bg -->
-		<!-- TODO mby bg component? -->
-		<div id="bg-layer-hard" style="background-image: url('/bordel/bordel-hard.svg');"></div>
-		<div id="bg-layer-soft" style="background-image: url('/bordel/bordel-soft.svg');"></div>
-		<div class="page-content">
+		<BackgroundTexture />
+		<div id="page-content">
 			{@render children()}
 			<Footer />
 		</div>
@@ -133,6 +106,7 @@
 	:global(html, body) {
 		height: 100%;
 		margin: 0;
+		padding: 0;
 
 		font-family:
 			'Inter',
@@ -152,31 +126,7 @@
 		font-size: var(--text-24);
 	}
 
-	#bg-layer-hard,
-	#bg-layer-soft {
-		position: absolute;
-		inset: 0;
-		z-index: 0;
-
-		background-repeat: repeat;
-		background-size: auto;
-		pointer-events: none;
-
-		transform: scale(1.05);
-		transform-origin: center;
-	}
-
-	#bg-layer-hard {
-		opacity: 0.3;
-		mix-blend-mode: soft-light;
-	}
-
-	#bg-layer-soft {
-		opacity: 0.15;
-		mix-blend-mode: overlay;
-	}
-
-	.page-content {
+	#page-content {
 		position: relative;
 		z-index: 1;
 	}
@@ -186,9 +136,7 @@
 		overflow: hidden;
 	}
 
-	#smooth-content,
-	#bg-layer-hard,
-	#bg-layer-soft {
+	#smooth-content {
 		will-change: transform;
 	}
 </style>

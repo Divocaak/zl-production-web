@@ -4,7 +4,6 @@
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 	export let bindContainer;
-	export let maskId = 'splash-mask';
 
 	const layers = [
 		'/homepage/landing/full.png',
@@ -23,7 +22,7 @@
 		});
 	}
 
-	onMount(() => {
+	onMount(async () => {
 		if (!bindContainer) return;
 		preloadImages(layers);
 
@@ -59,25 +58,45 @@
 	});
 </script>
 
-<div
-	bind:this={bindContainer}
-	class="parallax masked"
-	style="mask: url(#{maskId}); -webkit-mask: url(#{maskId}); mask-repeat: no-repeat; mask-size: 100% 100%; -webkit-mask-size: 100% 100%;"
->
-	{#each layers as layer}
-		<div class="layer-wrapper">
-			<img src={layer} alt="" class="layer" loading="eager" />
-		</div>
-	{/each}
+<div bind:this={bindContainer} class="parallax-wrapper">
+	<div class="parallax-mask">
+		{#each layers as layer}
+			<div class="layer-wrapper">
+				<img src={layer} alt="" class="layer" loading="eager" />
+			</div>
+		{/each}
+	</div>
 </div>
 
 <style>
-	.parallax {
+	.parallax-wrapper {
 		position: absolute;
 		inset: 0;
 		height: 120vh;
-		overflow: hidden;
 		transform-style: preserve-3d;
+		pointer-events: none;
+	}
+
+	.parallax-mask {
+		position: absolute;
+		inset: 0;
+		width: 120%;
+		height: 120%;
+		margin: -10%;
+
+		mask-image: url('/hero-mask/0.svg');
+		mask-repeat: no-repeat;
+		mask-position: center;
+		mask-size: cover;
+		mask-mode: luminance;
+
+		-webkit-mask-image: url('/hero-mask/0.svg');
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-position: center;
+		-webkit-mask-size: cover;
+		-webkit-mask-mode: luminance;
+
+		animation: mask-breathe 8s ease-in-out infinite;
 	}
 
 	.layer-wrapper {
@@ -95,5 +114,33 @@
 		pointer-events: none;
 		backface-visibility: hidden;
 		transform: translateZ(0);
+	}
+
+	@keyframes mask-breathe {
+		0% {
+			mask-position: center;
+			-webkit-mask-position: center;
+			filter: blur(1px);
+		}
+		25% {
+			mask-position: 48% 48%;
+			-webkit-mask-position: 48% 48%;
+			filter: blur(0px);
+		}
+		50% {
+			mask-position: 52% 52%;
+			-webkit-mask-position: 52% 52%;
+			filter: blur(1px);
+		}
+		75% {
+			mask-position: 48% 52%;
+			-webkit-mask-position: 48% 52%;
+			filter: blur(0px);
+		}
+		100% {
+			mask-position: center;
+			-webkit-mask-position: center;
+			filter: blur(1px);
+		}
 	}
 </style>

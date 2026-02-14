@@ -1,6 +1,5 @@
 <script>
 	import { onMount, onDestroy } from 'svelte';
-	/* TODO optimalization */
 
 	const isLowPower =
 		typeof navigator !== 'undefined' &&
@@ -16,18 +15,18 @@
 	let ctx;
 
 	let mouse = { x: 0, y: 0 };
-	let trail = [];
-	let particles = [];
+	let trail = new Array(TRAIL_LENGTH).fill(null).map(() => ({ x: 0, y: 0, alpha: 0 }));
+	let trailIndex = 0;
 
+	let particles = [];
 	let raf = null;
 	let moving = false;
 	let idleTimeout;
-	let handleResize;
+	let resizeRAF;
 
 	function handleMouseMove(e) {
 		mouse.x = e.clientX;
 		mouse.y = e.clientY;
-
 		moving = true;
 
 		clearTimeout(idleTimeout);
@@ -56,85 +55,86 @@
 		let hasWork = false;
 
 		if (moving) {
-			trail.unshift({ x: mouse.x, y: mouse.y, alpha: 1 });
-			if (trail.length > TRAIL_LENGTH) trail.pop();
+			// reuse trail slot
+			const point = trail[trailIndex];
+			point.x = mouse.x;
+			point.y = mouse.y;
+			point.alpha = 1;
+
+			trailIndex = (trailIndex + 1) % TRAIL_LENGTH;
 			hasWork = true;
 		}
 
-		// fade trail in-place (no new arrays)
-		for (let i = trail.length - 1; i >= 0; i--) {
-			trail[i].alpha -= ALPHA_DECAY;
-			if (trail[i].alpha <= 0) trail.splice(i, 1);
+		// fade trail in-place
+		for (let i = 0; i < TRAIL_LENGTH; i++) {
+			const p = trail[i];
+			if (p.alpha > 0) {
+				p.alpha -= ALPHA_DECAY;
+				if (p.alpha < 0) p.alpha = 0;
+				hasWork = true;
+			}
 		}
 
-		if (trail.length || particles.length) {
-			hasWork = true;
-
+		if (hasWork || particles.length) {
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
-
 			ctx.lineCap = 'round';
 			ctx.shadowBlur = 2;
 			ctx.shadowColor = 'rgba(255,255,255,0.5)';
 
-			for (let i = 0; i < trail.length - 1; i++) {
+			// draw trail
+			for (let i = 0; i < TRAIL_LENGTH - 1; i++) {
 				const p1 = trail[i];
 				const p2 = trail[i + 1];
+				if (p1.alpha <= 0 && p2.alpha <= 0) continue;
 
-				const alpha = p1.alpha * (0.4 + Math.random() * 0.6);
+				/* const alpha = p1.alpha * (0.5 + Math.random() * 0.5);
 				const size = 2 + Math.random() * 2 * p1.alpha;
-
-				const ox1 = (Math.random() - 0.5) * 2;
-				const oy1 = (Math.random() - 0.5) * 2;
-				const ox2 = (Math.random() - 0.5) * 2;
-				const oy2 = (Math.random() - 0.5) * 2;
-
 				ctx.strokeStyle = `rgba(255,255,255,${alpha})`;
 				ctx.lineWidth = size;
 				ctx.beginPath();
-				ctx.moveTo(p1.x + ox1, p1.y + oy1);
-				ctx.lineTo(p2.x + ox2, p2.y + oy2);
-				ctx.stroke();
+				ctx.moveTo(p1.x, p1.y);
+				ctx.lineTo(p2.x, p2.y);
+				ctx.stroke(); */
 
+				// generate particles
 				for (let j = 0; j < PARTICLE_COUNT; j++) {
-					particles.push({
-						x: p1.x + (Math.random() - 0.5) * 10,
-						y: p1.y + (Math.random() - 0.5) * 10,
-						size: Math.random() * 2 + 1,
-						alpha: 0.3 + Math.random() * 0.3,
-						vx: (Math.random() - 0.5) * 0.5,
-						vy: -Math.random() * 1
-					});
+					if (particles.length < MAX_PARTICLES) {
+						particles.push({
+							x: p1.x + (Math.random() - 0.5) * 10,
+							y: p1.y + (Math.random() - 0.5) * 10,
+							size: Math.random() * 2 + 1,
+							alpha: 0.3 + Math.random() * 0.3,
+							vx: (Math.random() - 0.5) * 0.5,
+							vy: -Math.random() * 1
+						});
+					}
 				}
 			}
-		}
 
-		// cap particles
-		if (particles.length > MAX_PARTICLES) {
-			particles.splice(0, particles.length - MAX_PARTICLES);
-		}
+			// update particles
+			for (let i = particles.length - 1; i >= 0; i--) {
+				const p = particles[i];
+				p.x += p.vx;
+				p.y += p.vy;
+				p.alpha -= 0.01;
 
-		// update particles
-		for (let i = particles.length - 1; i >= 0; i--) {
-			const p = particles[i];
-			p.x += p.vx;
-			p.y += p.vy;
-			p.alpha -= 0.01;
+				if (p.alpha <= 0) {
+					particles[i] = particles[particles.length - 1];
+					particles.pop();
+					continue;
+				}
 
-			if (p.alpha <= 0) {
-				particles.splice(i, 1);
-				continue;
+				ctx.beginPath();
+				ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+				ctx.fillStyle = `rgba(255,255,255,${p.alpha})`;
+				ctx.fill();
 			}
-
-			ctx.beginPath();
-			ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-			ctx.fillStyle = `rgba(255,255,255,${p.alpha})`;
-			ctx.fill();
 		}
 
-		if (hasWork) {
+		if (hasWork || particles.length) {
 			raf = requestAnimationFrame(animate);
 		} else {
-			raf = null; // fully stop loop when idle
+			raf = null;
 		}
 	}
 
@@ -152,15 +152,21 @@
 		resize();
 
 		window.addEventListener('mousemove', handleMouseMove);
-		handleResize = () => resize();
-		window.addEventListener('resize', handleResize);
+
+		const onResize = () => {
+			if (!resizeRAF)
+				resizeRAF = requestAnimationFrame(() => {
+					resize();
+					resizeRAF = null;
+				});
+		};
+		window.addEventListener('resize', onResize);
 		document.addEventListener('visibilitychange', handleVisibility);
 	});
 
 	onDestroy(() => {
-		if (typeof window === 'undefined') return;
 		window.removeEventListener('mousemove', handleMouseMove);
-		window.removeEventListener('resize', handleResize);
+		window.removeEventListener('resize', resize);
 		document.removeEventListener('visibilitychange', handleVisibility);
 		if (raf) cancelAnimationFrame(raf);
 	});

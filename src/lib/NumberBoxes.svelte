@@ -33,7 +33,7 @@
 				trigger: gridSection,
 				start: 'top 60%',
 				end: 'bottom 90%',
-				scrub: true
+				scrub: .5
 			}
 		});
 

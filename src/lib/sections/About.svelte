@@ -23,7 +23,7 @@
 				trigger: content,
 				start: 'top 60%',
 				end: 'bottom 90%',
-				scrub: true
+				scrub: .5
 			}
 		});
 		tl.from(logoImg, { y: -50, autoAlpha: 0, duration: 1, ease: 'power2.out' })

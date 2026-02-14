@@ -32,7 +32,7 @@
 				trigger: sectionEl,
 				start: 'top 50%',
 				end: 'bottom 90%',
-				scrub: true
+				scrub: .5
 			},
 			defaults: { duration: 1, stagger: 0.5, ease: 'power3.out' }
 		});
