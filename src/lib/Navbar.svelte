@@ -19,11 +19,6 @@
 	let ticking = false;
 
 	onMount(() => {
-		['/assets/splashes/0.svg', '/assets/splashes/2.svg'].forEach((src) => {
-			const img = new Image();
-			img.src = src;
-		});
-
 		previousY = window.scrollY;
 
 		const handleScroll = () => {
