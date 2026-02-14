@@ -3,47 +3,72 @@
 	import LogoHeading from '$lib/LogoHeading.svelte';
 	import SectionWrapper from './SectionWrapper.svelte';
 
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import gsap from 'gsap';
 	import ScrollTrigger from 'gsap/ScrollTrigger';
 	import FlexContent from '$lib/FlexContent.svelte';
 
-	/* BUG optimalization */
 	let sectionEl;
 	let contentEl;
 	let zoo0, zoo1, zoo2, zoo3, zoo4, zoo5, zoo6;
 
+	let tl;
+
+	function preloadZooImages() {
+		const sources = [
+			'/zoo/lights.svg',
+			'/zoo/production-alt.svg',
+			'/zoo/rigging-alt.svg',
+			'/zoo/sound.svg',
+			'/zoo/stage.svg',
+			'/zoo/video.svg',
+			'/zoo/yoda.svg'
+		];
+
+		sources.forEach((src) => {
+			const img = new Image();
+			img.src = src;
+		});
+	}
+
 	onMount(() => {
-		const tl = gsap.timeline({
+		preloadZooImages();
+		gsap.set(contentEl, { autoAlpha: 0, y: 40 });
+		const zooEls = [zoo0, zoo1, zoo2, zoo3, zoo4, zoo5, zoo6].filter(Boolean);
+		const rotations = zooEls.map(() => gsap.utils.random(-15, 15));
+
+		tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: sectionEl,
-				start: 'top 70%',
-				toggleActions: 'play reverse play reverse'
+				start: 'top 50%',
+				end: 'bottom 90%',
+				scrub: 0.5
 			}
 		});
 
-		tl.from(contentEl, {
-			opacity: 0,
-			y: 40,
+		tl.to(contentEl, {
+			autoAlpha: 1,
+			y: 0,
 			duration: 0.8,
 			ease: 'power3.out'
 		});
 
-		const zooEls = [zoo0, zoo1, zoo2, zoo3, zoo4, zoo5, zoo6];
-		tl.from(
-			zooEls,
-			{
-				scale: 0,
-				opacity: 0,
-				y: 20,
-				transformOrigin: '50% 50%',
-				rotation: () => gsap.utils.random(-15, 15),
-				duration: 0.6,
-				stagger: 0.08,
-				ease: 'back.out(1.4)'
-			},
-			'-=0.4'
-		);
+		tl.from(zooEls, {
+			scale: 0,
+			autoAlpha: 0,
+			y: 20,
+			rotation: (i) => rotations[i],
+			duration: 0.6,
+			stagger: 0.3,
+			ease: 'back.out(1.4)'
+		});
+	});
+
+	onDestroy(() => {
+		if (tl) {
+			tl.scrollTrigger?.kill();
+			tl.kill();
+		}
 	});
 </script>
 
@@ -141,6 +166,7 @@
 	}
 
 	.media .zoo {
+		transform-origin: '50% 50%';
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
 		transition: transform 0.2s ease;
 	}

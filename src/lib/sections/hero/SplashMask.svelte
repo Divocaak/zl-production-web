@@ -8,8 +8,6 @@
 	import splash3 from '$lib/assets/splashes/3.svg?raw';
 	import splash4 from '$lib/assets/splashes/4.svg?raw';
 
-	/* BUG optimalization */
-
 	const splashes = [splash0, splash1, splash2, splash3, splash4];
 	const transforms = [
 		{ x: -0.1, y: -0.1, scale: 1 },
@@ -20,8 +18,15 @@
 	];
 
 	export let bindMask;
-
 	const dispatch = createEventDispatcher();
+	let tweens = [];
+
+	function preloadSVGs(urls) {
+		urls.forEach((url) => {
+			const img = new Image();
+			img.src = `data:image/svg+xml,${encodeURIComponent(url)}`;
+		});
+	}
 
 	function extractInner(svg) {
 		return svg.replace(/<svg[^>]*>/, '').replace('</svg>', '');
@@ -49,42 +54,48 @@
 	}
 
 	onMount(() => {
-		// wait for the container to be passed via prop
-		let container;
-		const observer = new MutationObserver(() => {
-			if (bindMask?.parentNode) {
-				container = bindMask.parentNode.querySelector('.parallax');
-				if (container) {
-					resizeMask(container);
+		preloadSVGs(splashes);
 
-					// animate splashes
-					const splashGroups = bindMask.querySelectorAll('.splash');
-					splashGroups.forEach((g, i) => {
-						gsap.to(g, {
-							x: '+=10',
-							y: '+=10',
-							yoyo: true,
-							repeat: -1,
-							duration: 3 + i * 0.5,
-							ease: 'sine.inOut'
-						});
-					});
+		const container = bindMask?.parentNode?.querySelector('.parallax');
+		if (!container) return;
 
-					// notify hero that splashes are ready
-					dispatch('loaded');
+		resizeMask(container);
 
-					observer.disconnect();
-				}
-			}
+		const splashGroups = bindMask.querySelectorAll('.splash');
+		const tl = gsap.timeline({ repeat: -1, yoyo: true });
+		splashGroups.forEach((g, i) => {
+			const duration = 3 + i * 0.5;
+			const dx = 10;
+			const dy = 10;
+			tl.to(
+				g,
+				{
+					x: `+=${dx}`,
+					y: `+=${dy}`,
+					duration,
+					ease: 'sine.inOut'
+				},
+				0
+			);
 		});
+		tweens.push(tl);
 
-		observer.observe(document.body, { childList: true, subtree: true });
+		dispatch('loaded');
 
-		const handleResize = () => resizeMask(container);
+		let resizeRAF;
+		const handleResize = () => {
+			if (!resizeRAF) {
+				resizeRAF = requestAnimationFrame(() => {
+					resizeMask(container);
+					resizeRAF = null;
+				});
+			}
+		};
 		window.addEventListener('resize', handleResize);
 
 		onDestroy(() => {
 			window.removeEventListener('resize', handleResize);
+			tweens.forEach((t) => t.kill());
 		});
 	});
 </script>

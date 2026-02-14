@@ -1,70 +1,85 @@
 <script>
-	import { onMount, tick } from 'svelte';
+	import { onMount, onDestroy, tick } from 'svelte';
 	import { gsap } from 'gsap';
 	export let trigger = false;
-
-	/* BUG optimalization */
 
 	let loadingOverlay;
 	let logo;
 	let tagline;
 
+	const image = '/logos/logo-horizontal-dark.svg';
 	const text = 'Žijeme ve světe speciálních eventů';
 
-	async function animateHero() {
-		await tick();
+	let tl;
+	let hasAnimated = false;
 
+	async function animateHero() {
+		if (hasAnimated) return;
+		hasAnimated = true;
+
+		await tick();
 		if (!loadingOverlay || !logo || !tagline) return;
 
-		const heroTimeline = gsap.timeline({
-			delay: 0.2,
-			ease: 'power2.out',
-			onStart: () => {
-				gsap.to(loadingOverlay, {
-					opacity: 0,
-					duration: 0.3
-				});
-			}
+		new Image().src = image;
+
+		const fragment = document.createDocumentFragment();
+		text.split('').forEach((char) => {
+			const span = document.createElement('span');
+			span.textContent = char;
+			fragment.appendChild(span);
+		});
+		tagline.innerHTML = '';
+		tagline.appendChild(fragment);
+		const letters = gsap.utils.toArray(tagline.querySelectorAll('span'));
+
+		tl = gsap.timeline({
+			delay: 1,
+			ease: 'power2.out'
 		});
 
-		heroTimeline.from(logo, { autoAlpha: 0, scale: 0.8, duration: 1, ease: 'power2.out' });
-
-		tagline.innerHTML = text
-			.split('')
-			.map((char) => `<span>${char}</span>`)
-			.join('');
-		const letters = tagline.querySelectorAll('span');
-
-		heroTimeline.from(letters, {
-			opacity: 0,
+		tl.to(loadingOverlay, { autoAlpha: 0, duration: 0.3 });
+		tl.from(logo, { autoAlpha: 0, scale: 0.8, duration: 1, ease: 'power2.out' });
+		tl.from(letters, {
+			autoAlpha: 0,
 			y: 10,
 			stagger: 0.05,
 			duration: 0.4
 		});
 	}
 
-	$: if (trigger) {
-		animateHero();
-	}
+	onDestroy(() => {
+		tl?.kill();
+	});
+
+	$: if (trigger) animateHero();
 </script>
 
 <div id="loading-overlay" bind:this={loadingOverlay}>
-	<div class="loading-dot"></div>
+	<img src="/sticker.svg" alt="loading sticker" />
 </div>
-
 <div class="hero-content">
-	<img src="/logos/logo-horizontal-dark.svg" alt="Logo" bind:this={logo} class="logo" />
+	<img
+		src="/logos/logo-horizontal-dark.svg"
+		alt="Logo"
+		bind:this={logo}
+		class="logo"
+		loading="eager"
+	/>
 	<p class="tagline" bind:this={tagline}></p>
 </div>
 
 <style>
 	#loading-overlay {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100vw;
+		position: absolute;
+		inset: 0;
+		width: 100%;
 		height: 100vh;
-		background: linear-gradient(180deg, #111, #222);
+
+		background-image: url('/bordel/bordel-soft.svg'), linear-gradient(180deg, #111, #222);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+
 		z-index: 9999;
 
 		display: flex;
@@ -76,11 +91,8 @@
 		transition: opacity 0.8s ease;
 	}
 
-	.loading-dot {
-		width: 20px;
-		height: 20px;
-		border-radius: 50%;
-		background: var(--zl-red);
+	#loading-overlay img {
+		width: 25%;
 		animation: pulse 1s infinite alternate;
 	}
 

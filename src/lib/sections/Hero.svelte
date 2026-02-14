@@ -12,8 +12,6 @@
 </script>
 
 <!-- TODO few pixels on top -->
-<!-- <div style="border: 1px solid red;"> -->
-	<SplashMask bindMask={maskSvg} on:loaded={onMaskLoaded} />
-	<ParallaxLayers maskId="splash-mask" />
-	<LoadingAndContent trigger={triggerHero} />
-<!-- </div> -->
+<SplashMask bindMask={maskSvg} on:loaded={onMaskLoaded} />
+<ParallaxLayers maskId="splash-mask" />
+<LoadingAndContent trigger={triggerHero} />

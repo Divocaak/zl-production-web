@@ -9,7 +9,8 @@
 </script>
 
 <div style="height:100vh"></div>
-<!-- <Hero /> -->
+
+<Hero />
 <!-- <About /> -->
 <!-- <VideoReferences /> -->
 <!-- <Booking /> -->

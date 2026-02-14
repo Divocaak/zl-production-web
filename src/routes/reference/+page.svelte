@@ -1,0 +1,2 @@
+<!-- TODO PAGE reference -->
+<!-- 3 columns on desktop, each column with different scroll speed, mixed text references (optional picture, name, text, event label, optional year), videos and images (keep aspect ratio!) -->

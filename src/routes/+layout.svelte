@@ -68,10 +68,12 @@
 
 <!-- URGENT <Cursor /> -->
 <!-- TODO fastScrollEnd: true in ScrollTriggers -->
-<!-- TODO everywhere where scrub:true, play and pause with scroll trigger -->
+<!-- TODO everywhere where scrub:true, play and pause with scroll trigger OR use scrub: .5 -->
 <Navbar />
 <div id="smooth-wrapper">
 	<div id="smooth-content">
+		<!-- TODO optimize bg -->
+		<!-- TODO mby bg component? -->
 		<div id="bg-layer-hard" style="background-image: url('/bordel/bordel-hard.svg');"></div>
 		<div id="bg-layer-soft" style="background-image: url('/bordel/bordel-soft.svg');"></div>
 		<div class="page-content">

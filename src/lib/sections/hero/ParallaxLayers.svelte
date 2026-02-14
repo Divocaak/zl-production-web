@@ -1,9 +1,7 @@
 <script>
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-	/* BUG optimalization */
 
 	export let bindContainer;
 	export let maskId = 'splash-mask';
@@ -16,29 +14,48 @@
 		'/homepage/landing/v1.png'
 	];
 
-	onMount(() => {
-		const wrappers = bindContainer.querySelectorAll('.layer-wrapper');
+	let st;
 
-		wrappers.forEach((wrapper, i) => {
-			const t = i / (wrappers.length - 1);
-			const depth = gsap.utils.interpolate(30, 200, t * t);
-
-			gsap.fromTo(
-				wrapper,
-				{ y: depth },
-				{
-					y: -depth,
-					ease: 'none',
-					scrollTrigger: {
-						trigger: bindContainer,
-						start: 'top bottom',
-						end: 'bottom top',
-						scrub: true,
-						invalidateOnRefresh: true
-					}
-				}
-			);
+	function preloadImages(urls) {
+		urls.forEach((url) => {
+			const img = new Image();
+			img.src = url;
 		});
+	}
+
+	onMount(() => {
+		if (!bindContainer) return;
+		preloadImages(layers);
+
+		const wrappers = bindContainer.querySelectorAll('.layer-wrapper');
+		const depths = Array.from(wrappers).map((_, i) =>
+			gsap.utils.interpolate(30, 200, Math.pow(i / (wrappers.length - 1), 2))
+		);
+
+		let raf;
+		st = ScrollTrigger.create({
+			trigger: bindContainer,
+			start: 'top bottom',
+			end: 'bottom top',
+			scrub: true,
+			invalidateOnRefresh: true,
+			onUpdate: (self) => {
+				const progress = self.progress;
+				if (!raf) {
+					raf = requestAnimationFrame(() => {
+						wrappers.forEach((wrapper, i) => {
+							const depth = depths[i];
+							wrapper.style.transform = `translate3d(0, ${depth - progress * 2 * depth}px, 0)`;
+						});
+						raf = null;
+					});
+				}
+			}
+		});
+	});
+
+	onDestroy(() => {
+		if (st) st.kill();
 	});
 </script>
 
@@ -49,16 +66,18 @@
 >
 	{#each layers as layer}
 		<div class="layer-wrapper">
-			<img src={layer} alt="" class="layer" />
+			<img src={layer} alt="" class="layer" loading="eager" />
 		</div>
 	{/each}
 </div>
 
 <style>
 	.parallax {
-		position: relative;
+		position: absolute;
+		inset: 0;
 		height: 120vh;
 		overflow: hidden;
+		transform-style: preserve-3d;
 	}
 
 	.layer-wrapper {

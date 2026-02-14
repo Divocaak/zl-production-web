@@ -1,12 +1,12 @@
 <script>
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy, tick } from 'svelte';
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import HanddrawnLink from '$lib/buttons/HanddrawnLink.svelte';
 
-	/* BUG optimalization */
 	let horizontalSection;
 	let horizontalContainer;
+	let tween;
 
 	const cards = [
 		{ color: '#fcc424', text: 'video 1' },
@@ -14,27 +14,51 @@
 		{ color: '#124a99', text: 'video 3' }
 	];
 
-	onMount(() => {
+	const getDistance = () => {
 		const containerWidth = horizontalContainer.scrollWidth;
 		const viewportWidth = horizontalSection.offsetWidth;
+		return Math.max(0, containerWidth - viewportWidth);
+	};
 
-		const scrollTween = gsap.to(horizontalContainer, {
-			x: () => -(containerWidth - viewportWidth),
-			ease: 'none',
-			scrollTrigger: {
-				trigger: horizontalSection,
-				start: 'top top',
-				end: () => `+=${containerWidth - viewportWidth + window.innerHeight}`,
-				scrub: 0.5,
-				pin: true,
-				snap: {
-					snapTo: 1 / (cards.length - 1),
-					duration: { min: 0.2, max: 0.5 },
-					ease: 'power1.inOut'
-				},
-				invalidateOnRefresh: true
-			}
+	const preloadCards = () => {
+		cards.forEach((card) => {
+			const img = new Image();
+			img.src = card.backgroundImage || '';
 		});
+	};
+
+	onMount(async () => {
+		await tick();
+		preloadCards();
+
+		requestAnimationFrame(() => {
+			tween = gsap.to(horizontalContainer, {
+				x: () => `-${getDistance()}px`,
+				ease: 'none',
+				force3D: true,
+				scrollTrigger: {
+					trigger: horizontalSection,
+					start: 'top top',
+					end: () => `+=${getDistance() + window.innerHeight}`,
+					scrub: 0.5,
+					pin: true,
+					anticipatePin: 1,
+					invalidateOnRefresh: true,
+					snap: {
+						snapTo: 1 / (cards.length - 1),
+						duration: { min: 0.2, max: 0.5 },
+						ease: 'power1.inOut'
+					}
+				}
+			});
+
+			ScrollTrigger.refresh();
+		});
+	});
+
+	onDestroy(() => {
+		tween?.scrollTrigger?.kill();
+		tween?.kill();
 	});
 </script>
 
@@ -61,12 +85,13 @@
 		background-position: center;
 		background-size: cover;
 
-		overflow: hidden;
 		text-align: center;
 
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+
+		overflow: visible;
 	}
 
 	.horizontal-container {
@@ -75,6 +100,11 @@
 		height: 50%;
 
 		padding: 2rem 0;
+
+		width: max-content;
+
+		will-change: transform;
+		transform-style: preserve-3d;
 	}
 
 	.card {
@@ -88,5 +118,9 @@
 		border-radius: 6px;
 		user-select: none;
 		touch-action: pan-x;
+
+		will-change: transform, opacity;
+
+		transform: translateZ(0);
 	}
 </style>
