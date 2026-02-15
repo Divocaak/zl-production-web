@@ -13,31 +13,27 @@
 	/* const pinnedOffset = 1500; */
 
 	function handleClick(event) {
-		event.preventDefault();
 		dispatch('click', event);
 		
-		/* <!-- BUG links not working from other pages --> */
-		if (href.startsWith('/#')) {
-			const targetId = href.slice(2);
-			const el = document.getElementById(targetId);
+		if (!(href.startsWith('/#') && window.location.pathname === '/')) return;
+		event.preventDefault();
+		const targetId = href.slice(2);
+		const el = document.getElementById(targetId);
 
-			if (!el) return;
-			const top = el.getBoundingClientRect().top + window.scrollY; // - pinnedOffset;
+		if (!el) return;
+		const top = el.getBoundingClientRect().top + window.scrollY; // - pinnedOffset;
 
-			gsap.killTweensOf(window);
+		gsap.killTweensOf(window);
 
-			scrollTween = gsap.to(window, {
-				scrollTo: { y: top },
-				duration: 0.8,
-				ease: 'power1.out'
-			});
-		} else {
-			dispatch('click', event);
-		}
+		scrollTween = gsap.to(window, {
+			scrollTo: { y: top },
+			duration: 0.8,
+			ease: 'power1.out'
+		});
 	}
 </script>
 
-<a {href} {target} rel="noopener noreferrer" class="subtle-link" on:click={handleClick}>
+<a {href} {target} class="subtle-link" on:click={handleClick}>
 	<slot />
 </a>
 

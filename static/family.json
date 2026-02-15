@@ -1,0 +1,153 @@
+[
+    {
+        "heading": "logo-horizontal-dark.svg",
+        "zoo": [
+            "yoda.svg"
+        ],
+        "members": [
+            {
+                "img": "headshot.svg",
+                "name": "Jméno Příjmení",
+                "position": "CEO",
+                "desc": "Pozice podrobně",
+                "email": "email@zlproduction.cz"
+            },
+            {
+                "img": "headshot.svg",
+                "name": "Jméno Příjmení",
+                "position": "Head of controlling",
+                "desc": "Pozice podrobně",
+                "email": "email@zlproduction.cz"
+            }
+        ]
+    },
+    {
+        "zoo": [
+            "technician.svg",
+            "production.svg",
+            "stage-manager.svg"
+        ],
+        "members": [
+            {
+                "img": "headshot.svg",
+                "name": "Jméno Příjmení",
+                "position": "COO Technika",
+                "desc": "Pozice podrobně",
+                "tel": "+420111222333",
+                "email": "email@zlproduction.cz"
+            },
+            {
+                "img": "headshot.svg",
+                "name": "Jméno Příjmení",
+                "position": "COO Produkce",
+                "desc": "Pozice podrobně",
+                "tel": "+420111222333",
+                "email": "email@zlproduction.cz"
+            },
+            {
+                "img": "headshot.svg",
+                "name": "Jméno Příjmení",
+                "position": "COO Logistika a sklad",
+                "desc": "Pozice podrobně",
+                "tel": "+420111222333",
+                "email": "email@zlproduction.cz"
+            }
+        ]
+    },
+    {
+        "heading": "equipment/zl-sound-dark.svg",
+        "zoo": [
+            "sound.svg"
+        ],
+        "members": [
+            {
+                "img": "headshot.svg",
+                "name": "Jméno Příjmení",
+                "position": "Zvuk",
+                "desc": "Pozice podrobně",
+                "tel": "+420111222333",
+                "email": "email@zlproduction.cz"
+            },
+            {
+                "img": "headshot.svg",
+                "name": "Jméno Příjmení",
+                "position": "Zvuk",
+                "desc": "Pozice podrobně",
+                "tel": "+420111222333",
+                "email": "email@zlproduction.cz"
+            },
+            {
+                "img": "headshot.svg",
+                "name": "Jméno Příjmení",
+                "position": "Zvuk",
+                "desc": "Pozice podrobně",
+                "tel": "+420111222333",
+                "email": "email@zlproduction.cz"
+            },
+            {
+                "img": "headshot.svg",
+                "name": "Jméno Příjmení",
+                "position": "Zvuk",
+                "desc": "Pozice podrobně",
+                "tel": "+420111222333",
+                "email": "email@zlproduction.cz"
+            },
+            {
+                "img": "headshot.svg",
+                "name": "Jméno Příjmení",
+                "position": "Zvuk",
+                "desc": "Pozice podrobně",
+                "tel": "+420111222333",
+                "email": "email@zlproduction.cz"
+            },
+            {
+                "img": "headshot.svg",
+                "name": "Jméno Příjmení",
+                "position": "Zvuk",
+                "desc": "Pozice podrobně",
+                "tel": "+420111222333",
+                "email": "email@zlproduction.cz"
+            }
+        ]
+    },
+    {
+        "heading": "equipment/zl-stage-dark.svg",
+        "zoo": [
+            "stage.svg","stage-alt.svg"
+        ],
+        "members": [
+            {
+                "img": "headshot.svg",
+                "name": "Jméno Příjmení",
+                "position": "Stage",
+                "desc": "Pozice podrobně",
+                "tel": "+420111222333",
+                "email": "email@zlproduction.cz"
+            },
+            {
+                "img": "headshot.svg",
+                "name": "Jméno Příjmení",
+                "position": "Stage",
+                "desc": "Pozice podrobně",
+                "tel": "+420111222333",
+                "email": "email@zlproduction.cz"
+            },
+            {
+                "img": "headshot.svg",
+                "name": "Jméno Příjmení",
+                "position": "Stage",
+                "desc": "Pozice podrobně",
+                "tel": "+420111222333",
+                "email": "email@zlproduction.cz"
+            },
+            {
+                "img": "headshot.svg",
+                "name": "Jméno Příjmení",
+                "position": "Stage",
+                "desc": "Pozice podrobně",
+                "tel": "+420111222333",
+                "email": "email@zlproduction.cz"
+            }
+        ]
+    }
+]

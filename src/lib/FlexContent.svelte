@@ -28,12 +28,12 @@
 		}
 	}
 
-	/* iPhone 15 and smaller (≤ 430px) */
-	@media (max-width: 430px) {
-	}
-
 	/* iPad and smaller (≤ 1024px) */
 	@media (max-width: 1024px) {
+	}
+
+	/* iPhone 15 and smaller (≤ 430px) */
+	@media (max-width: 430px) {
 	}
 
 	/* Bigger than 1920px (ultrawide / 2K / 4K) */
