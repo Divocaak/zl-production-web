@@ -74,7 +74,7 @@
 			</div>
 		{/each}
 	</div>
-	<HanddrawnLink inverted={true}>Všechny reference</HanddrawnLink>
+	<HanddrawnLink href="/reference" inverted={true}>Všechny reference</HanddrawnLink>
 </section>
 
 <style>

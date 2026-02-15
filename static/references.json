@@ -1,0 +1,148 @@
+[
+    {
+        "type": "image",
+        "src": "/reference/00.jpg",
+        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+    },
+    {
+        "type": "image",
+        "src": "/reference/01.jpg",
+        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+    },
+    {
+        "type": "text",
+        "label": "jméno příjmení",
+        "desc": "ZL ZOO pouze jako placeholder pro fotku :)",
+        "year": "2025",
+        "image": "/zoo/production.svg"
+    },
+    {
+        "type": "image",
+        "src": "/reference/02.jpg",
+        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+    },
+    {
+        "type": "text",
+        "label": "jméno příjmení",
+        "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus luctus egestas leo. In enim a arcu imperdiet malesuada. In rutrum. Aliquam ante. Nulla est.",
+        "year": "2025",
+        "image": "/zoo/stage-alt.svg"
+    },
+    {
+        "type": "image",
+        "src": "/reference/03.jpg",
+        "label": "název reference",
+        "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus luctus egestas leo. In enim a arcu imperdiet malesuada. In rutrum. Aliquam ante. Nulla est.",
+        "year": "2025"
+    },
+    {
+        "type": "image",
+        "src": "/reference/019.jpg",
+        "label": "název reference",
+        "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus luctus egestas leo. In enim a arcu imperdiet malesuada. In rutrum. Aliquam ante. Nulla est.",
+        "year": "2025"
+    },
+    {
+        "type": "image",
+        "src": "/reference/05.jpg",
+        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+    },
+    {
+        "type": "image",
+        "src": "/reference/06.jpg",
+        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+    },
+    {
+        "type": "image",
+        "src": "/reference/04.jpg",
+        "label": "název reference",
+        "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus luctus egestas leo. In enim a arcu imperdiet malesuada. In rutrum. Aliquam ante. Nulla est.",
+        "year": "2025"
+    },
+    {
+        "type": "image",
+        "src": "/reference/07.jpg",
+        "label": "název reference",
+        "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus luctus egestas leo. In enim a arcu imperdiet malesuada. In rutrum. Aliquam ante. Nulla est.",
+        "year": "2025"
+    },
+    {
+        "type": "text",
+        "label": "jméno příjmení",
+        "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus luctus egestas leo. In enim a arcu imperdiet malesuada. In rutrum. Aliquam ante. Nulla est.",
+        "year": "2025",
+        "image": "/zoo/stage-manager.svg"
+    },
+    {
+        "type": "image",
+        "src": "/reference/08.jpg",
+        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+    },
+    {
+        "type": "image",
+        "src": "/reference/09.jpg",
+        "label": "název reference",
+        "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus luctus egestas leo. In enim a arcu imperdiet malesuada. In rutrum. Aliquam ante. Nulla est.",
+        "year": "2025"
+    },
+    {
+        "type": "image",
+        "src": "/reference/017.jpg",
+        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+    },
+    {
+        "type": "image",
+        "src": "/reference/018.jpg",
+        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+    },
+    {
+        "type": "text",
+        "label": "jméno příjmení",
+        "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus luctus egestas leo. In enim a arcu imperdiet malesuada. In rutrum. Aliquam ante. Nulla est.",
+        "year": "2025",
+        "image": "/zoo/technician.svg"
+    },
+    {
+        "type": "image",
+        "src": "/reference/012.jpg",
+        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+    },
+    {
+        "type": "image",
+        "src": "/reference/013.jpg",
+        "label": "název reference",
+        "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus luctus egestas leo. In enim a arcu imperdiet malesuada. In rutrum. Aliquam ante. Nulla est.",
+        "year": "2025"
+    },
+    {
+        "type": "image",
+        "src": "/reference/014.jpg",
+        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+    },
+    {
+        "type": "image",
+        "src": "/reference/015.jpg",
+        "label": "název reference",
+        "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus luctus egestas leo. In enim a arcu imperdiet malesuada. In rutrum. Aliquam ante. Nulla est.",
+        "year": "2025"
+    },
+    {
+        "type": "image",
+        "src": "/reference/016.jpg",
+        "label": "název reference",
+        "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus luctus egestas leo. In enim a arcu imperdiet malesuada. In rutrum. Aliquam ante. Nulla est.",
+        "year": "2025"
+    },
+    {
+        "type": "image",
+        "src": "/reference/010.jpg",
+        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+    },
+    {
+        "type": "image",
+        "src": "/reference/011.jpg",
+        "label": "název reference",
+        "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus luctus egestas leo. In enim a arcu imperdiet malesuada. In rutrum. Aliquam ante. Nulla est.",
+        "year": "2025"
+    }
+]

@@ -52,6 +52,7 @@
 </script>
 
 <nav class:visible={navVisible}>
+	<!-- TODO hover anim -->
 	<button class="menu-button" on:click={toggleMenu}>
 		<span class="splash" aria-hidden="true">{@html splashSvgRaw}</span>
 
@@ -129,7 +130,7 @@
 		z-index: 0;
 
 		fill: var(--zl-red);
-		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));
 
 		transform: rotate(90deg);
 		will-change: transform, opacity;

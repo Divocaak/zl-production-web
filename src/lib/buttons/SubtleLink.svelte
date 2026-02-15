@@ -13,11 +13,11 @@
 	/* const pinnedOffset = 1500; */
 
 	function handleClick(event) {
-		// Always notify parent first (so menu can close instantly)
+		event.preventDefault();
+		dispatch('click', event);
+		
+		/* <!-- BUG links not working from other pages --> */
 		if (href.startsWith('/#')) {
-			event.preventDefault();
-			dispatch('click', event);
-
 			const targetId = href.slice(2);
 			const el = document.getElementById(targetId);
 
