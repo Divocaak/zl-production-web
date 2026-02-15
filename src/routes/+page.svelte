@@ -6,6 +6,25 @@
 	import Family from '$lib/sections/Family.svelte';
 	import Studio from '$lib/sections/Studio.svelte';
 	import VideoReferences from '$lib/sections/VideoReferences.svelte';
+	import { onMount } from 'svelte';
+	import ScrollTrigger from 'gsap/ScrollTrigger';
+
+	onMount(() => {
+		const hash = window.location.hash;
+		if (!hash) return;
+
+		setTimeout(() => {
+			const el = document.querySelector(hash);
+			if (!el) return;
+
+			if (window.__smoother) {
+				window.__smoother.scrollTo(el, false);
+			} else {
+				el.scrollIntoView({ behavior: 'auto' });
+			}
+			ScrollTrigger.refresh();
+		}, 0);
+	});
 </script>
 
 <Hero />

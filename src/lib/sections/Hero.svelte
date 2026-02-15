@@ -8,8 +8,6 @@
 	function onMaskLoaded() {
 		triggerHero = true;
 	}
-
-	/* BUG wait for load then scroll if anchor */
 </script>
 
 <div class="hero-wrapper">

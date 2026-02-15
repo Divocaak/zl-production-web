@@ -7,29 +7,31 @@
 	export let target = '_self';
 
 	const dispatch = createEventDispatcher();
-	let scrollTween;
-
-	// height of pinned section in pixels (adjust if you have sticky header or pinned GSAP section)
-	/* const pinnedOffset = 1500; */
 
 	function handleClick(event) {
 		dispatch('click', event);
-		
-		if (!(href.startsWith('/#') && window.location.pathname === '/')) return;
+
+		if (/^(https?:\/\/|mailto:|tel:)/.test(href)) return;
+
+		if (!href.startsWith('/#') || window.location.pathname !== '/') return;
+
 		event.preventDefault();
+
 		const targetId = href.slice(2);
 		const el = document.getElementById(targetId);
-
 		if (!el) return;
-		const top = el.getBoundingClientRect().top + window.scrollY; // - pinnedOffset;
 
 		gsap.killTweensOf(window);
 
-		scrollTween = gsap.to(window, {
-			scrollTo: { y: top },
-			duration: 0.8,
-			ease: 'power1.out'
-		});
+		if (window.__smoother) {
+			window.__smoother.scrollTo(el, true);
+		} else {
+			gsap.to(window, {
+				scrollTo: { y: el },
+				duration: 0.8,
+				ease: 'power1.out'
+			});
+		}
 	}
 </script>
 

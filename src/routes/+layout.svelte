@@ -17,6 +17,10 @@
 	let smoother;
 
 	onMount(() => {
+		if ('scrollRestoration' in history) {
+			history.scrollRestoration = 'manual';
+		}
+
 		const isMobile = window.innerWidth < 768;
 
 		if (!isMobile) {
@@ -30,7 +34,10 @@
 				onUpdate: () => ScrollTrigger.update() // keeps ScrollTriggers in sync
 			});
 
+			window.__smoother = smoother;
+
 			ScrollTrigger.config({ ignoreMobileResize: true, fastScrollEnd: true });
+			ScrollTrigger.defaults({anticipatePin: 1});
 			ScrollTrigger.refresh();
 		} else {
 			// mobile fallback: remove overflow hidden
@@ -142,7 +149,7 @@
 	}
 
 	@media (max-width: 767px) {
-		:global(body){
+		:global(body) {
 			overflow: auto;
 		}
 
