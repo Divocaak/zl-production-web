@@ -47,7 +47,6 @@
 	});
 </script>
 
-<!-- TODO loading -->
 {#each family as section}
 	{#if section.heading}
 		<div class="heading-wrapper">

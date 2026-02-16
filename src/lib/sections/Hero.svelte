@@ -1,18 +1,12 @@
 <script>
 	import ParallaxLayers from '$lib/sections/hero/ParallaxLayers.svelte';
-	import LoadingAndContent from '$lib/sections/hero/LoadingAndContent.svelte';
-
-	let maskSvg;
-	let triggerHero = true;
-
-	function onMaskLoaded() {
-		triggerHero = true;
-	}
+	import HeroContent from '$lib/sections/hero/HeroContent.svelte';
+	import { loadingDone } from '$lib/stores/loading';
 </script>
 
 <div class="hero-wrapper">
 	<ParallaxLayers maskId="splash-mask" />
-	<LoadingAndContent trigger={triggerHero} />
+	<HeroContent trigger={$loadingDone}/>
 </div>
 
 <style>

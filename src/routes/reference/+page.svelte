@@ -85,7 +85,6 @@
 	});
 </script>
 
-<!-- TODO loading -->
 <section id="reference-gallery">
 	<div class="columns-wrapper" bind:this={wrapper}>
 		{#each columns as column}
