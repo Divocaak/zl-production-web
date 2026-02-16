@@ -28,14 +28,14 @@
 	});
 </script>
 
-<!-- <Hero />
+<Hero />
 <About />
 <VideoReferences />
 <Booking />
 <Studio />
-<Family /> -->
+<Family />
 
 <!-- <div style="height:100vh"></div> -->
-<!-- <Equipment /> -->
-<EquipmentNew />
-<div style="height:100vh"></div>
+<Equipment />
+<!-- <EquipmentNew /> -->
+<!-- <div style="height:100vh"></div> -->
