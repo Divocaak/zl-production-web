@@ -75,6 +75,7 @@
 		height: 120vh;
 		transform-style: preserve-3d;
 		pointer-events: none;
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.9));
 	}
 
 	.parallax-mask {

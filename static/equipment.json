@@ -1,0 +1,32 @@
+[
+    {
+        "logo": "zl-sound-dark.svg",
+        "items":[
+            {
+                "heading": "Zvukové systémy",
+                "desc": "Lorem ipsum dolor sit amet, <span>Adamson VGt</span> consectetuer adipiscing elit. Curabitur vitae diam non enim vestibulum interdum. Praesent id justo in neque elementum ultrices. Pellentesque arcu. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.",
+                "image": "vgt.jpg"
+            },
+            {
+                "heading": "Zvukové pulty",
+                "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur vitae diam non enim vestibulum interdum. Praesent <span>DiGiCo</span> id justo in neque elementum ultrices. Pellentesque arcu. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.",
+                "image": "digico.jpg"
+            },
+            {
+                "heading": "Zesilovače",
+                "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur <span>LAB Gruppen PLM</span> vitae diam non enim vestibulum interdum. Praesent id justo in neque elementum ultrices. Pellentesque arcu. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.",
+                "image": "labgruppen.jpg"
+            }
+        ]
+    },
+    {
+        "logo": "zl-rigging-dark.svg",
+        "items":[
+            {
+                "heading": "Ground support, zastřešení",
+                "desc": "Lorem ipsum <span>HEAVY-DUTY & SUPER-BEAM</span> dolor sit amet, consectetuer adipiscing elit. Curabitur vitae diam non enim vestibulum interdum. Praesent id justo in neque elementum ultrices. Pellentesque arcu. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.",
+                "image": "taf.jpg"
+            }
+        ]
+    }
+]

@@ -1,5 +1,9 @@
+<script>
+	export let alternated = false;
+</script>
+
 <div class="wrapper">
-	<div class="content"><slot name="left" /></div>
+	<div class="content" class:alternated><slot name="left" /></div>
 	<div class="content"><slot name="right" /></div>
 </div>
 
@@ -16,6 +20,10 @@
 		width: 50%;
 	}
 
+	.alternated {
+		order: 1;
+	}
+
 	/* NOTE media bank */
 	/* iPad Pro and smaller (≤ 1366px) */
 	@media (max-width: 1366px) {
@@ -25,6 +33,10 @@
 
 		.content {
 			width: 100%;
+		}
+
+		.alternated {
+			order: 0;
 		}
 	}
 

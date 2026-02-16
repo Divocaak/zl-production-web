@@ -3,6 +3,7 @@
 	import gsap from 'gsap';
 	import ScrollTrigger from 'gsap/ScrollTrigger';
 	import { onMount } from 'svelte';
+	import MaskedImage from './MaskedImage.svelte';
 
 	export let member;
 	export let animal;
@@ -52,17 +53,9 @@
 </script>
 
 <div class="wrapper" bind:this={wrapper}>
-	<div class="masked-container">
-		<div class="mask">
-			<img
-				bind:this={imageEl}
-				class="masked-image"
-				src="family/{member.img}"
-				alt="member headshot"
-			/>
-		</div>
+	<MaskedImage bind:imageEl src="family/{member.img}" alt="member headshot">
 		<img bind:this={animalEl} src="/zoo/{animal}" class="animal" alt="" />
-	</div>
+	</MaskedImage>
 	<p>{member.name}</p>
 	<p>{member.position}</p>
 	<p>{member.desc}</p>
@@ -83,13 +76,6 @@
 		will-change: opacity;
 	}
 
-	.masked-container {
-		aspect-ratio: 1 / 1;
-		position: relative;
-		width: 100%;
-		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
-	}
-
 	.animal {
 		position: absolute;
 		height: 120px;
@@ -103,29 +89,6 @@
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));
 
 		will-change: transform, opacity;
-	}
-
-	.mask {
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-		position: relative;
-
-		-webkit-mask-image: url('/splashes/2.svg');
-		-webkit-mask-repeat: no-repeat;
-		-webkit-mask-position: center;
-		-webkit-mask-size: contain;
-
-		mask-image: url('/splashes/2.svg');
-		mask-repeat: no-repeat;
-		mask-position: center;
-		mask-size: contain;
-	}
-
-	.masked-image {
-		position: absolute;
-		object-fit: cover;
-		will-change: transform;
 	}
 
 	.wrapper p {

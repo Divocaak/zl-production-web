@@ -38,7 +38,7 @@
 		/>
 	</div>
 	<div class="link">
-		<HanddrawnLink href="/technika">Rent</HanddrawnLink>
+		<HanddrawnLink href="/technika">vybavení</HanddrawnLink>
 	</div>
 </section>
 

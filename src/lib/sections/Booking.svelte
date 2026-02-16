@@ -193,6 +193,7 @@
 	.masked-container {
 		aspect-ratio: 1 / 1;
 		position: relative;
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, .4));
 	}
 
 	.masked-container .doodle:first-of-type {

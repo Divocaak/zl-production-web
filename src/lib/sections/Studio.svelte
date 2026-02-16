@@ -62,6 +62,8 @@
 		transform: translate(-50%, -50%);
 		z-index: 0;
 		pointer-events: none;
+
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, .7));
 	}
 
 	:global(.marquee-overlay svg) {

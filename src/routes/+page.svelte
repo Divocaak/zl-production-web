@@ -8,6 +8,7 @@
 	import VideoReferences from '$lib/sections/VideoReferences.svelte';
 	import { onMount } from 'svelte';
 	import ScrollTrigger from 'gsap/ScrollTrigger';
+	import EquipmentNew from '$lib/sections/EquipmentNew.svelte';
 
 	onMount(() => {
 		const hash = window.location.hash;
@@ -27,10 +28,14 @@
 	});
 </script>
 
-<Hero />
+<!-- <Hero />
 <About />
 <VideoReferences />
 <Booking />
 <Studio />
-<Family />
-<Equipment />
+<Family /> -->
+
+<!-- <div style="height:100vh"></div> -->
+<!-- <Equipment /> -->
+<EquipmentNew />
+<div style="height:100vh"></div>
