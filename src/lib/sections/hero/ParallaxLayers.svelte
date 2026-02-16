@@ -96,7 +96,7 @@
 		-webkit-mask-size: cover;
 		-webkit-mask-mode: luminance;
 
-		animation: mask-breathe 8s ease-in-out infinite;
+		/* animation: mask-breathe 8s ease-in-out infinite; */
 	}
 
 	.layer-wrapper {

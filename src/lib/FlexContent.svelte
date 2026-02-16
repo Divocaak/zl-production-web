@@ -38,8 +38,5 @@
 
 	/* Bigger than 1920px (ultrawide / 2K / 4K) */
 	@media (min-width: 1921px) {
-		.wrapper {
-			border: 1px solid yellow;
-		}
 	}
 </style>
