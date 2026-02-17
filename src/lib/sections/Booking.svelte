@@ -103,7 +103,7 @@
 				trigger: sectionEl,
 				start: 'top 50%',
 				end: 'bottom 90%',
-				scrub: .5
+				scrub: 0.5
 			}
 		});
 		tl.from([...doodles, ...textItems], {
@@ -143,6 +143,7 @@
 				<HanddrawnLink href="https://www.zlbooking.cz/" target="_blank">Navštívit</HanddrawnLink>
 			</div>
 
+			<!-- URGENT zkusit narvat do MaskedImage -->
 			<div slot="right" class="masked-container">
 				<div class="mask">
 					<img bind:this={imgA} class="masked-image image-a" src={images[0]} alt="Booking band" />
@@ -193,7 +194,7 @@
 	.masked-container {
 		aspect-ratio: 1 / 1;
 		position: relative;
-		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, .4));
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
 	}
 
 	.masked-container .doodle:first-of-type {

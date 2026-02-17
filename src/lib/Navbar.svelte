@@ -80,7 +80,7 @@
 				<SubtleLink on:click={toggleMenu} href="/#booking">Booking</SubtleLink>
 				<SubtleLink on:click={toggleMenu} href="/#studio">Studio</SubtleLink>
 				<SubtleLink on:click={toggleMenu} href="/#family">Family</SubtleLink>
-				<SubtleLink on:click={toggleMenu} href="/#equipment">Technika</SubtleLink>
+				<SubtleLink on:click={toggleMenu} href="/#technika">Technika</SubtleLink>
 			</div>
 		</div>
 	{/if}

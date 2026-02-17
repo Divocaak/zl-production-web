@@ -6,7 +6,7 @@
 </script>
 
 <!-- TODO add optional parallax fx -->
-<!-- TODO check where used and if it wont be better with the fx -->
+<!-- check where used and if it wont be better with the fx -->
 <div class="masked-container" style="--width: {widthPercent}%">
 	<div class="mask">
 		<img bind:this={imageEl} class="masked-image" {src} {alt} />

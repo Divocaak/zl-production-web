@@ -174,10 +174,3 @@
 		will-change: transform;
 	}
 </style>
-
-<!-- NOTE release notes
-- loading globálně na celej web, plus optimalizace
-- sekce technika rework
-- podstránka technika/rental
-	- stejně jako /family a /reference běží na jsonu, tzn. data snadno měnit/přidávat
-	- tlačítko s předepsaným mailem -->
