@@ -140,7 +140,7 @@
 					sapien nunc, commodo et, interdum suscipit, sollicitudin et, dolor. Cras elementum. Nulla
 					pulvinar eleifend sem. Fusce tellus odio, dapibus id fermentum quis, suscipit id erat.
 				</p>
-				<HanddrawnLink href="#">Celý tým</HanddrawnLink>
+				<HanddrawnLink href="/family">Celý tým</HanddrawnLink>
 			</div>
 		</FlexContent>
 	</div>

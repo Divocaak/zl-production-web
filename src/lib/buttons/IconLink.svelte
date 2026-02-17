@@ -20,7 +20,7 @@
 		/* if your SVGs are dark and you want them light on dark bg */
 		filter: brightness(0) invert(1);
 
-		padding-right: 0.75rem;
+		/* padding-right: 0.5rem; */
 	}
 
 	.label {

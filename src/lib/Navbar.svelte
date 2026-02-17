@@ -1,5 +1,6 @@
 <script>
 	import { onDestroy, onMount, tick } from 'svelte';
+	import { fade, scale, fly } from 'svelte/transition';
 	import SubtleLink from './buttons/SubtleLink.svelte';
 	import splashSvgRaw from '$lib/assets/splashes/0.svg?raw';
 	import menuSplashSvgRaw from '$lib/assets/splashes/2.svg?raw';
@@ -52,27 +53,34 @@
 </script>
 
 <nav class:visible={navVisible}>
-	<!-- TODO hover anim -->
 	<button class="menu-button" on:click={toggleMenu}>
 		<span class="splash" aria-hidden="true">{@html splashSvgRaw}</span>
 
 		<img
-			class="icon"
-			src={menuShown ? '/icons/cross.svg' : '/icons/hamburger.svg'}
-			alt={menuShown ? 'close icon' : 'hamburger icon'}
+			class="icon hamburger"
+			src="/icons/hamburger.svg"
+			alt="hamburger icon"
+			class:visible={!menuShown}
 		/>
+
+		<img class="icon cross" src="/icons/cross.svg" alt="close icon" class:visible={menuShown} />
 	</button>
 
 	{#if menuShown}
 		<div class="small-nav-bg">
-			<span class="splash" aria-hidden="true">{@html menuSplashSvgRaw}</span>
+			<span
+				class="splash"
+				aria-hidden="true"
+				in:fade={{ duration: 150 }}
+				out:fade={{ duration: 100 }}>{@html menuSplashSvgRaw}</span
+			>
 			<div class="small-nav">
 				<SubtleLink on:click={toggleMenu} href="/#about">O nás</SubtleLink>
 				<SubtleLink on:click={toggleMenu} href="/#reference">Reference</SubtleLink>
 				<SubtleLink on:click={toggleMenu} href="/#booking">Booking</SubtleLink>
 				<SubtleLink on:click={toggleMenu} href="/#studio">Studio</SubtleLink>
 				<SubtleLink on:click={toggleMenu} href="/#family">Family</SubtleLink>
-				<SubtleLink on:click={toggleMenu} href="/#equipment">Technika</SubtleLink>
+				<SubtleLink on:click={toggleMenu} href="/#technika">Technika</SubtleLink>
 			</div>
 		</div>
 	{/if}
@@ -145,6 +153,22 @@
 		display: block;
 		transition: opacity 0.2s ease;
 		will-change: opacity;
+
+		pointer-events: all;
+
+		opacity: 0;
+		transform: scale(0.9);
+		transition: all 0.2s ease;
+	}
+
+	.menu-button .icon.visible {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	.menu-button:hover .icon.visible {
+		transform: rotate(3deg) scale(1.15);
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
 	}
 
 	/* --- Small Nav --- */
@@ -159,8 +183,11 @@
 		inset: -60%;
 		width: 220%;
 		height: 220%;
-		pointer-events: none;
 		fill: var(--zl-red);
+
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));
+
+		pointer-events: none;
 	}
 
 	.small-nav {

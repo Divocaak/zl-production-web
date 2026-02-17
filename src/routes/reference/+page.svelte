@@ -60,11 +60,9 @@
 			tallest = Math.max(tallest, col.scrollHeight);
 		});
 		wrapper.style.height = tallest * highestSpeed + 'px';
-		console.log(tallest);
 
 		columnEls.forEach((col, i) => {
 			const { speed, direction } = columnData[i] ?? columnData[0];
-			console.log(speed);
 			const distance = (tallest - col.scrollHeight) * speed * direction;
 
 			gsap.to(col, {

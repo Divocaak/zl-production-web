@@ -7,37 +7,35 @@
 	export let target = '_self';
 
 	const dispatch = createEventDispatcher();
-	let scrollTween;
-
-	// height of pinned section in pixels (adjust if you have sticky header or pinned GSAP section)
-	/* const pinnedOffset = 1500; */
 
 	function handleClick(event) {
-		event.preventDefault();
 		dispatch('click', event);
-		
-		/* <!-- BUG links not working from other pages --> */
-		if (href.startsWith('/#')) {
-			const targetId = href.slice(2);
-			const el = document.getElementById(targetId);
 
-			if (!el) return;
-			const top = el.getBoundingClientRect().top + window.scrollY; // - pinnedOffset;
+		if (/^(https?:\/\/|mailto:|tel:)/.test(href)) return;
 
-			gsap.killTweensOf(window);
+		if (!href.startsWith('/#') || window.location.pathname !== '/') return;
 
-			scrollTween = gsap.to(window, {
-				scrollTo: { y: top },
+		event.preventDefault();
+
+		const targetId = href.slice(2);
+		const el = document.getElementById(targetId);
+		if (!el) return;
+
+		gsap.killTweensOf(window);
+
+		if (window.__smoother) {
+			window.__smoother.scrollTo(el, true);
+		} else {
+			gsap.to(window, {
+				scrollTo: { y: el },
 				duration: 0.8,
 				ease: 'power1.out'
 			});
-		} else {
-			dispatch('click', event);
 		}
 	}
 </script>
 
-<a {href} {target} rel="noopener noreferrer" class="subtle-link" on:click={handleClick}>
+<a {href} {target} class="subtle-link" on:click={handleClick}>
 	<slot />
 </a>
 

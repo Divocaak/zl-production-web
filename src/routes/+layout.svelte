@@ -9,6 +9,8 @@
 	import Footer from '$lib/sections/Footer.svelte';
 	import Navbar from '$lib/Navbar.svelte';
 	import BackgroundTexture from '$lib/BackgroundTexture.svelte';
+	import LoadingOverlay from '$lib/LoadingOverlay.svelte';
+	import { loadingDone } from '$lib/stores/loading';
 
 	let { children } = $props();
 
@@ -16,7 +18,11 @@
 
 	let smoother;
 
-	onMount(() => {
+	onMount(async () => {
+		if ('scrollRestoration' in history) {
+			history.scrollRestoration = 'manual';
+		}
+
 		const isMobile = window.innerWidth < 768;
 
 		if (!isMobile) {
@@ -30,13 +36,23 @@
 				onUpdate: () => ScrollTrigger.update() // keeps ScrollTriggers in sync
 			});
 
+			window.__smoother = smoother;
+
 			ScrollTrigger.config({ ignoreMobileResize: true, fastScrollEnd: true });
+			ScrollTrigger.defaults({ anticipatePin: 1 });
 			ScrollTrigger.refresh();
 		} else {
 			// mobile fallback: remove overflow hidden
 			document.querySelector('#smooth-wrapper').style.overflow = 'auto';
 			document.querySelector('#smooth-wrapper').style.height = 'auto';
 		}
+
+		await document.fonts?.ready;
+		const images = Array.from(document.images);
+		await Promise.all(
+			images.map((img) => (img.complete ? Promise.resolve() : new Promise((r) => (img.onload = r))))
+		);
+		loadingDone.set(true);
 	});
 
 	onDestroy(() => {
@@ -50,7 +66,9 @@
 </svelte:head>
 
 <!-- <Cursor /> -->
+<LoadingOverlay trigger={$loadingDone} />
 <Navbar />
+<!-- TODO back btn (samostatnej layout na podstránky) -->
 <div id="smooth-wrapper">
 	<div id="smooth-content">
 		<BackgroundTexture />
@@ -142,7 +160,7 @@
 	}
 
 	@media (max-width: 767px) {
-		:global(body){
+		:global(body) {
 			overflow: auto;
 		}
 

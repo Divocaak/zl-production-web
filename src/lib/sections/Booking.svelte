@@ -6,26 +6,15 @@
 	import LogoHeading from '$lib/LogoHeading.svelte';
 	import SectionWrapper from './SectionWrapper.svelte';
 	import FlexContent from '$lib/FlexContent.svelte';
+	import MaskedImage from '$lib/MaskedImage.svelte';
 
 	let sectionEl;
 	let imgA, imgB;
-	let scrollY = 0;
-	let floatX = 0;
-	let floatY = 0;
 	let active = 'A';
 	let index = 0;
 	let swapInterval;
 
 	const images = ['/booking/krystof.jpg', '/booking/dymytry.jpg', '/booking/partlova.jpg'];
-
-	let setXA, setYA, setXB, setYB;
-
-	const applyTransform = () => {
-		setXA(floatX);
-		setYA(scrollY + floatY);
-		setXB(floatX);
-		setYB(scrollY + floatY);
-	};
 
 	const swapImages = () => {
 		index = (index + 1) % images.length;
@@ -45,53 +34,15 @@
 
 		images.forEach((src) => (new Image().src = src));
 
-		setXA = gsap.quickSetter(imgA, 'x', 'px');
-		setYA = gsap.quickSetter(imgA, 'y', 'px');
-		setXB = gsap.quickSetter(imgB, 'x', 'px');
-		setYB = gsap.quickSetter(imgB, 'y', 'px');
-
-		// ---------- FLOATING IMAGE ANIMATION (paused until visible) ----------
-		const floatAnim = gsap.to(
-			{},
-			{
-				duration: 12,
-				repeat: -1,
-				yoyo: true,
-				ease: 'sine.inOut',
-				paused: true,
-				onUpdate: () => {
-					floatY = Math.sin(gsap.ticker.time * 0.8) * 4;
-					floatX = Math.cos(gsap.ticker.time * 0.6) * 3;
-					applyTransform();
-				}
-			}
-		);
-
 		// ---------- SCROLL-TRIGGER controlling visibility ----------
 		const st = ScrollTrigger.create({
 			trigger: sectionEl,
 			start: 'top bottom',
 			end: 'bottom top',
-			onEnter: () => {
-				floatAnim.play();
-				swapInterval = setInterval(swapImages, 4000);
-			},
-			onLeave: () => {
-				floatAnim.pause();
-				clearInterval(swapInterval);
-			},
-			onEnterBack: () => {
-				floatAnim.play();
-				swapInterval = setInterval(swapImages, 4000);
-			},
-			onLeaveBack: () => {
-				floatAnim.pause();
-				clearInterval(swapInterval);
-			},
-			onUpdate: (self) => {
-				scrollY = gsap.utils.interpolate(0, -80, self.progress);
-				applyTransform();
-			}
+			onEnter: () => (swapInterval = setInterval(swapImages, 4000)),
+			onLeave: () => clearInterval(swapInterval),
+			onEnterBack: () => (swapInterval = setInterval(swapImages, 4000)),
+			onLeaveBack: () => clearInterval(swapInterval)
 		});
 
 		// ---------- REVEAL TIMELINE ----------
@@ -103,7 +54,7 @@
 				trigger: sectionEl,
 				start: 'top 50%',
 				end: 'bottom 90%',
-				scrub: .5
+				scrub: 0.5
 			}
 		});
 		tl.from([...doodles, ...textItems], {
@@ -144,10 +95,22 @@
 			</div>
 
 			<div slot="right" class="masked-container">
-				<div class="mask">
-					<img bind:this={imgA} class="masked-image image-a" src={images[0]} alt="Booking band" />
-					<img bind:this={imgB} class="masked-image image-b" src={images[1]} alt="Booking band" />
-				</div>
+				<MaskedImage
+					bind:imageEl={imgA}
+					src={images[0]}
+					alt="Booking band"
+					parallax={true}
+					floating={true}
+				/>
+
+				<MaskedImage
+					bind:imageEl={imgB}
+					src={images[1]}
+					alt="Booking band"
+					parallax={true}
+					floating={true}
+				/>
+
 				<img src="/doodles/arrow.svg" class="doodle" alt="" />
 				<img src="/doodles/heart.svg" class="doodle" alt="" />
 			</div>
@@ -193,6 +156,12 @@
 	.masked-container {
 		aspect-ratio: 1 / 1;
 		position: relative;
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+	}
+
+	.masked-container > :global(.masked-container) {
+		position: absolute;
+		inset: 0;
 	}
 
 	.masked-container .doodle:first-of-type {
@@ -202,40 +171,6 @@
 	.masked-container .doodle:last-of-type {
 		top: 5%;
 		left: 80%;
-	}
-
-	.mask {
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-		position: relative;
-
-		-webkit-mask-image: url('/splashes/2.svg');
-		-webkit-mask-repeat: no-repeat;
-		-webkit-mask-position: center;
-		-webkit-mask-size: contain;
-
-		mask-image: url('/splashes/2.svg');
-		mask-repeat: no-repeat;
-		mask-position: center;
-		mask-size: contain;
-	}
-
-	.masked-image {
-		position: absolute;
-		inset: -5%;
-		width: 110%;
-		height: 110%;
-		object-fit: cover;
-		will-change: transform, opacity;
-	}
-
-	.image-a {
-		opacity: 1;
-	}
-
-	.image-b {
-		opacity: 0;
 	}
 
 	/* iPad and smaller (≤ 1024px) */

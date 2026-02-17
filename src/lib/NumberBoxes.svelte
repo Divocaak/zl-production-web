@@ -114,6 +114,8 @@
 		justify-content: center;
 		font-weight: bold;
 		overflow: hidden;
+
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, .8));
 	}
 
 	:global(.box svg) {

@@ -35,7 +35,7 @@
 			<SubtleLink href="/#booking">Booking</SubtleLink>
 			<SubtleLink href="/#studio">Studio</SubtleLink>
 			<SubtleLink href="/#family">Family</SubtleLink>
-			<SubtleLink href="/#equipment">Technika</SubtleLink>
+			<SubtleLink href="/#technika">Technika</SubtleLink>
 		</div>
 	</div>
 	<p class="signature">

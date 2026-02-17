@@ -95,6 +95,8 @@
 		justify-content: center;
 
 		overflow: visible;
+
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 1));
 	}
 
 	.horizontal-container {
