@@ -53,7 +53,9 @@
 </script>
 
 <div class="wrapper" bind:this={wrapper}>
-	<MaskedImage bind:imageEl src="family/{member.img}" alt="member headshot">
+	<MaskedImage bind:imageEl src="family/{member.img}" alt="member headshot"
+							parallax={true}
+							parallaxDistance={20}>
 		<img bind:this={animalEl} src="/zoo/{animal}" class="animal" alt="" />
 	</MaskedImage>
 	<p>{member.name}</p>

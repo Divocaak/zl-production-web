@@ -9,7 +9,7 @@
 
 <FlexContent>
 	<div slot="right">
-		<MaskedImage src={card.image} alt="reference image">
+		<MaskedImage src={card.image} alt="reference image" parallax={true} floating={true}>
 			<div class="logo-wrapper">
 				<LogoHeading src={card.logo} alt="zl section logo" maxWidthPx="400" shadowOpacity="1" />
 			</div>
