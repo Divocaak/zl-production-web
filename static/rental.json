@@ -1,0 +1,96 @@
+{
+    "form": [
+        "zvuk",
+        "světla"
+    ],
+    "items": [
+        {
+            "categories": [
+                "Zesilovače",
+                "Reprosoustavy"
+            ],
+            "items": [
+                {
+                    "form": {
+                        "brand": {
+                            "label": "Značka",
+                            "values": [
+                                "brand 1",
+                                "brand 2"
+                            ]
+                        },
+                        "outs": {
+                            "label": "výstupy",
+                            "values": [
+                                "2",
+                                "4",
+                                "8"
+                            ]
+                        }
+                    },
+                    "items": [
+                        {
+                            "label": "zesilovač 1",
+                            "brand": 0,
+                            "outs": 1
+                        },
+                        {
+                            "label": "zesilovač 2",
+                            "brand": 1,
+                            "outs": 2
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "světla",
+            "categories": [
+                "svítidla",
+                "stmívače"
+            ],
+            "items": [
+                {
+                    "form": {
+                        "brand": {
+                            "label": "Značka",
+                            "values": [
+                                "brand 1",
+                                "brand 2"
+                            ]
+                        },
+                        "type": {
+                            "label": "typ",
+                            "values": [
+                                "wash",
+                                "beam",
+                                "strobe"
+                            ]
+                        },
+                        "ip": {
+                            "label": "IP specifikace",
+                            "values": []
+                        }
+                    },
+                    "items": []
+                },
+                {
+                    "form": {
+                        "brand": {
+                            "label": "Značka",
+                            "values": [
+                                "brand 1",
+                                "brand 2"
+                            ]
+                        },
+                        "power": {
+                            "label": "výkon",
+                            "values": []
+                        }
+                    },
+                    "items": []
+                }
+            ]
+        }
+    ]
+}
