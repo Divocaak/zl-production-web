@@ -114,3 +114,19 @@
 		<li>No results</li>
 	{/if}
 </ul>
+
+<div class="note">
+	<p>
+		Stránka čte data jak pro formulář, tak pro samotné vybavení z externího souboru.<br />
+		Nic tedy není pevné, pro každou sekci lze vytvořit její vlastní filtrování podle potřeby.
+	</p>
+	<pre>{JSON.stringify(equipment, null, 2)}</pre>
+</div>
+
+<style>
+	.note {
+		margin-top: 50vh;
+		padding: 0 4rem;
+		width: 50%;
+	}
+</style>
