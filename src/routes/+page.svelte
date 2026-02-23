@@ -8,6 +8,7 @@
 	import VideoReferences from '$lib/sections/VideoReferences.svelte';
 	import { onMount } from 'svelte';
 	import ScrollTrigger from 'gsap/ScrollTrigger';
+	import { page } from '$app/stores';
 
 	onMount(() => {
 		const hash = window.location.hash;
@@ -25,12 +26,35 @@
 			ScrollTrigger.refresh();
 		}, 0);
 	});
+
+	$: visible = $page.url.searchParams.get('dev') === 'true';
 </script>
 
+<div class="dev" class:visible>HERO</div>
 <Hero />
+<div class="dev" class:visible>ABOUT US</div>
 <About />
+<div class="dev" class:visible>REFERENCE</div>
 <VideoReferences />
+<div class="dev" class:visible>BOOKING</div>
 <Booking />
+<div class="dev" class:visible>STUDIO</div>
 <Studio />
+<div class="dev" class:visible>FAMILY</div>
 <Family />
+<div class="dev" class:visible>RENTAL</div>
 <Equipment />
+<div class="dev" class:visible>FOOTER</div>
+
+<style>
+	.dev {
+		border-top: 1px solid red;
+		width: 100%;
+		position: relative;
+		display: none;
+	}
+
+	.visible{
+		display: block;
+	}
+</style>
