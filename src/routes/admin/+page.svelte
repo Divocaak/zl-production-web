@@ -1,0 +1,48 @@
+<script>
+	import AdminForm from '$lib/admin/AdminForm.svelte';
+
+	async function logout() {
+		await fetch('/api/logout', { method: 'POST' });
+		window.location.href = '/admin';
+	}
+</script>
+
+<button on:click={logout}>logout</button>
+
+<AdminForm
+	schemaPath="/dynamic/jsons/schemas/filters.json"
+	dataPath="/dynamic/jsons/data/filters.json"
+	apiPath="/api/save-filters"
+	saveButton="filtry"
+	filters={true}
+/>
+<AdminForm
+	schemaPath="/dynamic/jsons/schemas/reference.json"
+	dataPath="/dynamic/jsons/data/reference.json"
+	apiPath="/api/save-reference"
+	saveButton="reference"
+/>
+<AdminForm
+	schemaPath="/dynamic/jsons/schemas/projects.json"
+	dataPath="/dynamic/jsons/data/projects.json"
+	apiPath="/api/save-projects"
+	saveButton="projekty"
+/>
+<AdminForm
+	schemaPath="/dynamic/jsons/schemas/arch.json"
+	dataPath="/dynamic/jsons/data/arch.json"
+	apiPath="/api/save-arch"
+	saveButton="arch"
+/>
+<AdminForm
+	schemaPath="/dynamic/jsons/schemas/studio.json"
+	dataPath="/dynamic/jsons/data/studio.json"
+	apiPath="/api/save-studio"
+	saveButton="studio"
+/>
+<AdminForm
+	schemaPath="/dynamic/jsons/schemas/contacts.json"
+	dataPath="/dynamic/jsons/data/contacts.json"
+	apiPath="/api/save-contacts"
+	saveButton="kontakt"
+/>
