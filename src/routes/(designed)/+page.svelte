@@ -1,6 +1,6 @@
 <script>
 	import Hero from '$lib/sections/Hero.svelte';
-	import About from '$lib/sections/About.svelte';
+	import History from '$lib/sections/History.svelte';
 	import Booking from '$lib/sections/Booking.svelte';
 	import Equipment from '$lib/sections/Equipment.svelte';
 	import Family from '$lib/sections/Family.svelte';
@@ -9,6 +9,7 @@
 	import { onMount } from 'svelte';
 	import ScrollTrigger from 'gsap/ScrollTrigger';
 	import { page } from '$app/stores';
+	import Stageisours from '$lib/sections/Stageisours.svelte';
 
 	onMount(() => {
 		const hash = window.location.hash;
@@ -30,11 +31,11 @@
 	$: visible = $page.url.searchParams.get('dev') === 'true';
 </script>
 
-<div class="dev" class:visible>HERO</div>
+<!-- <div class="dev" class:visible>HERO</div>
 <Hero />
-<div class="dev" class:visible>ABOUT US</div>
-<About />
-<div class="dev" class:visible>REFERENCE</div>
+<div class="dev" class:visible>STAGE IS OURS</div> -->
+<Stageisours />
+<!-- <div class="dev" class:visible>REFERENCE</div>
 <VideoReferences />
 <div class="dev" class:visible>BOOKING</div>
 <Booking />
@@ -44,7 +45,9 @@
 <Family />
 <div class="dev" class:visible>RENTAL</div>
 <Equipment />
-<div class="dev" class:visible>FOOTER</div>
+<div class="dev" class:visible>HISTORIE</div>
+<History />
+<div class="dev" class:visible>FOOTER</div> -->
 
 <style>
 	.dev {
@@ -54,7 +57,7 @@
 		display: none;
 	}
 
-	.visible{
+	.visible {
 		display: block;
 	}
 </style>

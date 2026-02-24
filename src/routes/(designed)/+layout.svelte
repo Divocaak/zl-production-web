@@ -101,11 +101,15 @@
 		--white: #f6f6f6;
 
 		--zl-red: #db0812;
+		--card-red: #580307;
+		--card-back: #420205;
 		--tech-yellow: #fcc424;
 		--punch-pink: #d13d77;
 		--stage-blue: #124a99;
 
 		--general-px: 3rem;
+
+		--card-border-radius: 1rem;
 
 		/* vw = px value / 19.2 */
 		/* rem = px value / 16 */

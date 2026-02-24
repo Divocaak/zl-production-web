@@ -9,26 +9,31 @@
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 	let content;
-	let logoImg;
+	let sinceImg;
 
 	let tl;
 	onMount(() => {
 		if (!content) return;
 
 		const paragraph = content.querySelector('p');
-		const sinceImg = content.querySelector('img:last-of-type');
-
 		const tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: content,
 				start: 'top 60%',
 				end: 'bottom 90%',
-				scrub: .5
+				scrub: 0.5
 			}
 		});
-		tl.from(logoImg, { y: -50, autoAlpha: 0, duration: 1, ease: 'power2.out' })
-			.from(paragraph, { y: 50, autoAlpha: 0, duration: 1, ease: 'power2.out' }, '-=0.2')
-			.from(sinceImg, { y: 20, autoAlpha: 0, duration: 1, ease: 'power2.out' });
+		tl.from(paragraph, { y: 50, autoAlpha: 0, duration: 1, ease: 'power2.out' }).from(
+			sinceImg,
+			{
+				y: 20,
+				autoAlpha: 0,
+				duration: 1,
+				ease: 'power2.out'
+			},
+			'+=3'
+		);
 	});
 
 	onDestroy(() => {
@@ -37,15 +42,13 @@
 	});
 </script>
 
-<SectionWrapper id="about">
+<SectionWrapper id="historie">
 	<FlexContent>
-		<div slot="left">
+		<div slot="left" class="content">
 			<NumberBoxes />
+			<img bind:this={sinceImg} class="since" src="/since.svg" alt="Since 2005" />
 		</div>
 		<div slot="right" class="content" bind:this={content}>
-			<div bind:this={logoImg}>
-				<LogoHeading src="/hashtags/stage-is-ours-dark.svg" alt="Stage Is Ours" />
-			</div>
 			<p>
 				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis sapien nunc, commodo et,
 				interdum suscipit, sollicitudin et, dolor. Integer malesuada. Donec vitae arcu. Nullam eget
@@ -56,7 +59,6 @@
 				et, interdum suscipit, sollicitudin et, dolor. Cras elementum. Nulla pulvinar eleifend sem.
 				Fusce tellus odio, dapibus id fermentum quis, suscipit id erat.
 			</p>
-			<img class="since" src="/since.svg" alt="Since 2005" />
 		</div>
 	</FlexContent>
 	<div class="wrapper"></div>
