@@ -36,6 +36,7 @@
 			<SubtleLink href="/#studio">Studio</SubtleLink>
 			<SubtleLink href="/#family">Family</SubtleLink>
 			<SubtleLink href="/#technika">Technika</SubtleLink>
+			<SubtleLink href="/kariera">Kariéra</SubtleLink>
 		</div>
 	</div>
 	<p class="signature">

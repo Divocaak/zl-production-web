@@ -81,6 +81,7 @@
 				<SubtleLink on:click={toggleMenu} href="/#studio">Studio</SubtleLink>
 				<SubtleLink on:click={toggleMenu} href="/#family">Family</SubtleLink>
 				<SubtleLink on:click={toggleMenu} href="/#technika">Technika</SubtleLink>
+				<SubtleLink on:click={toggleMenu} href="/kariera">Kariéra</SubtleLink>
 			</div>
 		</div>
 	{/if}
