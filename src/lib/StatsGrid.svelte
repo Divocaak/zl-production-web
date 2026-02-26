@@ -20,7 +20,7 @@
 
 	onMount(() => {
 		const boxEls = [...gridSection.querySelectorAll('.box')];
-		const numberEls = boxEls.map((b) => b.querySelector('.number'));
+		const numberEls = boxEls.map((b) => b.querySelector('.number-value'));
 		const svgEls = boxEls.map((b) => b.querySelector('svg'));
 
 		tl = gsap.timeline({
@@ -88,7 +88,7 @@
 	{#each items as item, i}
 		<div class="box">
 			{@html splashes[i % splashes.length]}
-			<div class="number">0</div>
+			<div class="number"><span class="number-value">0</span>{item.unit ? item.unit : ''}</div>
 			<div class="description">{item.label}</div>
 		</div>
 	{/each}
@@ -131,6 +131,12 @@
 		z-index: 1;
 		font-size: 4rem;
 		color: var(--tech-yellow);
+	}
+
+	.number-value {
+		display: inline-block;
+		min-width: 2ch;
+		text-align: right;
 	}
 
 	.description {

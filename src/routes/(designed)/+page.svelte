@@ -31,11 +31,11 @@
 	$: visible = $page.url.searchParams.get('dev') === 'true';
 </script>
 
-<!-- <div class="dev" class:visible>HERO</div>
-<Hero />
-<div class="dev" class:visible>STAGE IS OURS</div> -->
+<div class="dev" class:visible>HERO</div>
+<Hero logoSrc={'/logos/logo-horizontal-dark.svg'} tagline={'Žijeme ve světe speciálních eventů'} />
+<div class="dev" class:visible>STAGE IS OURS</div>
 <Stageisours />
-<!-- <div class="dev" class:visible>REFERENCE</div>
+<div class="dev" class:visible>REFERENCE</div>
 <VideoReferences />
 <div class="dev" class:visible>BOOKING</div>
 <Booking />
@@ -47,7 +47,7 @@
 <Equipment />
 <div class="dev" class:visible>HISTORIE</div>
 <History />
-<div class="dev" class:visible>FOOTER</div> -->
+<div class="dev" class:visible>FOOTER</div>
 
 <style>
 	.dev {

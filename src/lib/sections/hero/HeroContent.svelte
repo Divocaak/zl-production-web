@@ -3,14 +3,13 @@
 	import gsap from 'gsap';
 
 	export let trigger = false;
+	export let image;
+	export let text;
 
 	let logo;
 	let tagline;
 	let tl;
 	let hasAnimated = false;
-
-	const image = '/logos/logo-horizontal-dark.svg';
-	const text = 'Žijeme ve světe speciálních eventů';
 
 	onMount(async () => {
 		await tick();
