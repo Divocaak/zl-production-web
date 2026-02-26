@@ -1,5 +1,5 @@
 <script>
-	import NumberBoxes from '$lib/NumberBoxes.svelte';
+	import StatsGrid from '$lib/StatsGrid.svelte';
 	import SectionWrapper from './SectionWrapper.svelte';
 	import LogoHeading from '$lib/LogoHeading.svelte';
 	import FlexContent from '$lib/FlexContent.svelte';
@@ -45,7 +45,14 @@
 <SectionWrapper id="historie">
 	<FlexContent>
 		<div slot="left" class="content">
-			<NumberBoxes />
+		<StatsGrid
+	items={[
+		{ value: 999, label: 'eventů ročně' },
+		{ value: 20, label: 'let zkušeností' },
+		{ value: 200, label: 'zaměstnanců' },
+		{ value: 123, label: '??' }
+	]}
+/>
 			<img bind:this={sinceImg} class="since" src="/since.svg" alt="Since 2005" />
 		</div>
 		<div slot="right" class="content" bind:this={content}>

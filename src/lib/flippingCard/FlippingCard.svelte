@@ -109,6 +109,8 @@
 		cursor: pointer;
 
 		transform-style: preserve-3d;
+
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, .7));
 	}
 
 	.card-inner {

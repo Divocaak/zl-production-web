@@ -3,41 +3,35 @@
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-	import svg1 from '$lib/assets/splashes/1.svg?raw';
 	import svg0 from '$lib/assets/splashes/0.svg?raw';
-	import svg3 from '$lib/assets/splashes/3.svg?raw';
+	import svg1 from '$lib/assets/splashes/1.svg?raw';
 	import svg2 from '$lib/assets/splashes/2.svg?raw';
+	import svg3 from '$lib/assets/splashes/3.svg?raw';
 
-	const boxes = [
-		{ number: 999, description: 'eventů ročně', svg: svg1 },
-		{ number: 20, description: 'let zkušeností', svg: svg0 },
-		{ number: 200, description: 'zaměstnanců', svg: svg3 },
-		{ number: 123, description: '??', svg: svg2 }
-	];
+	const splashes = [svg0, svg1, svg2, svg3];
+	export let items = [];
+	export let columns = 'repeat(2, 1fr)';
+	export let gap = '1rem';
+	export let maxWidth = '500px';
 
 	let gridSection;
-	let numberEls = [];
-	let svgEls = [];
-
 	let tl;
 	let floatAnim;
 
 	onMount(() => {
-		const boxEls = Array.from(gridSection.querySelectorAll('.box'));
-		numberEls = boxEls.map((box) => box.querySelector('.number'));
-		svgEls = boxEls.map((box) => box.querySelector('svg'));
+		const boxEls = [...gridSection.querySelectorAll('.box')];
+		const numberEls = boxEls.map((b) => b.querySelector('.number'));
+		const svgEls = boxEls.map((b) => b.querySelector('svg'));
 
-		// ----- SCROLL-TRIGGERED TIMELINE for boxes -----
 		tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: gridSection,
 				start: 'top 60%',
 				end: 'bottom 90%',
-				scrub: .5
+				scrub: 0.5
 			}
 		});
 
-		// Animate boxes with scale + opacity
 		tl.from(boxEls, {
 			scale: 0.5,
 			opacity: 0,
@@ -45,18 +39,18 @@
 			duration: 1,
 			ease: 'back.out(1.7)',
 			onStart: () => {
-				// ----- Start number count once boxes are in place -----
 				numberEls.forEach((el, i) => {
-					const number = boxes[i].number;
+					const target = items[i]?.value ?? 0;
 					const setter = gsap.quickSetter(el, 'textContent');
+
 					gsap.to(
-						{ progress: 0 },
+						{ v: 0 },
 						{
-							progress: number,
+							v: target,
 							duration: 2,
 							ease: 'power1.out',
 							onUpdate() {
-								setter(Math.floor(this.targets()[0].progress));
+								setter(Math.floor(this.targets()[0].v));
 							}
 						}
 					);
@@ -64,7 +58,6 @@
 			}
 		});
 
-		// Floating SVG animation (looped, independent from scroll)
 		floatAnim = gsap.to(svgEls, {
 			y: 5,
 			repeat: -1,
@@ -72,8 +65,7 @@
 			duration: 2,
 			stagger: 0.2,
 			ease: 'sine.inOut',
-			force3D: true,
-			willChange: 'transform',
+			force3D: true
 		});
 	});
 
@@ -84,12 +76,20 @@
 	});
 </script>
 
-<div class="grid" bind:this={gridSection}>
-	{#each boxes as box}
+<div
+	class="grid"
+	bind:this={gridSection}
+	style="
+		--cols: {columns};
+		--gap: {gap};
+		--max-width: {maxWidth};
+	"
+>
+	{#each items as item, i}
 		<div class="box">
-			{@html box.svg}
+			{@html splashes[i % splashes.length]}
 			<div class="number">0</div>
-			<div class="description">{box.description}</div>
+			<div class="description">{item.label}</div>
 		</div>
 	{/each}
 </div>
@@ -97,16 +97,15 @@
 <style>
 	.grid {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: var(--cols);
+		gap: var(--gap);
 		width: 100%;
-		max-width: 500px;
-		gap: 1rem;
+		max-width: var(--max-width);
 		margin: 0 auto;
 	}
 
 	.box {
 		position: relative;
-		width: 100%;
 		aspect-ratio: 1 / 1;
 		display: flex;
 		flex-direction: column;
@@ -114,14 +113,12 @@
 		justify-content: center;
 		font-weight: bold;
 		overflow: hidden;
-
-		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, .8));
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.8));
 	}
 
 	:global(.box svg) {
 		position: absolute;
-		top: 0;
-		left: 0;
+		inset: 0;
 		width: 100%;
 		height: 100%;
 		z-index: 0;
@@ -133,7 +130,6 @@
 		position: relative;
 		z-index: 1;
 		font-size: 4rem;
-		font-weight: bolder;
 		color: var(--tech-yellow);
 	}
 

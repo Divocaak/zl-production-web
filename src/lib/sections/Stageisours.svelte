@@ -2,12 +2,23 @@
 	import FlippingCard from '$lib/flippingCard/FlippingCard.svelte';
 	import SectionCard from '$lib/flippingCard/SectionCard.svelte';
 	import LogoHeading from '$lib/LogoHeading.svelte';
+	import StatsGrid from '$lib/StatsGrid.svelte';
 
 	let logoImg;
 </script>
 
 <div id="stage-is-ours" bind:this={logoImg}>
 	<LogoHeading src="/hashtags/stage-is-ours-dark.svg" alt="Stage Is Ours" />
+	<StatsGrid
+		columns="repeat(4, 1fr)"
+		maxWidth="80%"
+		items={[
+			{ value: 54, label: 'Akcí v 02 Aréně' },
+			{ value: 20, label: 'Majálesů' },
+			{ value: 120, label: 'Stálých klientů' },
+			{ value: 19, label: 'Ocenění kvality' }
+		]}
+	/>
 	<div class="cards-wrapper">
 		<SectionCard
 			landingSrc="/reference/01.jpg"
