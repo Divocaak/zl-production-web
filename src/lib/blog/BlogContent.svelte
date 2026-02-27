@@ -2,12 +2,15 @@
 	import Hero from '$lib/sections/Hero.svelte';
 	import StatsGrid from '$lib/StatsGrid.svelte';
 	import BentoGallery from '$lib/blog/BentoGallery.svelte';
+	import VideoModalButton from '$lib/videoModal/VideoModalButton.svelte';
 
 	export let data;
 </script>
 
 {#if data.hero}
-	<Hero logoSrc={data.hero.logoSrc} tagline={data.hero.tagline} />
+	<VideoModalButton>
+		<Hero logoSrc={data.hero.logoSrc} tagline={data.hero.tagline} />
+	</VideoModalButton>
 {/if}
 
 {#if data.textBeforeStats}

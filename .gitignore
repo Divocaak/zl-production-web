@@ -1,4 +1,5 @@
 node_modules
+/static/videos/*/*.mp4
 
 # Output
 .output

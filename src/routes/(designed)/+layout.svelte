@@ -98,6 +98,8 @@
 
 	:global(:root) {
 		--black: #1d1d1b;
+		--grey: #545453;
+		--grey-lighter: #616160;
 		--white: #f6f6f6;
 
 		--zl-red: #db0812;
