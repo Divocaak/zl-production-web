@@ -8,9 +8,11 @@
 </script>
 
 {#if data.hero}
-	<VideoModalButton>
-		<Hero logoSrc={data.hero.logoSrc} tagline={data.hero.tagline} />
-	</VideoModalButton>
+	<div class="video-wrapper">
+		<VideoModalButton videoSrc="/videos/michal-david/michal-david_master.m3u8">
+			<Hero logoSrc={data.hero.logoSrc} tagline={data.hero.tagline} />
+		</VideoModalButton>
+	</div>
 {/if}
 
 {#if data.textBeforeStats}
@@ -44,6 +46,10 @@
 {/if}
 
 <style>
+	.video-wrapper {
+		margin-bottom: 25vh;
+	}
+
 	.blog-text {
 		padding: 5rem 10rem;
 	}

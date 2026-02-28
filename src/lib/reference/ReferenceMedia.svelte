@@ -1,4 +1,5 @@
 <script>
+	import VideoModalButton from '$lib/videoModal/VideoModalButton.svelte';
 	import gsap from 'gsap';
 
 	export let item;
@@ -15,13 +16,8 @@
 	}
 </script>
 
-{#if item.link}
-	<a href={item.link} target="_blank" class="image-wrapper">
-		<img class="image-content" src={item.src} alt="" />
-		<div class="icon-wrapper">
-			<img src="/icons/play.svg" alt="play icon" />
-		</div>
-	</a>
+{#if item.videoPath}
+	<VideoModalButton videoSrc={item.videoPath} imageThumbnailSrc={item.src}></VideoModalButton>
 {:else}
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -59,33 +55,8 @@
 		transition: all 0.3s ease;
 	}
 
-	a.image-wrapper:hover .image-content {
-		filter: brightness(0.6);
-	}
-
 	.image-wrapper:hover .image-content {
 		transform: scale(1.05);
-	}
-
-	.icon-wrapper {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		pointer-events: none;
-	}
-
-	.icon-wrapper img {
-		width: 30%;
-		height: auto;
-		margin: 0 auto;
-		filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
-	}
-
-	.image-wrapper:hover .icon-wrapper img {
-		filter: drop-shadow(0 0 8px rgba(255,255,255,0.3))
-            drop-shadow(0 0 12px rgba(255,255,255,0.2));
-		transform: scale(1.2) rotate(2deg);
 	}
 
 	.card-wrapper {
