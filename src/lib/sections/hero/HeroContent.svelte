@@ -5,6 +5,7 @@
 	export let trigger = false;
 	export let image;
 	export let text;
+	export let hasButton = false;
 
 	let logo;
 	let tagline;
@@ -60,14 +61,9 @@
 	});
 </script>
 
-<div class="hero-content">
-	<img
-		src="{image}"
-		alt="Logo"
-		bind:this={logo}
-		class="logo"
-		loading="eager"
-	/>
+<div class="hero-content" class:has-button={hasButton}>
+	<img src={image} alt="Logo" bind:this={logo} class="logo" loading="eager" />
+
 	<p class="tagline" bind:this={tagline}></p>
 </div>
 
@@ -86,6 +82,10 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+	}
+
+	.hero-content.has-button {
+		gap: 300px;
 	}
 
 	.logo {

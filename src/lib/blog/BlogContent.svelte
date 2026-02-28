@@ -8,11 +8,15 @@
 </script>
 
 {#if data.hero}
-	<div class="video-wrapper">
-		<VideoModalButton videoSrc="/videos/michal-david/michal-david_master.m3u8">
-			<Hero logoSrc={data.hero.logoSrc} tagline={data.hero.tagline} />
-		</VideoModalButton>
-	</div>
+	{#if data.hero.videoSrc}
+		<div class="video-wrapper">
+			<VideoModalButton videoSrc={data.hero.videoSrc}>
+				<Hero logoSrc={data.hero.logoSrc} tagline={data.hero.tagline} hasButton={true}/>
+			</VideoModalButton>
+		</div>
+	{:else}
+		<Hero logoSrc={data.hero.logoSrc} tagline={data.hero.tagline} />
+	{/if}
 {/if}
 
 {#if data.textBeforeStats}

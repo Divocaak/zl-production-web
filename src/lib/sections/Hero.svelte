@@ -5,11 +5,12 @@
 
 	export let logoSrc;
 	export let tagline;
+	export let hasButton = false;
 </script>
 
 <div class="hero-wrapper">
 	<ParallaxLayers maskId="splash-mask" />
-	<HeroContent trigger={$loadingDone} image={logoSrc} text={tagline} />
+	<HeroContent trigger={$loadingDone} image={logoSrc} text={tagline} {hasButton}/>
 </div>
 
 <style>
