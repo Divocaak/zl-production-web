@@ -12,10 +12,10 @@
 		<div class="contact-wrapper">
 			<div class="contact-section">
 				<h2>Kontakt</h2>
-				<IconLink href="mailto:info@zlproduction.cz" svgPath="icons/email.svg">
+				<IconLink href="mailto:info@zlproduction.cz" svgPath="/icons/email.svg">
 					info@zlproduction.cz
 				</IconLink>
-				<IconLink href="tel:+420111222333" svgPath="icons/phone.svg">
+				<IconLink href="tel:+420111222333" svgPath="/icons/phone.svg">
 					+420&nbsp111&nbsp222&nbsp333
 				</IconLink>
 			</div>
