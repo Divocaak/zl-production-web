@@ -1,12 +1,12 @@
 {
 	"name": "zl-production-web",
 	"private": true,
-	"version": "0.0.7",
+	"version": "0.0.9",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"start": "HOST=127.0.0.1 PORT=3009 node build",
+		"start": "HOST=127.0.0.1 PORT=3009 BODY_SIZE_LIMIT=Infinity node build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"lint": "prettier --check . && eslint .",
@@ -33,6 +33,9 @@
 		"vite": "^7.3.1"
 	},
 	"dependencies": {
-		"gsap": "^3.14.2"
+		"@json-editor/json-editor": "^2.15.1",
+		"gsap": "^3.14.2",
+		"hls.js": "^1.6.15",
+		"svelte-portal": "^2.2.1"
 	}
 }

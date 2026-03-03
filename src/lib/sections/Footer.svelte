@@ -12,10 +12,10 @@
 		<div class="contact-wrapper">
 			<div class="contact-section">
 				<h2>Kontakt</h2>
-				<IconLink href="mailto:info@zlproduction.cz" svgPath="icons/email.svg">
+				<IconLink href="mailto:info@zlproduction.cz" svgPath="/icons/email.svg">
 					info@zlproduction.cz
 				</IconLink>
-				<IconLink href="tel:+420111222333" svgPath="icons/phone.svg">
+				<IconLink href="tel:+420111222333" svgPath="/icons/phone.svg">
 					+420&nbsp111&nbsp222&nbsp333
 				</IconLink>
 			</div>
@@ -30,12 +30,14 @@
 			</div>
 		</div>
 		<div class="nav-wrapper">
-			<SubtleLink href="/#about">O nás</SubtleLink>
+			<SubtleLink href="/#stage-is-ours">#STAGEISOURS</SubtleLink>
 			<SubtleLink href="/#reference">Reference</SubtleLink>
 			<SubtleLink href="/#booking">Booking</SubtleLink>
 			<SubtleLink href="/#studio">Studio</SubtleLink>
 			<SubtleLink href="/#family">Family</SubtleLink>
 			<SubtleLink href="/#technika">Technika</SubtleLink>
+			<SubtleLink href="/#historie">Historie</SubtleLink>
+			<SubtleLink href="/kariera">Kariéra</SubtleLink>
 		</div>
 	</div>
 	<p class="signature">

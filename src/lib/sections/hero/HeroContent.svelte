@@ -3,14 +3,14 @@
 	import gsap from 'gsap';
 
 	export let trigger = false;
+	export let image;
+	export let text;
+	export let hasButton = false;
 
 	let logo;
 	let tagline;
 	let tl;
 	let hasAnimated = false;
-
-	const image = '/logos/logo-horizontal-dark.svg';
-	const text = 'Žijeme ve světe speciálních eventů';
 
 	onMount(async () => {
 		await tick();
@@ -35,7 +35,7 @@
 
 		tl.from(logo, {
 			autoAlpha: 0,
-			scale: 0.8,
+			scale: 0.8,	
 			duration: 1,
 			ease: 'power2.out'
 		}).from(
@@ -61,14 +61,9 @@
 	});
 </script>
 
-<div class="hero-content">
-	<img
-		src="{image}"
-		alt="Logo"
-		bind:this={logo}
-		class="logo"
-		loading="eager"
-	/>
+<div class="hero-content" class:has-button={hasButton}>
+	<img src={image} alt="Logo" bind:this={logo} class="logo" loading="eager" />
+
 	<p class="tagline" bind:this={tagline}></p>
 </div>
 
@@ -87,6 +82,10 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+	}
+
+	.hero-content.has-button {
+		gap: 300px;
 	}
 
 	.logo {

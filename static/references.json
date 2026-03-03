@@ -2,12 +2,12 @@
     {
         "type": "image",
         "src": "/reference/00.jpg",
-        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+        "videoPath": "/videos/michal-david/michal-david_master.m3u8"
     },
     {
         "type": "image",
         "src": "/reference/01.jpg",
-        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+        "videoPath": "/videos/monster-meeting-o2/monster-meeting-o2_master.m3u8"
     },
     {
         "type": "text",
@@ -19,7 +19,7 @@
     {
         "type": "image",
         "src": "/reference/02.jpg",
-        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+        "videoPath": "/videos/majales-ostrava/majales-ostrava_master.m3u8"
     },
     {
         "type": "text",
@@ -45,12 +45,12 @@
     {
         "type": "image",
         "src": "/reference/05.jpg",
-        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+        "videoPath": "/videos/monster-meeting-o2/monster-meeting-o2_master.m3u8"
     },
     {
         "type": "image",
         "src": "/reference/06.jpg",
-        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+        "videoPath": "/videos/michal-david/michal-david_master.m3u8"
     },
     {
         "type": "image",
@@ -76,7 +76,7 @@
     {
         "type": "image",
         "src": "/reference/08.jpg",
-        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+        "videoPath": "/videos/monster-meeting-o2/monster-meeting-o2_master.m3u8"
     },
     {
         "type": "image",
@@ -88,12 +88,12 @@
     {
         "type": "image",
         "src": "/reference/017.jpg",
-        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+        "videoPath": "/videos/majales-ostrava/majales-ostrava_master.m3u8"
     },
     {
         "type": "image",
         "src": "/reference/018.jpg",
-        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+        "videoPath": "/videos/michal-david/michal-david_master.m3u8"
     },
     {
         "type": "text",
@@ -105,7 +105,7 @@
     {
         "type": "image",
         "src": "/reference/012.jpg",
-        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+        "videoPath": "/videos/monster-meeting-o2/monster-meeting-o2_master.m3u8"
     },
     {
         "type": "image",
@@ -117,7 +117,7 @@
     {
         "type": "image",
         "src": "/reference/014.jpg",
-        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+        "videoPath": "/videos/majales-ostrava/majales-ostrava_master.m3u8"
     },
     {
         "type": "image",
@@ -136,7 +136,7 @@
     {
         "type": "image",
         "src": "/reference/010.jpg",
-        "link": "https://www.youtube.com/watch?v=Z2jnxsWu1A4"
+        "videoPath": "/videos/majales-ostrava/majales-ostrava_master.m3u8"
     },
     {
         "type": "image",

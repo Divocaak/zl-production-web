@@ -2,6 +2,7 @@
 	import Marquee from '$lib/Marquee.svelte';
 	import LogoHeading from '$lib/LogoHeading.svelte';
 	import overlaySvgRaw from '$lib/assets/splashes/2.svg?raw';
+	import HanddrawnLink from '$lib/buttons/HanddrawnLink.svelte';
 </script>
 
 <div class="marquee-wrapper" id="studio">
@@ -25,7 +26,7 @@
 				Pod našima rukama tak vznikají jedinečná díla - od prvotních nápadů a náčrtů, přes přesnou
 				vizualizaci, až po finální realizaci a obsah šitý na míru živým i televizním produkcím.
 			</p>
-			<LogoHeading src="logos/zl-basecamp-dark.svg" alt="#ZLBaseCamp Logo" />
+			<HanddrawnLink href="/studio">Více informací</HanddrawnLink>
 		</div>
 	</div>
 </div>
@@ -84,6 +85,8 @@
 		width: clamp(280px, 50%, 900px);
 		text-align: center;
 		gap: 2rem;
+
+		pointer-events: all;
 	}
 
 	.content p {
