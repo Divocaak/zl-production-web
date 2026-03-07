@@ -1,7 +1,14 @@
 [
     {
-        "logo": "zl-sound-dark.svg",
-        "items":[
+        "logo": "/logos/equipment/zl-sound-dark.svg",
+        "buttonImg": "/logos/equipment/buttons/zl-sound.svg",
+        "homepageCard": {
+            "fill": "var(--stage-blue)",
+            "image": "/reference/05.jpg",
+            "lead": "prvotřídní zvuk, který vás uchvátí",
+            "desc": "Lorem ipsum dolor <span>Adamson VGt</span> sit amet, consectetuer adipiscing elit. Aliquam id dolor. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo <span>DiGiCo</span>inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nulla pulvinar eleifend sem. Aenean vel massa quis mauris vehicula lacinia. Maecenas aliquet <span>LAB Gruppen PLM</span> accumsan leo. Sed convallis magna eu sem. Maecenas fermentum, sem in pharetra pellentesque, velit turpis volutpat ante, in pharetra metus odio a lectus."
+        },
+        "categories": [
             {
                 "heading": "Zvukové systémy",
                 "desc": "Lorem ipsum dolor sit amet, <span>Adamson VGt</span> consectetuer adipiscing elit. Curabitur vitae diam non enim vestibulum interdum. Praesent id justo in neque elementum ultrices. Pellentesque arcu. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.",
@@ -20,8 +27,48 @@
         ]
     },
     {
-        "logo": "zl-rigging-dark.svg",
-        "items":[
+        "logo": "/logos/equipment/zl-lights-dark.svg",
+        "buttonImg": "/logos/equipment/buttons/zl-lights.svg",
+        "homepageCard": {
+            "fill": "var(--tech-yellow)",
+            "image": "/reference/08.jpg",
+            "lead": "světla lead text",
+            "desc": "Z nabídky našich profesionálních světel a speciálních efektů rádi připravíme originální scénu pro váš projekt. Vybavení je vhodné jak pro turné, festivaly, koncerty a eventy od malých klubů až po velké haly, tak i pro dekorační osvětlení prostorů nebo televizní záznamy a přenosy.<br><br>Exkluzivně využíváme produkty české značky <span>ROBE</span>, která patří k největším výrobcům riderového vybavení na světě. Tuto značku doplňujeme o specifické vybavení <span>ASTERA</span>, <span>ARRI</span>, <span>SGM</span> a mnoho dalších. Dbáme na kvalitu a spolehlivost ostatních zařízení, jako jsou rozvaděče, splittery, stmívače, elektrický rozvod a DMX propojení. Pro ovládání využíváme konzole <span>CHAMSYS</span> (MQ70, MQ100, MQ250 a MQ500 stadium M s různými variantami wingů) a nebo puty <span>GRAND MA2</span> (full size)."
+        },
+        "categories": []
+    },
+    {
+        "logo": "/logos/equipment/zl-video-dark.svg",
+        "buttonImg": "/logos/equipment/buttons/zl-video.svg",
+        "homepageCard": {
+            "fill": "var(--punch-pink)",
+            "image": "/reference/011.jpg",
+            "lead": "lead text video",
+            "desc": "Disponujeme <span>300 m² outdoor LED obrazovek s rozlišením 6 mm</span>, <span>150 m² semioutdoor LED obrazovek s rozlišením 3,9 mm</span> a nově také <span>600 m² LED FRAME s vysokým rozlišením a velkou svítivostí</span>. Tyto obrazovky je možné skládat do různých tvarů a rozdělovat na více ploch. K LED obrazovkám poskytujeme kompletní režii a v případě potřeby i kamerový systém <span>BlackMagic Ursa</span>, jak standardní, tak robotický. Pro odbavení využíváme vlastní mediaservery <span>ZL BRUTAL FORCE I a II</span>."
+        },
+        "categories": []
+    },
+    {
+        "logo": "/logos/equipment/zl-stage-dark.svg",
+        "buttonImg": "/logos/equipment/buttons/zl-stage.svg",
+        "homepageCard": {
+            "fill": "var(--tech-yellow)",
+            "image": "/reference/015.jpg",
+            "lead": "stage lead text",
+            "desc": "Disponujeme 600 ks desek <span>NiVtec Flexibel</span> (standardní modul 2x1m, výběr dalších speciální dílů, certifikovaná nosnost 750 kg/m2) pro stavby pódií různých velikostí a výšek (20cm - 200 cm). Jako příslušenství automaticky dodáváme zavětrování, schody, zábradlí a zakrytí stran. Pro oddělení návštěvníků od pódia nabízíme 200m nášlapných zábran <span>Mojo type</span>."
+        },
+        "categories": []
+    },
+    {
+        "logo": "/logos/equipment/zl-rigging-dark.svg",
+        "buttonImg": "/logos/equipment/buttons/zl-rigging.svg",
+        "homepageCard": {
+            "fill": "var(--stage-blue)",
+            "image": "/reference/019.jpg",
+            "lead": "lead text pro rigging",
+            "desc": "Páteř našeho GS vybavení tvoří <span>HEAVY-DUTY & SUPER-BEAM</span> trussing, díky kterému nyní disponujeme jedním z největších a nejbezpečnějších systémů v ČR. Základní rozměr zastřešení nabízí až 13 m výšku nohou GS a zakrytou plochu od 10 m x 12 m až po <span>22 m x 16 m</span> s mnohatunovou nosností. Navíc je možné systém rozšířit o PA a video wings až na 45 m pohledovou šířku."
+        },
+        "categories": [
             {
                 "heading": "Ground support, zastřešení",
                 "desc": "Lorem ipsum <span>HEAVY-DUTY & SUPER-BEAM</span> dolor sit amet, consectetuer adipiscing elit. Curabitur vitae diam non enim vestibulum interdum. Praesent id justo in neque elementum ultrices. Pellentesque arcu. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.",
