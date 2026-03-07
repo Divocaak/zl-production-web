@@ -9,15 +9,15 @@
 
 <FlexContent>
 	<div slot="right">
-		<MaskedImage src={card.image} alt="reference image" parallax={true} floating={true}>
+		<MaskedImage src={card.homepageCard.image} alt="reference image" parallax={true} floating={true}>
 			<div class="logo-wrapper">
 				<LogoHeading src={card.logo} alt="zl section logo" maxWidthPx="400" shadowOpacity="1" />
 			</div>
 		</MaskedImage>
 	</div>
 	<div slot="left" class="texts-wrapper">
-		<p class="lead">{card.lead}</p>
-		<p>{@html card.desc}</p>
+		<p class="lead">{card.homepageCard.lead}</p>
+		<p>{@html card.homepageCard.desc}</p>
 		<div class="link">
 			<HanddrawnLink href="/technika">vybavení</HanddrawnLink>
 		</div>

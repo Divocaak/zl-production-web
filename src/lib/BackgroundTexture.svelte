@@ -22,9 +22,11 @@
 
 <style>
 	.bg-layer {
-		position: absolute;
+		position: fixed;
 		inset: 0;
 		z-index: 0;
+
+		height: 500vh;
 
 		background-repeat: repeat;
 		background-position: 0 0;
@@ -32,6 +34,10 @@
 		pointer-events: none;
 
 		will-change: transform;
+		transform: translate3d(0, 0, 0);
+		backface-visibility: hidden;
+		contain: paint;
+		image-rendering: optimizeSpeed;
 	}
 
 	.bg-layer.hard {
