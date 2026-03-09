@@ -77,39 +77,29 @@ Děkuji a přeji hezký den`
 	}
 </script>
 
-<div class="wrapper">
-	<LogoHeading src="/logos/equipment/{section.logo}" alt="section logo" />
-	<div class="equipment-wrapper">
-		{#each section.items as item, i}
-			<div class="gsap-wrapper" bind:this={items[i]}>
-				<FlexContent alternated={i % 2 != 0}>
-					<div class="equipment-content alternated" slot="left">
-						<h2>{item.heading}</h2>
-						<p>{@html item.desc}</p>
-						<div class="link-wrapper">
-							<HanddrawnLink href={composeMailtoHref(item.heading)}>Poptat dostupnost</HanddrawnLink
-							>
-						</div>
+<LogoHeading src={section.logo} alt="section logo" />
+<div class="equipment-wrapper">
+	{#each section.categories as item, i}
+		<div class="gsap-wrapper" bind:this={items[i]}>
+			<FlexContent alternated={i % 2 != 0}>
+				<div class="equipment-content alternated" slot="left">
+					<h2>{item.heading}</h2>
+					<p>{@html item.desc}</p>
+					<div class="link-wrapper">
+						<HanddrawnLink href={() => composeMailtoHref(item.heading)}>
+							Poptat dostupnost
+						</HanddrawnLink>
 					</div>
-					<div class="img-wrapper" slot="right">
-						<MaskedImage
-							src="/equipment/{item.image}"
-							alt="equipment image"
-							widthPercent={60}
-						/>
-					</div>
-				</FlexContent>
-			</div>
-		{/each}
-	</div>
+				</div>
+				<div class="img-wrapper" slot="right">
+					<MaskedImage src="/equipment/{item.image}" alt="equipment image" widthPercent={60} />
+				</div>
+			</FlexContent>
+		</div>
+	{/each}
 </div>
 
 <style>
-	.wrapper {
-		margin-top: 10rem;
-		padding: 0 8rem;
-	}
-
 	.equipment-wrapper {
 		display: flex;
 		flex-direction: column;

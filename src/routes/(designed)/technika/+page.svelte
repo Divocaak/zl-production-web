@@ -1,8 +1,10 @@
 <script>
+	import EquipmentButtonBar from '$lib/EquipmentButtonBar.svelte';
 	import EquipmentSection from '$lib/EquipmentSection.svelte';
 	import { onMount, tick } from 'svelte';
 
 	let equipment;
+	let activeIndex = 0;
 
 	onMount(async () => {
 		try {
@@ -18,15 +20,14 @@
 </script>
 
 <div class="wrapper">
-	{#each equipment as section}
-		<EquipmentSection {section} />
-	{/each}
+	<EquipmentButtonBar cards={equipment} bind:activeIndex let:card>
+		<EquipmentSection section={card} />
+	</EquipmentButtonBar>
 </div>
 
 <style>
 	.wrapper {
-		display: flex;
-		flex-direction: column;
-		gap: 10rem;
+		position: relative;
+		padding: 0 8rem;
 	}
 </style>
