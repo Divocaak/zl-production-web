@@ -1,0 +1,137 @@
+{
+    "type": "object",
+    "title": "Reference",
+    "description": "Seznam referencí",
+    "options": {
+        "collapsed": true
+    },
+    "properties": {
+        "projects": {
+            "options": {
+                "titleHidden": true,
+                "disable_collapse": true
+            },
+            "type": "array",
+            "items": {
+                "type": "object",
+                "description": "Nastavení projektu",
+                "title": "Projekt",
+                "headerTemplate": "{{self.label}}",
+                "options": {
+                    "collapsed": true
+                },
+                "properties": {
+                    "referenceType": {
+                        "type": "string",
+                        "title": "Typ reference",
+                        "enum": [
+                            "image",
+                            "video",
+                            "person"
+                        ],
+                        "default": "image"
+                    },
+                    "id": {
+                        "type": "string",
+                        "format": "text",
+                        "title": "ID",
+                        "readonly": true
+                    },
+                    "label": {
+                        "type": "string",
+                        "format": "text",
+                        "title": "Název"
+                    },
+                    "description": {
+                        "type": "string",
+                        "format": "textarea",
+                        "title": "Popis",
+                        "description": "Stylování pomocí HTML značek",
+                        "options": {
+                            "expand_height": true
+                        }
+                    },
+                    "thumbnail": {
+                        "type": "string",
+                        "title": "thumbnail na kartě projektu",
+                        "media": {
+                            "binaryEncoding": "base64",
+                            "type": "img/png"
+                        }
+                    },
+                    "visible": {
+                        "type": "boolean",
+                        "format": "checkbox",
+                        "default": true,
+                        "title": "viditelná",
+                        "description": "zobrazuje se na seznamu referencí"
+                    },
+                    "images": {
+                        "type": "array",
+                        "title": "galerie v datilu projektu, 'array' pro vybrání dvou/tří obrázků na řádek",
+                        "options": {
+                            "collapsed": true
+                        },
+                        "items": {
+                            "title": "Obrázek/Obrázky",
+                            "anyOf": [
+                                {
+                                    "type": "array",
+                                    "options": {
+                                        "collapsed": true
+                                    },
+                                    "minItems": 2,
+                                    "maxItems": 3,
+                                    "description": "dva nebo tři obrázky na řádek",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "obrázek",
+                                        "media": {
+                                            "binaryEncoding": "base64",
+                                            "type": "img/png"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "string",
+                                    "title": "fotka",
+                                    "media": {
+                                        "binaryEncoding": "base64",
+                                        "type": "img/png"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "videoUrl": {
+                        "type": "string",
+                        "title": "Video URL"
+                    },
+                    "personName": {
+                        "type": "string",
+                        "title": "Jméno"
+                    },
+                    "personRole": {
+                        "type": "string",
+                        "title": "Role"
+                    },
+                    "personPhoto": {
+                        "type": "string",
+                        "title": "Fotografie",
+                        "media": {
+                            "binaryEncoding": "base64",
+                            "type": "img/png"
+                        }
+                    }
+                },
+                "required": [
+                    "id",
+                    "label",
+                    "description",
+                    "thumbnail",
+                    "visible"
+                ]
+            }
+        }
+    }
+}

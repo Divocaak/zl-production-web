@@ -30,7 +30,7 @@
 
 		const dataRes = await fetch(dataPath);
 		let dataData = await dataRes.json();
-		if (filters) dataData = dataData.definitions.filterEnums.items.enum;
+		/* if (filters) dataData = dataData.definitions.filterEnums.items.enum; */
 
 		editor = new JSONEditor(container, {
 			disable_edit_json: true,
@@ -48,6 +48,36 @@
 			editor.on('addRow', (property) => {
 				if (property.editors && property.editors.id) property.editors.id.setValue(Date.now());
 			});
+			function updateVisibility() {
+				const value = editor.getValue();
+
+				if (!value.projects) return;
+
+				value.projects.forEach((p, i) => {
+					const type = p.referenceType;
+
+					const base = `root.projects.${i}`;
+
+					const images = editor.getEditor(`${base}.images`);
+					const video = editor.getEditor(`${base}.videoUrl`);
+					const pname = editor.getEditor(`${base}.personName`);
+					const prole = editor.getEditor(`${base}.personRole`);
+					const pphoto = editor.getEditor(`${base}.personPhoto`);
+
+					if (images) images.container.style.display = type === 'image' ? '' : 'none';
+					if (video) video.container.style.display = type === 'video' ? '' : 'none';
+
+					const personVisible = type === 'person';
+
+					if (pname) pname.container.style.display = personVisible ? '' : 'none';
+					if (prole) prole.container.style.display = personVisible ? '' : 'none';
+					if (pphoto) pphoto.container.style.display = personVisible ? '' : 'none';
+				});
+			}
+
+			updateVisibility();
+
+			editor.on('change', updateVisibility);
 		});
 
 		return () => {
