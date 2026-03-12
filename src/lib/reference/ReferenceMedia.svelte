@@ -16,14 +16,14 @@
 	}
 </script>
 
-{#if item.videoPath}
-	<VideoModalButton videoSrc={item.videoPath} imageThumbnailSrc={item.src}></VideoModalButton>
+{#if item.referenceType === "video"}
+	<VideoModalButton videoSrc={item.video} imageThumbnailSrc={item.image}></VideoModalButton>
 {:else}
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div class="card-wrapper" bind:this={card} on:click={toggleFlip}>
 		<div class="card-face image-wrapper">
-			<img class="image-content" src={item.src} alt="" />
+			<img class="image-content" src={item.image} alt="" />
 		</div>
 		<div class="card-face card-back">
 			<div class="back-content">
@@ -86,7 +86,7 @@
 	.card-back {
 		transform: rotateY(180deg);
 		background: var(--black);
-		box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.7);
+		box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
 
 		width: calc(100% - 4rem);
 		text-align: center;

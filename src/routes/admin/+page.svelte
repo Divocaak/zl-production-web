@@ -12,6 +12,6 @@
 <AdminForm
 	schemaPath="/admin/reference-schema.json"
 	dataPath="/dynamic/jsons/reference.json"
-	apiPath="/api/save-reference"
+	apiPath="/api/saveReference"
 	saveButton="reference"
 />

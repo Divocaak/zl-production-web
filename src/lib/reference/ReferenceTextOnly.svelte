@@ -5,7 +5,7 @@
 <div class="wrapper">
 	<img src={item.image} alt="reference" />
 	<h3>{item.label}</h3>
-	<p>{item.desc}</p>
+	<p>{item.description}</p>
 	<p class="year">{item.year}</p>
 </div>
 

@@ -32,7 +32,10 @@
 		else if (width <= 1024) numColumns = 2;
 		else numColumns = 3;
 
-		if (references.length) columns = splitIntoColumns(references, numColumns);
+		const visibleReferences = references.filter((r) => r.visible);
+		if (visibleReferences.length) {
+			columns = splitIntoColumns(visibleReferences, numColumns);
+		}
 	}
 
 	onMount(async () => {
@@ -40,7 +43,7 @@
 		window.addEventListener('resize', updateNumColumns);
 
 		try {
-			const res = await fetch('/references.json');
+			const res = await fetch('/dynamic/jsons/reference.json');
 			if (!res.ok) throw new Error('Failed to load references');
 			references = await res.json();
 			updateNumColumns();
@@ -90,10 +93,10 @@
 		{#each columns as column}
 			<div class="column">
 				{#each column as item}
-					{#if item.type === 'image'}
-						<ReferenceMedia {item} />
-					{:else if item.type === 'text'}
+					{#if item.referenceType === 'person'}
 						<ReferenceTextOnly {item} />
+					{:else}
+						<ReferenceMedia {item} />
 					{/if}
 				{/each}
 			</div>

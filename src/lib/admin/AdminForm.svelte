@@ -4,8 +4,6 @@
 	import { Base64ImageEditor } from '$lib/admin/Base64ImageEditor';
 
 	export let schemaPath, dataPath, apiPath, saveButton;
-	export let filters = false;
-
 	let editor;
 	let container;
 
@@ -30,7 +28,6 @@
 
 		const dataRes = await fetch(dataPath);
 		let dataData = await dataRes.json();
-		/* if (filters) dataData = dataData.definitions.filterEnums.items.enum; */
 
 		editor = new JSONEditor(container, {
 			disable_edit_json: true,
@@ -50,28 +47,13 @@
 			});
 			function updateVisibility() {
 				const value = editor.getValue();
-
 				if (!value.projects) return;
 
 				value.projects.forEach((p, i) => {
 					const type = p.referenceType;
-
 					const base = `root.projects.${i}`;
-
-					const images = editor.getEditor(`${base}.images`);
-					const video = editor.getEditor(`${base}.videoUrl`);
-					const pname = editor.getEditor(`${base}.personName`);
-					const prole = editor.getEditor(`${base}.personRole`);
-					const pphoto = editor.getEditor(`${base}.personPhoto`);
-
-					if (images) images.container.style.display = type === 'image' ? '' : 'none';
+					const video = editor.getEditor(`${base}.video`);
 					if (video) video.container.style.display = type === 'video' ? '' : 'none';
-
-					const personVisible = type === 'person';
-
-					if (pname) pname.container.style.display = personVisible ? '' : 'none';
-					if (prole) prole.container.style.display = personVisible ? '' : 'none';
-					if (pphoto) pphoto.container.style.display = personVisible ? '' : 'none';
 				});
 			}
 

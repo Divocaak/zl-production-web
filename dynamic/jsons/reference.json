@@ -1,3 +1,32 @@
-{
-    "projects": []
-}
+[
+  {
+    "referenceType": "video",
+    "id": "1773335970903",
+    "label": "adsad",
+    "description": "bb",
+    "year": "131",
+    "visible": true,
+    "image": "/dynamic/media/reference/1773335970903/22266c1b13768251aeb37b15d4b89a46.png",
+    "video": "/dynamic/media/reference/1773335970903/1e709e3f46c3681877d4a5d56be37736.mp4"
+  },
+  {
+    "referenceType": "image",
+    "id": "1773335970903",
+    "label": "adsad",
+    "description": "bb",
+    "year": "131",
+    "visible": false,
+    "image": "/dynamic/media/reference/1773335970903/22266c1b13768251aeb37b15d4b89a46.png",
+    "video": "/dynamic/media/reference/1773335970903/1e709e3f46c3681877d4a5d56be37736.mp4"
+  },
+  {
+    "referenceType": "person",
+    "id": "1773335970903",
+    "label": "adsad",
+    "description": "bb",
+    "year": "131",
+    "visible": true,
+    "image": "/dynamic/media/reference/1773335970903/22266c1b13768251aeb37b15d4b89a46.png",
+    "video": "/dynamic/media/reference/1773335970903/1e709e3f46c3681877d4a5d56be37736.mp4"
+  }
+]
