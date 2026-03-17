@@ -4,13 +4,14 @@
 	import { loadingDone } from '$lib/stores/loading';
 
 	export let logoSrc;
+	export let heading;
 	export let tagline;
 	export let hasButton = false;
 </script>
 
 <div class="hero-wrapper">
 	<ParallaxLayers maskId="splash-mask" />
-	<HeroContent trigger={$loadingDone} image={logoSrc} text={tagline} {hasButton}/>
+	<HeroContent trigger={$loadingDone} image={logoSrc} {heading} text={tagline} {hasButton}/>
 </div>
 
 <style>

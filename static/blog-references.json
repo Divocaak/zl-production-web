@@ -6,7 +6,9 @@
     ],
     "items": {
         "majales-ostrava": {
+            "cardImage": "/reference/00.jpg",
             "hero": {
+                "label": "Majáles Ostrava",
                 "tagline": "Jak se stavěl Majáles v Ostravě?",
                 "videoSrc": "/videos/majales-ostrava/majales-ostrava_master.m3u8"
             },

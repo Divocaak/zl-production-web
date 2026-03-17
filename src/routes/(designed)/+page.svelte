@@ -5,7 +5,7 @@
 	import Equipment from '$lib/sections/Equipment.svelte';
 	import Family from '$lib/sections/Family.svelte';
 	import Studio from '$lib/sections/Studio.svelte';
-	import VideoReferences from '$lib/sections/VideoReferences.svelte';
+	import BlogReferences from '$lib/sections/BlogReferences.svelte';
 	import { onMount } from 'svelte';
 	import ScrollTrigger from 'gsap/ScrollTrigger';
 	import { page } from '$app/stores';
@@ -36,7 +36,7 @@
 <div class="dev" class:visible>STAGE IS OURS</div>
 <StageIsOurs />
 <div class="dev" class:visible>REFERENCE</div>
-<VideoReferences />
+<BlogReferences />
 <div class="dev" class:visible>BOOKING</div>
 <Booking />
 <div class="dev" class:visible>STUDIO</div>

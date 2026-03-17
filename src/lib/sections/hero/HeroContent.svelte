@@ -4,6 +4,7 @@
 
 	export let trigger = false;
 	export let image;
+	export let heading;
 	export let text;
 	export let hasButton = false;
 
@@ -62,7 +63,12 @@
 </script>
 
 <div class="hero-content" class:has-button={hasButton}>
-	<img src={image} alt="Logo" bind:this={logo} class="logo" loading="eager" />
+	{#if image}
+		<img src={image} alt="Logo" bind:this={logo} class="logo" loading="eager" />
+	{/if}
+	{#if heading}
+		<h1 class="heading">{heading}</h1>
+	{/if}
 	<p class="tagline" bind:this={tagline}></p>
 </div>
 
@@ -93,6 +99,14 @@
 		width: 100%;
 		margin: 0 auto;
 		filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+	}
+
+	.heading{
+		font-size: 5rem;
+		text-transform: uppercase;
+		font-weight: 900;
+		letter-spacing: -2px;
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 1));
 	}
 
 	.tagline {
