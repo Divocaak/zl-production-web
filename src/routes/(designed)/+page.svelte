@@ -9,7 +9,7 @@
 	import { onMount } from 'svelte';
 	import ScrollTrigger from 'gsap/ScrollTrigger';
 	import { page } from '$app/stores';
-	import Stageisours from '$lib/sections/Stageisours.svelte';
+	import StageIsOurs from '$lib/sections/StageIsOurs.svelte';
 
 	onMount(() => {
 		const hash = window.location.hash;
@@ -34,7 +34,7 @@
 <div class="dev" class:visible>HERO</div>
 <Hero logoSrc={'/logos/logo-horizontal-dark.svg'} tagline={'Žijeme ve světe speciálních eventů'} />
 <div class="dev" class:visible>STAGE IS OURS</div>
-<Stageisours />
+<StageIsOurs />
 <div class="dev" class:visible>REFERENCE</div>
 <VideoReferences />
 <div class="dev" class:visible>BOOKING</div>
