@@ -1,12 +1,19 @@
 <script>
+	import { createEventDispatcher } from 'svelte';
 	import SubtleLink from './SubtleLink.svelte';
 
 	export let href;
 	export let svgPath;
 	export let target = '_blank';
+
+	const dispatch = createEventDispatcher();
+
+	function handleClick(event) {
+		dispatch('click', event);
+	}
 </script>
 
-<SubtleLink {href} {target}>
+<SubtleLink {href} {target} on:click={handleClick}>
 	<img src={svgPath} alt="" aria-hidden="true" />
 	<span class="label"><slot /></span>
 </SubtleLink>

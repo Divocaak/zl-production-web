@@ -1,6 +1,7 @@
 <script>
 	import SubtleLink from '$lib/buttons/SubtleLink.svelte';
 	import FamilyMember from '$lib/FamilyMember.svelte';
+	import FamilyModal from '$lib/FamilyModal.svelte';
 	import { onDestroy, onMount, tick } from 'svelte';
 
 	let family;
@@ -45,7 +46,13 @@
 		if (typeof window === 'undefined') return;
 		window.removeEventListener('resize', updateChunkSize);
 	});
+
+	let selectedMember = null;
 </script>
+
+{#if selectedMember}
+	<FamilyModal {selectedMember} on:close={selectedMember = null}/>
+{/if}
 
 {#each family as section}
 	{#if section.heading}
@@ -57,7 +64,11 @@
 		{#each chunk(section.members, chunkSize) as row}
 			<div class="members-row">
 				{#each row as member, index}
-					<FamilyMember {member} animal={section.zoo[index % section.zoo.length]} />
+					<FamilyMember
+						{member}
+						animal={section.zoo[index % section.zoo.length]}
+						on:open={(e) => (selectedMember = e.detail)}
+					/>
 				{/each}
 			</div>
 		{/each}

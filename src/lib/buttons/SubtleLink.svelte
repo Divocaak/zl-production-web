@@ -11,6 +11,8 @@
 	function handleClick(event) {
 		dispatch('click', event);
 
+		if (!href) return;
+
 		if (/^(https?:\/\/|mailto:|tel:)/.test(href)) return;
 
 		if (!href.startsWith('/#') || window.location.pathname !== '/') return;

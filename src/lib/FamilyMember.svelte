@@ -5,6 +5,9 @@
 	import { onMount } from 'svelte';
 	import MaskedImage from './MaskedImage.svelte';
 
+	import { createEventDispatcher } from 'svelte';
+	const dispatch = createEventDispatcher();
+
 	export let member;
 	export let animal;
 
@@ -52,10 +55,16 @@
 	});
 </script>
 
-<div class="wrapper" bind:this={wrapper}>
-	<MaskedImage bind:imageEl src="family/{member.img}" alt="member headshot"
-							parallax={true}
-							parallaxDistance={20}>
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<div class="wrapper" bind:this={wrapper} on:click={() => dispatch('open', member)}>
+	<MaskedImage
+		bind:imageEl
+		src="family/{member.img}"
+		alt="member headshot"
+		parallax={false}
+		objectPositionY={0}
+	>
 		<img bind:this={animalEl} src="/zoo/{animal}" class="animal" alt="" />
 	</MaskedImage>
 	<p>{member.name}</p>
@@ -76,6 +85,8 @@
 		align-content: center;
 		margin: 2rem;
 		will-change: opacity;
+
+		cursor: pointer;
 	}
 
 	.animal {
