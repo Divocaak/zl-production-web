@@ -11,7 +11,7 @@
 	{#if data.hero.videoSrc}
 		<div class="video-wrapper">
 			<VideoModalButton videoSrc={data.hero.videoSrc}>
-				<Hero logoSrc={data.hero.logoSrc} tagline={data.hero.tagline} hasButton={true}/>
+				<Hero logoSrc={data.hero.logoSrc} tagline={data.hero.tagline} hasButton={true} />
 			</VideoModalButton>
 		</div>
 	{:else}

@@ -35,7 +35,7 @@
 
 		tl.from(logo, {
 			autoAlpha: 0,
-			scale: 0.8,	
+			scale: 0.8,
 			duration: 1,
 			ease: 'power2.out'
 		}).from(
@@ -63,7 +63,6 @@
 
 <div class="hero-content" class:has-button={hasButton}>
 	<img src={image} alt="Logo" bind:this={logo} class="logo" loading="eager" />
-
 	<p class="tagline" bind:this={tagline}></p>
 </div>
 
