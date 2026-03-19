@@ -4,6 +4,7 @@
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import ReferenceMedia from '$lib/reference/ReferenceMedia.svelte';
 	import ReferenceTextOnly from '$lib/reference/ReferenceTextOnly.svelte';
+	import BlogReference from '$lib/reference/BlogReference.svelte';
 
 	let references = [];
 	let loading = true;
@@ -45,7 +46,20 @@
 		try {
 			const res = await fetch('/dynamic/jsons/reference.json');
 			if (!res.ok) throw new Error('Failed to load references');
-			references = await res.json();
+			const baseReferences = await res.json();
+
+			const res2 = await fetch('/blog-references.json');
+			if (!res2.ok) throw new Error('Failed to load blog references');
+			const secondData = await res2.json();
+
+			const blogReferences = Object.entries(secondData.items).map(([id, item]) => ({
+				path: id,
+				img: item.cardImage,
+				label: item.hero.label,
+				visible: true
+			}));
+
+			references = [...blogReferences, ...baseReferences];
 			updateNumColumns();
 		} catch (e) {
 			console.error(e);
@@ -93,7 +107,9 @@
 		{#each columns as column}
 			<div class="column">
 				{#each column as item}
-					{#if item.referenceType === 'person'}
+					{#if !item.referenceType}
+						<BlogReference {...item} borderRadiusPx="0" />
+					{:else if item.referenceType === 'person'}
 						<ReferenceTextOnly {item} />
 					{:else}
 						<ReferenceMedia {item} />
