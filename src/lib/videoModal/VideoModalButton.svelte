@@ -4,6 +4,10 @@
 	export let videoSrc;
 	export let imageThumbnailSrc;
 	let open = false;
+
+	export let heading;
+	export let description;
+	export let year;
 </script>
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
@@ -25,7 +29,14 @@
 </div>
 
 {#if open}
-	<VideoModal src={videoSrc} poster={imageThumbnailSrc} on:close={() => (open = false)} />
+	<VideoModal
+		src={videoSrc}
+		poster={imageThumbnailSrc}
+		on:close={() => (open = false)}
+		{heading}
+		{description}
+		{year}
+	/>
 {/if}
 
 <style>

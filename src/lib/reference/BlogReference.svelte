@@ -2,14 +2,14 @@
 	export let path;
 	export let img;
 	export let label;
-    export let borderRadiusPx = 6;
+	export let borderRadiusPx = 6;
 
-    console.log(path);
+	console.log(path);
 </script>
 
 <a class="card" href="/reference/{path}" style="border-radius: {borderRadiusPx}px;">
 	<div class="card-image" style="background-image: url({img});"></div>
-	<h3>{label}</h3>
+	<h3 class="zl-text">{label}</h3>
 </a>
 
 <style>
@@ -57,13 +57,9 @@
 		position: relative;
 		z-index: 2;
 
-		font-size: 3rem;
-		text-transform: uppercase;
-		font-weight: 900;
-		letter-spacing: -2px;
-		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 1));
-
 		transition: all 0.45s ease;
+
+		text-align: center;
 	}
 
 	.card:hover h3 {

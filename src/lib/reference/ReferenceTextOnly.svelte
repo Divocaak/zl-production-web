@@ -4,7 +4,7 @@
 
 <div class="wrapper">
 	<img src={item.image} alt="reference" />
-	<h3>{item.label}</h3>
+	<h3 class="zl-text">{item.label}</h3>
 	<p>{item.description}</p>
 	<p class="year">{item.year}</p>
 </div>
@@ -37,8 +37,7 @@
 	}
 
 	.wrapper h3 {
-		font-size: 1.2rem;
-		text-transform: uppercase;
+		font-size: 2rem;
 		color: var(--zl-red);
 	}
 

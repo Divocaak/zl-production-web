@@ -67,7 +67,7 @@
 		<img src={image} alt="Logo" bind:this={logo} class="logo" loading="eager" />
 	{/if}
 	{#if heading}
-		<h1 class="heading">{heading}</h1>
+		<h1 class="zl-text heading">{heading}</h1>
 	{/if}
 	<p class="tagline" bind:this={tagline}></p>
 </div>
@@ -103,10 +103,6 @@
 
 	.heading{
 		font-size: 5rem;
-		text-transform: uppercase;
-		font-weight: 900;
-		letter-spacing: -2px;
-		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 1));
 	}
 
 	.tagline {

@@ -16,8 +16,14 @@
 	}
 </script>
 
-{#if item.referenceType === "video"}
-	<VideoModalButton videoSrc={item.video} imageThumbnailSrc={item.image}></VideoModalButton>
+{#if item.referenceType === 'video'}
+	<VideoModalButton
+		videoSrc={item.video}
+		imageThumbnailSrc={item.image}
+		heading={item.label}
+		description={item.description}
+		year={item.year}
+	></VideoModalButton>
 {:else}
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -27,8 +33,8 @@
 		</div>
 		<div class="card-face card-back">
 			<div class="back-content">
-				<h3>{item.label}</h3>
-				<p>{item.desc}</p>
+				<h3 class="zl-text">{item.label}</h3>
+				<p>{item.description}</p>
 				<p class="year">{item.year}</p>
 			</div>
 		</div>
@@ -94,8 +100,7 @@
 	}
 
 	.back-content h3 {
-		font-size: 1.2rem;
-		text-transform: uppercase;
+		font-size: 2rem;
 		color: var(--zl-red);
 	}
 
