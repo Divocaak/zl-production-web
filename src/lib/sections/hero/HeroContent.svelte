@@ -4,6 +4,7 @@
 
 	export let trigger = false;
 	export let image;
+	export let heading;
 	export let text;
 	export let hasButton = false;
 
@@ -35,7 +36,7 @@
 
 		tl.from(logo, {
 			autoAlpha: 0,
-			scale: 0.8,	
+			scale: 0.8,
 			duration: 1,
 			ease: 'power2.out'
 		}).from(
@@ -62,8 +63,12 @@
 </script>
 
 <div class="hero-content" class:has-button={hasButton}>
-	<img src={image} alt="Logo" bind:this={logo} class="logo" loading="eager" />
-
+	{#if image}
+		<img src={image} alt="Logo" bind:this={logo} class="logo" loading="eager" />
+	{/if}
+	{#if heading}
+		<h1 class="zl-text heading">{heading}</h1>
+	{/if}
 	<p class="tagline" bind:this={tagline}></p>
 </div>
 
@@ -94,6 +99,10 @@
 		width: 100%;
 		margin: 0 auto;
 		filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+	}
+
+	.heading{
+		font-size: 5rem;
 	}
 
 	.tagline {

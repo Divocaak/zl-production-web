@@ -5,11 +5,14 @@
 
 	export let href;
 	export let target = '_self';
+	export let centered = false;
 
 	const dispatch = createEventDispatcher();
 
 	function handleClick(event) {
 		dispatch('click', event);
+
+		if (!href) return;
 
 		if (/^(https?:\/\/|mailto:|tel:)/.test(href)) return;
 
@@ -35,7 +38,7 @@
 	}
 </script>
 
-<a {href} {target} class="subtle-link" on:click={handleClick}>
+<a {href} {target} class="subtle-link" class:centered on:click={handleClick}>
 	<slot />
 </a>
 
@@ -54,6 +57,10 @@
 		transition: all 0.2s ease;
 
 		cursor: pointer;
+	}
+
+	.subtle-link.centered {
+		justify-content: center;
 	}
 
 	.subtle-link:hover {

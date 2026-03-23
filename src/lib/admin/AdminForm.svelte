@@ -4,8 +4,6 @@
 	import { Base64ImageEditor } from '$lib/admin/Base64ImageEditor';
 
 	export let schemaPath, dataPath, apiPath, saveButton;
-	export let filters = false;
-
 	let editor;
 	let container;
 
@@ -30,7 +28,6 @@
 
 		const dataRes = await fetch(dataPath);
 		let dataData = await dataRes.json();
-		if (filters) dataData = dataData.definitions.filterEnums.items.enum;
 
 		editor = new JSONEditor(container, {
 			disable_edit_json: true,
@@ -48,6 +45,21 @@
 			editor.on('addRow', (property) => {
 				if (property.editors && property.editors.id) property.editors.id.setValue(Date.now());
 			});
+			function updateVisibility() {
+				const value = editor.getValue();
+				if (!value.projects) return;
+
+				value.projects.forEach((p, i) => {
+					const type = p.referenceType;
+					const base = `root.projects.${i}`;
+					const video = editor.getEditor(`${base}.video`);
+					if (video) video.container.style.display = type === 'video' ? '' : 'none';
+				});
+			}
+
+			updateVisibility();
+
+			editor.on('change', updateVisibility);
 		});
 
 		return () => {

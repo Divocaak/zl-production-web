@@ -5,6 +5,9 @@
 	import { onMount } from 'svelte';
 	import MaskedImage from './MaskedImage.svelte';
 
+	import { createEventDispatcher } from 'svelte';
+	const dispatch = createEventDispatcher();
+
 	export let member;
 	export let animal;
 
@@ -52,20 +55,28 @@
 	});
 </script>
 
-<div class="wrapper" bind:this={wrapper}>
-	<MaskedImage bind:imageEl src="family/{member.img}" alt="member headshot"
-							parallax={true}
-							parallaxDistance={20}>
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<div class="wrapper" bind:this={wrapper} on:click={() => dispatch('open', member)}>
+	<MaskedImage
+		bind:imageEl
+		src="family/{member.img}"
+		alt="member headshot"
+		parallax={false}
+		objectPositionY={0}
+		width="300px"
+	>
 		<img bind:this={animalEl} src="/zoo/{animal}" class="animal" alt="" />
 	</MaskedImage>
 	<p>{member.name}</p>
 	<p>{member.position}</p>
 	<p>{member.desc}</p>
 	{#if member.tel}
-		<IconLink href={member.tel} svgPath="icons/phone.svg">{member.tel}</IconLink>
+		<IconLink href={member.tel} svgPath="icons/phone.svg" centered={true}>{member.tel}</IconLink>
 	{/if}
 	{#if member.email}
-		<IconLink href={member.email} svgPath="icons/email.svg">{member.email}</IconLink>
+		<IconLink href={member.email} svgPath="icons/email.svg" centered={true}>{member.email}</IconLink
+		>
 	{/if}
 </div>
 
@@ -76,6 +87,8 @@
 		align-content: center;
 		margin: 2rem;
 		will-change: opacity;
+
+		cursor: pointer;
 	}
 
 	.animal {

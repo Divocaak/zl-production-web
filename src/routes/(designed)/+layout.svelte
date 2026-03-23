@@ -155,6 +155,14 @@
 		font-size: var(--text-24);
 	}
 
+	:global(.zl-text){
+		font-size: 3rem;
+		text-transform: uppercase;
+		font-weight: 900;
+		letter-spacing: -2px;
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 1));
+	}
+
 	#page-content {
 		position: relative;
 		z-index: 1;

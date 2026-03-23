@@ -6,7 +6,10 @@
 	export let src;
 	export let alt = '';
 	export let imageEl;
-	export let widthPercent = 100;
+	export let width = "100%";
+
+	export let objectPositionX = 50;
+	export let objectPositionY = 50;
 
 	/* effects */
 	export let parallax = false;
@@ -85,9 +88,15 @@
 	});
 </script>
 
-<div class="masked-container" style="--width: {widthPercent}%" bind:this={containerEl}>
+<div class="masked-container" style="--width: {width}" bind:this={containerEl}>
 	<div class="mask">
-		<img bind:this={imageEl} class="masked-image" {src} {alt} />
+		<img
+			bind:this={imageEl}
+			class="masked-image"
+			{src}
+			{alt}
+			style="object-position: {objectPositionX}% {objectPositionY}%"
+		/>
 	</div>
 	<slot />
 </div>
@@ -130,7 +139,6 @@
 		height: 100%;
 
 		object-fit: cover;
-		object-position: center;
 
 		will-change: transform;
 		transform: translateZ(0);

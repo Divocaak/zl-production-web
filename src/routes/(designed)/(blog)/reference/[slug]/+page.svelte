@@ -4,4 +4,4 @@
 	export let data;
 </script>
 
-<BlogContent {data} />
+<BlogContent data={data.reference} />

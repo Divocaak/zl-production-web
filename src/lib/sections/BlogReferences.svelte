@@ -3,16 +3,13 @@
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import HanddrawnLink from '$lib/buttons/HanddrawnLink.svelte';
+	import BlogReference from '$lib/reference/BlogReference.svelte';
 
 	let horizontalSection;
 	let horizontalContainer;
 	let tween;
 
-	const cards = [
-		{ color: '#fcc424', text: 'video 1' },
-		{ color: '#d13d77', text: 'video 2' },
-		{ color: '#124a99', text: 'video 3' }
-	];
+	let cards = [];
 
 	const getDistance = () => {
 		const containerWidth = horizontalContainer.scrollWidth;
@@ -28,6 +25,12 @@
 	};
 
 	onMount(async () => {
+		const res = await fetch('/blog-references.json');
+		const data = await res.json();
+		cards = data.selectedIds
+			.map((id) => data.items[id] && { key: id, ...data.items[id] })
+			.filter(Boolean);
+
 		await tick();
 		preloadCards();
 
@@ -64,14 +67,12 @@
 		tween?.kill();
 	});
 </script>
-
+	
 <section bind:this={horizontalSection} id="reference">
 	<h2>Vybrané reference</h2>
 	<div class="horizontal-container" bind:this={horizontalContainer}>
 		{#each cards as card}
-			<div class="card" style="background-color: {card.color}">
-				{card.text}
-			</div>
+			<BlogReference path={card.key} img={card.cardImage} label={card.hero.label} />
 		{/each}
 	</div>
 	<HanddrawnLink href="/reference" inverted={true}>Všechny reference</HanddrawnLink>
@@ -104,29 +105,12 @@
 		gap: 2rem;
 		height: 50%;
 
-		padding: 2rem 0;
+		padding: 2rem;
 
 		width: max-content;
 
 		will-change: transform;
 		transform-style: preserve-3d;
-	}
-
-	.card {
-		flex: 0 0 auto;
-		aspect-ratio: 16/9;
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		border-radius: 6px;
-		user-select: none;
-		touch-action: pan-x;
-
-		will-change: transform, opacity;
-
-		transform: translateZ(0);
 	}
 
 	@media (max-width: 767px) {
@@ -138,13 +122,6 @@
 			-webkit-overflow-scrolling: touch;
 			width: 100%;
 			padding: 1rem 0;
-		}
-
-		.card {
-			flex: 0 0 auto; /* prevent shrinking */
-			aspect-ratio: 16 / 9; /* preserve ratio */
-			scroll-snap-align: center;
-			/* width: calc(80vw);  */
 		}
 	}
 </style>

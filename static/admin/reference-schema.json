@@ -1,0 +1,87 @@
+{
+    "type": "array",
+    "title": "Reference",
+    "description": "Seznam referencí",
+    "options": {
+        "collapsed": true
+    },
+    "items": {
+        "type": "object",
+        "description": "Nastavení konkrétní reference",
+        "title": "Reference",
+        "headerTemplate": "{{self.label}}",
+        "options": {
+            "collapsed": true
+        },
+        "properties": {
+            "referenceType": {
+                "type": "string",
+                "title": "Typ reference",
+                "enum": [
+                    "image",
+                    "video",
+                    "person"
+                ],
+                "default": "image"
+            },
+            "id": {
+                "type": "string",
+                "format": "text",
+                "title": "ID",
+                "readonly": true
+            },
+            "label": {
+                "type": "string",
+                "format": "text",
+                "title": "Název/Jméno"
+            },
+            "description": {
+                "type": "string",
+                "format": "textarea",
+                "title": "Popis/text",
+                "description": "Stylování pomocí HTML značek",
+                "options": {
+                    "expand_height": true
+                }
+            },
+            "year": {
+                "type": "string",
+                "format": "text",
+                "title": "Rok/akce"
+            },
+            "visible": {
+                "type": "boolean",
+                "format": "checkbox",
+                "default": true,
+                "title": "viditelná",
+                "description": "Pokud ano, zobrazuje se na stránce /reference, pokud ne, zobrazuje se v /archiv"
+            },
+            "image": {
+                "type": "string",
+                "title": "Obrázek/fotka/náhledovka (u videa)",
+                "description": ".jpeg, .png",
+                "media": {
+                    "binaryEncoding": "base64",
+                    "type": "img/png"
+                }
+            },
+            "video": {
+                "type": "string",
+                "title": "Video",
+                "description": ".mp4, .mov",
+                "media": {
+                    "binaryEncoding": "base64",
+                    "type": "img/png"
+                }
+            }
+        },
+        "required": [
+            "id",
+            "label",
+            "description",
+            "year",
+            "visible",
+            "image"
+        ]
+    }
+}

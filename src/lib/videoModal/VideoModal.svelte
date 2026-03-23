@@ -6,6 +6,10 @@
 	export let src;
 	export let poster;
 
+	export let heading;
+	export let description;
+	export let year;
+
 	let overlay;
 
 	const dispatch = createEventDispatcher();
@@ -123,6 +127,7 @@
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <Portal>
 	<div bind:this={overlay} class="overlay" on:click={closeModal}>
+		<h3 class="zl-text">{heading}</h3>
 		<div class="modal" on:click|stopPropagation>
 			<video
 				bind:this={video}
@@ -179,6 +184,8 @@
 				</button>
 			</div>
 		</div>
+		<p>{description}</p>
+		<p class="year">{year}</p>
 	</div>
 </Portal>
 
@@ -192,11 +199,25 @@
 		justify-content: center;
 		align-items: center;
 
+		flex-direction: column;
+
 		z-index: 9999;
 
 		height: 100vh;
 
 		overflow: hidden;
+
+		padding: 0 4rem;
+	}
+
+	.overlay h3 {
+		margin-bottom: 1rem;
+		color: var(--zl-red);
+	}
+
+	.overlay .year{
+		font-weight: bolder;
+		color: var(--zl-red);
 	}
 
 	.modal {

@@ -2,6 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 
+const checkForBase64 = (image) => image.match(/^data:(.*?);base64,(.*)$/);
+
 export async function processImage(image, path, errs, filename = null) {
 	if (!image) return;
 
@@ -41,8 +43,6 @@ export async function processImageArray(images, path, errs) {
 	);
 }
 
-const checkForBase64 = (image) => image.match(/^data:(.*?);base64,(.*)$/);
-
 async function saveImage(base64Data, directory, desiredFilename = null) {
 	try {
 		const matches = checkForBase64(base64Data);
@@ -55,7 +55,7 @@ async function saveImage(base64Data, directory, desiredFilename = null) {
 		const buffer = Buffer.from(base64String, 'base64');
 
 		const filename = (desiredFilename ?? crypto.randomBytes(16).toString('hex')) + `.${extension}`;
-		const dir = path.join('./dynamic/imgs/', directory);
+		const dir = path.join('./dynamic/media/', directory);
 
 		if (!fs.existsSync(dir)) {
 			fs.mkdirSync(dir, { recursive: true });

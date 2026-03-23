@@ -4,10 +4,15 @@
 	export let videoSrc;
 	export let imageThumbnailSrc;
 	let open = false;
+
+	export let heading;
+	export let description;
+	export let year;
 </script>
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->
+<!-- TODO pokud se jedná o refernci, zmenšit efekt, možná reagovat jenom při hoveru nad talčítkem -->
 <div class="video-trigger" on:click={() => (open = true)}>
 	<div class="thumbnail-wrapper" class:hover-fx={!imageThumbnailSrc}>
 		{#if imageThumbnailSrc}
@@ -24,7 +29,14 @@
 </div>
 
 {#if open}
-	<VideoModal src={videoSrc} poster={imageThumbnailSrc} on:close={() => (open = false)} />
+	<VideoModal
+		src={videoSrc}
+		poster={imageThumbnailSrc}
+		on:close={() => (open = false)}
+		{heading}
+		{description}
+		{year}
+	/>
 {/if}
 
 <style>

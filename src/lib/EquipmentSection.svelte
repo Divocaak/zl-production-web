@@ -55,26 +55,6 @@
 	onDestroy(() => {
 		ctx?.revert();
 	});
-
-	function composeMailtoHref(itemName) {
-		const email = 'rental@zlproduction.cz';
-		const subject = encodeURIComponent(`Dostupnost ${itemName}`);
-		const body = encodeURIComponent(
-			`Dobrý den,
-    
-prosím o informace o dostupnosti vybavení:
-- ${itemName}
-
-v termínu:
-dd. mm. yyyy
-
-Prosím, zašlete cenovou nabídku.
-    
-Děkuji a přeji hezký den`
-		);
-
-		return `mailto:${email}?subject=${subject}&body=${body}`;
-	}
 </script>
 
 <LogoHeading src={section.logo} alt="section logo" />
@@ -86,13 +66,13 @@ Děkuji a přeji hezký den`
 					<h2>{item.heading}</h2>
 					<p>{@html item.desc}</p>
 					<div class="link-wrapper">
-						<HanddrawnLink href={() => composeMailtoHref(item.heading)}>
+						<HanddrawnLink href="/rental">
 							Poptat dostupnost
 						</HanddrawnLink>
 					</div>
 				</div>
 				<div class="img-wrapper" slot="right">
-					<MaskedImage src="/equipment/{item.image}" alt="equipment image" widthPercent={60} />
+					<MaskedImage src="/equipment/{item.image}" alt="equipment image" width="60%" />
 				</div>
 			</FlexContent>
 		</div>

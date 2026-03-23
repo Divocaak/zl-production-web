@@ -5,11 +5,11 @@
 	import Equipment from '$lib/sections/Equipment.svelte';
 	import Family from '$lib/sections/Family.svelte';
 	import Studio from '$lib/sections/Studio.svelte';
-	import VideoReferences from '$lib/sections/VideoReferences.svelte';
+	import BlogReferences from '$lib/sections/BlogReferences.svelte';
 	import { onMount } from 'svelte';
 	import ScrollTrigger from 'gsap/ScrollTrigger';
 	import { page } from '$app/stores';
-	import Stageisours from '$lib/sections/Stageisours.svelte';
+	import StageIsOurs from '$lib/sections/StageIsOurs.svelte';
 
 	onMount(() => {
 		const hash = window.location.hash;
@@ -34,9 +34,9 @@
 <div class="dev" class:visible>HERO</div>
 <Hero logoSrc={'/logos/logo-horizontal-dark.svg'} tagline={'Žijeme ve světe speciálních eventů'} />
 <div class="dev" class:visible>STAGE IS OURS</div>
-<Stageisours />
+<StageIsOurs />
 <div class="dev" class:visible>REFERENCE</div>
-<VideoReferences />
+<BlogReferences />
 <div class="dev" class:visible>BOOKING</div>
 <Booking />
 <div class="dev" class:visible>STUDIO</div>
