@@ -6,7 +6,7 @@
 	export let src;
 	export let alt = '';
 	export let imageEl;
-	export let widthPercent = 100;
+	export let width = "100%";
 
 	export let objectPositionX = 50;
 	export let objectPositionY = 50;
@@ -88,7 +88,7 @@
 	});
 </script>
 
-<div class="masked-container" style="--width: {widthPercent}%" bind:this={containerEl}>
+<div class="masked-container" style="--width: {width}" bind:this={containerEl}>
 	<div class="mask">
 		<img
 			bind:this={imageEl}

@@ -91,7 +91,7 @@
 
 	.modal {
 		position: relative;
-		width: min(90vw, 960px);
+		width: min(50vw, 960px);
 		border-radius: 12px;
 		overflow: hidden;
 

@@ -20,8 +20,7 @@
 		const width = window.innerWidth;
 		if (width <= 430) chunkSize = 1;
 		else if (width <= 1024) chunkSize = 2;
-		else if (width <= 1366) chunkSize = 3;
-		else chunkSize = 4;
+		else chunkSize = 3;
 	}
 
 	onMount(async () => {
@@ -95,7 +94,7 @@
 
 	.members-row {
 		display: grid;
-		grid-template-columns: repeat(4, max-content);
+		grid-template-columns: repeat(3, max-content);
 
 		justify-content: center;
 	}

@@ -5,6 +5,7 @@
 	export let href;
 	export let svgPath;
 	export let target = '_blank';
+	export let centered = false;
 
 	const dispatch = createEventDispatcher();
 
@@ -13,7 +14,7 @@
 	}
 </script>
 
-<SubtleLink {href} {target} on:click={handleClick}>
+<SubtleLink {href} {target} {centered} on:click={handleClick}>
 	<img src={svgPath} alt="" aria-hidden="true" />
 	<span class="label"><slot /></span>
 </SubtleLink>

@@ -72,7 +72,7 @@
 					</div>
 				</div>
 				<div class="img-wrapper" slot="right">
-					<MaskedImage src="/equipment/{item.image}" alt="equipment image" widthPercent={60} />
+					<MaskedImage src="/equipment/{item.image}" alt="equipment image" width="60%" />
 				</div>
 			</FlexContent>
 		</div>

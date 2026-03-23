@@ -1,23 +1,23 @@
 [
     {
-        "heading": "logo-horizontal-dark.svg",
+        "heading": "logo-vertical-dark.svg",
         "zoo": [
             "yoda.svg"
         ],
         "members": [
             {
-                "img": "headshot.svg",
-                "name": "Jméno Příjmení",
+                "img": "lippert.jpg",
+                "name": "Jan Lippert",
                 "position": "CEO",
-                "desc": "Pozice podrobně",
-                "email": "email@zlproduction.cz"
+                "desc": "vedení společnosti",
+                "email": "info@zlproduction.cz"
             },
             {
-                "img": "headshot.svg",
-                "name": "Jméno Příjmení",
+                "img": "lippertova.jpg",
+                "name": "Jana Lippertová",
                 "position": "Head of controlling",
-                "desc": "Pozice podrobně",
-                "email": "email@zlproduction.cz"
+                "desc": "správa společnosti",
+                "email": "agentura@zlproduction.cz"
             }
         ]
     },
@@ -29,28 +29,133 @@
         ],
         "members": [
             {
-                "img": "headshot.svg",
-                "name": "Jméno Příjmení",
-                "position": "COO Technika",
-                "desc": "Pozice podrobně",
-                "tel": "+420111222333",
-                "email": "email@zlproduction.cz"
+                "img": "holec.jpg",
+                "name": "David Holec",
+                "position": "COO, prokura",
+                "desc": "ředitel produkce",
+                "tel": "+420773552424",
+                "email": "holec@zlproduction.cz"
+            },
+            {
+                "img": "steiniger.jpg",
+                "name": "David Šteiniger",
+                "position": "COO, prokura",
+                "desc": "ředitel techniky",
+                "tel": "+420737300845",
+                "email": "steiniger@zlproduction.cz"
+            },
+            {
+                "img": "stary.jpg",
+                "name": "Lukáš Starý",
+                "position": "COO, prokura",
+                "desc": "ředitel skladu a logistiky",
+                "tel": "+420723659473",
+                "email": "stary@zlproduction.cz"
+            }
+        ]
+    },
+    {
+        "heading": "logo-horizontal-dark.svg",
+        "zoo": [
+            "production.svg",
+            "production-alt.svg"
+        ],
+        "members": [
+            {
+                "img": "kozlowski.jpg",
+                "name": "Vojtěch Kozlowski",
+                "position": "BACKOFFICE",
+                "desc": "administrativa projektů",
+                "tel": "+420732233191"
+            },
+            {
+                "img": "severynova.jpg",
+                "name": "Tereza Severýnová",
+                "position": "BOOKING",
+                "desc": "umělecký management",
+                "tel": "+420723831541"
+            },
+            {
+                "img": "florian.jpg",
+                "name": "Vít Florian",
+                "position": "PRODUKCE",
+                "desc": "event & tour management",
+                "tel": "+420603227243"
+            },
+            {
+                "img": "zelenka.jpg",
+                "name": "Jakub Zelenka",
+                "position": "PRODUKCE",
+                "desc": "event & tour management",
+                "tel": "+420734711701"
+            },
+            {
+                "img": "berankova.jpg",
+                "name": "Denisa Beránková",
+                "position": "PRODUKCE",
+                "desc": "event & tour management",
+                "tel": "+420728038723"
+            },
+            {
+                "img": "stein.jpg",
+                "name": "Pavel Stein",
+                "position": "PRODUKCE",
+                "desc": "event & tour management",
+                "tel": "+420723299362"
+            },
+            {
+                "img": "cernikova.jpg",
+                "name": "Denisa Černíková",
+                "position": "PRODUKCE",
+                "desc": "hospitality management",
+                "tel": "+420773562424",
+                "email": "denisa@zlproduction.cz"
             },
             {
                 "img": "headshot.svg",
-                "name": "Jméno Příjmení",
-                "position": "COO Produkce",
-                "desc": "Pozice podrobně",
-                "tel": "+420111222333",
-                "email": "email@zlproduction.cz"
+                "name": "Vít Mejzlík",
+                "position": "TECHNICKÁ PRODUKCE",
+                "desc": "event & tour management",
+                "tel": "+420739227614"
             },
             {
                 "img": "headshot.svg",
-                "name": "Jméno Příjmení",
-                "position": "COO Logistika a sklad",
-                "desc": "Pozice podrobně",
-                "tel": "+420111222333",
-                "email": "email@zlproduction.cz"
+                "name": "Michal Štorek",
+                "position": "CATERING",
+                "desc": "catering, stánkový prodej",
+                "tel": "+420728081531"
+            }
+        ]
+    },
+    {
+        "heading": "zl-studio-dark.svg",
+        "zoo": [
+            "production.svg",
+            "video.svg",
+            "lights.svg"
+        ],
+        "members": [
+            {
+                "img": "headshot.svg",
+                "name": "Martin Skála",
+                "position": "ZL STUDIO",
+                "desc": "vedení projektů",
+                "tel": "+420605215333"
+            },
+            {
+                "img": "blahova.jpg",
+                "name": "Magdálena Bláhová",
+                "position": "ZL STUDIO",
+                "desc": "kreativní animátor & designér",
+                "tel": "+420776677199",
+                "email": "majda@zlproduction.cz"
+            },
+            {
+                "img": "dobes.jpg",
+                "name": "Jan Dobeš",
+                "position": "ZL STUDIO",
+                "desc": "stage & light designér",
+                "tel": "+420605932760"
             }
         ]
     },
@@ -61,92 +166,259 @@
         ],
         "members": [
             {
+                "img": "zavrel.jpg",
+                "name": "Ing. Petr Zavřel",
+                "position": "ZL SOUND",
+                "desc": "vedení projektů, zvukař",
+                "tel": "+420606392497",
+                "email": "zavrel@zlproduction.cz"
+            },
+            {
+                "img": "zyka.jpg",
+                "name": "Tomáš Zýka",
+                "position": "ZL SOUND",
+                "desc": "zvukař",
+                "tel": "+420606706086",
+                "email": "tomas@zlproduction.cz"
+            },
+            {
+                "img": "sindelar.jpg",
+                "name": "Ivo Šindelář",
+                "position": "ZL SOUND",
+                "desc": "zvukař",
+                "tel": "+420722445235",
+                "email": "ivo@zlproduction.cz"
+            },
+            {
+                "img": "lehoszik.jpg",
+                "name": "Martin Lehoszik",
+                "position": "ZL SOUND",
+                "desc": "zvukař",
+                "tel": "+420603986111",
+                "email": "lehosik@zlproduction.cz"
+            },
+            {
+                "img": "pavla.jpg",
+                "name": "Filip Pavla",
+                "position": "ZL SOUND",
+                "desc": "zvukař",
+                "tel": "+420728130806",
+                "email": "filip@zlproduction.cz"
+            },
+            {
+                "img": "nezkusil.jpg",
+                "name": "Petr Nezkusil",
+                "position": "ZL SOUND",
+                "desc": "zvukař",
+                "tel": "+420777621800",
+                "email": "zvuk@zlproduction.cz"
+            },
+            {
+                "img": "headshot.svg",
+                "name": "Jan Klein",
+                "position": "ZL SOUND",
+                "desc": "zvukový technik",
+                "tel": "+420725942493",
+                "email": "honza-klein@seznam.cz"
+            },
+            {
+                "img": "headshot.svg",
+                "name": "Rasťo Bumbala",
+                "position": "ZL SOUND",
+                "desc": "zvukař",
+                "tel": "+421903158297",
+                "email": "rasto@zlproduction.cz"
+            },
+            {
+                "img": "polansky.jpg",
+                "name": "Jiří Polanský",
+                "position": "TECHNIKA - ZVUK",
+                "desc": "zvukař",
+                "tel": "+420602544610",
+                "email": "jiri.polansky@zlproduction.cz"
+            },
+            {
+                "img": "krpel.jpg",
+                "name": "Vojtěch Krpel",
+                "position": "ZL SOUND",
+                "desc": "zvukař",
+                "tel": "+420608850577",
+                "email": "krpel@zlproduction.cz"
+            },
+            {
+                "img": "pistora.jpg",
+                "name": "Adam Pistora",
+                "position": "ZL SOUND",
+                "desc": "zvukař",
+                "tel": "+420737394532",
+                "email": "adam.pis@seznam.cz"
+            },
+            {
+                "img": "headshot.svg",
+                "name": "Matěj Klíma",
+                "position": "ZL SOUND",
+                "desc": "zvukař",
+                "tel": "+420775984559",
+                "email": "matej@zlproduction.cz"
+            },
+            {
+                "img": "headshot.svg",
+                "name": "Tomáš Fila",
+                "position": "ZL SOUND",
+                "desc": "zvukový technik",
+                "tel": "+420605349768",
+                "email": "fila@zlproduction.cz"
+            }
+        ]
+    },
+    {
+        "heading": "equipment/zl-lights-dark.svg",
+        "zoo": [
+            "lights.svg",
+            "lights-alt.svg"
+        ],
+        "members": [
+            {
+                "img": "roucek.jpg",
+                "name": "Jiří Rouček",
+                "position": "ZL LIGHTS",
+                "desc": "hlavní osvětlovač / designér",
+                "tel": "+420602632228",
+                "email": "technika@zlproduction.cz"
+            },
+            {
+                "img": "kyncl.jpg",
+                "name": "Jakub Kyncl",
+                "position": "ZL LIGHTS",
+                "desc": "hlavní technik / sklad",
+                "tel": "+420608135606",
+                "email": "jakub@zlproduction.cz"
+            },
+            {
+                "img": "toman.jpg",
+                "name": "Vojtěch Toman",
+                "position": "ZL LIGHTS",
+                "desc": "osvětlovač / designér",
+                "tel": "+420607062586",
+                "email": "vojta@zlproduction.cz"
+            },
+            {
+                "img": "sterba.jpg",
+                "name": "Patrik Štěrba",
+                "position": "ZL LIGHTS",
+                "desc": "osvětlovač / technik",
+                "tel": "+420739551517",
+                "email": "patas@zlproduction.cz"
+            },
+            {
                 "img": "benada.jpg",
-                "name": "Jméno Příjmení",
-                "position": "Zvuk",
-                "desc": "Pozice podrobně",
-                "tel": "+420111222333",
-                "email": "email@zlproduction.cz"
+                "name": "Petr Benada",
+                "position": "ZL LIGHTS",
+                "desc": "osvětlovač / operátor",
+                "tel": "+420603476645"
             },
             {
-                "img": "headshot.svg",
-                "name": "Jméno Příjmení",
-                "position": "Zvuk",
-                "desc": "Pozice podrobně",
-                "tel": "+420111222333",
-                "email": "email@zlproduction.cz"
+                "img": "haramia.jpg",
+                "name": "Viktor Haramia",
+                "position": "ZL LIGHTS",
+                "desc": "osvětlovač / operátor",
+                "tel": "+420733523087"
+            }
+        ]
+    },
+    {
+        "heading": "equipment/zl-video-dark.svg",
+        "zoo": [
+            "video.svg"
+        ],
+        "members": [
+            {
+                "img": "navara.jpg",
+                "name": "Petr Návara",
+                "position": "ZL VIDEO",
+                "desc": "video manager, vedení",
+                "tel": "+420607980546",
+                "email": "navy@zlproduction.cz"
             },
             {
-                "img": "headshot.svg",
-                "name": "Jméno Příjmení",
-                "position": "Zvuk",
-                "desc": "Pozice podrobně",
-                "tel": "+420111222333",
-                "email": "email@zlproduction.cz"
+                "img": "gunis.jpg",
+                "name": "Matěj Guniš",
+                "position": "ZL VIDEO",
+                "desc": "video technik",
+                "tel": "+420601530294",
+                "email": "gunny@zlproduction.cz"
             },
             {
-                "img": "headshot.svg",
-                "name": "Jméno Příjmení",
-                "position": "Zvuk",
-                "desc": "Pozice podrobně",
-                "tel": "+420111222333",
-                "email": "email@zlproduction.cz"
+                "img": "krause.jpg",
+                "name": "Michal Krause",
+                "position": "ZL VIDEO",
+                "desc": "kamera & videorežie operátor",
+                "tel": "+420604389331",
+                "email": "kamery@zlproduction.cz"
+            }
+        ]
+    },
+    {
+        "heading": "equipment/zl-rigging-dark.svg",
+        "zoo": [
+            "rigging.svg",
+            "stage.svg"
+        ],
+        "members": [
+            {
+                "img": "svesely.jpg",
+                "name": "Šimon Veselý",
+                "position": "ZL RIGGING",
+                "desc": "rigging manager",
+                "tel": "+420720667803",
+                "email": "simon@zlproduction.cz"
             },
             {
-                "img": "headshot.svg",
-                "name": "Jméno Příjmení",
-                "position": "Zvuk",
-                "desc": "Pozice podrobně",
-                "tel": "+420111222333",
-                "email": "email@zlproduction.cz"
-            },
-            {
-                "img": "headshot.svg",
-                "name": "Jméno Příjmení",
-                "position": "Zvuk",
-                "desc": "Pozice podrobně",
-                "tel": "+420111222333",
-                "email": "email@zlproduction.cz"
+                "img": "parizek.jpg",
+                "name": "Martin Pařízek",
+                "position": "ZL STAGE",
+                "desc": "pódiový manager",
+                "tel": "+420731288299",
+                "email": "parez@zlproduction.cz"
             }
         ]
     },
     {
         "heading": "equipment/zl-stage-dark.svg",
         "zoo": [
-            "stage.svg","stage-alt.svg"
+            "stage-manager.svg"
         ],
         "members": [
             {
-                "img": "headshot.svg",
-                "name": "Jméno Příjmení",
-                "position": "Stage",
-                "desc": "Pozice podrobně",
-                "tel": "+420111222333",
-                "email": "email@zlproduction.cz"
+                "img": "choura.jpg",
+                "name": "Petr Choura",
+                "position": "ZL STAGE MANAGEMENT",
+                "desc": "umělecký servis",
+                "tel": "+420602211324",
+                "email": "choura@zlproduction.cz"
             },
             {
-                "img": "headshot.svg",
-                "name": "Jméno Příjmení",
-                "position": "Stage",
-                "desc": "Pozice podrobně",
-                "tel": "+420111222333",
-                "email": "email@zlproduction.cz"
-            },
+                "img": "rulik.jpg",
+                "name": "David Rulík",
+                "position": "ZL STAGE MANAGEMENT",
+                "desc": "umělecký servis",
+                "tel": "+420722410593"
+            }
+        ]
+    },
+    {
+        "heading": "zl-basecamp-dark.svg",
+        "zoo": [
+            "technician.svg"
+        ],
+        "members": [
             {
-                "img": "headshot.svg",
-                "name": "Jméno Příjmení",
-                "position": "Stage",
-                "desc": "Pozice podrobně",
-                "tel": "+420111222333",
-                "email": "email@zlproduction.cz"
-            },
-            {
-                "img": "headshot.svg",
-                "name": "Jméno Příjmení",
-                "position": "Stage",
-                "desc": "Pozice podrobně",
-                "tel": "+420111222333",
-                "email": "email@zlproduction.cz"
+                "img": "bouska.jpg",
+                "name": "Josef Bouška",
+                "position": "ZL BASECAMP",
+                "desc": "vedení skladu, servis",
+                "tel": "+420728232844",
+                "email": "sklad@zlproduction.cz"
             }
         ]
     }
