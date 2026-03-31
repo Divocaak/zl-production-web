@@ -5,7 +5,10 @@
 	export let landingSrc;
 	export let logoSrc;
 	export let logoAlt;
+
+	export let tagline;
 	export let desc;
+	export let references;
 </script>
 
 <FlippingCard>
@@ -17,9 +20,11 @@
 	</div>
 	<div slot="backface" class="wrapper">
 		<div class="content back">
+			<p class="tagline">{tagline}</p>
 			<p class="card-text">
 				{@html desc}
 			</p>
+			<p class="ref">Reference: {references}</p>
 		</div>
 	</div>
 </FlippingCard>
@@ -48,8 +53,13 @@
 		margin-top: 1rem;
 	}
 
-	.content.back{
-		height: 80%;
+	.content.back {
+		height: 90%;
+	}
+
+	.tagline {
+		letter-spacing: 0.05em;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 	}
 
 	:global(.card-text span) {

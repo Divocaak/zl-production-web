@@ -14,17 +14,26 @@
 		<div class="content">
 			<LogoHeading src="logos/zl-studio-dark.svg" alt="ZL Studio Logo" />
 			<p>
-				Nezávislost na externích dodavatelích, důkladná znalost vlastního vybavení a stálý produkční
-				i technický tým #zlfamily nám umožňují neustále rozvíjet nové technologie, znalosti a
-				postupy.
+				Moderní stage design a vizuální obsah show tvoříme v ZL studiu, které je součástí našeho ZL
+				Backstage v Chlumci nad CIdlinou. Na ploše více než 100 m² disponujeme kreativním prostorem
+				vybaveným synchronizovanými technologiemi (Grand MA3, mediaservery Brutal Force) a dalším
+				nezbytným vybavením včetně velkých zobrazovačů.
 			</p>
 			<p>
-				Díky tomu nejsme omezeni množstevními nebo cenovými limity vybavení, což nám dává volnost v
-				kreativním procesu.
+				V rámci přípravy zde na media serverech vytváříme a nasazujeme digitální content a zároveň
+				programujeme světelný design v synchornizaci se zvukem. Celému procesu předchází detailní 3D
+				návrhy, jejichž technologickou proveditelnost okamžitě ověřujeme v reálných podmínkách
+				&ndash; studio je totiž přímo napojené na náš 3 500 m² sklad plný nejmodernější techniky.
 			</p>
 			<p>
-				Pod našima rukama tak vznikají jedinečná díla - od prvotních nápadů a náčrtů, přes přesnou
-				vizualizaci, až po finální realizaci a obsah šitý na míru živým i televizním produkcím.
+				Toto zázemí využíváme nejen pro vlastní projekty a náš talentovaný ZL kreativní tým (Petr
+				Navara, Magdaléna Bláhová, Vojta Toman, Jiří Rouček, Martin Skála…), ale poskytujeme ho také
+				interpretům a jejich týmům, včetně prostoru pro zkoušky a finální doladění show.
+			</p>
+			<p>
+				ZL studio a jeho možnosti skrze náš tým využívají festivaly jako The Culture nebo Majáles a
+				interpreti Jelen, Kateřina Marie Tichá, Kryštof, Dymytry, Traktor či Panoptiko pro své
+				největší show.
 			</p>
 			<HanddrawnLink href="/studio">Více informací</HanddrawnLink>
 		</div>
@@ -64,7 +73,7 @@
 		z-index: 0;
 		pointer-events: none;
 
-		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, .7));
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.7));
 	}
 
 	:global(.marquee-overlay svg) {
@@ -84,13 +93,14 @@
 
 		width: clamp(280px, 50%, 900px);
 		text-align: center;
-		gap: 2rem;
+		gap: 2.5rem;
 
 		pointer-events: all;
 	}
 
 	.content p {
 		padding: 0 5rem;
+		margin: 0;
 	}
 
 	@media (max-width: 1024px) {

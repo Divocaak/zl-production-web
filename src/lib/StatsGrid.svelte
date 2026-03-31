@@ -88,7 +88,10 @@
 	{#each items as item, i}
 		<div class="box">
 			{@html splashes[i % splashes.length]}
-			<div class="number"><span class="number-value">0</span>{item.unit ? item.unit : ''}</div>
+			<div class="number">
+				<span class="number-value">0</span>
+				{@html item.unit ? item.unit : ''}
+			</div>
 			<div class="description">{item.label}</div>
 		</div>
 	{/each}
@@ -104,6 +107,7 @@
 		margin: 0 auto;
 	}
 
+	/* TODO overflow must be visible, fix bug with txt animation */
 	.box {
 		position: relative;
 		aspect-ratio: 1 / 1;
@@ -131,6 +135,7 @@
 		z-index: 1;
 		font-size: 4rem;
 		color: var(--tech-yellow);
+		white-space: pre;
 	}
 
 	.number-value {

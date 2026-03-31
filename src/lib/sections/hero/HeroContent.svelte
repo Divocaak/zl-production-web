@@ -98,7 +98,7 @@
 		max-width: 70%;
 		width: 100%;
 		margin: 0 auto;
-		filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+		filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .4));
 	}
 
 	.heading{
@@ -110,6 +110,6 @@
 		font-size: 1.5rem;
 		letter-spacing: 0.05em;
 		white-space: pre;
-		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 	}
 </style>
