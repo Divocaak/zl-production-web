@@ -12,21 +12,34 @@
 		<div class="contact-wrapper">
 			<div class="contact-section">
 				<h2>Kontakt</h2>
-				<IconLink href="mailto:info@zlproduction.cz" svgPath="/icons/email.svg">
-					info@zlproduction.cz
+				<IconLink href="mailto:office@zlproduction.cz" svgPath="/icons/email.svg">
+					office@zlproduction.cz
 				</IconLink>
-				<IconLink href="tel:+420111222333" svgPath="/icons/phone.svg">
-					+420&nbsp111&nbsp222&nbsp333
+				<IconLink href="tel:+420728038723" svgPath="/icons/phone.svg">
+					+420&nbsp728&nbsp038&nbsp723
 				</IconLink>
 			</div>
 			<div class="contact-section">
 				<p>
 					ZL Production s.r.o.<br />
-					IČO 26398443 <br /><br />
-					Brojova&nbsp;2113/16<br />
-					Východní&nbsp;Předměstí<br />
-					32600&nbsp;Plzeň
+					Brojova&nbsp;16, 326&nbsp;00&nbsp;Plzeň<br />
+					IČO:&nbsp;26398443<br />
+					DIČ:&nbsp;CZ26398443<br />
+					BÚ:&nbsp;RB,&nbsp;2172635001/5500<br />
+					Zapsáno: Krajský&nbsp;soud v&nbsp;Plzni, odd.&nbsp;C, složka&nbsp;17733
 				</p>
+				<hr />
+				<p>
+					ZL&nbsp;Backstage &&nbsp;ZL&nbsp;Studio<br />
+					Spravedlnost&nbsp;č.p.&nbsp;920<br />
+					503&nbsp;51&nbsp;Chlumec&nbsp;nad&nbsp;Cidlinou
+				</p>
+				<IconLink href="mailto:studio@zlproduction.cz" svgPath="/icons/email.svg">
+					studio@zlproduction.cz
+				</IconLink>
+				<IconLink href="tel:+420605215333" svgPath="/icons/phone.svg">
+					+420&nbsp605&nbsp215&nbsp333
+				</IconLink>
 			</div>
 		</div>
 		<div class="nav-wrapper">
@@ -92,6 +105,10 @@
 
 	.contact-wrapper .contact-section h2 {
 		margin: 0;
+	}
+
+	.contact-wrapper hr {
+		width: 100%;
 	}
 
 	.signature {

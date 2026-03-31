@@ -5,7 +5,7 @@ export async function POST({ request }) {
     const data = await request.json();
 
     let errs = [];
-    for (const item of data.projects) {
+    for (const item of data) {
         item.id = item.id.toLowerCase()
             /* .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "")

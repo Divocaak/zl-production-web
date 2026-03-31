@@ -32,7 +32,7 @@
 </script>
 
 <div class="dev" class:visible>HERO</div>
-<Hero logoSrc={'/logos/logo-horizontal-dark.svg'} tagline={'Žijeme ve světe speciálních eventů'} />
+<Hero logoSrc={'/logos/logo-horizontal-dark.svg'} tagline={'Žijeme ve světe eventů, už 20 let.'} />
 <div class="dev" class:visible>STAGE IS OURS</div>
 <StageIsOurs />
 <div class="dev" class:visible>REFERENCE</div>

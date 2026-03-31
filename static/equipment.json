@@ -4,9 +4,15 @@
         "buttonImg": "/logos/equipment/buttons/zl-sound.svg",
         "homepageCard": {
             "fill": "var(--stage-blue)",
-            "image": "/reference/05.jpg",
-            "lead": "prvotřídní zvuk, který vás uchvátí",
-            "desc": "Lorem ipsum dolor <span>Adamson VGt</span> sit amet, consectetuer adipiscing elit. Aliquam id dolor. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo <span>DiGiCo</span>inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nulla pulvinar eleifend sem. Aenean vel massa quis mauris vehicula lacinia. Maecenas aliquet <span>LAB Gruppen PLM</span> accumsan leo. Sed convallis magna eu sem. Maecenas fermentum, sem in pharetra pellentesque, velit turpis volutpat ante, in pharetra metus odio a lectus."
+            "image": "/equipment-section/sound.jpg",
+            "lead": "prvotřídní zvuk, který vás ohromí",
+            "desc": [
+                "Nejkvalitnější zvukové řešení pro rovnoměrné pokrytí prostoru a špičkový servis pro umělce zajišťujeme prostřednictvím nejmodernějšího vybavení předních světových výrobců, které splňuje přísné požadavky i těch nejnáročnějších interpretů.",
+                "Náš PA systém Adamson Systems Engineering (VGt, E15, E12, E219, S10) využívají přední světové produkce, jako jsou Imagine Dragons nebo Linkin Park. Ve spojení s mixážními pulty DiGiCo (Quantum 338), Yamaha (Rivage PM7, DM7) či wireless řešení Shure (Axient) tak doručujeme špičkovou kvalitu i pro největší eventy s desítkami tisíc návštěvníků na fotbalových stadionech, open air festivalech či v O2 areně. ",
+                "Se stejnou kvalitou a péčí zajišťujeme také menší akce, pro které nabízíme minimalistické VIP sety i řešení pro divadelní a halové projekty. Náš zkušený zvukový tým je prověřený těmi nejnáročnějšími klienty (T-Mobile, Česká spořitelna, Allianz), televizními přenosy (Fotbalista roku, Světlo pro Světlušku) i perfekcionisty, jako jsou Leoš Mareš, Petr Janda, Richard Krajčo nebo Joey DeMaio."
+            ],
+            "button": "specifikace vybavení / rental",
+            "buttonBrag": "(328 boxů Adamson, 12 zvukových pultů, 200 mikrofonů)"
         },
         "categories": [
             {
@@ -31,9 +37,16 @@
         "buttonImg": "/logos/equipment/buttons/zl-lights.svg",
         "homepageCard": {
             "fill": "var(--tech-yellow)",
-            "image": "/reference/08.jpg",
-            "lead": "světla lead text",
-            "desc": "Z nabídky našich profesionálních světel a speciálních efektů rádi připravíme originální scénu pro váš projekt. Vybavení je vhodné jak pro turné, festivaly, koncerty a eventy od malých klubů až po velké haly, tak i pro dekorační osvětlení prostorů nebo televizní záznamy a přenosy.<br><br>Exkluzivně využíváme produkty české značky <span>ROBE</span>, která patří k největším výrobcům riderového vybavení na světě. Tuto značku doplňujeme o specifické vybavení <span>ASTERA</span>, <span>ARRI</span>, <span>SGM</span> a mnoho dalších. Dbáme na kvalitu a spolehlivost ostatních zařízení, jako jsou rozvaděče, splittery, stmívače, elektrický rozvod a DMX propojení. Pro ovládání využíváme konzole <span>CHAMSYS</span> (MQ70, MQ100, MQ250 a MQ500 stadium M s různými variantami wingů) a nebo puty <span>GRAND MA2</span> (full size)."
+            "image": "/equipment-section/lights.jpg",
+            "lead": "light design a světla, která vás oslní",
+            "desc": [
+                "Uchvacující světelný design a show jsou dnes nezbytnou součástí naší práce. Obojí tvoříme s důrazem na emoci, dynamiku a vizuální identitu každé akce, často od prvních návrhů v ZL Studiu. Pomocí nejmodernějších technologií předních světových výrobců přetváříme scénu i prostor v živý organismus, který podtrhuje hudbu, atmosféru i jedinečný zážitek pro diváky.",
+                "Využíváme světelnou techniku českého výrobce Robe (Forte, MegaPointe, Spiider, Tetra2), která patří ke světové riderové špičce. Tu doplňujeme unikátními prvky jako jsou kinetická světla (bodová i kruhová), ale také běžnými svítidly pro efekty pixel mappingu či ve velkém množství pro silný dojem (Tilt Strobe, Pixel LED Bar). ",
+                "Ve spojení s řídicími pulty GrandMA3 či Chamsys MQ500 a profesionální signálovou distribucí Luminex pracujeme v plných režimech a využíváme potenciál světelného parku naplno. Vytváříme tak precizně synchronizované unikátní světelné show jak pro menší akce, turné, televizní přenosy, módní přehlídky, korporátní akce tak pro ty největší eventy na fotbalových stadionech, open air festivalech či v O2 areně.",
+                "Náš zkušený světelný tým je prověřený náročnými klienty, televizními přenosy i umělci, kteří vyžadují maximální přesnost, cit pro detail a silný vizuální výsledek. Stojíme za O2A scénami Jelen, Kryštof, Dymytry, Olympic, Michal David 360 a dodáváme řešení pro Manowar, Enrique Iglesiase, DJ Boba, Leoše Mareše a mnoho dalších od prvního návrhu po velkolepou koncertní show. "
+            ],
+            "button": "specifikace vybavení / rental",
+            "buttonBrag": "(1445 světel, z toho XXXX Robe, 10 světelných pultů)"
         },
         "categories": []
     },
@@ -42,9 +55,15 @@
         "buttonImg": "/logos/equipment/buttons/zl-video.svg",
         "homepageCard": {
             "fill": "var(--punch-pink)",
-            "image": "/reference/011.jpg",
-            "lead": "lead text video",
-            "desc": "Disponujeme <span>300 m² outdoor LED obrazovek s rozlišením 6 mm</span>, <span>150 m² semioutdoor LED obrazovek s rozlišením 3,9 mm</span> a nově také <span>600 m² LED FRAME s vysokým rozlišením a velkou svítivostí</span>. Tyto obrazovky je možné skládat do různých tvarů a rozdělovat na více ploch. K LED obrazovkám poskytujeme kompletní režii a v případě potřeby i kamerový systém <span>BlackMagic Ursa</span>, jak standardní, tak robotický. Pro odbavení využíváme vlastní mediaservery <span>ZL BRUTAL FORCE I a II</span>."
+            "image": "/equipment-section/video.jpg",
+            "lead": "led obrazovky a obsah, který vás uchvátí",
+            "desc": [
+                "Vizuální stránka eventu dnes zásadně ovlivňuje celkový dojem z koncertu, korporátní akce, firemní konference i dalších formátů, jako jsou sportovní akce, módní přehlídky nebo televizní přenosy. Video a obraz pracují s emocí, měřítkem i dynamikou a stávají se plnohodnotnou součástí každé produkce. Přistupujeme k nim s důrazem na kvalitu obsahu, technickou spolehlivost a kreativní zpracování v našem ZL studiu, které jsme pro tyto účely vybudovali.",
+                "Disponujeme více než 500 m² outdoor LED obrazovek transparentního systému Trinity Mesh a dalšími 300 m² kvalitních indoor panelů. Díky variabilitě našich řešení dokážeme navrhnout a realizovat obrazové plochy přesně podle charakteru akce od kompaktních instalací až po rozsáhlé stage designy pro velké projekty.",
+                "Ve spojení s režií Blackmagic (ATEM Pro 4K), kamerovými systémy URSA (G2) a především mediálními servery Brutal Force zajišťujeme precizní obsah i live přenos s minimálním zpožděním ve vysokém rozlišení. Celý systém stavíme s důrazem na stabilitu, redundanci a bezchybný průběh i u technicky nejnáročnějších produkcí.",
+                "Velkým benefitem je naše vlastní kreativní ZL studio, ve kterém připravujeme vizuální content na míru od prvotního návrhu přes produkci až po finální nasazení v rámci show. Díky tomu dokážeme propojit technologii s obsahem a dodat komplexní vizuální řešení, které odpovídá charakteru každého projektu jako koncerty v O2 areně (Jelen, Kryštof, Olympic) přes festivaly (The Culture, Majáles, 90s Explosion) až po jednotlivé produkce pro interprety (Yzomandias, Grey256, Mikolas Josef). "
+            ],
+            "button": "specifikace vybavení / zl studio"
         },
         "categories": []
     },
@@ -53,27 +72,16 @@
         "buttonImg": "/logos/equipment/buttons/zl-stage.svg",
         "homepageCard": {
             "fill": "var(--tech-yellow)",
-            "image": "/reference/015.jpg",
-            "lead": "stage lead text",
-            "desc": "Disponujeme 600 ks desek <span>NiVtec Flexibel</span> (standardní modul 2x1m, výběr dalších speciální dílů, certifikovaná nosnost 750 kg/m2) pro stavby pódií různých velikostí a výšek (20cm - 200 cm). Jako příslušenství automaticky dodáváme zavětrování, schody, zábradlí a zakrytí stran. Pro oddělení návštěvníků od pódia nabízíme 200m nášlapných zábran <span>Mojo type</span>."
+            "image": "/equipment-section/stage-rigging.jpg",
+            "lead": "bezpečná podia a halový rigging, který vás podrží",
+            "desc": [
+                "Každá show doslova stojí na bezpečném pódiu a precizně navrženém riggingu. Ať už jde o zavěšování technologií v O2 areně, nebo stavbu komplexních konstrukcí na open air festivalech, bezpečnost, statika a správné technické řešení jsou pro nás vždy na prvním místě. Hned na druhém je efektivita, protože naše největší pódia se staví a demontují ve výrazně kratším čase, než je v ČR obvyklé, a často tak šetříme související náklady.",
+                "Disponujeme dvěma základními systémy - lehkým touringovým řešením umožňujícím rychlou a efektivní realizaci open air turné a tředních festivalů (České hrady, Rock in, Pekelný ostrov) a heavy-duty systémem pro vícedenní festivaly a rozsáhlé produkce (Majáles, Kryštof na Strahově, Mostecká slavnost, Mělnické vinobraní, 90s Explosion). Ten umožňuje dosahovat mimořádných parametrů z hlediska velikosti, nosnosti i odolnosti vůči povětrnostním podmínkám. ",
+                "V jeden čas jsme schopni postavit 7 open air pódií od mobilní stage 10 &times; 8 m přes klasická touringová řešení 12 &times; 9 m až po heavy-duty konstrukce (SuperBeam) o rozměrech až 20 &times; 15 m s výškou až 14 m. Součástí je komplexní řešení podlahových systémů NivTec, waterproof přípravny i další nezbytné prvky.",
+                "Veškeré naše konstrukce využívají certifikované prvky a profesionální zdvihací techniku. Samozřejmostí jsou statické posudky a důsledné dodržování všech bezpečnostních standardů. Realizaci zajišťují zkušení profesionálové, kteří patří ke špičce ve svém oboru."
+            ],
+            "button": "specifikace vybavení / zl studio"
         },
         "categories": []
-    },
-    {
-        "logo": "/logos/equipment/zl-rigging-dark.svg",
-        "buttonImg": "/logos/equipment/buttons/zl-rigging.svg",
-        "homepageCard": {
-            "fill": "var(--stage-blue)",
-            "image": "/reference/019.jpg",
-            "lead": "lead text pro rigging",
-            "desc": "Páteř našeho GS vybavení tvoří <span>HEAVY-DUTY & SUPER-BEAM</span> trussing, díky kterému nyní disponujeme jedním z největších a nejbezpečnějších systémů v ČR. Základní rozměr zastřešení nabízí až 13 m výšku nohou GS a zakrytou plochu od 10 m x 12 m až po <span>22 m x 16 m</span> s mnohatunovou nosností. Navíc je možné systém rozšířit o PA a video wings až na 45 m pohledovou šířku."
-        },
-        "categories": [
-            {
-                "heading": "Ground support, zastřešení",
-                "desc": "Lorem ipsum <span>HEAVY-DUTY & SUPER-BEAM</span> dolor sit amet, consectetuer adipiscing elit. Curabitur vitae diam non enim vestibulum interdum. Praesent id justo in neque elementum ultrices. Pellentesque arcu. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.",
-                "image": "taf.jpg"
-            }
-        ]
     }
 ]

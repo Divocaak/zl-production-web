@@ -1,3 +1,4 @@
+
 <script>
 	import favicon from '$lib/assets/favicon.svg';
 	import { onMount, onDestroy } from 'svelte';

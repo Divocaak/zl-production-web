@@ -73,7 +73,7 @@
 </script>
 
 <SectionWrapper id="family">
-	<div bind:this={sectionEl}>
+	<div bind:this={sectionEl} style="padding: 200px 0;">
 		<FlexContent>
 			<div slot="left" class="media">
 				<img class="base" src="family.jpg" alt="#zlfamily group" />
@@ -131,14 +131,33 @@
 			<div slot="right" class="content" bind:this={contentEl}>
 				<LogoHeading src="/logos/zl-family-dark.svg" alt="#zlfamily logo" />
 				<p>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis sapien nunc, commodo et,
-					interdum suscipit, sollicitudin et, dolor. Integer malesuada. Donec vitae arcu. Nullam
-					eget nisl. Praesent vitae arcu tempor neque lacinia pretium. Curabitur sagittis hendrerit
-					ante. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
-					laboriosam, nisi ut aliquid ex ea commodi consequatur? Fusce dui leo, imperdiet in,
-					aliquam sit amet, feugiat eu, orci. Etiam dictum tincidunt diam. Donec vitae arcu. Duis
-					sapien nunc, commodo et, interdum suscipit, sollicitudin et, dolor. Cras elementum. Nulla
-					pulvinar eleifend sem. Fusce tellus odio, dapibus id fermentum quis, suscipit id erat.
+					ZL family dnes tvoří více než 50 nadšenců, kteří pracují v zaměstnaneckém nebo výhradním
+					spolupracujícím poměru. Díky tomu máme stabilní tým sehraných a zkušených kolegů, na které
+					se můžeme dlouhodobě spolehnout a kteří sdílejí stejný přístup k práci, kvalitě i
+					zodpovědnosti.
+				</p>
+				<p>
+					Více než 20 let společných zkušeností a zážitků - od Herálce přes Rock for People a
+					korporátní servis až po O2 arenu - mezi námi vybudovalo pevné vztahy, loajalitu a vzájemný
+					respekt. Právě to nám umožňuje přijímat velké výzvy, jako jsou jednorázové megaakce typu
+					Kryštof na Strahově nebo Prague Playoffs či realizace čtyř Majálesů v řadě pro více než
+					150 tisíc návštěvníků. Stejně tak si #zlfamily poradí i s exponovanými obdobími při
+					souběhu akcí nebo se zahraničním turné americké legendy Manowar.
+				</p>
+				<p>
+					V našich řadách najdete vedení společnosti zastoupené třemi COO, odborné vedoucí
+					jednotlivých technických sekcí se silnými a profesionálními realizačními týmy i zázemí
+					servisu a skladového hospodářství v rámci ZL Backstage. Nechybí ani plnohodnotné produkční
+					oddělení specializované na booking, marketing, produkci i catering a další oblasti.
+					Kreativní tým v ZL studiu navrhuje speciální designy, tvoří content a programuje show
+					postavené na rozsáhlém technickém vybavení ZL.
+				</p>
+				<p>
+					Díky tomu jako jedni z mála na českém trhu dodáváme skutečně komplexní full service s
+					minimální závislostí na dalších dodavatelích. To vše s klíčovými týmovými hodnotami
+					#zlfamily, bez nichž by neexistovalo ZL Production ani řada oblíbených projektů, jako jsou
+					Monster Meeting, Kryštof Kemp, Kryštof na Strahově, Dymytry Sabat, Léto s Rychtářem,
+					RockIn a další události, které inspirovaly.
 				</p>
 				<HanddrawnLink href="/family">Celý tým</HanddrawnLink>
 			</div>
@@ -176,6 +195,11 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		gap: 2rem;
+	}
+
+	.content p{
+		margin: 0;
 	}
 
 	.media .zoo,

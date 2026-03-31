@@ -9,7 +9,12 @@
 
 <FlexContent>
 	<div slot="right">
-		<MaskedImage src={card.homepageCard.image} alt="reference image" parallax={true} floating={true}>
+		<MaskedImage
+			src={card.homepageCard.image}
+			alt="reference image"
+			parallax={true}
+			floating={true}
+		>
 			<div class="logo-wrapper">
 				<LogoHeading src={card.logo} alt="zl section logo" maxWidthPx="400" shadowOpacity="1" />
 			</div>
@@ -17,9 +22,12 @@
 	</div>
 	<div slot="left" class="texts-wrapper">
 		<p class="lead">{card.homepageCard.lead}</p>
-		<p>{@html card.homepageCard.desc}</p>
+		{#each card.homepageCard.desc as txt}
+			<p>{@html txt}</p>
+		{/each}
 		<div class="link">
-			<HanddrawnLink href="/technika">vybavení</HanddrawnLink>
+			<HanddrawnLink href="/technika">{card.homepageCard.button}</HanddrawnLink>
+			{#if card.homepageCard.buttonBrag}<p>{card.homepageCard.buttonBrag}</p>{/if}
 		</div>
 	</div>
 </FlexContent>

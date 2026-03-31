@@ -7,6 +7,7 @@
 	import SectionWrapper from './SectionWrapper.svelte';
 	import FlexContent from '$lib/FlexContent.svelte';
 	import MaskedImage from '$lib/MaskedImage.svelte';
+	import SubtleLink from '$lib/buttons/SubtleLink.svelte';
 
 	let sectionEl;
 	let imgA, imgB;
@@ -77,19 +78,42 @@
 		<FlexContent>
 			<div slot="left" class="content">
 				<p class="lead">
-					Kdo bude hrát na Vaší další akci <img src="/doodles/question.svg" alt="question mark" />
+					Kdo bude vystupovat na Vaší další akci <img
+						src="/doodles/question.svg"
+						alt="question mark"
+					/>
 				</p>
 				<p>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam commodo dui eget wisi.
-					Fusce consectetuer risus a nunc. Aliquam ornare wisi eu metus. Donec iaculis gravida
-					nulla. Phasellus faucibus molestie nisl. Sed ut perspiciatis unde omnis iste natus error
-					sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-					illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Sed vel
-					lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem. Etiam ligula pede,
-					sagittis quis, interdum ultricies, scelerisque eu. Nemo enim ipsam voluptatem quia
-					voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
-					ratione voluptatem sequi nesciunt. Aliquam erat volutpat. Nulla quis diam. Mauris
-					tincidunt sem sed arcu.
+					Kryštof, Martina Pártlová, Dymytry, Arakain, Traktor, Helenine Oči, Koblížci… Co tyto
+					kapely spojuje? Všechny patří do #zlfamily. Stojíme za jejich turné, velkolepými koncerty
+					i speciálními projekty a zajišťujeme jejich booking pro třetí strany.
+				</p>
+				<p>
+					Kdo z nich vystoupí na vaší další akci? Stačí si vybrat, aktuální nabídku a dostupnost
+					všech intepretů najdete na <SubtleLink href="https://www.zlbooking.cz" target="_blank"
+						>zlbooking.cz</SubtleLink
+					> v jednoduchém objednávkovém systému. Registrujte se a využijte možnost speciálních nabídek
+					a přednostních poptávek.
+				</p>
+				<p>
+					Kryštof - <SubtleLink href="mailto:booking@zlproduction.cz">
+						booking@zlproduction.cz
+					</SubtleLink><br />
+					Martina Pártlová - <SubtleLink href="mailto:partlova@zlpro.cz">
+						partlova@zlpro.cz
+					</SubtleLink><br />
+					Dymytry - <SubtleLink href="mailto:dymytry@zlproduction.cz">
+						dymytry@zlproduction.cz
+					</SubtleLink><br />
+					Arakain - <SubtleLink href="mailto:arakain@zlproduction.cz">
+						arakain@zlproduction.cz
+					</SubtleLink><br />
+					Traktor - <SubtleLink href="mailto:traktor@zlproduction.cz">
+						traktor@zlproduction.cz
+					</SubtleLink><br />
+					Helenine Oči - <SubtleLink href="mailto:hel@zlpro.cz">hel@zlpro.cz</SubtleLink><br />
+					Koblizci - <SubtleLink href="mailto:koblizci@zlpro.cz">koblizci@zlpro.cz</SubtleLink><br
+					/>
 				</p>
 				<HanddrawnLink href="https://www.zlbooking.cz/" target="_blank">Navštívit</HanddrawnLink>
 			</div>
@@ -139,18 +163,28 @@
 	.content {
 		display: flex;
 		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.content p{
+		margin: 0;
 	}
 
 	.lead {
+		position: relative;
 		font-size: var(--text-36);
 		line-height: 1.4;
+		
+		width: fit-content;
 	}
 
 	.lead img {
+		position: absolute;
 		height: 5em;
 		width: auto;
-		vertical-align: -1.4em;
-		margin-left: -1.5em;
+
+		top: -4rem;
+		right: -3rem;
 	}
 
 	.masked-container {

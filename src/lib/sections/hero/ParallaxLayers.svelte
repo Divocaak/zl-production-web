@@ -6,12 +6,15 @@
 	export let bindContainer;
 
 	const layers = [
+		'/homepage/landing-hero/6.jpg'
+	];
+	/* const layers = [
 		'/homepage/landing/full.png',
 		'/homepage/landing/v4.png',
 		'/homepage/landing/v3.png',
 		'/homepage/landing/v2.png',
 		'/homepage/landing/v1.png'
-	];
+	]; */
 
 	let st;
 
