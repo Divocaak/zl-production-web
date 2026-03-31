@@ -163,18 +163,28 @@
 	.content {
 		display: flex;
 		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.content p{
+		margin: 0;
 	}
 
 	.lead {
+		position: relative;
 		font-size: var(--text-36);
 		line-height: 1.4;
+		
+		width: fit-content;
 	}
 
 	.lead img {
+		position: absolute;
 		height: 5em;
 		width: auto;
-		vertical-align: -1.4em;
-		margin-left: -1.5em;
+
+		top: -4rem;
+		right: -3rem;
 	}
 
 	.masked-container {
