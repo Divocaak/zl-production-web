@@ -21,54 +21,47 @@
 	/>
 	<div class="cards-wrapper">
 		<SectionCard
-			landingSrc="/reference/01.jpg"
-			logoSrc="/logos/logo-horizontal-dark.svg"
+			landingSrc="/cards/pics/zl-production.jpg"
+			logoSrc="/cards/logos/production.svg"
 			logoAlt="zl production logo"
-			tagline="Organizace koncertů, festivalů, turné a produkce"
-			desc="Naše původní činnost je dodnes hlavním pilířem společnosti, ve kterém se přirozeně propojují všechny naše služby. Zajišťujeme produkci projektů od ticketingu přes marketing až po catering, tvorbu programu, stage design, kreativitu ZL studia i dodání vlastního technického zajištění a plnou organizaci a koordinaci na místě.<br/><br/>Díky propojení všech složek pod jednou střechou dokážeme řídit celý projekt efektivně, flexibilně a s maximální kontrolou nad kvalitou i výsledkem s minimálním zapojení dodavatelů."
-			references="Majáles, Rock for People, Monster Meeting, Kryštof Kemp, RockIn"
+			desc="<span>ZL PRODUCTION</span> &mdash; organizace vlastních koncertů, festivalů a turné, stejně jako dílčí i celkové <span>produkce významných společenských akcí</span> na klíč za podpory našich dalších divizí ZL Technical Rental, ZL Studio a ZL Booking, které společně tvoří <span>komplexní řešení</span> pro jakéhokoliv klienta v rámci jedné produkce."
+			bottom="Reference: Majáles Hradec Králové / Praha / Brno / Ostrava, Rock for People, RockIn, Monster Meeting, Kryštof kemp…"
 		/>
 		<SectionCard
-			landingSrc="/reference/015.jpg"
-			logoSrc="/logos/zl-events-dark.svg"
+			landingSrc="/cards/pics/zl-events.jpg"
+			logoSrc="/cards/logos/events.svg"
 			logoAlt="zl events logo"
-			tagline="Realizace korporátních, společenských, sportovních a dalších akcí"
-			desc="Prostředí speciálních eventů je naším přirozeným světem. Připravujeme a realizujeme nebo se podílíme produkčně či technicky na akcích všech typů od komorních setkání, televizních přenosů až po velké mezinárodní projekty v nejprestižnějších prostorách.<br/><br/>Jako specialisté na O2 arenu, O2 universum, Forum Karlín a další typické lokace dokážeme zúročit naše dlouholeté zkušenosti i komplexní portfolio služeb a dodat řešení přesně na míru každému klientovi."
-			references="Prague Playoffs, Allianz, Česká spořitelna, Molson Coors, Prosperity"
+			desc="<span>ZL EVENTS</span> &mdash; zajištění specifických <span>korporátních</span>, sportovních i dalších <span>speciálních eventů</span>, jako jsou zaměstnanecké akce, firemní oslavy televizní přenosy nebo módní přehlídky. Významnou součástí naší činnosti jsou akce v <span>O2 areně</span>, O2 Universu a Fóru Karlín, kde patříme mezi <span>ověřené dodavatele</span> nejen techniky, ale i komplexních eventových řešení na klíč."
+			bottom="Reference: Prague Playoffs, Česká Spořitelna, Allianz Pojišťovna, M&M Reality, Rádio Blaník"
 		/>
 		<SectionCard
-			landingSrc="/reference/06.jpg"
-			logoSrc="/logos/zl-rental-dark.svg"
-			logoAlt="zl rental logo"
-			tagline="Technické zajištění a pronájem špičkového AV vybavení"
-			desc="Od roku 2010 budujeme rozsáhlé portfolio moderních technologií a vlastní tým pro odbavení hudebních produkcí a živých akcí všech velikostí včetně O2 areny. Disponujeme riderovým vybavením předních světových výrobců pro zvuk, světla, video, rigging i zastřešení.<br/><br/>Připravíme rychlé a efektivní odbavení od menších eventů až po velké koncerty a festivaly případně i s odbavením, zpracováním návrhů, designu, obsahu a programování ZL studiu. Partnerským firmám poskytujeme podporu v podobě dry-hire značkového vybavení Adamson, DiGiCo, Yamaha, Shure, Robe, GrandMA."
-			references="Kryštof na Strahově, O2 arena (Jelen, Michal David, Dymytry, Jiří Korn), evropské turné Manowar, VELO stage Majáles, The Culture, České Hrady, Konopiště Blaník"
+			landingSrc="/cards/pics/zl-booking.jpg"
+			logoSrc="/cards/logos/booking.svg"
+			logoAlt="zl booking logo"
+			desc="<span>ZL BOOKING</span> &mdash; objednejte si <span>exkluzivně zastupované interprety</span> pro váš veřejný i soukromý event <span>online</span> nebo prostřednictvím našich booking agentů, kteří vám díky svým zkušenostem a kontaktům pomohou se sestavením <span>kvalitního a funkčního programu</span>."
+			bottom="Výhradně zastupujeme: Kryštof, Dymytry, Martina Pártlová, Arakain, Traktor, Helenine Oči"
 		/>
 	</div>
 	<div class="cards-wrapper">
 		<SectionCard
-			landingSrc="/reference/09.jpg"
-			logoSrc="/logos/zl-backstage-dark.svg"
-			logoAlt="zl backstage logo"
-			tagline="Zázemí, kde v se plánují projekty a zakázky a kde se připravuje technický setup"
-			desc="ZL Backstage je unikátní prostor o rozloze více než 10 000 m², který propojuje sklad techniky, produkční zázemí i kreativní část včetně ZL studia. Slouží pro přípravu, plánování, programování i řízení projektů.<br/><br/>Díky nevyčerpatelnému vlastnímu technickému vybavení na ploše 3 500 m² dokážeme okamžitě ověřovat návrhy, optimalizovat řešení a připravit každou show s maximální kvalitou, efektivitou a jistotou. Disponujeme vlastní kamionovou dopravou, špičkovým vybavením i stabilním týmem, a jsme tak schopni dodávat komplexní řešení bez závislosti na externích dodavatelích."
-			references="všechny naše realizované projekty :)"
+			landingSrc="/cards/pics/zl-rental.jpg"
+			logoSrc="/cards/logos/rental.svg"
+			logoAlt="zl rental logo"
+			desc="<span>ZL TECHNICAL RENTAL</span> &mdash; technická produkce a zajištění <span>audiovizuální techniky</span> pro eventy, špičková indoor i outdoor pódia a pronájem <span>značkového riderového</span> vybavení (zvuk, světla, stage, rigging, video, SFX) včetně realizace s využitím <span>nejmodernějších technologií</span> a vysoce profesionálního technického týmu #zlfamily."
+			bottom="Reference: O2 Arena (Kryštof, Jelen, Michal David, Olympic, Millennium Explosion…), O2 Universum (Katerina Marie Tichá, Kool and the gang, Harlej 360…), The Culture, České Hrady, Mostecká Slavnost, Mělnické Vinobraní, Manowar European tour<br/><br/>Značky: Robe, Adamson, TAF, GrandMA, DiGiCo, Yamaha, Shure…"
 		/>
 		<SectionCard
-			landingSrc="/reference/018.jpg"
+			landingSrc="/cards/pics/zl-base.jpg"
+			logoSrc="/cards/logos/base.svg"
+			logoAlt="zl base logo"
+			desc="<span>ZL BASE</span> &mdash; 10&nbsp;000&nbsp;m<sup>²</sup> společného zázemí ZL Production, ZL Rental a ZL Studio nabízí sklad plný špičkové AV techniky, prostory pro zkoušení, kreativní studio s nejmodernějším vybavením pro stage design a programming, ideální pro vznik projektů od prvních návrhů až po kompletní přípravu a realizaci."
+		/>
+		<SectionCard
+			landingSrc="/cards/pics/zl-studio.jpg"
+			logoSrc="/cards/logos/studio.svg"
 			logoAlt="zl studio logo"
-			logoSrc="/logos/zl-studio-dark.svg"
-			tagline="Kreativní prostor pro tvorbu stage designu a audiovizuálních show"
-			desc="ZL studio je místem, kde vzniká vizuální a kreativní podoba našich projektů. Navrhujeme stage design, vytváříme obsah a programujeme kompletní audiovizuální show.<br/><br/>Díky propojení se skladem a technologiemi dokážeme návrhy okamžitě testovat, ladit a převádět do reálné podoby. Studio zároveň nabízíme i interpretům a jejich týmům jako prostor pro zkoušky a finální přípravu show."
-			references="Jelen, Kryštof, Dymytry, Kateřina Marie Tichá, Manowar, Majáles, The Culture"
-		/>
-		<SectionCard
-			landingSrc="/reference/018.jpg"
-			logoAlt="zl booking logo"
-			logoSrc="/logos/zl-booking-dark.svg"
-			tagline="Zastoupení interpretů a booking pro firemní i veřejné akce"
-			desc="Zastupujeme přední české i zahraniční interprety a zajišťujeme jejich booking pro různé typy akcí od firemních eventů až po velké koncerty a festivaly.<br/><br/>Díky našemu online systému si obratem ověříte dostupnost, případně najdete vhodnou alternativu bez zbytečného čekání."
-			references="Kryštof, Dymytry, Martina Pártlová, Arakain, Traktor, Helenine Oči"
+			desc="<span>ZL SHOWDESIGN STUDIO</span> &mdash; kreativní prostor pro vznik návrhů a konceptů, tvorbu stage designu, programování obsahu a přípravu audiovizuálních show, ve kterém náš mladý a talentovaný tým pracuje s nejmodernějším vybavením a technologiemi, k dispozici i pro vás"
+			bottom="Reference: The Culture, Kateřina Marie Tichá, Jelen, Kryštof, Mikolas Josef, Panoptiko, Trautenberk, Harlej"
 		/>
 	</div>
 </div>
