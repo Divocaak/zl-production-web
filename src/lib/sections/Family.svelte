@@ -41,8 +41,7 @@
 			scrollTrigger: {
 				trigger: sectionEl,
 				start: 'top 50%',
-				end: 'bottom 90%',
-				scrub: 0.5
+				end: 'bottom 90%'
 			}
 		});
 
@@ -187,7 +186,6 @@
 	.media .zoo {
 		transform-origin: '50% 50%';
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
-		transition: transform 0.2s ease;
 	}
 
 	.content {

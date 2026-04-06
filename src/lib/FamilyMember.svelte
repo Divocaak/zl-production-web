@@ -25,7 +25,6 @@
 					trigger: wrapper,
 					start: 'top 70%',
 					end: 'bottom 85%',
-					scrub: 0.2
 				}
 			});
 

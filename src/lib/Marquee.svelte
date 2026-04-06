@@ -12,12 +12,10 @@
 	];
 
 	let track;
-	let isVisible = true;
 
 	onMount(() => {
 		const observer = new IntersectionObserver(([entry]) => {
-			isVisible = entry.isIntersecting;
-			track.style.animationPlayState = isVisible ? 'running' : 'paused';
+			track.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
 		});
 
 		observer.observe(track);

@@ -57,7 +57,6 @@
 				trigger: sectionEl,
 				start: 'top 50%',
 				end: 'bottom 90%',
-				scrub: 0.5
 			}
 		});
 		tl.from([...doodles, ...textItems], {

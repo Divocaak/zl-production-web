@@ -26,7 +26,6 @@
 							trigger: item,
 							start: 'top 70%',
 							end: 'bottom 30%',
-							scrub: 0.5
 						},
 						defaults: {
 							duration: 0.6,
