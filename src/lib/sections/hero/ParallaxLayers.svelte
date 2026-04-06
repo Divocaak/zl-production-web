@@ -23,11 +23,11 @@
 		});
 	}
 
+	let wrappers = [];
 	onMount(async () => {
 		if (!bindContainer) return;
 		preloadImages(layers);
 
-		const wrappers = bindContainer.querySelectorAll('.layer-wrapper');
 		const depths = Array.from(wrappers).map((_, i) =>
 			gsap.utils.interpolate(30, 200, Math.pow(i / (wrappers.length - 1), 2))
 		);
@@ -61,8 +61,8 @@
 
 <div bind:this={bindContainer} class="parallax-wrapper">
 	<div class="parallax-mask">
-		{#each layers as layer}
-			<div class="layer-wrapper">
+		{#each layers as layer, i}
+			<div class="layer-wrapper" bind:this={wrappers[i]}>
 				<img src={layer} alt="" class="layer" loading="eager" />
 			</div>
 		{/each}

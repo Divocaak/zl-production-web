@@ -18,28 +18,25 @@
 	let tl;
 	let floatAnim;
 
-	onMount(() => {
-		const boxEls = [...gridSection.querySelectorAll('.box')];
-		const numberEls = boxEls.map((b) => b.querySelector('.number-value'));
-		const svgEls = boxEls.map((b) => b.querySelector('svg'));
+	let boxes = [];
+	let svgEls = [];
+	let numbers = [];
+	let observer;
 
-		tl = gsap.timeline({
+	onMount(() => {
+		gsap.from(boxes, {
 			scrollTrigger: {
 				trigger: gridSection,
-				start: 'top 60%',
-				end: 'bottom 90%',
-				scrub: 0.5
-			}
-		});
-
-		tl.from(boxEls, {
-			scale: 0.5,
+				start: 'top 70%',
+				once: true
+			},
+			scale: 0.6,
 			opacity: 0,
-			stagger: 0.2,
-			duration: 1,
-			ease: 'back.out(1.7)',
+			stagger: 0.15,
+			duration: 0.6,
+			ease: 'back.out(1.5)',
 			onStart: () => {
-				numberEls.forEach((el, i) => {
+				numbers.forEach((el, i) => {
 					const target = items[i]?.value ?? 0;
 					const setter = gsap.quickSetter(el, 'textContent');
 
@@ -47,7 +44,7 @@
 						{ v: 0 },
 						{
 							v: target,
-							duration: 2,
+							duration: 1.2,
 							ease: 'power1.out',
 							onUpdate() {
 								setter(Math.floor(this.targets()[0].v));
@@ -58,6 +55,7 @@
 			}
 		});
 
+		svgEls = boxes.map((box) => box.querySelector('svg'));
 		floatAnim = gsap.to(svgEls, {
 			y: 5,
 			repeat: -1,
@@ -67,11 +65,15 @@
 			ease: 'sine.inOut',
 			force3D: true
 		});
+
+		observer = new IntersectionObserver(([entry]) => floatAnim?.paused(!entry.isIntersecting));
+		observer.observe(gridSection);
 	});
 
 	onDestroy(() => {
 		tl?.kill();
 		floatAnim?.kill();
+		observer?.disconnect();
 	});
 </script>
 
@@ -85,10 +87,10 @@
 	"
 >
 	{#each items as item, i}
-		<div class="box">
+		<div class="box" bind:this={boxes[i]}>
 			{@html splashes[i % splashes.length]}
 			<div class="number">
-				<span class="number-value">0</span>
+				<span class="number-value" bind:this={numbers[i]}>0</span>
 				{@html item.unit ? item.unit : ''}
 			</div>
 			<div class="description">{@html item.label}</div>
@@ -127,8 +129,8 @@
 		fill: var(--zl-red);
 		will-change: transform;
 
-			pointer-events: none;
-	contain: paint;
+		pointer-events: none;
+		contain: paint;
 	}
 
 	.number {

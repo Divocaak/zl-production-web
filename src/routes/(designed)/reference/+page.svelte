@@ -39,6 +39,7 @@
 		}
 	}
 
+	let columnsEls = [];
 	onMount(async () => {
 		if (typeof window === 'undefined') return;
 		window.addEventListener('resize', updateNumColumns);
@@ -69,8 +70,6 @@
 
 		await tick();
 		if (window.matchMedia('(pointer: coarse)').matches) return;
-
-		const columnEls = wrapper.querySelectorAll('.column');
 
 		let tallest = 0;
 		columnEls.forEach((col) => {
@@ -103,8 +102,8 @@
 
 <section id="reference-gallery">
 	<div class="columns-wrapper" bind:this={wrapper}>
-		{#each columns as column}
-			<div class="column">
+		{#each columns as column, i}
+			<div class="column" bind:this={columnEls[i]}>
 				{#each column as item}
 					{#if !item.referenceType}
 						<BlogReference {...item} borderRadiusPx="0" />
