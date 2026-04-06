@@ -1,4 +1,3 @@
-
 <script>
 	import favicon from '$lib/assets/favicon.svg';
 	import { onMount, onDestroy } from 'svelte';
@@ -20,6 +19,8 @@
 	let smoother;
 
 	onMount(async () => {
+		console.log('[loader] start');
+
 		if ('scrollRestoration' in history) {
 			history.scrollRestoration = 'manual';
 		}
@@ -27,21 +28,23 @@
 		const isMobile = window.innerWidth < 768;
 
 		if (!isMobile) {
-			smoother = ScrollSmoother.create({
-				wrapper: '#smooth-wrapper',
-				content: '#smooth-content',
-				smooth: 1.2, // adjust for performance vs feel
-				effects: true, // allows data-speed / data-lag on child elements
-				normalizeScroll: true, // fixes inconsistent scroll
-				smoothTouch: 0.7, // prevents huge lag on mobile
-				onUpdate: () => ScrollTrigger.update() // keeps ScrollTriggers in sync
+			requestIdleCallback(() => {
+				smoother = ScrollSmoother.create({
+					wrapper: '#smooth-wrapper',
+					content: '#smooth-content',
+					smooth: 1.2, // adjust for performance vs feel
+					effects: true, // allows data-speed / data-lag on child elements
+					normalizeScroll: true, // fixes inconsistent scroll
+					smoothTouch: 0.7, // prevents huge lag on mobile
+					onUpdate: () => ScrollTrigger.update() // keeps ScrollTriggers in sync
+				});
+
+				window.__smoother = smoother;
+
+				ScrollTrigger.config({ ignoreMobileResize: true, fastScrollEnd: true });
+				ScrollTrigger.defaults({ anticipatePin: 1 });
+				ScrollTrigger.refresh();
 			});
-
-			window.__smoother = smoother;
-
-			ScrollTrigger.config({ ignoreMobileResize: true, fastScrollEnd: true });
-			ScrollTrigger.defaults({ anticipatePin: 1 });
-			ScrollTrigger.refresh();
 		} else {
 			// mobile fallback: remove overflow hidden
 			document.querySelector('#smooth-wrapper').style.overflow = 'auto';
@@ -49,17 +52,49 @@
 		}
 
 		await document.fonts?.ready;
-		const images = Array.from(document.images);
-		await Promise.all(
-			images.map((img) => (img.complete ? Promise.resolve() : new Promise((r) => (img.onload = r))))
-		);
+		console.log('[loader] fonts ready');
+		await waitForImagesWithProgress();
+		console.log('[loader] all assets ready');
 		loadingDone.set(true);
 	});
 
 	onDestroy(() => {
 		smoother?.kill();
-		ScrollTrigger.getAll().forEach((t) => t.kill());
 	});
+
+	function waitForImagesWithProgress() {
+		const images = Array.from(document.images);
+		const total = images.length;
+
+		let loaded = 0;
+
+		console.log(`[loader] Found ${total} images`);
+
+		function updateProgress() {
+			loaded++;
+			const percent = Math.round((loaded / total) * 100);
+			console.log(`[loader] Images: ${loaded}/${total} (${percent}%)`);
+		}
+
+		return Promise.all(
+			images.map((img) => {
+				if (img.complete) {
+					updateProgress();
+					return Promise.resolve();
+				}
+
+				return new Promise((resolve) => {
+					const done = () => {
+						updateProgress();
+						resolve();
+					};
+
+					img.addEventListener('load', done, { once: true });
+					img.addEventListener('error', done, { once: true });
+				});
+			})
+		);
+	}
 </script>
 
 <svelte:head>
@@ -116,14 +151,14 @@
 
 		/* vw = px value / 19.2 */
 		/* rem = px value / 16 */
-		--text-16: calc(8px + (0.926vw * 0.35));
-		--text-20: calc(10px + (1.157vw * 0.25));
-		--text-24: calc(12px + (1.389vw * 0.15));
-		--text-32: calc(16px + (1.852vw * 0.15));
-		--text-36: calc(18px + (2.083vw * 0.15));
-		--text-48: calc(24px + (2.083vw * 0.15));
-		--text-64: calc(32px + (3.704vw * 0.15));
-		--text-96: calc(48px + (5.556vw * 0.15));
+		--text-16: calc(8px + (0.926vw * 0.35rem));
+		--text-20: calc(10px + (1.157vw * 0.25rem));
+		--text-24: calc(12px + (1.389vw * 0.15rem));
+		--text-32: calc(16px + (1.852vw * 0.15rem));
+		--text-36: calc(18px + (2.083vw * 0.15rem));
+		--text-48: calc(24px + (2.083vw * 0.15rem));
+		--text-64: calc(32px + (3.704vw * 0.15rem));
+		--text-96: calc(48px + (5.556vw * 0.15rem));
 	}
 
 	:global(body) {
@@ -148,20 +183,25 @@
 		text-rendering: optimizeLegibility;
 	}
 
-	:global(h2) {
-		font-size: var(--text-64);
-	}
-
 	:global(p) {
 		font-size: var(--text-24);
 	}
 
-	:global(.zl-text){
+	:global(.zl-text) {
 		font-size: 3rem;
 		text-transform: uppercase;
 		font-weight: 900;
 		letter-spacing: -2px;
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 1));
+	}
+
+	:global(.zl-heading) {
+		font-size: 2rem;
+		text-transform: uppercase;
+		transform: skew(-10deg);
+		-webkit-transform: skew(-10deg);
+		font-weight: 900;
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
 	}
 
 	#page-content {

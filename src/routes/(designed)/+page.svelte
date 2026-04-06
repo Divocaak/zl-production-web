@@ -32,19 +32,24 @@
 </script>
 
 <div class="dev" class:visible>HERO</div>
-<Hero logoSrc={'/logos/logo-horizontal-dark.svg'} tagline={'Žijeme ve světe eventů, už 20 let.'} />
+<Hero
+	logoSrc={'/logos/logo-horizontal-dark.svg'}
+	tagline={'Žijeme ve světe eventů, už 20 let.'}
+	stageIsOurs={true}
+/>
 <div class="dev" class:visible>STAGE IS OURS</div>
 <StageIsOurs />
 <div class="dev" class:visible>REFERENCE</div>
 <BlogReferences />
-<div class="dev" class:visible>BOOKING</div>
-<Booking />
 <div class="dev" class:visible>STUDIO</div>
 <Studio />
+<div class="dev" class:visible>RENTAL</div>
+<div class="spacer"></div>
+<Equipment />
+<div class="dev" class:visible>BOOKING</div>
+<Booking />
 <div class="dev" class:visible>FAMILY</div>
 <Family />
-<div class="dev" class:visible>RENTAL</div>
-<Equipment />
 <div class="dev" class:visible>HISTORIE</div>
 <History />
 <div class="dev" class:visible>FOOTER</div>
@@ -59,5 +64,9 @@
 
 	.visible {
 		display: block;
+	}
+
+	.spacer{
+		height: 200px;
 	}
 </style>

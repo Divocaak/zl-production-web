@@ -7,11 +7,19 @@
 	export let heading;
 	export let tagline;
 	export let hasButton = false;
+	export let stageIsOurs = false;
 </script>
 
 <div class="hero-wrapper">
 	<ParallaxLayers maskId="splash-mask" />
-	<HeroContent trigger={$loadingDone} image={logoSrc} {heading} text={tagline} {hasButton}/>
+	<HeroContent
+		trigger={$loadingDone}
+		image={logoSrc}
+		{heading}
+		text={tagline}
+		{hasButton}
+		{stageIsOurs}
+	/>
 </div>
 
 <style>

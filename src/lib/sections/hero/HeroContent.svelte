@@ -1,15 +1,19 @@
 <script>
 	import { onMount, onDestroy, tick } from 'svelte';
 	import gsap from 'gsap';
+	import LogoHeading from '$lib/LogoHeading.svelte';
 
 	export let trigger = false;
 	export let image;
 	export let heading;
 	export let text;
 	export let hasButton = false;
+	export let stageIsOurs = false;
 
 	let logo;
 	let tagline;
+	let stage;
+
 	let tl;
 	let hasAnimated = false;
 
@@ -50,6 +54,19 @@
 			},
 			'-=0.4'
 		);
+
+		if (stage) {
+			tl.from(
+				stage,
+				{
+					autoAlpha: 0,
+					scale: 0.8,
+					duration: 1,
+					ease: 'power2.out'
+				},
+				'-=2'
+			);
+		}
 	});
 
 	$: if (trigger && tl && !hasAnimated) {
@@ -70,6 +87,9 @@
 		<h1 class="zl-text heading">{heading}</h1>
 	{/if}
 	<p class="tagline" bind:this={tagline}></p>
+	{#if stageIsOurs}
+		<LogoHeading src="/hashtags/stage-is-ours-dark.svg" alt="Stage Is Ours" bind:element={stage} />
+	{/if}
 </div>
 
 <style>
@@ -98,10 +118,10 @@
 		max-width: 70%;
 		width: 100%;
 		margin: 0 auto;
-		filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .4));
+		filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
 	}
 
-	.heading{
+	.heading {
 		font-size: 5rem;
 	}
 

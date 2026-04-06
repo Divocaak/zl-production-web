@@ -198,7 +198,7 @@
 		gap: 2rem;
 	}
 
-	.content p{
+	.content p {
 		margin: 0;
 	}
 

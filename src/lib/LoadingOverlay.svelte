@@ -18,13 +18,17 @@
 			duration: 1,
 			ease: 'power2.out',
 			force3d: true,
-			onComplete: () => loadingOverlay.remove()
+			onComplete: () => {
+				loadingOverlay?.remove();
+			}
 		});
 	});
 
-	$: if (trigger && tl && !hasAnimated) {
-		hasAnimated = true;
-		tl.play();
+	$: {
+		if (trigger && tl && !hasAnimated) {
+			hasAnimated = true;
+			tl.play();
+		}
 	}
 
 	onDestroy(() => {

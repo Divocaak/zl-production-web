@@ -1,6 +1,6 @@
 <script>
 	export let href = '#';
-	export let target = "_self";
+	export let target = '_self';
 	export let inverted = false;
 
 	let textEl;
@@ -22,7 +22,12 @@
 	}
 </script>
 
-<a {href} {target} class="handdrawn-link" style="--base: {inverted ? "var(--tech-yellow)" : "var(--zl-red)"};">
+<a
+	{href}
+	{target}
+	class="handdrawn-link"
+	style="--base: {inverted ? 'var(--tech-yellow)' : 'var(--zl-red)'};"
+>
 	<span bind:this={textEl}><slot></slot></span>
 	<svg viewBox="0 0 70 36" bind:this={svgEl}>
 		<path
@@ -32,7 +37,7 @@
 </a>
 
 <style>
-	:root{
+	:root {
 		--base: var(--zl-red);
 	}
 
@@ -40,11 +45,12 @@
 		position: relative;
 		display: inline-block;
 
-		font-weight: bold;
+		font-weight: 900;
 		text-decoration: none;
 		text-transform: uppercase;
-		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-		font-size: var(--text-36);
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+		letter-spacing: -1px;
+		font-size: 2rem;
 		color: var(--base);
 
 		transition: transform 0.25s;
@@ -83,6 +89,6 @@
 		--stroke: var(--tech-yellow);
 		--stroke-delay: 0.1s;
 		--offset: 180px;
-		transform: rotate(2deg) scale(1.05);
+		transform: rotate(1deg) scale(1.05);
 	}
 </style>

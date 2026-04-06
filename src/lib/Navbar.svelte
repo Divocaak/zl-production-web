@@ -77,10 +77,10 @@
 			<div class="small-nav">
 				<SubtleLink on:click={toggleMenu} href="/#stage-is-ours">#STAGEISOURS</SubtleLink>
 				<SubtleLink on:click={toggleMenu} href="/#reference">Reference</SubtleLink>
-				<SubtleLink on:click={toggleMenu} href="/#booking">Booking</SubtleLink>
 				<SubtleLink on:click={toggleMenu} href="/#studio">Studio</SubtleLink>
+				<SubtleLink on:click={toggleMenu} href="/#technika">Rental</SubtleLink>
+				<SubtleLink on:click={toggleMenu} href="/#booking">Booking</SubtleLink>
 				<SubtleLink on:click={toggleMenu} href="/#family">Family</SubtleLink>
-				<SubtleLink on:click={toggleMenu} href="/#technika">Technika</SubtleLink>
 				<SubtleLink on:click={toggleMenu} href="/#historie">Historie</SubtleLink>
 				<SubtleLink on:click={toggleMenu} href="/kariera">Kariéra</SubtleLink>
 			</div>

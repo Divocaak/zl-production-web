@@ -5,9 +5,7 @@
 
 	export let bindContainer;
 
-	const layers = [
-		'/homepage/landing-hero/6.jpg'
-	];
+	const layers = ['/homepage/landing-hero/6.jpg'];
 	/* const layers = [
 		'/homepage/landing/full.png',
 		'/homepage/landing/v4.png',
@@ -57,7 +55,7 @@
 	});
 
 	onDestroy(() => {
-		if (st) st.kill();
+		st?.kill();
 	});
 </script>
 

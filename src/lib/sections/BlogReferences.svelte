@@ -69,7 +69,7 @@
 </script>
 	
 <section bind:this={horizontalSection} id="reference">
-	<h2>Vybrané reference</h2>
+	<h2 class="zl-heading">Reference</h2>
 	<div class="horizontal-container" bind:this={horizontalContainer}>
 		{#each cards as card}
 			<BlogReference path={card.key} img={card.cardImage} label={card.hero.label} />

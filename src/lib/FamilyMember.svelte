@@ -51,7 +51,10 @@
 				);
 		}, wrapper);
 
-		return () => ctx.revert();
+		return () => {
+			ctx.revert();
+			tl?.kill();
+		};
 	});
 </script>
 
