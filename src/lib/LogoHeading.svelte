@@ -2,12 +2,13 @@
 	export let src;
 	export let alt = 'alternative desc';
 	export let maxWidthPx = 700;
-	export let shadowOpacity = .4;
+	export let shadowOpacity = 0.4;
+
+	export let element;
 </script>
 
-
 <div class="wrapper" style="--img-max-width: {maxWidthPx}px; --shadow-opacity: {shadowOpacity}">
-	<img {src} {alt}/>
+	<img {src} {alt} bind:this={element} />
 </div>
 
 <style>
@@ -22,8 +23,8 @@
 		margin-inline: auto;
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, var(--shadow-opacity)));
 	}
-	
-	.wrapper{
+
+	.wrapper {
 		text-align: center;
 		width: 100%;
 	}

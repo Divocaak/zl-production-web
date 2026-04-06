@@ -8,15 +8,14 @@
 </script>
 
 <div id="stage-is-ours" bind:this={logoImg}>
-	<LogoHeading src="/hashtags/stage-is-ours-dark.svg" alt="Stage Is Ours" />
 	<StatsGrid
 		columns="repeat(4, 1fr)"
 		maxWidth="80%"
 		items={[
 			{ value: 3500, label: 'odbavených eventů' },
-			{ value: 99, label: 'dnů v O2 Aréně' },
-			{ value: 1445, label: 'Svítidel (převážně ROBE)' },
-			{ value: 328, label: 'Reproboxů Adamson' }
+			{ value: 99, label: 'dnů v O2&nbsp;areně' },
+			{ value: 1445, label: 'světel (převážně Robe)' },
+			{ value: 328, label: 'reproboxů Adamson' }
 		]}
 	/>
 	<div class="cards-wrapper">

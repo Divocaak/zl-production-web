@@ -92,7 +92,7 @@
 				<span class="number-value">0</span>
 				{@html item.unit ? item.unit : ''}
 			</div>
-			<div class="description">{item.label}</div>
+			<div class="description">{@html item.label}</div>
 		</div>
 	{/each}
 </div>
@@ -107,7 +107,6 @@
 		margin: 0 auto;
 	}
 
-	/* TODO overflow must be visible, fix bug with txt animation */
 	.box {
 		position: relative;
 		aspect-ratio: 1 / 1;
@@ -116,7 +115,7 @@
 		align-items: center;
 		justify-content: center;
 		font-weight: bold;
-		overflow: hidden;
+		overflow: visible;
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.8));
 	}
 
@@ -136,11 +135,13 @@
 		font-size: 4rem;
 		color: var(--tech-yellow);
 		white-space: pre;
+
+		font-variant-numeric: tabular-nums;
 	}
 
 	.number-value {
 		display: inline-block;
-		min-width: 2ch;
+		width: auto;
 		text-align: right;
 	}
 

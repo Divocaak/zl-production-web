@@ -8,6 +8,7 @@
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import SubtleLink from '$lib/buttons/SubtleLink.svelte';
+	import VideoModalButton from '$lib/videoModal/VideoModalButton.svelte';
 
 	let content;
 	let sinceImg;
@@ -16,8 +17,8 @@
 	onMount(() => {
 		if (!content) return;
 
-		const paragraph = content.querySelector('p');
-		const tl = gsap.timeline({
+		const paragraphs = content.querySelectorAll('p');
+		tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: content,
 				start: 'top 60%',
@@ -25,7 +26,13 @@
 				scrub: 0.5
 			}
 		});
-		tl.from(paragraph, { y: 50, autoAlpha: 0, duration: 1, ease: 'power2.out' }).from(
+		tl.from(paragraphs, {
+			y: 50,
+			autoAlpha: 0,
+			duration: 1,
+			ease: 'power2.out',
+			stagger: 0.2
+		}).from(
 			sinceImg,
 			{
 				y: 20,
@@ -95,7 +102,7 @@
 			<p>Jan Lippert a Jana (Zelenková) Lippertová</p>
 		</div>
 	</FlexContent>
-	<div class="wrapper"></div>
+	<VideoModalButton imageThumbnailSrc="/history/thumbnail.jpg" />
 </SectionWrapper>
 
 <style>

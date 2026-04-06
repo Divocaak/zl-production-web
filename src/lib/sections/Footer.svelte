@@ -45,12 +45,27 @@
 		<div class="nav-wrapper">
 			<SubtleLink href="/#stage-is-ours">#STAGEISOURS</SubtleLink>
 			<SubtleLink href="/#reference">Reference</SubtleLink>
-			<SubtleLink href="/#booking">Booking</SubtleLink>
 			<SubtleLink href="/#studio">Studio</SubtleLink>
+			<SubtleLink href="/#technika">Rental</SubtleLink>
+			<SubtleLink href="/#booking">Booking</SubtleLink>
 			<SubtleLink href="/#family">Family</SubtleLink>
-			<SubtleLink href="/#technika">Technika</SubtleLink>
 			<SubtleLink href="/#historie">Historie</SubtleLink>
 			<SubtleLink href="/kariera">Kariéra</SubtleLink>
+		</div>
+	</div>
+	<div class="powered-by">
+		<h2 style="text-align: center;">Powered by</h2>
+		<div class="logos-grid">
+			<img src="/logos/equipment/partners/adamson.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/blackmagic.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/chamsys.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/digico.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/luminex.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/ma.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/novastar.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/robe.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/shure.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/yamaha.svg" alt="partners logo" />
 		</div>
 	</div>
 	<p class="signature">
@@ -60,7 +75,7 @@
 </footer>
 
 <style>
-	footer {
+	.footer-content {
 		min-height: 100vh;
 
 		background-image: url('/monkey-touch.svg');
@@ -109,6 +124,26 @@
 
 	.contact-wrapper hr {
 		width: 100%;
+	}
+
+	.powered-by {
+		padding: 0.1rem 5rem;
+		background-color: black;
+	}
+
+	.powered-by .logos-grid {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: 2rem;
+
+		align-items: center;
+		justify-items: center;
+	}
+
+	.powered-by .logos-grid img {
+		width: 100%;
+		height: auto;
 	}
 
 	.signature {
@@ -197,6 +232,12 @@
 
 		.img-wrapper img {
 			max-width: 220px;
+		}
+
+		.powered-by .logos-grid {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(5, 1fr);
+			gap: 2rem;
 		}
 	}
 </style>

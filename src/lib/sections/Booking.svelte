@@ -172,7 +172,7 @@
 
 	.lead {
 		position: relative;
-		font-size: var(--text-36);
+		font-size: 1.5rem;
 		line-height: 1.4;
 		
 		width: fit-content;

@@ -46,7 +46,7 @@
 		background-repeat: none;
 		background-size: cover;
 
-		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, .4));
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
 	}
 
 	.bg-image.back {
@@ -73,7 +73,7 @@
 	.logo img {
 		height: 70px;
 		width: auto;
-		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, .5));
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5));
 	}
 
 	.content.back {
