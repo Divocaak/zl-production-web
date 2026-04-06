@@ -42,7 +42,7 @@
 <div class="dev" class:visible>REFERENCE</div>
 <BlogReferences />
 <div class="dev" class:visible>STUDIO</div>
-<Studio />
+<!-- <Studio /> -->
 <div class="dev" class:visible>RENTAL</div>
 <div class="spacer"></div>
 <Equipment />

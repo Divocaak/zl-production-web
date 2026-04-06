@@ -72,7 +72,6 @@
 	onDestroy(() => {
 		tl?.kill();
 		floatAnim?.kill();
-		ScrollTrigger.getAll().forEach((st) => st.kill());
 	});
 </script>
 

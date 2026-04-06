@@ -30,13 +30,15 @@
 		active = active === 'A' ? 'B' : 'A';
 	};
 
+	let tl;
+	let st;
 	onMount(() => {
 		if (!imgA || !imgB || !sectionEl) return;
 
 		images.forEach((src) => (new Image().src = src));
 
 		// ---------- SCROLL-TRIGGER controlling visibility ----------
-		const st = ScrollTrigger.create({
+		st = ScrollTrigger.create({
 			trigger: sectionEl,
 			start: 'top bottom',
 			end: 'bottom top',
@@ -50,7 +52,7 @@
 		const doodles = sectionEl.querySelectorAll('.doodle');
 		const textItems = sectionEl.querySelectorAll('.content, .lead');
 
-		const tl = gsap.timeline({
+		tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: sectionEl,
 				start: 'top 50%',
@@ -68,7 +70,8 @@
 
 	onDestroy(() => {
 		clearInterval(swapInterval);
-		ScrollTrigger.getAll().forEach((st) => st.kill());
+		tl?.kill();
+		st?.kill();
 	});
 </script>
 
@@ -166,7 +169,7 @@
 		gap: 1.5rem;
 	}
 
-	.content p{
+	.content p {
 		margin: 0;
 	}
 
@@ -174,7 +177,7 @@
 		position: relative;
 		font-size: 1.5rem;
 		line-height: 1.4;
-		
+
 		width: fit-content;
 	}
 

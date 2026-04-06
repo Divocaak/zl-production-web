@@ -46,7 +46,6 @@
 
 	onDestroy(() => {
 		tl?.kill();
-		ScrollTrigger.getAll().forEach((t) => t.kill());
 	});
 </script>
 

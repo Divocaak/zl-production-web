@@ -98,7 +98,6 @@
 	onDestroy(() => {
 		if (typeof window === 'undefined') return;
 		window.removeEventListener('resize', updateNumColumns);
-		ScrollTrigger.getAll().forEach((t) => t.kill());
 	});
 </script>
 

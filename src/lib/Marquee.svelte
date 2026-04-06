@@ -29,10 +29,10 @@
 <div class="marquee">
 	<div class="track" bind:this={track}>
 		{#each images as img}
-			<img src={img} alt="" class="item" decoding="async" loading="lazy" />
+			<img src={img} alt="" class="item" decoding="async" loading="eager" />
 		{/each}
 		{#each [...images, ...images.slice(0, 3)] as img}
-			<img src={img} alt="" class="item" decoding="async" loading="lazy" />
+			<img src={img} alt="" class="item" decoding="async" loading="eager" />
 		{/each}
 	</div>
 </div>
