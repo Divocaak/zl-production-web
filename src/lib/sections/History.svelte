@@ -26,13 +26,16 @@
 				scrub: 0.5
 			}
 		});
-		tl.from(paragraphs, {
-			y: 50,
-			autoAlpha: 0,
-			duration: 1,
-			ease: 'power2.out',
-			stagger: 0.2
-		}).from(
+		ScrollTrigger.batch(paragraphs, {
+			onEnter: (batch) => {
+				gsap.from(batch, {
+					y: 50,
+					opacity: 0,
+					stagger: 0.15
+				});
+			}
+		});
+		tl.from(
 			sinceImg,
 			{
 				y: 20,

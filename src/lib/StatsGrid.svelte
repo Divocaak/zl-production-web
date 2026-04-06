@@ -126,6 +126,9 @@
 		z-index: 0;
 		fill: var(--zl-red);
 		will-change: transform;
+
+			pointer-events: none;
+	contain: paint;
 	}
 
 	.number {
