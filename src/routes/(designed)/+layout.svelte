@@ -28,15 +28,15 @@
 		const isMobile = window.innerWidth < 768;
 
 		if (!isMobile) {
-			requestIdleCallback(() => {
+			const run = () => {
 				smoother = ScrollSmoother.create({
 					wrapper: '#smooth-wrapper',
 					content: '#smooth-content',
-					smooth: 1.2, // adjust for performance vs feel
-					effects: true, // allows data-speed / data-lag on child elements
-					normalizeScroll: true, // fixes inconsistent scroll
-					smoothTouch: 0.7, // prevents huge lag on mobile
-					onUpdate: () => ScrollTrigger.update() // keeps ScrollTriggers in sync
+					smooth: 1.2,
+					effects: true,
+					normalizeScroll: true,
+					smoothTouch: 0.7,
+					onUpdate: () => ScrollTrigger.update()
 				});
 
 				window.__smoother = smoother;
@@ -44,7 +44,13 @@
 				ScrollTrigger.config({ ignoreMobileResize: true, fastScrollEnd: true });
 				ScrollTrigger.defaults({ anticipatePin: 1 });
 				ScrollTrigger.refresh();
-			});
+			};
+
+			if ('requestIdleCallback' in window) {
+				requestIdleCallback(run, { timeout: 500 });
+			} else {
+				requestAnimationFrame(() => requestAnimationFrame(run));
+			}
 		} else {
 			// mobile fallback: remove overflow hidden
 			document.querySelector('#smooth-wrapper').style.overflow = 'auto';
