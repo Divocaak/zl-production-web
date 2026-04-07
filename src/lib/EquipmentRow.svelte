@@ -3,6 +3,7 @@
 	import LogoHeading from '$lib/LogoHeading.svelte';
 	import MaskedImage from '$lib/MaskedImage.svelte';
 	import HanddrawnLink from './buttons/HanddrawnLink.svelte';
+	import ExpandableText from './ExpandableText.svelte';
 
 	export let card;
 </script>
@@ -22,9 +23,11 @@
 	</div>
 	<div slot="left" class="texts-wrapper">
 		<p class="lead">{card.homepageCard.lead}</p>
-		{#each card.homepageCard.desc as txt}
-			<p>{@html txt}</p>
-		{/each}
+		<ExpandableText>
+			{#each card.homepageCard.desc as txt}
+				<p>{@html txt}</p>
+			{/each}
+		</ExpandableText>
 		<div class="link">
 			<HanddrawnLink href="/technika">{card.homepageCard.button}</HanddrawnLink>
 			{#if card.homepageCard.buttonBrag}<p>{card.homepageCard.buttonBrag}</p>{/if}
@@ -53,6 +56,7 @@
 	.link {
 		width: 100%;
 		text-align: center;
+		margin-top: 2rem;
 	}
 
 	:global(.texts-wrapper p span) {
