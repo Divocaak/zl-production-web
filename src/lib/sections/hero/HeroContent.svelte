@@ -101,12 +101,14 @@
 		pointer-events: none;
 		z-index: 10;
 
-		width: 100%;
+		width: calc(100% - (2 * (--general-px)));
 		height: 100vh;
 
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+
+		padding: 0 var(--general-px);
 	}
 
 	.hero-content.has-button {
@@ -115,7 +117,6 @@
 
 	.logo {
 		display: block;
-		max-width: 70%;
 		width: 100%;
 		margin: 0 auto;
 		filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
@@ -129,7 +130,6 @@
 		margin-top: 1rem;
 		font-size: 1.5rem;
 		letter-spacing: 0.05em;
-		white-space: pre;
 		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 	}
 </style>

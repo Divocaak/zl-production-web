@@ -77,6 +77,8 @@
 		transform-style: preserve-3d;
 		pointer-events: none;
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.9));
+
+		top: -100px;
 	}
 
 	.parallax-mask {
@@ -143,6 +145,27 @@
 			mask-position: center;
 			-webkit-mask-position: center;
 			filter: blur(1px);
+		}
+	}
+
+	/* iPad Pro and smaller (≤ 1366px) */
+	@media (max-width: 1366px) {
+		.parallax-wrapper {
+			top: 200px;
+		}
+	}
+
+	/* iPad and smaller (≤ 1024px) */
+	@media (max-width: 1024px) {
+		.parallax-wrapper {
+			top: -220px;
+		}
+	}
+
+	/* iPhone 15 and smaller (≤ 430px) */
+	@media (max-width: 430px) {
+		.parallax-wrapper {
+			top: -200px;
 		}
 	}
 </style>

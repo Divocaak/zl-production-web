@@ -2,12 +2,12 @@
 	export let path;
 	export let img;
 	export let label;
-	export let borderRadiusPx = 6;
+	export let borderRadius = 1;
 
 	console.log(path);
 </script>
 
-<a class="card" href="/reference/{path}" style="border-radius: {borderRadiusPx}px;">
+<a class="card" href="/reference/{path}" style="border-radius: {borderRadius}rem;">
 	<div class="card-image" style="background-image: url({img});"></div>
 	<h3 class="zl-text">{label}</h3>
 </a>

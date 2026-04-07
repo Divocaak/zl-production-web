@@ -106,7 +106,7 @@
 			<div class="column" bind:this={columnEls[i]}>
 				{#each column as item}
 					{#if !item.referenceType}
-						<BlogReference {...item} borderRadiusPx="0" />
+						<BlogReference {...item} borderRadius="0" />
 					{:else if item.referenceType === 'person'}
 						<ReferenceTextOnly {item} />
 					{:else}

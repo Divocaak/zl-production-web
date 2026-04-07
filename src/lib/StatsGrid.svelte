@@ -105,7 +105,7 @@
 		gap: var(--gap);
 		width: 100%;
 		max-width: var(--max-width);
-		margin: 0 auto;
+		justify-self: center;
 	}
 
 	.box {
@@ -154,5 +154,22 @@
 		z-index: 1;
 		margin-top: 0.5rem;
 		font-size: 1rem;
+	}
+
+	/* iPad Pro and smaller (≤ 1366px) */
+	@media (max-width: 1366px) {
+		.grid {
+			grid-template-columns: repeat(2, 1fr);
+			width: 60%;
+		}
+	}
+
+	/* iPhone 15 and smaller (≤ 430px) */
+	@media (max-width: 430px) {
+		.grid {
+			grid-template-columns: repeat(2, 1fr);
+			width: 100%;
+			max-width: none;
+		}
 	}
 </style>
