@@ -41,7 +41,7 @@
 
 	.wrapper {
 		position: relative;
-		padding: 0 8rem;
+		padding: 0 var(--general-px);
 		min-height: 100vh;
 	}
 
@@ -69,12 +69,5 @@
 
 		fill: var(--fill);
 		transition: fill 0.7s ease;
-	}
-
-	/* iPad Pro and smaller (≤ 1366px) */
-	@media (max-width: 1366px) {
-		.wrapper {
-			padding: 0 1rem;
-		}
 	}
 </style>

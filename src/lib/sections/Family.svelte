@@ -73,7 +73,7 @@
 </script>
 
 <SectionWrapper id="family">
-	<div bind:this={sectionEl} style="padding: 200px 0;">
+	<div bind:this={sectionEl}>
 		<FlexContent>
 			<div slot="left" class="media">
 				<img class="base" src="family.jpg" alt="#zlfamily group" />

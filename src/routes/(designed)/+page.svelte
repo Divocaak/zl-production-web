@@ -42,7 +42,7 @@
 <div class="dev" class:visible>REFERENCE</div>
 <BlogReferences />
 <div class="dev" class:visible>STUDIO</div>
-<Studio /> -->
+<Studio />
 <div class="dev" class:visible>RENTAL</div>
 <div class="spacer"></div>
 <Equipment />
@@ -50,7 +50,7 @@
 <Booking />
 <div class="dev" class:visible>FAMILY</div>
 <Family />
-<div class="dev" class:visible>HISTORIE</div>
+<div class="dev" class:visible>HISTORIE</div> -->
 <History />
 <div class="dev" class:visible>FOOTER</div>
 

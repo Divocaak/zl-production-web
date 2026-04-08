@@ -111,13 +111,19 @@
 	.box {
 		position: relative;
 		aspect-ratio: 1 / 1;
+
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+
 		font-weight: bold;
 		overflow: visible;
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.8));
+
+		min-width: 0;
+		min-height: 0;
+		container-type: size;
 	}
 
 	:global(.box svg) {
@@ -136,11 +142,15 @@
 	.number {
 		position: relative;
 		z-index: 1;
-		font-size: 4rem;
+		font-size: 20cqw;
+
 		color: var(--tech-yellow);
 		white-space: pre;
 
 		font-variant-numeric: tabular-nums;
+
+		overflow: hidden;
+		text-overflow: clip;
 	}
 
 	.number-value {

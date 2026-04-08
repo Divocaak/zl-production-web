@@ -221,6 +221,10 @@
 	}
 
 	@media (max-width: 767px) {
+		:global(:root) {
+			--general-px: 1rem;
+		}
+
 		:global(body) {
 			overflow: auto;
 		}

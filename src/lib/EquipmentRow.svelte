@@ -8,6 +8,9 @@
 	export let card;
 </script>
 
+<div class="logo-center-wrapper">
+	<LogoHeading src={card.logo} alt="zl section logo" maxWidthPx="400" shadowOpacity="1" />
+</div>
 <FlexContent>
 	<div slot="right">
 		<MaskedImage
@@ -36,6 +39,10 @@
 </FlexContent>
 
 <style>
+	.logo-center-wrapper {
+		display: none;
+	}
+
 	.logo-wrapper {
 		position: absolute;
 		inset: 0;
@@ -62,5 +69,15 @@
 	:global(.texts-wrapper p span) {
 		color: var(--zl-red);
 		font-weight: bolder;
+	}
+
+	@media (max-width: 1024px) {
+		.logo-center-wrapper {
+			display: block;
+		}
+
+		.logo-wrapper {
+			display: none;
+		}
 	}
 </style>

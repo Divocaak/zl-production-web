@@ -83,7 +83,9 @@
 			</ExpandableText>
 		</div>
 	</FlexContent>
-	<VideoModalButton imageThumbnailSrc="/history/thumbnail.jpg" />
+	<div class="video-wrapper">
+		<VideoModalButton imageThumbnailSrc="/history/thumbnail.jpg" />
+	</div>
 </SectionWrapper>
 
 <style>
@@ -95,5 +97,30 @@
 		width: 50%;
 		margin: 0 auto;
 		will-change: transform;
+		margin-top: 3rem;
+	}
+
+	.video-wrapper {
+		max-width: 70%;
+		margin: 0 auto;
+		margin-top: 5rem;
+	}
+
+	@media (max-width: 1024px) {
+		.video-wrapper {
+			max-width: 80%;
+			margin-top: 3rem;
+		}
+	}
+
+	@media (max-width: 430px) {
+		.since {
+			margin-top: 1rem;
+		}
+
+		.video-wrapper {
+			max-width: 100%;
+			margin-top: 1rem;
+		}
 	}
 </style>
