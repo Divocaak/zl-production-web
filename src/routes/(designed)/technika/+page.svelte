@@ -29,6 +29,7 @@
 <style>
 	.wrapper {
 		position: relative;
-		padding: 0 8rem;
+		padding: 0 var(--general-px);
+		z-index: 0;
 	}
 </style>

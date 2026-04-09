@@ -210,6 +210,13 @@
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
 	}
 
+	:global(.zl-tagline) {
+		margin-top: 1rem;
+		font-size: 1.5rem;
+		letter-spacing: 0.05em;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+	}
+
 	#page-content {
 		position: relative;
 		z-index: 1;
@@ -218,6 +225,15 @@
 	#smooth-wrapper {
 		height: 100vh;
 		overflow: hidden;
+	}
+
+	#smooth-content {
+		will-change: transform;
+		pointer-events: none;
+	}
+
+	:global(#page-content *) {
+		pointer-events: all;
 	}
 
 	@media (max-width: 767px) {
@@ -233,9 +249,5 @@
 			overflow: auto;
 			height: auto;
 		}
-	}
-
-	#smooth-content {
-		will-change: transform;
 	}
 </style>

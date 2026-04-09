@@ -25,7 +25,7 @@
 		</MaskedImage>
 	</div>
 	<div slot="left" class="texts-wrapper">
-		<p class="lead">{card.homepageCard.lead}</p>
+		<p class="zl-tagline">{card.homepageCard.lead}</p>
 		<ExpandableText>
 			{#each card.homepageCard.desc as txt}
 				<p>{@html txt}</p>
@@ -52,10 +52,7 @@
 		pointer-events: none;
 	}
 
-	.texts-wrapper .lead {
-		font-size: 1.5rem;
-		letter-spacing: 0.05em;
-		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	.texts-wrapper .zl-tagline {
 		text-align: center;
 		text-transform: uppercase;
 	}

@@ -1,5 +1,6 @@
 <script>
 	import { onDestroy, onMount } from 'svelte';
+	import Portal, { portal } from 'svelte-portal';
 	import { fade } from 'svelte/transition';
 
 	export let cards = [];
@@ -15,7 +16,6 @@
 
 	async function activate(index) {
 		if (index === activeIndex || transitioning) return;
-
 		transitioning = true;
 
 		if (window.__smoother) window.__smoother.paused(true);
@@ -46,9 +46,7 @@
 		}
 	}
 
-	onDestroy(() => {
-		observer?.disconnect();
-	});
+	onDestroy(() => observer?.disconnect());
 </script>
 
 <div class="buttons" data-scroll-ignore>
@@ -82,9 +80,10 @@
 
 		gap: 3rem;
 		position: relative;
-		z-index: 2;
+		pointer-events: auto !important;
 
 		margin-bottom: 4rem;
+		z-index: 2;
 	}
 
 	button {
@@ -117,7 +116,7 @@
 
 		transform: scale(0.8);
 	}
-	
+
 	button.active img {
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.7));
 		transform: scale(1);

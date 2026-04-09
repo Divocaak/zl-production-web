@@ -46,6 +46,8 @@
 
 		width: 100%;
 		aspect-ratio: 16 / 9;
+
+		pointer-events: auto;
 	}
 
 	.hover-fx {

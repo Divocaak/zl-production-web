@@ -32,7 +32,7 @@
 	</div>
 {/if}
 
-{#if data.stats}
+{#if !data.stats}
 	<div class="stats-wrapper">
 		<StatsGrid
 			columns={data.stats.columns}

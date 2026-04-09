@@ -86,7 +86,7 @@
 	{#if heading}
 		<h1 class="zl-text heading">{heading}</h1>
 	{/if}
-	<p class="tagline" bind:this={tagline}></p>
+	<p class="zl-tagline" bind:this={tagline}></p>
 	{#if stageIsOurs}
 		<LogoHeading src="/hashtags/stage-is-ours-dark.svg" alt="Stage Is Ours" bind:element={stage} />
 	{/if}
@@ -124,12 +124,5 @@
 
 	.heading {
 		font-size: 5rem;
-	}
-
-	.tagline {
-		margin-top: 1rem;
-		font-size: 1.5rem;
-		letter-spacing: 0.05em;
-		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 	}
 </style>

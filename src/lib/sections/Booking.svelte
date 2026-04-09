@@ -79,7 +79,7 @@
 		<FlexContent>
 			<div slot="left" class="content">
 				<LogoHeading src="/logos/zl-booking-dark.svg" alt="booking logo" maxWidthPx="550" />
-				<p class="lead">
+				<p class="zl-tagline">
 					Kdo bude vystupovat na Vaší&nbsp;další&nbsp;akci<img
 						src="/doodles/question.svg"
 						alt="question mark"
@@ -172,17 +172,9 @@
 		margin: 0;
 	}
 
-	.lead {
-		position: relative;
-		font-size: 1.5rem;
-		line-height: 1.4;
-
-		width: fit-content;
-	}
-
-	.lead img {
+	.zl-tagline img {
 		display: inline-block;
-		height: 3em; /* scales with text */
+		height: 3em;
 		width: auto;
 		vertical-align: baseline;
 		transform: translateY(0.5em);

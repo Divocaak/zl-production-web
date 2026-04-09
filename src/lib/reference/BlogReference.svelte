@@ -3,8 +3,6 @@
 	export let img;
 	export let label;
 	export let borderRadius = 1;
-
-	console.log(path);
 </script>
 
 <a class="card" href="/reference/{path}" style="border-radius: {borderRadius}rem;">
@@ -34,6 +32,8 @@
 
 		color: var(--white);
 		text-decoration: none;
+
+		pointer-events: all;
 	}
 
 	.card-image {
