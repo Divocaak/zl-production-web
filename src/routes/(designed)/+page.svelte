@@ -31,7 +31,7 @@
 	$: visible = $page.url.searchParams.get('dev') === 'true';
 </script>
 
-<!-- <div class="dev" class:visible>HERO</div>
+<div class="dev" class:visible>HERO</div>
 <Hero
 	logoSrc={'/logos/logo-horizontal-dark.svg'}
 	tagline={'Žijeme ve světe eventů, už 20 let.'}
@@ -50,7 +50,7 @@
 <Booking />
 <div class="dev" class:visible>FAMILY</div>
 <Family />
-<div class="dev" class:visible>HISTORIE</div> -->
+<div class="dev" class:visible>HISTORIE</div>
 <History />
 <div class="dev" class:visible>FOOTER</div>
 

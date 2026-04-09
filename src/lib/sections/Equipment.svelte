@@ -43,20 +43,22 @@
 		position: relative;
 		padding: 0 var(--general-px);
 		min-height: 100vh;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
 	}
 
 	.bg-svg {
 		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%) translateZ(0);
 
-		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		z-index: 0;
 		pointer-events: none;
-		will-change: transform;
-
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.7));
 	}
 
@@ -69,5 +71,19 @@
 
 		fill: var(--fill);
 		transition: fill 0.7s ease;
+	}
+
+	/* iPad and smaller (≤ 1024px) */
+	@media (max-width: 1024px) {
+		.bg-svg {
+			top: -5%;
+		}
+	}
+
+	/* iPhone 15 and smaller (≤ 430px) */
+	@media (max-width: 430px) {
+		.bg-svg {
+			display: none;
+		}
 	}
 </style>

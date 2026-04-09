@@ -20,7 +20,9 @@
 				</IconLink>
 				<p>
 					ZL Production s.r.o.<br />
-					Brojova&nbsp;16, 326&nbsp;00&nbsp;Plzeň<br />
+					Brojova&nbsp;16,<br />
+					326&nbsp;00&nbsp;Plzeň<br />
+					<br />
 					IČO:&nbsp;26398443<br />
 					DIČ:&nbsp;CZ26398443<br />
 					BÚ:&nbsp;RB,&nbsp;2172635001/5500<br />
@@ -196,18 +198,16 @@
 			display: contents;
 		}
 
-		.contact-wrapper .contact-section:first-child {
-			border: 1px solid yellow;
-			grid-area: contactA;
+		.contact-wrapper .contact-section {
 			align-items: center;
-			text-align: center;
+		}
+
+		.contact-wrapper .contact-section:first-child {
+			grid-area: contactA;
 		}
 
 		.contact-wrapper .contact-section:last-child {
-			border: 1px solid yellow;
 			grid-area: contactB;
-			align-items: center;
-			text-align: center;
 		}
 	}
 
@@ -222,21 +222,25 @@
 				'contactB';
 			row-gap: 2rem;
 			justify-items: center;
-			text-align: center;
 		}
 
 		.img-wrapper,
 		.nav-wrapper,
 		.contact-wrapper .contact-section {
-			align-items: center;
-			text-align: center;
 			width: 100%;
 		}
-
+		
 		.nav-wrapper {
 			gap: 0.75rem;
+			text-align: center;
+			align-items: center;
 		}
-
+		
+		.img-wrapper{
+			text-align: center;
+			align-items: center;
+		}
+		
 		.img-wrapper img {
 			max-width: 220px;
 		}
