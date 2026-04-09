@@ -1,23 +1,24 @@
 <script>
-	import { onMount, onDestroy, tick } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+	gsap.registerPlugin(ScrollTrigger);
+
 	const folders = ['mjls', 'kme', 'ppo', 'md'];
-	let currentFolderIndex = 0;
-
-	let activeLayers = getLayers(folders[0]);
-	let nextLayers = [];
-	let isTransitioning = false;
-
-	let activeOpacity = 1;
-	let nextOpacity = 0;
 
 	let parallaxEl;
 	let st;
 	let interval;
 
-	let fade = { v: 0 };
+	let wrappers = [];
+	let currentFolderIndex = 0;
+
+	let io;
+	let isInView = false;
+
+	let depths = [];
+	let raf;
 
 	function getLayers(folder) {
 		return [
@@ -30,40 +31,30 @@
 	}
 
 	function preloadImages(urls) {
-		urls.forEach((url) => {
+		for (let i = 0; i < urls.length; i++) {
 			const img = new Image();
-			img.src = url;
-		});
+			img.src = urls[i];
+		}
 	}
 
-	onMount(() => {
-		preloadImages(activeLayers);
-		initScroll();
+	function initWrappers() {
+		wrappers = Array.from(parallaxEl.querySelectorAll('.layer-wrapper'));
+		const max = Math.max(wrappers.length - 1, 1);
+		depths = wrappers.map((_, i) => gsap.utils.interpolate(30, 200, Math.pow(i / max, 2)));
+	}
 
-		interval = setInterval(() => {
-			if (isTransitioning) return;
-			currentFolderIndex = (currentFolderIndex + 1) % folders.length;
-			nextLayers = getLayers(folders[currentFolderIndex]);
-			preloadImages(nextLayers);
-			crossfade();
-		}, 5000);
-	});
+	function setFolder(folder) {
+		const layers = getLayers(folder);
 
-	onDestroy(() => {
-		clearInterval(interval);
-		st?.kill();
-	});
+		for (let i = 0; i < wrappers.length; i++) {
+			const img = wrappers[i].querySelector('img');
+			img.src = layers[i];
+		}
+	}
 
 	function initScroll() {
-		st?.kill();
+		let lastProgress = 0;
 
-		if (!parallaxEl) return;
-		const wrappers = Array.from(parallaxEl.querySelectorAll('.layer-wrapper'));
-		if (!wrappers.length) return;
-		const max = Math.max(wrappers.length - 1, 1);
-		const depths = wrappers.map((_, i) => gsap.utils.interpolate(30, 200, Math.pow(i / max, 2)));
-
-		let raf;
 		st = ScrollTrigger.create({
 			trigger: parallaxEl,
 			start: 'top bottom',
@@ -71,72 +62,115 @@
 			scrub: true,
 
 			onUpdate: (self) => {
-				const p = self.progress;
-				if (!raf) {
-					raf = requestAnimationFrame(() => {
-						wrappers.forEach((el, i) => {
-							const depth = depths[i];
-							el.style.transform = `translate3d(0, ${depth - p * 2 * depth}px, 0)`;
-						});
+				if (!isInView) return;
+				lastProgress = self.progress;
 
-						raf = null;
-					});
-				}
+				if (raf) return;
+				raf = requestAnimationFrame(() => {
+					for (let i = 0; i < wrappers.length; i++) {
+						const el = wrappers[i];
+						const depth = depths[i];
+						el.style.transform = `translate3d(0, ${depth - lastProgress * 2 * depth}px, 0)`;
+					}
+
+					raf = null;
+				});
 			}
 		});
+
+		st.disable();
 	}
 
 	function crossfade() {
-		isTransitioning = true;
+		if (!isInView) return;
 
-		gsap.to(fade, {
-			v: 1,
-			duration: 1.2,
-			ease: 'power2.inOut',
-			onUpdate: () => {
-				activeOpacity = 1 - fade.v;
-				nextOpacity = fade.v;
-			},
-			onComplete: async () => {
-				await swapLayers();
+		const nextIndex = (currentFolderIndex + 1) % folders.length;
+		const nextLayers = getLayers(folders[nextIndex]);
 
-				fade.v = 0;
-				activeOpacity = 1;
-				nextOpacity = 0;
+		preloadImages(nextLayers);
 
-				isTransitioning = false;
+		const imgs = wrappers.map((w) => w.querySelector('img'));
 
-				await tick();
-				requestAnimationFrame(() => initScroll());
+		const tl = gsap.timeline({
+			onComplete: () => {
+				currentFolderIndex = nextIndex;
+				setFolder(folders[currentFolderIndex]);
 			}
+		});
+
+		tl.to(wrappers, {
+			opacity: 0,
+			duration: 0.4,
+			ease: 'power2.inOut'
+		});
+
+		tl.add(() => {
+			for (let i = 0; i < nextLayers.length; i++) imgs[i].src = nextLayers[i];
+		});
+
+		tl.to(wrappers, {
+			opacity: 1,
+			duration: 0.4,
+			ease: 'power2.inOut'
 		});
 	}
 
-	async function swapLayers() {
-		activeLayers = nextLayers;
-		nextLayers = [];
+	function setupVisibilityObserver() {
+		io = new IntersectionObserver(
+			(entries) => {
+				const entry = entries[0];
+				isInView = entry.isIntersecting;
 
-		await tick();
+				if (isInView) {
+					st.enable();
+					ScrollTrigger.refresh();
+
+					interval = setInterval(crossfade, 5000);
+				} else {
+					st.disable();
+					clearInterval(interval);
+					interval = null;
+
+					if (raf) {
+						cancelAnimationFrame(raf);
+						raf = null;
+					}
+
+					gsap.killTweensOf(wrappers);
+				}
+			},
+			{
+				root: null,
+				threshold: 0.1
+			}
+		);
+
+		io.observe(parallaxEl);
 	}
+
+	onMount(() => {
+		initWrappers();
+		setFolder(folders[0]);
+
+		initScroll();
+		setupVisibilityObserver();
+	});
+
+	onDestroy(() => {
+		clearInterval(interval);
+		io?.disconnect();
+		st?.kill();
+		if (raf) cancelAnimationFrame(raf);
+	});
 </script>
 
 <div bind:this={parallaxEl} class="parallax-wrapper">
 	<div class="parallax-mask">
-		<!-- ACTIVE -->
-		{#each activeLayers as layer (layer)}
-			<div class="layer-wrapper" style="opacity: {activeOpacity}">
-				<img src={layer} class="layer" alt="active layer" />
+		{#each Array(5) as _, i}
+			<div class="layer-wrapper">
+				<img class="layer" alt="layer" />
 			</div>
 		{/each}
-
-		<!-- NEXT -->
-		{#if nextLayers.length}
-			{#each nextLayers as layer (layer)}
-				<div class="layer-wrapper" style="opacity: {nextOpacity}">
-					<img src={layer} class="layer" alt="next layer" />
-				</div>
-			{/each}
-		{/if}
 	</div>
 </div>
 
@@ -179,7 +213,8 @@
 		inset: 0;
 		width: 100%;
 		height: 120%;
-		will-change: transform;
+		will-change: transform, opacity;
+		transform: translateZ(0);
 	}
 
 	.layer {
