@@ -1,20 +1,33 @@
 <script>
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount, onDestroy, tick } from 'svelte';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-	export let bindContainer;
+	const folders = ['mjls', 'kme', 'ppo', 'md'];
+	let currentFolderIndex = 0;
 
-	const layers = ['/homepage/landing-hero/6.jpg'];
-	/* const layers = [
-		'/homepage/landing/full.png',
-		'/homepage/landing/v4.png',
-		'/homepage/landing/v3.png',
-		'/homepage/landing/v2.png',
-		'/homepage/landing/v1.png'
-	]; */
+	let activeLayers = getLayers(folders[0]);
+	let nextLayers = [];
+	let isTransitioning = false;
 
+	let activeOpacity = 1;
+	let nextOpacity = 0;
+
+	let parallaxEl;
 	let st;
+	let interval;
+
+	let fade = { v: 0 };
+
+	function getLayers(folder) {
+		return [
+			`/homepage/${folder}/full.png`,
+			`/homepage/${folder}/v4.png`,
+			`/homepage/${folder}/v3.png`,
+			`/homepage/${folder}/v2.png`,
+			`/homepage/${folder}/v1.png`
+		];
+	}
 
 	function preloadImages(urls) {
 		urls.forEach((url) => {
@@ -23,49 +36,107 @@
 		});
 	}
 
-	let wrappers = [];
-	onMount(async () => {
-		if (!bindContainer) return;
-		preloadImages(layers);
+	onMount(() => {
+		preloadImages(activeLayers);
+		initScroll();
 
-		const depths = Array.from(wrappers).map((_, i) =>
-			gsap.utils.interpolate(30, 200, Math.pow(i / (wrappers.length - 1), 2))
-		);
+		interval = setInterval(() => {
+			if (isTransitioning) return;
+			currentFolderIndex = (currentFolderIndex + 1) % folders.length;
+			nextLayers = getLayers(folders[currentFolderIndex]);
+			preloadImages(nextLayers);
+			crossfade();
+		}, 5000);
+	});
+
+	onDestroy(() => {
+		clearInterval(interval);
+		st?.kill();
+	});
+
+	function initScroll() {
+		st?.kill();
+
+		if (!parallaxEl) return;
+		const wrappers = Array.from(parallaxEl.querySelectorAll('.layer-wrapper'));
+		if (!wrappers.length) return;
+		const max = Math.max(wrappers.length - 1, 1);
+		const depths = wrappers.map((_, i) => gsap.utils.interpolate(30, 200, Math.pow(i / max, 2)));
 
 		let raf;
 		st = ScrollTrigger.create({
-			trigger: bindContainer,
+			trigger: parallaxEl,
 			start: 'top bottom',
 			end: 'bottom top',
 			scrub: true,
-			invalidateOnRefresh: true,
+
 			onUpdate: (self) => {
-				const progress = self.progress;
+				const p = self.progress;
 				if (!raf) {
 					raf = requestAnimationFrame(() => {
-						wrappers.forEach((wrapper, i) => {
+						wrappers.forEach((el, i) => {
 							const depth = depths[i];
-							wrapper.style.transform = `translate3d(0, ${depth - progress * 2 * depth}px, 0)`;
+							el.style.transform = `translate3d(0, ${depth - p * 2 * depth}px, 0)`;
 						});
+
 						raf = null;
 					});
 				}
 			}
 		});
-	});
+	}
 
-	onDestroy(() => {
-		st?.kill();
-	});
+	function crossfade() {
+		isTransitioning = true;
+
+		gsap.to(fade, {
+			v: 1,
+			duration: 1.2,
+			ease: 'power2.inOut',
+			onUpdate: () => {
+				activeOpacity = 1 - fade.v;
+				nextOpacity = fade.v;
+			},
+			onComplete: async () => {
+				await swapLayers();
+
+				fade.v = 0;
+				activeOpacity = 1;
+				nextOpacity = 0;
+
+				isTransitioning = false;
+
+				await tick();
+				requestAnimationFrame(() => initScroll());
+			}
+		});
+	}
+
+	async function swapLayers() {
+		activeLayers = nextLayers;
+		nextLayers = [];
+
+		await tick();
+	}
 </script>
 
-<div bind:this={bindContainer} class="parallax-wrapper">
+<div bind:this={parallaxEl} class="parallax-wrapper">
 	<div class="parallax-mask">
-		{#each layers as layer, i}
-			<div class="layer-wrapper" bind:this={wrappers[i]}>
-				<img src={layer} alt="" class="layer" loading="eager" />
+		<!-- ACTIVE -->
+		{#each activeLayers as layer (layer)}
+			<div class="layer-wrapper" style="opacity: {activeOpacity}">
+				<img src={layer} class="layer" alt="active layer" />
 			</div>
 		{/each}
+
+		<!-- NEXT -->
+		{#if nextLayers.length}
+			{#each nextLayers as layer (layer)}
+				<div class="layer-wrapper" style="opacity: {nextOpacity}">
+					<img src={layer} class="layer" alt="next layer" />
+				</div>
+			{/each}
+		{/if}
 	</div>
 </div>
 
