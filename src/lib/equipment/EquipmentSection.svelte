@@ -1,8 +1,8 @@
 <script>
-	import HanddrawnLink from './buttons/HanddrawnLink.svelte';
-	import FlexContent from './FlexContent.svelte';
-	import LogoHeading from './LogoHeading.svelte';
-	import MaskedImage from './MaskedImage.svelte';
+	import HanddrawnLink from '$lib/buttons/HanddrawnLink.svelte';
+	import FlexContent from '$lib/FlexContent.svelte';
+	import LogoHeading from '$lib/LogoHeading.svelte';
+	import MaskedImage from '$lib/MaskedImage.svelte';
 	import { onDestroy, onMount } from 'svelte';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';

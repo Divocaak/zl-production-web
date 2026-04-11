@@ -59,16 +59,16 @@
 	<div class="powered-by">
 		<h2 style="text-align: center;">Powered by</h2>
 		<div class="logos-grid">
-			<img src="/logos/equipment/partners/adamson.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/adamson.svg" class="white" alt="partners logo" />
 			<img src="/logos/equipment/partners/blackmagic.svg" alt="partners logo" />
-			<img src="/logos/equipment/partners/chamsys.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/chamsys.svg" class="white" alt="partners logo" />
 			<img src="/logos/equipment/partners/digico.svg" alt="partners logo" />
-			<img src="/logos/equipment/partners/luminex.svg" alt="partners logo" />
-			<img src="/logos/equipment/partners/ma.svg" alt="partners logo" />
-			<img src="/logos/equipment/partners/novastar.svg" alt="partners logo" />
-			<img src="/logos/equipment/partners/robe.svg" alt="partners logo" />
-			<img src="/logos/equipment/partners/shure.svg" alt="partners logo" />
-			<img src="/logos/equipment/partners/yamaha.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/luminex-white.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/ma-white.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/novastar.svg" class="white" alt="partners logo" />
+			<img src="/logos/equipment/partners/robe-white.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/shure.svg" class="white" alt="partners logo" />
+			<img src="/logos/equipment/partners/yamaha.svg" class="white" alt="partners logo" />
 		</div>
 	</div>
 	<p class="signature">
@@ -160,6 +160,10 @@
 
 	.signature a {
 		color: var(--white);
+	}
+	
+	.logos-grid img.white{
+		filter: brightness(0) invert(1);
 	}
 
 	/* iPad and smaller (≤ 1024px) */

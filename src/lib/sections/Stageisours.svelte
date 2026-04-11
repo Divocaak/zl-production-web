@@ -62,8 +62,8 @@
 		maxWidth="80%"
 		items={[
 			{ value: 3500, label: 'odbavených eventů' },
-			{ value: 99, label: 'dnů v O2&nbsp;areně' },
-			{ value: 1445, label: 'světel (převážně Robe)' },
+			{ value: 99, label: 'pracovních dnů<br/>v O2&nbsp;areně' },
+			{ value: 577, label: 'světel (převážně Robe)' },
 			{ value: 328, label: 'reproboxů Adamson' }
 		]}
 	/>

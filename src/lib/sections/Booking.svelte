@@ -78,7 +78,13 @@
 	<div class="wrapper" bind:this={sectionEl}>
 		<FlexContent>
 			<div slot="left" class="content">
-				<LogoHeading src="/logos/zl-booking-dark.svg" alt="booking logo" maxWidthPx="550" />
+				<LogoHeading
+					src="/logos/zl-booking-dark.svg"
+					alt="booking logo"
+					maxWidthPx="550"
+					href="https://www.zlbooking.cz"
+					target="_blank"
+				/>
 				<p class="zl-tagline">
 					Kdo bude vystupovat na Vaší&nbsp;další&nbsp;akci<img
 						src="/doodles/question.svg"

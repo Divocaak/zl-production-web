@@ -24,9 +24,10 @@
 	.bg-layer {
 		position: fixed;
 		inset: 0;
-		z-index: 0;
+		height: 100%;
+		width: 100%;
 
-		height: 500vh;
+		z-index: 0;
 
 		background-repeat: repeat;
 		background-position: 0 0;

@@ -3,13 +3,25 @@
 	export let alt = 'alternative desc';
 	export let maxWidthPx = 700;
 	export let shadowOpacity = 0.4;
+	export let href;
 
 	export let element;
+	export let target;
 </script>
 
-<div class="wrapper" style="--img-max-width: {maxWidthPx}px; --shadow-opacity: {shadowOpacity}">
-	<img {src} {alt} bind:this={element} />
-</div>
+<svelte:element
+	this={href ? 'a' : 'div'}
+	{...href ? { href } : {}}
+	{...target ? { target } : {}}
+	class="wrapper"
+>
+	<img
+		{src}
+		{alt}
+		bind:this={element}
+		style="--img-max-width: {maxWidthPx}px; --shadow-opacity: {shadowOpacity}"
+	/>
+</svelte:element>
 
 <style>
 	img {

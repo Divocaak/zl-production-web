@@ -32,6 +32,7 @@
 </script>
 
 <div class="dev" class:visible>HERO</div>
+<!-- BUG mobile design width overflow -->
 <Hero
 	logoSrc={'/logos/logo-horizontal-dark.svg'}
 	tagline={'Žijeme ve světe eventů, už 20 let.'}
@@ -42,6 +43,7 @@
 <div class="dev" class:visible>REFERENCE</div>
 <BlogReferences />
 <div class="dev" class:visible>STUDIO</div>
+<!-- BUG mobile design width overflow -->
 <Studio />
 <div class="dev" class:visible>RENTAL</div>
 <div class="spacer"></div>
@@ -66,7 +68,7 @@
 		display: block;
 	}
 
-	.spacer{
+	.spacer {
 		height: 200px;
 	}
 </style>

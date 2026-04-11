@@ -1,6 +1,6 @@
 <script>
-	import EquipmentButtonBar from '$lib/EquipmentButtonBar.svelte';
-	import EquipmentSection from '$lib/EquipmentSection.svelte';
+	import EquipmentButtonBar from '$lib/equipment/EquipmentButtonBar.svelte';
+	import EquipmentSection from '$lib/equipment/EquipmentSection.svelte';
 	import BlogReferences from '$lib/sections/BlogReferences.svelte';
 	import { onMount, tick } from 'svelte';
 

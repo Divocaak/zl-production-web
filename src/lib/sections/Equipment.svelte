@@ -1,8 +1,8 @@
 <script>
 	import splashBgRaw from '$lib/assets/splashes/3.svg?raw';
 	import HanddrawnLink from '$lib/buttons/HanddrawnLink.svelte';
-	import EquipmentButtonBar from '$lib/EquipmentButtonBar.svelte';
-	import EquipmentRow from '$lib/EquipmentRow.svelte';
+	import EquipmentButtonBar from '$lib/equipment/EquipmentButtonBar.svelte';
+	import EquipmentRow from '$lib/equipment/homepage/EquipmentRow.svelte';
 	import { onMount, tick } from 'svelte';
 
 	let equipmentCards;

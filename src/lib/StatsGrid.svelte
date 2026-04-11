@@ -164,6 +164,7 @@
 		z-index: 1;
 		margin-top: 0.5rem;
 		font-size: 1rem;
+		text-align: center;
 	}
 
 	/* iPad Pro and smaller (≤ 1366px) */

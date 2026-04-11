@@ -2,27 +2,19 @@
 	import FlexContent from '$lib/FlexContent.svelte';
 	import LogoHeading from '$lib/LogoHeading.svelte';
 	import MaskedImage from '$lib/MaskedImage.svelte';
-	import HanddrawnLink from './buttons/HanddrawnLink.svelte';
-	import ExpandableText from './ExpandableText.svelte';
+	import HanddrawnLink from '$lib/buttons/HanddrawnLink.svelte';
+	import EquipmentLogoImage from './EquipmentLogoImage.svelte';
+	import ExpandableText from '$lib/ExpandableText.svelte';
 
 	export let card;
 </script>
 
 <div class="logo-center-wrapper">
-	<LogoHeading src={card.logo} alt="zl section logo" maxWidthPx="400" shadowOpacity="1" />
+	<EquipmentLogoImage logo={card.logo} image={card.homepageCard.image} />
 </div>
 <FlexContent>
-	<div slot="right">
-		<MaskedImage
-			src={card.homepageCard.image}
-			alt="reference image"
-			parallax={true}
-			floating={true}
-		>
-			<div class="logo-wrapper">
-				<LogoHeading src={card.logo} alt="zl section logo" maxWidthPx="400" shadowOpacity="1" />
-			</div>
-		</MaskedImage>
+	<div slot="right" class="flex-logo-wrapper">
+		<EquipmentLogoImage logo={card.logo} image={card.homepageCard.image} />
 	</div>
 	<div slot="left" class="texts-wrapper">
 		<p class="zl-tagline">{card.homepageCard.lead}</p>
@@ -41,15 +33,6 @@
 <style>
 	.logo-center-wrapper {
 		display: none;
-	}
-
-	.logo-wrapper {
-		position: absolute;
-		inset: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		pointer-events: none;
 	}
 
 	.texts-wrapper .zl-tagline {
@@ -73,7 +56,7 @@
 			display: block;
 		}
 
-		.logo-wrapper {
+		.flex-logo-wrapper {
 			display: none;
 		}
 	}
