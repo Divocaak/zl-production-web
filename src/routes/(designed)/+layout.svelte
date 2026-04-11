@@ -28,15 +28,15 @@
 		const isMobile = window.innerWidth < 768;
 
 		if (!isMobile) {
-			requestIdleCallback(() => {
+			const run = () => {
 				smoother = ScrollSmoother.create({
 					wrapper: '#smooth-wrapper',
 					content: '#smooth-content',
-					smooth: 1.2, // adjust for performance vs feel
-					effects: true, // allows data-speed / data-lag on child elements
-					normalizeScroll: true, // fixes inconsistent scroll
-					smoothTouch: 0.7, // prevents huge lag on mobile
-					onUpdate: () => ScrollTrigger.update() // keeps ScrollTriggers in sync
+					smooth: 1.2,
+					effects: true,
+					normalizeScroll: true,
+					smoothTouch: 0.7,
+					onUpdate: () => ScrollTrigger.update()
 				});
 
 				window.__smoother = smoother;
@@ -44,7 +44,13 @@
 				ScrollTrigger.config({ ignoreMobileResize: true, fastScrollEnd: true });
 				ScrollTrigger.defaults({ anticipatePin: 1 });
 				ScrollTrigger.refresh();
-			});
+			};
+
+			if ('requestIdleCallback' in window) {
+				requestIdleCallback(run, { timeout: 500 });
+			} else {
+				requestAnimationFrame(() => requestAnimationFrame(run));
+			}
 		} else {
 			// mobile fallback: remove overflow hidden
 			document.querySelector('#smooth-wrapper').style.overflow = 'auto';
@@ -204,6 +210,13 @@
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
 	}
 
+	:global(.zl-tagline) {
+		margin-top: 1rem;
+		font-size: 1.5rem;
+		letter-spacing: 0.05em;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+	}
+
 	#page-content {
 		position: relative;
 		z-index: 1;
@@ -214,7 +227,20 @@
 		overflow: hidden;
 	}
 
+	#smooth-content {
+		will-change: transform;
+		pointer-events: none;
+	}
+
+	:global(#page-content *) {
+		pointer-events: all;
+	}
+
 	@media (max-width: 767px) {
+		:global(:root) {
+			--general-px: 1rem;
+		}
+
 		:global(body) {
 			overflow: auto;
 		}
@@ -223,9 +249,5 @@
 			overflow: auto;
 			height: auto;
 		}
-	}
-
-	#smooth-content {
-		will-change: transform;
 	}
 </style>

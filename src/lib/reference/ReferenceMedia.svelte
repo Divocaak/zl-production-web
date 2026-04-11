@@ -1,12 +1,14 @@
 <script>
 	import VideoModalButton from '$lib/videoModal/VideoModalButton.svelte';
 	import gsap from 'gsap';
+	import { tick } from 'svelte';
 
 	export let item;
 
 	let card;
 	let flipped = false;
-	function toggleFlip() {
+	async function toggleFlip() {
+		if (!card) return;
 		flipped = !flipped;
 		gsap.to(card, {
 			rotationY: flipped ? 180 : 0,
@@ -23,7 +25,7 @@
 		heading={item.label}
 		description={item.description}
 		year={item.year}
-	></VideoModalButton>
+	/>
 {:else}
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -72,6 +74,8 @@
 		cursor: pointer;
 		position: relative;
 		transform-style: preserve-3d;
+
+		pointer-events: auto;
 	}
 
 	.card-face {

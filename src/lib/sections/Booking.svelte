@@ -56,7 +56,7 @@
 			scrollTrigger: {
 				trigger: sectionEl,
 				start: 'top 50%',
-				end: 'bottom 90%',
+				end: 'bottom 90%'
 			}
 		});
 		tl.from([...doodles, ...textItems], {
@@ -75,12 +75,18 @@
 </script>
 
 <SectionWrapper id="booking">
-	<LogoHeading src="/logos/zl-booking-dark.svg" alt="booking logo" maxWidthPx="550" />
 	<div class="wrapper" bind:this={sectionEl}>
 		<FlexContent>
 			<div slot="left" class="content">
-				<p class="lead">
-					Kdo bude vystupovat na Vaší další akci <img
+				<LogoHeading
+					src="/logos/zl-booking-dark.svg"
+					alt="booking logo"
+					maxWidthPx="550"
+					href="https://www.zlbooking.cz"
+					target="_blank"
+				/>
+				<p class="zl-tagline">
+					Kdo bude vystupovat na Vaší&nbsp;další&nbsp;akci<img
 						src="/doodles/question.svg"
 						alt="question mark"
 					/>
@@ -172,21 +178,13 @@
 		margin: 0;
 	}
 
-	.lead {
-		position: relative;
-		font-size: 1.5rem;
-		line-height: 1.4;
-
-		width: fit-content;
-	}
-
-	.lead img {
-		position: absolute;
-		height: 5em;
+	.zl-tagline img {
+		display: inline-block;
+		height: 3em;
 		width: auto;
-
-		top: -4rem;
-		right: -3rem;
+		vertical-align: baseline;
+		transform: translateY(0.5em);
+		margin-left: -0.5em;
 	}
 
 	.masked-container {

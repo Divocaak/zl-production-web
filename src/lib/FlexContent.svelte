@@ -27,6 +27,10 @@
 	/* NOTE media bank */
 	/* iPad Pro and smaller (≤ 1366px) */
 	@media (max-width: 1366px) {
+	}
+
+	/* iPad and smaller (≤ 1024px) */
+	@media (max-width: 1024px) {
 		.wrapper {
 			flex-direction: column;
 		}
@@ -38,10 +42,6 @@
 		.alternated {
 			order: 0;
 		}
-	}
-
-	/* iPad and smaller (≤ 1024px) */
-	@media (max-width: 1024px) {
 	}
 
 	/* iPhone 15 and smaller (≤ 430px) */

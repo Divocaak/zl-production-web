@@ -64,10 +64,6 @@
 		transform: translateZ(0);
 	}
 
-	#loading-overlay[style*='opacity: 0'] img {
-		animation-play-state: paused;
-	}
-
 	#loading-overlay img {
 		width: 25%;
 		animation: pulse 1s infinite alternate;

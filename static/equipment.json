@@ -16,19 +16,58 @@
         },
         "categories": [
             {
+                "heading": "Flexibilita zvukového řešení",
+                "tagline": "#ZL SOUND crew",
+                "desc": "Jsme jedineční v individuálním řešení jakéhokoli požadavku. Od stadiónové show, po malý klub. Přinášíme optimalizované individuální řešení podle potřeb klienta. Od zajištění sluchátkového odposlechu interpreta, až po návrh zvukového systému pro O2 arénu.",
+                "image": "placeholder.jpg"
+            },
+            {
                 "heading": "Zvukové systémy",
-                "desc": "Lorem ipsum dolor sit amet, <span>Adamson VGt</span> consectetuer adipiscing elit. Curabitur vitae diam non enim vestibulum interdum. Praesent id justo in neque elementum ultrices. Pellentesque arcu. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.",
+                "tagline": "Adamson VGt",
+                "desc": [
+                    "VGt je velkoformátový lineární reproduktor s špičkovým výkonem a prvním členem řady Vergence Group. Kombinace osmi měničů, zesilovače, síťového DSP modulu a závěsného systému Autolock v lehké a kompaktní konstrukci představuje kvantový skok ve vývoji reproduktorů.",
+                    "Kompresní měniče M140 MF, na které je podána patentová přihláška, představují špičkové technologie, které přinášejí novou úroveň kvality ve středním frekvenčním rozsahu. Jak kompresní měniče M140, tak 3” vysokofrekvenční kompresní měniče jsou umístěny v kriticky optimalizovaných zvukových komorách, které vytvářejí jednotnou vlnovou frontu. Nízkofrekvenční sekce obsahuje jak přímé, tak směrové komponenty, aby bylo dosaženo multimodálního rozptylu nízkých frekvencí. VGt je navržen tak, aby poskytoval rovnoměrné 90stupňové horizontální pokrytí v celém frekvenčním rozsahu a zároveň produkoval působivý akustický tlak s extrémně nízkým zkreslením.",
+                    "Konstrukce skříně využívá březovou překližku námořní kvality, stejně jako letecký hliník a ocel. Díky systému upevnění Autolock může systém bezpečně a snadno zavěsit jediný technik. VGt je vybaveno na míru vyrobeným vestavěným zesilovačem třídy D a inteligentním síťovým DSP koncovým bodem. Pro efektivní kabeláž lze všechny potřebné připojení zapojit do řetězce, včetně napájení, analogového zvuku a redundantní sítě obsahující digitální zvuk Milan a řídicí data AES70. VGt je špičkou mezi vysoce výkonnými velkoformátovými reproduktory."
+                ],
                 "image": "vgt.jpg"
             },
             {
+                "heading": "Zvukové systémy",
+                "tagline": "Adamson Energia",
+                "desc": "Řada Energia představuje obrovský krok vpřed v technologii velkoformátových lineárních arrayů. Vynikající výkon spojený s bleskurychlou montáží a balením do přepravních kontejnerů je to, co definuje řadu E jako lídra v oboru. Je žádaná nejuznávanějšími produkcemi na světě a instalována ve světových sálech. Každý večer reprodukuje ty nejjemnější nuance představení na každém sedadle v každém sále.",
+                "image": "energia.jpg"
+            },
+            {
                 "heading": "Zvukové pulty",
-                "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur vitae diam non enim vestibulum interdum. Praesent <span>DiGiCo</span> id justo in neque elementum ultrices. Pellentesque arcu. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.",
+                "tagline": "DiGiCo",
+                "desc": [
+                    "Quantum 338: Skok vpřed",
+                    "Quantum 338 představuje dramatický skok vpřed v oblasti výkonu a konektivity v pozoruhodně kompaktním provedení a navazuje na model Quantum 7 v definování budoucnosti audio mixování.",
+                    "Quantum 338 se pyšní celou řadou nových konstrukčních prvků a vylepšení, které zajišťují maximální flexibilitu použití a rychlost provozu, jakou dokáže nabídnout pouze Quantum. Je založen na FPGA sedmé generace s zcela novou systémovou architekturou. Konzole spojuje osvědčené pracovní postupy s obrovským výpočetním výkonem a odvážnými inovacemi, včetně působivého nového tmavého režimu.",
+                    "Pod kapotou &mdash; maximální výkon!",
+                    "Quantum 338 vám nabízí trojici 17palcových multitouchových obrazovek s vysokým jasem 1000 nitů, přičemž na každé obrazovce jsou zobrazeny jak měřicí můstek, tak softwarová tlačítka pro rychlý výběr, což umožňuje rychlé a intuitivní ovládání. Kromě toho se k plovoucímu šasi Quantum připojuje 70 samostatných TFT displejů kanálů s 38 dotykovými fadery o velikosti 100 mm, uspořádanými do tří bloků po 12 faderech, plus dva speciální fadery přiřaditelné uživatelem, každý s měřením ve vysokém rozlišení.",
+                    "Vynikající lokální audio konektivita a výkon jsou zajištěny díky novému 32bitovému převodu ADC a DAC „Ultimate Stadius“, který je standardně zabudován do Quantum 338 spolu se šesti samostatnými nebo třemi redundantními MADI připojeními, duálními DMI sloty a vestavěným nahrávacím rozhraním UB MADI USB.",
+                    "Standardně jsou také zahrnuty Mustard Processing, možnosti nativního FPGA zpracování ve stylu pluginů Spice Rack, Nodal Processing a True Solo"
+                ],
                 "image": "digico.jpg"
             },
             {
-                "heading": "Zesilovače",
-                "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur <span>LAB Gruppen PLM</span> vitae diam non enim vestibulum interdum. Praesent id justo in neque elementum ultrices. Pellentesque arcu. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.",
-                "image": "labgruppen.jpg"
+                "heading": "Zvukové systémy",
+                "tagline": "Yamaha PM7 + Rpio 622",
+                "desc": "Digitální mixážní konzole CSD-R7 je základní součástí jakéhokoli systému RIVAGE PM7, s 96 kHz zpracováním signálu, 120 mono vstupy a univerzálním doplňkem mixážních sběrnic (60 MIX, 24 MATRIX a 2 STEREO). Konzole má tři 12-faderové pozice pro flexibilní nastavení a konfiguraci a pro zvýšenou spolehlivost jsou vestavěny duální zdroje napájení.",
+                "image": "yamaha.jpg"
+            },
+            {
+                "heading": "Bezdrátové mikrofony",
+                "tagline": "SHURE Axient",
+                "desc": "Na největších pódiích světa, kde se dívají tisíce, ba dokonce miliony lidí, čeká bezdrátový mikrofon obrovský úkol. Zvuk musí být čistý. Musí být věrný. Musí zářit v paprscích reflektorů. Žádný jiný systém této výzvě nedokáže čelit tak jako Axient® Digital.",
+                "image": "shure.jpg"
+            },
+            {
+                "heading": "In-Ear Monitoring",
+                "tagline": "SHURE Axient digital PSM",
+                "desc": "Díky technologii Shure WMAS* posouvá systém Axient Digital PSM hranice možností a nastavuje nový standard v oblasti bezdrátového in-ear monitoringu. Nabízí maximální kontrolu a flexibilitu, takže můžete každému umělci přenášet vyvážený a čistý mix a vytvořit tak podmínky pro velkolepější a kreativnější vystoupení.",
+                "image": "iem.jpg"
             }
         ]
     },
@@ -48,7 +87,33 @@
             "button": "specifikace vybavení / rental",
             "buttonBrag": "(1445 světel, z toho XXXX Robe, 10 světelných pultů)"
         },
-        "categories": []
+        "categories": [
+            {
+                "heading": "Inteligentní svítidla",
+                "desc": "Stavíme na riderových značkách, které jsou standardem velkých produkcí a zaručují maximální kompatibilitu, výkon a spolehlivost v každé situaci. Pracujeme s technikou, na kterou se dá spolehnout i v nejnáročnějších provozních podmínkách. Zároveň doplňujeme setup o svítidla a eye candy od menších výrobců, které posouvají vizuální stránku projektu dál a dávají každé realizaci vlastní charakter. Kombinujeme osvědčený touring standard s kreativním přístupem, díky čemuž vzniká světelný design, který funguje technicky i vizuálně bez kompromisů.",
+                "image": "placeholder.jpg"
+            },
+            {
+                "heading": "Konvenční",
+                "desc": "Konvenční osvětlení stavíme na osvědčené technice, která je standardem každé produkce. Používáme klasické tungstenové i LED zdroje pro přesné a spolehlivé nasvícení. Osvedčená klasika jako třeba Shhowtec Sunstrip nebo produkty od značky Arri.",
+                "image": "placeholder.jpg"
+            },
+            {
+                "heading": "Převodníky",
+                "desc": "Síťovou infrastrukturu stavíme na prověřených řešeních, která zvládají nároky moderních produkcí bez kompromisů. Klíčovým prvkem jsou produkty od společností Luminex a Swisson, které zajišťují stabilní a bezpečný přenos dat v celém systému. Díky tomu máme plnou kontrolu nad distribucí signálu a spolehlivý provoz i v komplexních setupech.",
+                "image": "placeholder.jpg"
+            },
+            {
+                "heading": "RoboSpot",
+                "desc": "Follow spot řešení stavíme na systému Robe RoboSpot, který umožňuje přesné a konzistentní sledování umělců bez omezení klasického spotu. Operátor má plnou kontrolu nad pohybem, intenzitou i dalšími parametry, což zajišťuje plynulý a spolehlivý výkon i v náročných podmínkách. Systém podporuje dálkové ovládání více spotů najednou a nabízí flexibilitu, kterou klasické follow spoty nemohou. Moderní přístup k follow spotu bez kompromisů.",
+                "image": "placeholder.jpg"
+            },
+            {
+                "heading": "MDG, Look, SomkeFactory",
+                "desc": "Vytváříme efekty dýmu a haze pomocí produktů od MDG, Smoke Factory, Look Solutions a Showven které promění scénu a dodají jí nezaměnitelnou atmosféru. Efekty jsou vždy konzistentní a plně pod kontrolou, takže vystoupení působí profesionálně a působivě. Moderní řešení, které dokáže scénu opravdu oživit.",
+                "image": "placeholder.jpg"
+            }
+        ]
     },
     {
         "logo": "/logos/equipment/zl-video-dark.svg",
@@ -65,7 +130,23 @@
             ],
             "button": "specifikace vybavení / zl studio"
         },
-        "categories": []
+        "categories": [
+            {
+                "heading": "Trinity Mesh LED",
+                "desc": "Transparentní úhlovací LED obrazovka nabízí mnohstranné využití v koncertním a show prostředí. Průhlednost přes 40% přímo vybízí ke spojení animací a světel umístěných za LED obrazovku v jeden efekt. Poloviční pixel pitch ve svislém směru navíc šetří náročný signálový přenos.",
+                "image": "trinity.jpg"
+            },
+            {
+                "heading": "Rental LED p3.9",
+                "desc": "Úhlovací LED obrazovka s velikostí pixelu 3.9mm je vhodná pro větší konference a prezentace s pozorovací vzdáleností od 8m. Vhodná je ale například i na výstavy nebo vnitřní akce. Díky možnosti úhlování nabízí nespočet možností využití.",
+                "image": "p39.jpg"
+            },
+            {
+                "heading": "Rental LED p6.6",
+                "desc": "Robustní outdoor LED obrazovka s vysokou svítivostí a rozlišením vhodným pro městské slavnosti, koncerty či festivaly. Díky osvědčenému a odolnému šasí je tento typ obrazovky vhodný zejména do venkovního prostředí. Tato obrazovka velice dobře odolává silnému větru i dešti a podrží každou venkovní akci.",
+                "image": "p66.jpg"
+            }
+        ]
     },
     {
         "logo": "/logos/equipment/zl-stage-dark.svg",

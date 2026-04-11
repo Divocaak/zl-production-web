@@ -105,19 +105,25 @@
 		gap: var(--gap);
 		width: 100%;
 		max-width: var(--max-width);
-		margin: 0 auto;
+		justify-self: center;
 	}
 
 	.box {
 		position: relative;
 		aspect-ratio: 1 / 1;
+
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+
 		font-weight: bold;
 		overflow: visible;
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.8));
+
+		min-width: 0;
+		min-height: 0;
+		container-type: size;
 	}
 
 	:global(.box svg) {
@@ -136,11 +142,15 @@
 	.number {
 		position: relative;
 		z-index: 1;
-		font-size: 4rem;
+		font-size: 20cqw;
+
 		color: var(--tech-yellow);
 		white-space: pre;
 
 		font-variant-numeric: tabular-nums;
+
+		overflow: hidden;
+		text-overflow: clip;
 	}
 
 	.number-value {
@@ -154,5 +164,23 @@
 		z-index: 1;
 		margin-top: 0.5rem;
 		font-size: 1rem;
+		text-align: center;
+	}
+
+	/* iPad Pro and smaller (≤ 1366px) */
+	@media (max-width: 1366px) {
+		.grid {
+			grid-template-columns: repeat(2, 1fr);
+			width: 60%;
+		}
+	}
+
+	/* iPhone 15 and smaller (≤ 430px) */
+	@media (max-width: 430px) {
+		.grid {
+			grid-template-columns: repeat(2, 1fr);
+			width: 100%;
+			max-width: none;
+		}
 	}
 </style>

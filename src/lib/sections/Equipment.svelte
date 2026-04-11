@@ -1,8 +1,8 @@
 <script>
 	import splashBgRaw from '$lib/assets/splashes/3.svg?raw';
 	import HanddrawnLink from '$lib/buttons/HanddrawnLink.svelte';
-	import EquipmentButtonBar from '$lib/EquipmentButtonBar.svelte';
-	import EquipmentRow from '$lib/EquipmentRow.svelte';
+	import EquipmentButtonBar from '$lib/equipment/EquipmentButtonBar.svelte';
+	import EquipmentRow from '$lib/equipment/homepage/EquipmentRow.svelte';
 	import { onMount, tick } from 'svelte';
 
 	let equipmentCards;
@@ -41,22 +41,24 @@
 
 	.wrapper {
 		position: relative;
-		padding: 0 8rem;
+		padding: 0 var(--general-px);
 		min-height: 100vh;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
 	}
 
 	.bg-svg {
 		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%) translateZ(0);
 
-		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		z-index: 0;
 		pointer-events: none;
-		will-change: transform;
-
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.7));
 	}
 
@@ -71,10 +73,17 @@
 		transition: fill 0.7s ease;
 	}
 
-	/* iPad Pro and smaller (≤ 1366px) */
-	@media (max-width: 1366px) {
-		.wrapper {
-			padding: 0 1rem;
+	/* iPad and smaller (≤ 1024px) */
+	@media (max-width: 1024px) {
+		.bg-svg {
+			top: -5%;
+		}
+	}
+
+	/* iPhone 15 and smaller (≤ 430px) */
+	@media (max-width: 430px) {
+		.bg-svg {
+			display: none;
 		}
 	}
 </style>

@@ -6,6 +6,7 @@
 	export let href;
 	export let target = '_self';
 	export let centered = false;
+	export let style;
 
 	const dispatch = createEventDispatcher();
 
@@ -38,7 +39,7 @@
 	}
 </script>
 
-<a {href} {target} class="subtle-link" class:centered on:click={handleClick}>
+<a {href} {target} class="subtle-link" class:centered on:click={handleClick} {style}>
 	<slot />
 </a>
 

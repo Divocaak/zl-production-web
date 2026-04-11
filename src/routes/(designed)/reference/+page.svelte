@@ -39,7 +39,7 @@
 		}
 	}
 
-	let columnsEls = [];
+	let columnEls = [];
 	onMount(async () => {
 		if (typeof window === 'undefined') return;
 		window.addEventListener('resize', updateNumColumns);
@@ -106,7 +106,7 @@
 			<div class="column" bind:this={columnEls[i]}>
 				{#each column as item}
 					{#if !item.referenceType}
-						<BlogReference {...item} borderRadiusPx="0" />
+						<BlogReference {...item} borderRadius="0" />
 					{:else if item.referenceType === 'person'}
 						<ReferenceTextOnly {item} />
 					{:else}
@@ -137,6 +137,7 @@
 		flex-direction: column;
 		will-change: transform;
 		transform: translate3d(0, 0, 0);
+		pointer-events: auto;
 	}
 
 	@media (max-width: 1024px) {

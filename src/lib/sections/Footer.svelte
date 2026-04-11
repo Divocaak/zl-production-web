@@ -18,28 +18,31 @@
 				<IconLink href="tel:+420728038723" svgPath="/icons/phone.svg">
 					+420&nbsp728&nbsp038&nbsp723
 				</IconLink>
-			</div>
-			<div class="contact-section">
 				<p>
 					ZL Production s.r.o.<br />
-					Brojova&nbsp;16, 326&nbsp;00&nbsp;Plzeň<br />
+					Brojova&nbsp;16,<br />
+					326&nbsp;00&nbsp;Plzeň<br />
+					<br />
 					IČO:&nbsp;26398443<br />
 					DIČ:&nbsp;CZ26398443<br />
 					BÚ:&nbsp;RB,&nbsp;2172635001/5500<br />
-					Zapsáno: Krajský&nbsp;soud v&nbsp;Plzni, odd.&nbsp;C, složka&nbsp;17733
+					Zapsáno: Krajský&nbsp;soud v&nbsp;Plzni,<br />
+					odd.&nbsp;C, složka&nbsp;17733
 				</p>
-				<hr />
-				<p>
-					ZL&nbsp;Backstage &&nbsp;ZL&nbsp;Studio<br />
-					Spravedlnost&nbsp;č.p.&nbsp;920<br />
-					503&nbsp;51&nbsp;Chlumec&nbsp;nad&nbsp;Cidlinou
-				</p>
+			</div>
+			<div class="contact-section">
+				<h2>ZL Base</h2>
 				<IconLink href="mailto:studio@zlproduction.cz" svgPath="/icons/email.svg">
 					studio@zlproduction.cz
 				</IconLink>
 				<IconLink href="tel:+420605215333" svgPath="/icons/phone.svg">
 					+420&nbsp605&nbsp215&nbsp333
 				</IconLink>
+				<p>
+					ZL&nbsp;Backstage &&nbsp;ZL&nbsp;Studio<br />
+					Spravedlnost&nbsp;č.p.&nbsp;920<br />
+					503&nbsp;51&nbsp;Chlumec&nbsp;nad&nbsp;Cidlinou
+				</p>
 			</div>
 		</div>
 		<div class="nav-wrapper">
@@ -56,16 +59,16 @@
 	<div class="powered-by">
 		<h2 style="text-align: center;">Powered by</h2>
 		<div class="logos-grid">
-			<img src="/logos/equipment/partners/adamson.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/adamson.svg" class="white" alt="partners logo" />
 			<img src="/logos/equipment/partners/blackmagic.svg" alt="partners logo" />
-			<img src="/logos/equipment/partners/chamsys.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/chamsys.svg" class="white" alt="partners logo" />
 			<img src="/logos/equipment/partners/digico.svg" alt="partners logo" />
-			<img src="/logos/equipment/partners/luminex.svg" alt="partners logo" />
-			<img src="/logos/equipment/partners/ma.svg" alt="partners logo" />
-			<img src="/logos/equipment/partners/novastar.svg" alt="partners logo" />
-			<img src="/logos/equipment/partners/robe.svg" alt="partners logo" />
-			<img src="/logos/equipment/partners/shure.svg" alt="partners logo" />
-			<img src="/logos/equipment/partners/yamaha.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/luminex-white.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/ma-white.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/novastar.svg" class="white" alt="partners logo" />
+			<img src="/logos/equipment/partners/robe-white.svg" alt="partners logo" />
+			<img src="/logos/equipment/partners/shure.svg" class="white" alt="partners logo" />
+			<img src="/logos/equipment/partners/yamaha.svg" class="white" alt="partners logo" />
 		</div>
 	</div>
 	<p class="signature">
@@ -122,10 +125,6 @@
 		margin: 0;
 	}
 
-	.contact-wrapper hr {
-		width: 100%;
-	}
-
 	.powered-by {
 		padding: 0.1rem 5rem;
 		background-color: black;
@@ -162,9 +161,17 @@
 	.signature a {
 		color: var(--white);
 	}
+	
+	.logos-grid img.white{
+		filter: brightness(0) invert(1);
+	}
 
 	/* iPad and smaller (≤ 1024px) */
 	@media (max-width: 1024px) {
+		footer {
+			margin-top: 4rem;
+		}
+
 		.footer-content {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
@@ -174,6 +181,9 @@
 			column-gap: 2rem;
 			row-gap: 3rem;
 			align-items: start;
+			align-content: center;
+
+			min-height: auto;
 		}
 
 		.img-wrapper {
@@ -184,23 +194,24 @@
 
 		.nav-wrapper {
 			grid-area: nav;
-			align-items: center;
+			width: fit-content;
+			margin: 0 auto;
 		}
 
 		.contact-wrapper {
 			display: contents;
 		}
 
+		.contact-wrapper .contact-section {
+			align-items: center;
+		}
+
 		.contact-wrapper .contact-section:first-child {
 			grid-area: contactA;
-			align-items: center;
-			text-align: center;
 		}
 
 		.contact-wrapper .contact-section:last-child {
 			grid-area: contactB;
-			align-items: center;
-			text-align: center;
 		}
 	}
 
@@ -215,21 +226,25 @@
 				'contactB';
 			row-gap: 2rem;
 			justify-items: center;
-			text-align: center;
 		}
 
 		.img-wrapper,
 		.nav-wrapper,
 		.contact-wrapper .contact-section {
-			align-items: center;
-			text-align: center;
 			width: 100%;
 		}
-
+		
 		.nav-wrapper {
 			gap: 0.75rem;
+			text-align: center;
+			align-items: center;
 		}
-
+		
+		.img-wrapper{
+			text-align: center;
+			align-items: center;
+		}
+		
 		.img-wrapper img {
 			max-width: 220px;
 		}

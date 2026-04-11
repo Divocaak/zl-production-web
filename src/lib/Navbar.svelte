@@ -55,14 +55,12 @@
 <nav class:visible={navVisible}>
 	<button class="menu-button" on:click={toggleMenu}>
 		<span class="splash" aria-hidden="true">{@html splashSvgRaw}</span>
-
 		<img
 			class="icon hamburger"
 			src="/icons/hamburger.svg"
 			alt="hamburger icon"
 			class:visible={!menuShown}
 		/>
-
 		<img class="icon cross" src="/icons/cross.svg" alt="close icon" class:visible={menuShown} />
 	</button>
 
@@ -110,6 +108,8 @@
 			transform 0.25s ease,
 			opacity 0.25s ease;
 		will-change: transform, opacity;
+
+		pointer-events: none;
 	}
 
 	nav.visible {
@@ -198,5 +198,6 @@
 		flex-direction: column;
 		align-items: center;
 		font-size: 2rem;
+		pointer-events: auto;
 	}
 </style>

@@ -12,7 +12,7 @@
 			{@html overlaySvgRaw}
 		</div>
 		<div class="content">
-			<LogoHeading src="logos/zl-studio-dark.svg" alt="ZL Studio Logo" />
+			<LogoHeading src="logos/zl-studio-dark.svg" alt="ZL Studio Logo" href="/studio" />
 			<p>
 				Moderní stage design a vizuální obsah show tvoříme v ZL studiu, které je součástí našeho ZL
 				Backstage v Chlumci nad CIdlinou. Na ploše více než 100 m² disponujeme kreativním prostorem
