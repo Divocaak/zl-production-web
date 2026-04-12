@@ -77,15 +77,16 @@
 <style>
 	#stage-is-ours {
 		min-height: 100vh;
+		height: auto;
 	}
 
 	.cards-wrapper {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		justify-items: center;
 
-		gap: 2rem;
+		gap: calc(2 * var(--general-px));
 		padding: 0 var(--general-px);
-
 		margin-top: 2rem;
 	}
 

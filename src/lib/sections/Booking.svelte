@@ -191,6 +191,7 @@
 		aspect-ratio: 1 / 1;
 		position: relative;
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+		margin: 0 auto;
 	}
 
 	.masked-container > :global(.masked-container) {
@@ -211,7 +212,12 @@
 	@media (max-width: 1024px) {
 		.masked-container {
 			max-width: 70%;
-			margin: 0 auto;
+		}
+	}
+	/* iPad and smaller (≤ 1024px) */
+	@media (max-width: 1024px) {
+		.masked-container {
+			max-width: 100%;
 		}
 	}
 </style>

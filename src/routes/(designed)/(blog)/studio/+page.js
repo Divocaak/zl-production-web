@@ -10,7 +10,7 @@ export const load = () => {
         ],
         stats: {
             columns: 'repeat(2, 1fr)',
-            maxWidth: '80%',
+            maxWidth: '50%',
             items: [
                 { value: 100, label: 'Kreativního prostoru', unit: 'm²' },
                 { value: 54, label: 'Realizovaných projektů' }

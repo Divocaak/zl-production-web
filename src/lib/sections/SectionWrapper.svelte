@@ -17,4 +17,13 @@
 		flex-direction: column;
 		justify-content: center;
 	}
+
+	/* Bigger than 1920px (ultrawide / 2K / 4K) */
+	@media (min-width: 1921px) {
+		section {
+			min-height: 100%;
+			width: 60%;
+			margin: 10rem auto;
+		}
+	}
 </style>

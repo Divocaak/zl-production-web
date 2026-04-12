@@ -27,48 +27,17 @@
 			ScrollTrigger.refresh();
 		}, 0);
 	});
-
-	$: visible = $page.url.searchParams.get('dev') === 'true';
 </script>
 
-<div class="dev" class:visible>HERO</div>
-<!-- BUG mobile design width overflow -->
 <Hero
 	logoSrc={'/logos/logo-horizontal-dark.svg'}
 	tagline={'Žijeme ve světe eventů, už 20 let.'}
 	stageIsOurs={true}
 />
-<div class="dev" class:visible>STAGE IS OURS</div>
 <StageIsOurs />
-<div class="dev" class:visible>REFERENCE</div>
 <BlogReferences />
-<div class="dev" class:visible>STUDIO</div>
-<!-- BUG mobile design width overflow -->
 <Studio />
-<div class="dev" class:visible>RENTAL</div>
-<div class="spacer"></div>
-<Equipment />
-<div class="dev" class:visible>BOOKING</div>
+<!-- <Equipment /> -->
 <Booking />
-<div class="dev" class:visible>FAMILY</div>
 <Family />
-<div class="dev" class:visible>HISTORIE</div>
 <History />
-<div class="dev" class:visible>FOOTER</div>
-
-<style>
-	.dev {
-		border-top: 1px solid red;
-		width: 100%;
-		position: relative;
-		display: none;
-	}
-
-	.visible {
-		display: block;
-	}
-
-	.spacer {
-		height: 200px;
-	}
-</style>

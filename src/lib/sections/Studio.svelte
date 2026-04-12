@@ -65,22 +65,18 @@
 	.overlay-bg {
 		position: absolute;
 		inset: 0;
-		width: 120%;
-		height: 120%;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		z-index: 0;
-		pointer-events: none;
 
-		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.7));
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	:global(.marquee-overlay svg) {
-		width: 100%;
-		height: 100%;
-		display: block;
+		width: clamp(280px, 55vw, 900px);
+		height: auto;
+
 		fill: var(--stage-blue);
+		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.7));
 	}
 
 	.content {

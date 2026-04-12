@@ -96,22 +96,22 @@
             {
                 "heading": "Konvenční",
                 "desc": "Konvenční osvětlení stavíme na osvědčené technice, která je standardem každé produkce. Používáme klasické tungstenové i LED zdroje pro přesné a spolehlivé nasvícení. Osvedčená klasika jako třeba Shhowtec Sunstrip nebo produkty od značky Arri.",
-                "image": "placeholder.jpg"
+                "image": "light_2.jpg"
             },
             {
                 "heading": "Převodníky",
                 "desc": "Síťovou infrastrukturu stavíme na prověřených řešeních, která zvládají nároky moderních produkcí bez kompromisů. Klíčovým prvkem jsou produkty od společností Luminex a Swisson, které zajišťují stabilní a bezpečný přenos dat v celém systému. Díky tomu máme plnou kontrolu nad distribucí signálu a spolehlivý provoz i v komplexních setupech.",
-                "image": "placeholder.jpg"
+                "image": "light_3.jpg"
             },
             {
                 "heading": "RoboSpot",
                 "desc": "Follow spot řešení stavíme na systému Robe RoboSpot, který umožňuje přesné a konzistentní sledování umělců bez omezení klasického spotu. Operátor má plnou kontrolu nad pohybem, intenzitou i dalšími parametry, což zajišťuje plynulý a spolehlivý výkon i v náročných podmínkách. Systém podporuje dálkové ovládání více spotů najednou a nabízí flexibilitu, kterou klasické follow spoty nemohou. Moderní přístup k follow spotu bez kompromisů.",
-                "image": "placeholder.jpg"
+                "image": "light_4.jpg"
             },
             {
-                "heading": "MDG, Look, SomkeFactory",
+                "heading": "MDG, Look, SmokeFactory",
                 "desc": "Vytváříme efekty dýmu a haze pomocí produktů od MDG, Smoke Factory, Look Solutions a Showven které promění scénu a dodají jí nezaměnitelnou atmosféru. Efekty jsou vždy konzistentní a plně pod kontrolou, takže vystoupení působí profesionálně a působivě. Moderní řešení, které dokáže scénu opravdu oživit.",
-                "image": "placeholder.jpg"
+                "image": "light_5.jpg"
             }
         ]
     },
@@ -163,6 +163,31 @@
             ],
             "button": "specifikace vybavení / zl studio"
         },
-        "categories": []
+        "categories": [
+            {
+                "heading": "NivTec",
+                "desc": [
+                    "Disponujeme a používáme standardizovaný pódiový systém Nivtec. Tento stavebnicový systém představuje certifikované, vysoce odolné a modulární pódiové platformy německé výroby. Vyniká rychlou montáží bez nářadí, díky patentovanému 'Click-Clack' aretačnímu systému, vysokou nosností. Tato technologie naší firmě umožňuje navrhovat, stavět, tvořit rychle a snadno ty nejoriginálnější a složité designové scény, jak na domácím poli, v České republice , tak i v zahraničí na světových festivalech, koncertech a show.image.png",
+                    "Systém Nivtec svou nízkou hmotností a protiskluzovým povrchem je ideálním řešením pro profesionální pódia, výstavy a akce. Mezi největší výhody patří rychlá montáž bez nářadí, vysoká bezpečnost a nosnost. Unikátní zámkový systém (Click-Clack) umožňuje rychlé a bezpečné spojení podest bez použití spojovacího materiálu. Nivtec tedy zosobňuje lehkost, rychlost i stabilitu.",
+                    "Systém Nivtec nabízí různé rozměry podest a rozličné tvarové moduly. Díky hybridní hliníkové konstrukci si zachovává nízkou hmotnost a pružnou odolnost. Pódiové desky Nivtec zvyšují komfort a bezpečnost při manipulaci, stavbě, přepravě a používání. ",
+                    "Technologie nivtec je oblíbená, zejména i pro pronájem a zapůjčování, kde je vyžadována rychlá realizace, preciznost, bezpečnost a vysoká odolnost."
+                ],
+                "image": "placeholder.jpg"
+            },
+            {
+                "heading": "Motory ChainMaster 2t, 1t, 0,5t",
+                "desc": " S desítkami tisíc prodaných řetězových kladkostrojů po celém světě, stovkami známých uživatelů a tolika aplikacemi, že je nelze ani spočítat, je CHAINMASTER světovým lídrem ve vývoji a výrobě řetězových kladkostrojů přizpůsobených náročným požadavkům každodenního používání na jevišti. Náš sortiment zahrnuje pohony pro každodenní použití v mnoha oblastech moderní technologie pro pořádání akcí.",
+                "image": "chainmaster.jpg"
+            },
+            {
+                "heading": "TAF konstrukce",
+                "desc": [
+                    "Široká škála produktů TAF zahrnuje hliníkové rychloupínací příhradové nosníky (kuželové, s kolíky), šroubované příhradové nosníky, vidlicové příhradové nosníky, věže, střechy, LED rámy, jevištní plošiny, rampy, bariéry, designy pro výstavy, příslušenství k příhradovým nosníkům a další související produkty.",
+                    "Produkty TAF jsou vyráběny z nejkvalitnějších materiálů v moderní továrně v České republice, která využívá pokročilé výrobní procesy a je vybavena moderními, špičkovými stroji. Společnost TAF byla první značkou v oboru, která do své výrobní linky zavedla automatizované svařovací rameno, které zajišťuje rychlé a přesné svary a optimalizuje výrobní výkon. Přísné sledování svařovacího procesu, pečlivé testování, přísná kontrola kvality a ochranné balení zajišťují, že zákazníci společnosti TAF obdrží produkty, které jsou po dodání plně bezpečné a v perfektním stavu.",
+                    "Příhradové nosníky, podpůrné konstrukce a příslušenství společnosti TAF se používají v široké škále vnitřních i venkovních koncertů, živých akcí, zábavních zařízení, rodinných center, prostor virtuální reality, sportovních/překážkových drah, zábavních podniků, výstav, maloobchodních prodejen a dalších."
+                ],
+                "image": "taf.jpg"
+            }
+        ]
     }
 ]

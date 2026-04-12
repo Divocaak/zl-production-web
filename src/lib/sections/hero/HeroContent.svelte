@@ -81,7 +81,9 @@
 
 <div class="hero-content" class:has-button={hasButton}>
 	{#if image}
+	<div class="logo-wrapper">
 		<img src={image} alt="Logo" bind:this={logo} class="logo" loading="eager" />
+	</div>
 	{/if}
 	{#if heading}
 		<h1 class="zl-text heading">{heading}</h1>
@@ -107,12 +109,17 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		align-items: center;
 
 		padding: 0 var(--general-px);
 	}
 
 	.hero-content.has-button {
 		gap: 300px;
+	}
+
+	.logo-wrapper{
+		width: 60%;
 	}
 
 	.logo {
@@ -125,4 +132,12 @@
 	.heading {
 		font-size: 5rem;
 	}
+
+	/* iPad and smaller (≤ 1024px) */
+	@media (max-width: 1024px) {
+		.logo-wrapper{
+			width: 100%;
+		}
+	}
+
 </style>
