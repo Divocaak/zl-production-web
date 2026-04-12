@@ -50,7 +50,7 @@
 		text-transform: uppercase;
 		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 		letter-spacing: -1px;
-		font-size: 2rem;
+		font-size: var(--text-32);
 		color: var(--base);
 
 		transition: transform 0.25s;

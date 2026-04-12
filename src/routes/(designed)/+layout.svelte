@@ -139,6 +139,8 @@
 	}
 
 	:global(:root) {
+		--ui-scale: 1;
+
 		--black: #1d1d1b;
 		--grey: #545453;
 		--grey-lighter: #616160;
@@ -155,14 +157,15 @@
 
 		--card-border-radius: 1rem;
 
-		--text-16: clamp(0.9rem, 0.8rem + 0.5vw, 1rem);
-		--text-20: clamp(1rem, 0.9rem + 0.6vw, 1.25rem);
-		--text-24: clamp(1.1rem, 1rem + 0.8vw, 1.5rem);
-		--text-32: clamp(1.3rem, 1.1rem + 1.2vw, 2rem);
-		--text-36: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
-		--text-48: clamp(1.8rem, 1.4rem + 2vw, 3rem);
-		--text-64: clamp(2.2rem, 1.8rem + 2.8vw, 4rem);
-		--text-96: clamp(3rem, 2.5rem + 4vw, 6rem);
+		--text-12: calc(clamp(0.6rem, 0.5rem + 0.2vw, 0.75rem) * var(--ui-scale));
+		--text-16: calc(clamp(0.9rem, 0.8rem + 0.5vw, 1rem) * var(--ui-scale));
+		--text-20: calc(clamp(1rem, 0.9rem + 0.6vw, 1.25rem) * var(--ui-scale));
+		--text-24: calc(clamp(1.1rem, 1rem + 0.8vw, 1.5rem) * var(--ui-scale));
+		--text-32: calc(clamp(1.3rem, 1.1rem + 1.2vw, 2rem) * var(--ui-scale));
+		--text-36: calc(clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem) * var(--ui-scale));
+		--text-48: calc(clamp(1.8rem, 1.4rem + 2vw, 3rem) * var(--ui-scale));
+		--text-64: calc(clamp(2.2rem, 1.8rem + 2.8vw, 4rem) * var(--ui-scale));
+		--text-96: calc(clamp(3rem, 2.5rem + 4vw, 6rem) * var(--ui-scale));
 	}
 
 	:global(body) {
@@ -187,7 +190,7 @@
 		text-rendering: optimizeLegibility;
 	}
 
-	:global(p) {
+	:global(p, a) {
 		font-size: var(--text-16);
 	}
 
@@ -248,6 +251,24 @@
 		#smooth-wrapper {
 			overflow: hidden;
 			height: auto;
+		}
+	}
+
+	@media (min-width: 1920px) {
+		:global(:root) {
+			--ui-scale: 1.25;
+		}
+	}
+
+	@media (min-width: 2560px) {
+		:global(:root) {
+			--ui-scale: 1.45;
+		}
+	}
+
+	@media (min-width: 3840px) {
+		:global(:root) {
+			--ui-scale: 1.7;
 		}
 	}
 </style>

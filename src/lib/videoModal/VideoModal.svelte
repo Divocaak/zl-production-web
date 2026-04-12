@@ -309,7 +309,7 @@
 	}
 
 	.controls .time {
-		font-size: 0.9rem;
+		font-size: var(--text-16);
 		text-align: center;
 	}
 

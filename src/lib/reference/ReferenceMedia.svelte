@@ -104,7 +104,7 @@
 	}
 
 	.back-content h3 {
-		font-size: 2rem;
+		font-size: var(--text-32);
 		color: var(--zl-red);
 	}
 

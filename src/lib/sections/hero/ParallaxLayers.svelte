@@ -2,17 +2,19 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+	import { heroIndex } from '$lib/stores/heroCycle.js';
+	import { get } from 'svelte/store';
 
 	gsap.registerPlugin(ScrollTrigger);
 
-	const folders = ['mjls', 'kme', 'ppo', 'md'];
+	/* const folders = ['mjls', 'kme', 'ppo', 'md']; */
+	const folders = ['tst/full.png', 'tst/uvod1-20.jpg', 'tst/uvod1-70.jpg'];
 
 	let parallaxEl;
 	let st;
 	let interval;
 
 	let wrappers = [];
-	let currentFolderIndex = 0;
 
 	let io;
 	let isInView = false;
@@ -20,13 +22,15 @@
 	let depths = [];
 	let raf;
 
+	/* TODO nahradit s vrstvama */
 	function getLayers(folder) {
 		return [
-			`/homepage/${folder}/full.png`,
+			`/homepage/${folder}`
+			/* `/homepage/${folder}/full.png`,
 			`/homepage/${folder}/v4.png`,
 			`/homepage/${folder}/v3.png`,
 			`/homepage/${folder}/v2.png`,
-			`/homepage/${folder}/v1.png`
+			`/homepage/${folder}/v1.png` */
 		];
 	}
 
@@ -84,17 +88,17 @@
 	function crossfade() {
 		if (!isInView) return;
 
-		const nextIndex = (currentFolderIndex + 1) % folders.length;
+		const current = get(heroIndex);
+		const nextIndex = (current + 1) % folders.length;
+
 		const nextLayers = getLayers(folders[nextIndex]);
-
 		preloadImages(nextLayers);
-
 		const imgs = wrappers.map((w) => w.querySelector('img'));
 
 		const tl = gsap.timeline({
 			onComplete: () => {
-				currentFolderIndex = nextIndex;
-				setFolder(folders[currentFolderIndex]);
+				heroIndex.set(nextIndex);
+				setFolder(folders[nextIndex]);
 			}
 		});
 

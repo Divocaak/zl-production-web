@@ -106,6 +106,8 @@
 		width: 100%;
 		max-width: var(--max-width);
 		justify-self: center;
+
+		margin: 0 auto;
 	}
 
 	.box {
@@ -163,7 +165,7 @@
 		position: relative;
 		z-index: 1;
 		margin-top: 0.5rem;
-		font-size: 1rem;
+		font-size: var(--text-16);
 		text-align: center;
 	}
 

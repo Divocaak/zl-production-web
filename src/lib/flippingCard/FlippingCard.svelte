@@ -146,4 +146,11 @@
 			width: 100%;
 		}
 	}
+
+	/* Bigger than 1920px (ultrawide / 2K / 4K) */
+	@media (min-width: 1921px) {
+		.card {
+			max-width: 50%;
+		}
+	}
 </style>

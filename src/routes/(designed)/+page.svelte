@@ -31,7 +31,15 @@
 
 <Hero
 	logoSrc={'/logos/logo-horizontal-dark.svg'}
-	tagline={'Žijeme ve světe eventů, už 20 let.'}
+	taglines={[
+		'Žijeme ve světe speciálních eventů, už 20 let.',
+		'Produkčně i technicky zajišťujeme významné společenské události. ',
+		'Realizujeme projekty od malých sálů přes O2 arenu až po stadiony. ',
+		'Exkluzivně zastupujeme významné české a slovenské interprety.',
+		'Tvoříme a odbavujeme korporátní akce, prezentace a konference.',
+		'Pronajímáme nejmodernější značkovou techniku podium / zvuk / světla / video / sfx.',
+		'Máme ten nejlepší tým na světě.'
+	]}
 	stageIsOurs={true}
 />
 <StageIsOurs />
