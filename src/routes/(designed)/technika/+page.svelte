@@ -32,4 +32,14 @@
 		padding: 0 var(--general-px);
 		z-index: 0;
 	}
+
+
+	/* Bigger than 1920px (ultrawide / 2K / 4K) */
+	@media (min-width: 1921px) {
+		.wrapper {
+			min-height: 100%;
+			width: 60%;
+			margin: 0 auto;
+		}
+	}
 </style>
