@@ -72,7 +72,8 @@
 						<p>{@html item.desc}</p>
 					{/if}
 					<div class="link-wrapper">
-						<HanddrawnLink href="/rental">Poptat dostupnost</HanddrawnLink>
+						<!-- <HanddrawnLink href="/rental">Poptat dostupnost</HanddrawnLink> -->
+						<HanddrawnLink href="mailto:office@zlproduction.cz">Poptat dostupnost</HanddrawnLink>
 					</div>
 				</div>
 				<div class="img-wrapper" slot="right">
