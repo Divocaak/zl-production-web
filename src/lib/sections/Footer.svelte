@@ -255,4 +255,11 @@
 			gap: 2rem;
 		}
 	}
+
+	/* Bigger than 1920px (ultrawide / 2K / 4K) */
+	@media (min-width: 1921px) {
+		.logos-grid {
+			padding: 0 20%;
+		}
+	}
 </style>

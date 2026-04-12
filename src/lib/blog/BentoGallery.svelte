@@ -72,7 +72,7 @@
 		gap: 0.5rem;
 		grid-auto-flow: dense;
 
-		padding: 0 10rem;
+		padding: 0 var(--general-px);
 	}
 
 	.size-lg {

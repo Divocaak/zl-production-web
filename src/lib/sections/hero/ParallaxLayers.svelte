@@ -183,15 +183,15 @@
 		pointer-events: none;
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.9));
 
-		top: -100px;
+		top: -10vh;
+		overflow-x: clip;
 	}
 
 	.parallax-mask {
 		position: absolute;
 		inset: 0;
-		width: 120%;
-		height: 120%;
-		margin: -10%;
+		transform: scale(1.2);
+		transform-origin: center;
 
 		mask-image: url('/hero-mask/0.svg');
 		mask-repeat: no-repeat;
@@ -257,21 +257,7 @@
 	/* iPad Pro and smaller (≤ 1366px) */
 	@media (max-width: 1366px) {
 		.parallax-wrapper {
-			top: 200px;
-		}
-	}
-
-	/* iPad and smaller (≤ 1024px) */
-	@media (max-width: 1024px) {
-		.parallax-wrapper {
-			top: -220px;
-		}
-	}
-
-	/* iPhone 15 and smaller (≤ 430px) */
-	@media (max-width: 430px) {
-		.parallax-wrapper {
-			top: -200px;
+			top: -20vh;
 		}
 	}
 </style>

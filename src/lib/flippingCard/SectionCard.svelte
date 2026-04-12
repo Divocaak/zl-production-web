@@ -40,8 +40,10 @@
 	}
 
 	.bg-image {
+		flex: 0 0 80%;
+		min-height: 0;
+
 		border-radius: calc(var(--card-border-radius) / 2);
-		min-height: 400px;
 		background-position: center;
 		background-repeat: none;
 		background-size: cover;
@@ -62,17 +64,29 @@
 
 	.content {
 		position: relative;
+
 		display: flex;
 		flex-direction: column;
+
 		justify-content: center;
 		margin: 0 1rem;
-		margin-top: 1rem;
 		z-index: 999;
 	}
 
+	.logo {
+		flex: 0 0 20%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		min-height: 0;
+	}
+
 	.logo img {
-		height: 70px;
-		width: auto;
+		max-height: 100%;
+		max-width: 80%;
+		object-fit: contain;
+
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5));
 	}
 

@@ -32,14 +32,8 @@
 	</div>
 {/if}
 
-{#if !data.stats}
-	<div class="stats-wrapper">
-		<StatsGrid
-			columns={data.stats.columns}
-			maxWidth={data.stats.maxWidth}
-			items={data.stats.items}
-		/>
-	</div>
+{#if data.stats}
+	<StatsGrid columns={data.stats.columns} maxWidth={data.stats.maxWidth} items={data.stats.items} />
 {/if}
 
 {#if data.textAfterStats}
@@ -62,14 +56,17 @@
 	}
 
 	.blog-text {
-		padding: 5rem 10rem;
+		padding: 5rem var(--general-px);
 	}
 	:global(.blog-text p span) {
 		color: var(--zl-red);
 		font-weight: bolder;
 	}
 
-	.stats-wrapper {
-		padding: 5rem 0;
+	/* Bigger than 1920px (ultrawide / 2K / 4K) */
+	@media (min-width: 1921px) {
+		.blog-text {
+			padding: 0 20%;
+		}
 	}
 </style>

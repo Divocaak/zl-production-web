@@ -1,8 +1,4 @@
 <script>
-	export let widthPx = '370px';
-	export let minHeightPx = '530px';
-	export let minHeightPxSm = '530px';
-
 	let card;
 	let cardInner;
 	let innerCard;
@@ -59,7 +55,6 @@
 	on:mouseleave={resetCard}
 	on:click={flipCard}
 	on:transitionend={onFlipTransitionEnd}
-	style="--width:{widthPx}; --min-height:{minHeightPx}; --min-height-sm:{minHeightPxSm}"
 >
 	<div class="card-inner" bind:this={cardInner} class:flipped>
 		<div class="inner-card" bind:this={innerCard}>
@@ -77,9 +72,6 @@
 
 <style>
 	:root {
-		--width: 370px;
-		--min-height: 530px;
-		--min-height-sm: 500px;
 		--card-background: var(--card-red);
 	}
 
@@ -102,9 +94,8 @@
 	.card {
 		all: unset;
 
-		width: var(--width);
-		min-height: var(--min-height);
-		height: auto;
+		width: 100%;
+		aspect-ratio: 5 / 7;
 
 		perspective: 1000px;
 		cursor: pointer;
@@ -152,7 +143,6 @@
 
 	@media (max-width: 1200px) {
 		.card {
-			height: var(--min-height-sm);
 			width: 100%;
 		}
 	}
