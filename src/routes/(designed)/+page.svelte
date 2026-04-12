@@ -29,16 +29,15 @@
 	});
 </script>
 
-<!-- <Hero
+<Hero
 	logoSrc={'/logos/logo-horizontal-dark.svg'}
 	tagline={'Žijeme ve světe eventů, už 20 let.'}
 	stageIsOurs={true}
-/> -->
+/>
 <StageIsOurs />
-<!-- <BlogReferences />
+<BlogReferences />
 <Studio />
-<Equipment />
+<!-- <Equipment /> -->
 <Booking />
 <Family />
 <History />
- -->
