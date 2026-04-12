@@ -34,8 +34,9 @@
 		height: auto;
 		margin-inline: auto;
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, var(--shadow-opacity)));
-	}
 
+	}
+	
 	.wrapper {
 		text-align: center;
 		width: 100%;

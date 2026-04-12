@@ -3,6 +3,21 @@
 	import SubtleLink from '$lib/buttons/SubtleLink.svelte';
 </script>
 
+<div class="powered-by">
+	<h2 style="text-align: center;">Powered by</h2>
+	<div class="logos-grid">
+		<img src="/logos/equipment/partners/adamson.svg" class="white" alt="partners logo" />
+		<img src="/logos/equipment/partners/blackmagic.svg" alt="partners logo" />
+		<img src="/logos/equipment/partners/chamsys.svg" class="white" alt="partners logo" />
+		<img src="/logos/equipment/partners/digico.svg" alt="partners logo" />
+		<img src="/logos/equipment/partners/luminex-white.svg" alt="partners logo" />
+		<img src="/logos/equipment/partners/ma-white.svg" alt="partners logo" />
+		<img src="/logos/equipment/partners/novastar.svg" class="white" alt="partners logo" />
+		<img src="/logos/equipment/partners/robe-white.svg" alt="partners logo" />
+		<img src="/logos/equipment/partners/shure.svg" class="white" alt="partners logo" />
+		<img src="/logos/equipment/partners/yamaha.svg" class="white" alt="partners logo" />
+	</div>
+</div>
 <footer id="contact">
 	<div class="footer-content">
 		<div class="img-wrapper">
@@ -56,21 +71,6 @@
 			<SubtleLink href="/kariera">Kariéra</SubtleLink>
 		</div>
 	</div>
-	<div class="powered-by">
-		<h2 style="text-align: center;">Powered by</h2>
-		<div class="logos-grid">
-			<img src="/logos/equipment/partners/adamson.svg" class="white" alt="partners logo" />
-			<img src="/logos/equipment/partners/blackmagic.svg" alt="partners logo" />
-			<img src="/logos/equipment/partners/chamsys.svg" class="white" alt="partners logo" />
-			<img src="/logos/equipment/partners/digico.svg" alt="partners logo" />
-			<img src="/logos/equipment/partners/luminex-white.svg" alt="partners logo" />
-			<img src="/logos/equipment/partners/ma-white.svg" alt="partners logo" />
-			<img src="/logos/equipment/partners/novastar.svg" class="white" alt="partners logo" />
-			<img src="/logos/equipment/partners/robe-white.svg" alt="partners logo" />
-			<img src="/logos/equipment/partners/shure.svg" class="white" alt="partners logo" />
-			<img src="/logos/equipment/partners/yamaha.svg" class="white" alt="partners logo" />
-		</div>
-	</div>
 	<p class="signature">
 		Website designed, coded and maintained by
 		<a href="https://divokyvojtech.cz" target="_blank">Vojtěch Divoký</a>
@@ -78,6 +78,38 @@
 </footer>
 
 <style>
+	.powered-by {
+		position: relative;
+		padding: 0 var(--general-px);
+	}
+
+	.powered-by .logos-grid {
+		display: grid;
+		grid-template-columns: repeat(5, auto);
+		grid-template-rows: repeat(2, auto);
+		gap: 2rem;
+
+		align-items: center;
+		justify-items: center;
+		align-content: center;
+		justify-content: center;
+	}
+
+	.powered-by .logos-grid img {
+		width: 100%;
+		max-width: 150px;
+		max-height: 75px;
+
+		height: auto;
+		object-fit: contain;
+		display: block;
+	}
+
+	footer {
+		display: flex;
+		flex-direction: column;
+	}
+
 	.footer-content {
 		min-height: 100vh;
 
@@ -97,9 +129,13 @@
 
 	.footer-content {
 		width: 100%;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-evenly;
+
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		width: 100%;
+
+		justify-content: center;
+		justify-items: center;
 	}
 
 	.img-wrapper img {
@@ -125,44 +161,27 @@
 		margin: 0;
 	}
 
-	.powered-by {
-		padding: 0.1rem 5rem;
-		background-color: black;
-	}
-
-	.powered-by .logos-grid {
-		display: grid;
-		grid-template-columns: repeat(5, 1fr);
-		grid-template-rows: repeat(2, 1fr);
-		gap: 2rem;
-
-		align-items: center;
-		justify-items: center;
-	}
-
-	.powered-by .logos-grid img {
-		width: 100%;
-		height: auto;
-	}
-
 	.signature {
-		position: absolute;
 		bottom: 0;
 		width: calc(100% - 2rem);
 		padding: 0 1rem;
+		margin: 0;
 
 		text-align: end;
-		font-size: 0.5rem;
+		font-size: var(--text-12);
 		opacity: 0.6;
+
+		background-color: black;
 
 		color: var(--white);
 	}
 
 	.signature a {
 		color: var(--white);
+		font-size: var(--text-12);
 	}
-	
-	.logos-grid img.white{
+
+	.logos-grid img.white {
 		filter: brightness(0) invert(1);
 	}
 
@@ -233,18 +252,18 @@
 		.contact-wrapper .contact-section {
 			width: 100%;
 		}
-		
+
 		.nav-wrapper {
 			gap: 0.75rem;
 			text-align: center;
 			align-items: center;
 		}
-		
-		.img-wrapper{
+
+		.img-wrapper {
 			text-align: center;
 			align-items: center;
 		}
-		
+
 		.img-wrapper img {
 			max-width: 220px;
 		}
@@ -253,13 +272,6 @@
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: repeat(5, 1fr);
 			gap: 2rem;
-		}
-	}
-
-	/* Bigger than 1920px (ultrawide / 2K / 4K) */
-	@media (min-width: 1921px) {
-		.logos-grid {
-			padding: 0 20%;
 		}
 	}
 </style>

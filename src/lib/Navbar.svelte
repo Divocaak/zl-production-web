@@ -197,7 +197,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		font-size: 2rem;
+		font-size: var(--text-32);
 		pointer-events: auto;
 	}
 </style>

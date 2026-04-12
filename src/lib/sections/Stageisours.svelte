@@ -11,7 +11,7 @@
 			landingSrc: '/cards/pics/zl-production.jpg',
 			logoSrc: '/cards/logos/production.svg',
 			logoAlt: 'zl production logo',
-			desc: '<span>ZL PRODUCTION</span> &mdash; organizace vlastních koncertů, festivalů a turné, stejně jako dílčí i celkové <span>produkce významných společenských akcí</span> na klíč za podpory našich dalších divizí ZL Technical Rental, ZL Studio a ZL Booking, které společně tvoří <span>komplexní řešení</span> pro jakéhokoliv klienta v rámci jedné produkce.',
+			desc: '<span>ZL PRODUCTION</span> &mdash; organizace vlastních koncertů, festivalů a turné, stejně jako dílčí i&nbsp;celkové <span>produkce významných společenských akcí</span> na klíč za podpory našich dalších divizí ZL Technical Rental, ZL Studio a ZL Booking, které společně tvoří <span>komplexní řešení</span> pro jakéhokoliv klienta v&nbsp;rámci jedné produkce.',
 			bottom:
 				'Reference: Majáles Hradec Králové / Praha / Brno / Ostrava, Rock for People, RockIn, Monster Meeting, Kryštof kemp…'
 		},
@@ -19,7 +19,7 @@
 			landingSrc: '/cards/pics/zl-events.jpg',
 			logoSrc: '/cards/logos/events.svg',
 			logoAlt: 'zl events logo',
-			desc: '<span>ZL EVENTS</span> &mdash; zajištění specifických <span>korporátních</span>, sportovních i dalších <span>speciálních eventů</span>, jako jsou zaměstnanecké akce, firemní oslavy televizní přenosy nebo módní přehlídky. Významnou součástí naší činnosti jsou akce v <span>O2 areně</span>, O2 Universu a Fóru Karlín, kde patříme mezi <span>ověřené dodavatele</span> nejen techniky, ale i komplexních eventových řešení na klíč.',
+			desc: '<span>ZL EVENTS</span> &mdash; zajištění specifických <span>korporátních</span>, sportovních i&nbsp;dalších <span>speciálních eventů</span>, jako jsou zaměstnanecké akce, firemní oslavy televizní přenosy nebo módní přehlídky. Významnou součástí naší činnosti jsou akce v <span>O2 areně</span>, O2 Universu a Fóru Karlín, kde patříme mezi <span>ověřené dodavatele</span> nejen techniky, ale i&nbsp;komplexních eventových řešení na klíč.',
 			bottom:
 				'Reference: Prague Playoffs, Česká Spořitelna, Allianz Pojišťovna, M&M Reality, Rádio Blaník'
 		},
@@ -27,7 +27,7 @@
 			landingSrc: '/cards/pics/zl-booking.jpg',
 			logoSrc: '/cards/logos/booking.svg',
 			logoAlt: 'zl booking logo',
-			desc: '<span>ZL BOOKING</span> &mdash; objednejte si <span>exkluzivně zastupované interprety</span> pro váš veřejný i soukromý event <span>online</span> nebo prostřednictvím našich booking agentů, kteří vám díky svým zkušenostem a kontaktům pomohou se sestavením <span>kvalitního a funkčního programu</span>.',
+			desc: '<span>ZL BOOKING</span> &mdash; objednejte si <span>exkluzivně zastupované interprety</span> pro váš veřejný i&nbsp;soukromý event <span>online</span> nebo prostřednictvím našich booking agentů, kteří vám díky svým zkušenostem a&nbsp;kontaktům pomohou se sestavením <span>kvalitního a&nbsp;funkčního programu</span>.',
 			bottom:
 				'Výhradně zastupujeme: Kryštof, Dymytry, Martina Pártlová, Arakain, Traktor, Helenine Oči'
 		},
@@ -43,13 +43,14 @@
 			landingSrc: '/cards/pics/zl-base.jpg',
 			logoSrc: '/cards/logos/base.svg',
 			logoAlt: 'zl base logo',
-			desc: '<span>ZL BASE</span> &mdash; 10&nbsp;000&nbsp;m<sup>²</sup> společného zázemí ZL Production, ZL Rental a ZL Studio nabízí sklad plný špičkové AV techniky, prostory pro zkoušení, kreativní studio s nejmodernějším vybavením pro stage design a programming, ideální pro vznik projektů od prvních návrhů až po kompletní přípravu a realizaci.'
+			desc: '<span>ZL BASE</span> &mdash; 10&nbsp;000&nbsp;m<sup>²</sup> společného zázemí ZL Production, ZL Rental a ZL Studio nabízí sklad plný špičkové AV techniky, prostory pro zkoušení, kreativní studio s nejmodernějším vybavením pro stage design a programming, ideální pro vznik projektů od prvních návrhů až po kompletní přípravu a realizaci.',
+			summer: true
 		},
 		{
 			landingSrc: '/cards/pics/zl-studio.jpg',
 			logoSrc: '/cards/logos/studio.svg',
 			logoAlt: 'zl studio logo',
-			desc: '<span>ZL SHOWDESIGN STUDIO</span> &mdash; kreativní prostor pro vznik návrhů a konceptů, tvorbu stage designu, programování obsahu a přípravu audiovizuálních show, ve kterém náš mladý a talentovaný tým pracuje s nejmodernějším vybavením a technologiemi, k dispozici i pro vás',
+			desc: '<span>ZL SHOWDESIGN STUDIO</span> &mdash; kreativní prostor pro vznik návrhů a konceptů, tvorbu stage designu, programování obsahu a přípravu audiovizuálních show, ve kterém náš mladý a talentovaný tým pracuje s nejmodernějším vybavením a technologiemi, k dispozici i pro vás.',
 			bottom:
 				'Reference: The Culture, Kateřina Marie Tichá, Jelen, Kryštof, Mikolas Josef, Panoptiko, Trautenberk, Harlej'
 		}

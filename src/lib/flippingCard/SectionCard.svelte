@@ -7,11 +7,13 @@
 
 	export let desc;
 	export let bottom;
+
+	export let summer = false;
 </script>
 
 <FlippingCard>
 	<div slot="inner" class="wrapper">
-		<div class="bg-image" style="background-image: url('{landingSrc}');"></div>
+		<div class="bg-image" style="background-image: url('{landingSrc}');" class:summer></div>
 		<div class="content logo">
 			<img src={logoSrc} alt={logoAlt} />
 		</div>
@@ -51,6 +53,10 @@
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
 	}
 
+	.bg-image.summer {
+		filter: brightness(1.18) contrast(1.08) saturate(1.25) sepia(0.22) hue-rotate(5deg);
+	}
+
 	.bg-image.back {
 		position: absolute;
 		width: 100%;
@@ -83,8 +89,8 @@
 	}
 
 	.logo img {
-		max-height: 100%;
-		max-width: 80%;
+		width: 100%;
+		height: 100%;
 		object-fit: contain;
 
 		filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5));

@@ -14,7 +14,7 @@
 				<Hero
 					logoSrc={data.hero.logoSrc}
 					heading={data.hero.label}
-					tagline={data.hero.tagline}
+					taglines={[data.hero.tagline]}
 					hasButton={true}
 				/>
 			</VideoModalButton>

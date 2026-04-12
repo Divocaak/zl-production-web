@@ -14,26 +14,23 @@
 		<div class="content">
 			<LogoHeading src="logos/zl-studio-dark.svg" alt="ZL Studio Logo" href="/studio" />
 			<p>
-				Moderní stage design a vizuální obsah show tvoříme v ZL studiu, které je součástí našeho ZL
-				Backstage v Chlumci nad CIdlinou. Na ploše více než 100 m² disponujeme kreativním prostorem
-				vybaveným synchronizovanými technologiemi (Grand MA3, mediaservery Brutal Force) a dalším
-				nezbytným vybavením včetně velkých zobrazovačů.
+				Moderní stage design a vizuální obsah show tvoříme ve vlastním ZL studiu - komfortním 100m2
+				prostoru s nejmodernějšími technologiemi (GrandMA3, ChamSys MQ500, ZL mediaserver, kamerové
+				studio) a dalším nezbytným vybavením, včetně špičkového ozvučení, LED stěny a velkoplošných
+				zobrazovačů.
 			</p>
 			<p>
-				V rámci přípravy zde na media serverech vytváříme a nasazujeme digitální content a zároveň
-				programujeme světelný design v synchornizaci se zvukem. Celému procesu předchází detailní 3D
-				návrhy, jejichž technologickou proveditelnost okamžitě ověřujeme v reálných podmínkách
-				&ndash; studio je totiž přímo napojené na náš 3 500 m² sklad plný nejmodernější techniky.
+				Tvoříme, prezentujeme a nasazujeme zde digitální content, programujeme světelné scény dle
+				stage designu. Ten vzniká v reálném 3D prostředí, protože disponujeme přesnými modely O2
+				areny, O2 universa, hal BVV, amfiteátrů a dalších prostor.
 			</p>
 			<p>
-				Toto zázemí využíváme nejen pro vlastní projekty a náš talentovaný ZL kreativní tým (Petr
-				Navara, Magdaléna Bláhová, Vojta Toman, Jiří Rouček, Martin Skála…), ale poskytujeme ho také
-				interpretům a jejich týmům, včetně prostoru pro zkoušky a finální doladění show.
+				Technologickou proveditelnost okamžitě ověřujeme v reálných podmínkách. Studio je součástí
+				skladu nejmodernější koncertní techniky.
 			</p>
 			<p>
-				ZL studio a jeho možnosti skrze náš tým využívají festivaly jako The Culture nebo Majáles a
-				interpreti Jelen, Kateřina Marie Tichá, Kryštof, Dymytry, Traktor či Panoptiko pro své
-				největší show.
+				Reference: The Culture, Jelen (O2 arena), Kateřina Marie Tichá (O2 universum), Dymytry (02
+				arena), Kryštof, Panoptiko, Česká spořitelna, Prosperity, Plzeňský Prazdroj.
 			</p>
 			<HanddrawnLink href="/studio">Více informací</HanddrawnLink>
 		</div>
@@ -91,9 +88,10 @@
 		text-align: center;
 		gap: 2.5rem;
 
+		
 		pointer-events: all;
 	}
-
+	
 	.content p {
 		padding: 0 5rem;
 		margin: 0;

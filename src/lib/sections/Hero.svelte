@@ -5,7 +5,7 @@
 
 	export let logoSrc;
 	export let heading;
-	export let tagline;
+	export let taglines;
 	export let hasButton = false;
 	export let stageIsOurs = false;
 </script>
@@ -16,7 +16,7 @@
 		trigger={$loadingDone}
 		image={logoSrc}
 		{heading}
-		text={tagline}
+		{taglines}
 		{hasButton}
 		{stageIsOurs}
 	/>
