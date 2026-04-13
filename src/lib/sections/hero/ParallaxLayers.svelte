@@ -5,10 +5,10 @@
 	import { heroIndex } from '$lib/stores/heroCycle.js';
 	import { get } from 'svelte/store';
 
-	gsap.registerPlugin(ScrollTrigger);
+	export let parallaxImages;
 
 	/* const folders = ['mjls', 'kme', 'ppo', 'md']; */
-	const folders = ['tst/full.png', 'tst/uvod1-20.jpg', 'tst/uvod1-70.jpg'];
+	const folders = parallaxImages;
 
 	let parallaxEl;
 	let st;
@@ -25,7 +25,7 @@
 	/* TODO nahradit s vrstvama */
 	function getLayers(folder) {
 		return [
-			`/homepage/${folder}`
+			folder
 			/* `/homepage/${folder}/full.png`,
 			`/homepage/${folder}/v4.png`,
 			`/homepage/${folder}/v3.png`,

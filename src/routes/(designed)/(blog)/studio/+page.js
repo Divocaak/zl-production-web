@@ -2,7 +2,22 @@ export const load = () => {
     return {
         hero: {
             logoSrc: '/logos/zl-studio-dark.svg',
-            tagline: 'Jedinečný stagedesign, obsah a prvotřídní odbavení'
+            tagline: 'Jedinečný stagedesign, obsah a prvotřídní odbavení',
+            parallaxImages: [
+                "/reference/studio/0.jpg",
+                "/reference/studio/1.jpg",
+                "/reference/studio/2.jpg",
+                "/reference/studio/3.jpg",
+                "/reference/studio/4.jpg",
+                "/reference/studio/5.jpg",
+                "/reference/studio/6.jpg",
+                "/reference/studio/7.jpg",
+                "/reference/studio/8.jpg",
+                "/reference/studio/9.jpg",
+                "/reference/studio/10.jpg",
+                "/reference/studio/11.jpg",
+                "/reference/studio/12.jpg"
+            ]
         },
         textBeforeStats: [
             `<span>Nezávislost na externích dodavatelích</span>, důkladná znalost vlastního vybavení a <span>stálý produkční i technický tým #zlfamily</span> nám umožňují neustále rozvíjet nové technologie, znalosti a postupy. Díky tomu nejsme omezeni množstevními nebo cenovými limity vybavení, což nám dává <span>volnost v kreativním procesu</span>. Pod našima rukama tak vznikají jedinečná díla - od prvotních nápadů a náčrtů, přes přesnou vizualizaci, až po finální realizaci a obsah šitý na míru živým i televizním produkcím.`,
@@ -22,26 +37,19 @@ export const load = () => {
             `Pro tvorbu desginu a programing světel, videa a dalšího obsahu nabízíme kompletně zařízené a technoligicky vybavené ZLFAMILY SHOW DESIGN STUDIO.`
         ],
         gallery: [
-            { src: '/reference/00.jpg', alt: 'studio work' },
-            { src: '/reference/01.jpg', alt: 'studio work' },
-            { src: '/reference/02.jpg', alt: 'studio work' },
-            { src: '/reference/03.jpg', alt: 'studio work' },
-            { src: '/reference/04.jpg', alt: 'studio work' },
-            { src: '/reference/05.jpg', alt: 'studio work' },
-            { src: '/reference/06.jpg', alt: 'studio work' },
-            { src: '/reference/07.jpg', alt: 'studio work' },
-            { src: '/reference/08.jpg', alt: 'studio work' },
-            { src: '/reference/09.jpg', alt: 'studio work' },
-            { src: '/reference/010.jpg', alt: 'studio work' },
-            { src: '/reference/011.jpg', alt: 'studio work' },
-            { src: '/reference/012.jpg', alt: 'studio work' },
-            { src: '/reference/013.jpg', alt: 'studio work' },
-            { src: '/reference/014.jpg', alt: 'studio work' },
-            { src: '/reference/015.jpg', alt: 'studio work' },
-            { src: '/reference/016.jpg', alt: 'studio work' },
-            { src: '/reference/017.jpg', alt: 'studio work' },
-            { src: '/reference/018.jpg', alt: 'studio work' },
-            { src: '/reference/019.jpg', alt: 'studio work' }
+            { src: '/reference/studio/0.jpg', alt: 'studio work' },
+            { src: '/reference/studio/1.jpg', alt: 'studio work' },
+            { src: '/reference/studio/2.jpg', alt: 'studio work' },
+            { src: '/reference/studio/3.jpg', alt: 'studio work' },
+            { src: '/reference/studio/4.jpg', alt: 'studio work' },
+            { src: '/reference/studio/5.jpg', alt: 'studio work' },
+            { src: '/reference/studio/6.jpg', alt: 'studio work' },
+            { src: '/reference/studio/7.jpg', alt: 'studio work' },
+            { src: '/reference/studio/8.jpg', alt: 'studio work' },
+            { src: '/reference/studio/9.jpg', alt: 'studio work' },
+            { src: '/reference/studio/10.jpg', alt: 'studio work' },
+            { src: '/reference/studio/11.jpg', alt: 'studio work' },
+            { src: '/reference/studio/12.jpg', alt: 'studio work' }
         ]
     };
 };

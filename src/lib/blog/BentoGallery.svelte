@@ -3,35 +3,74 @@
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+	gsap.registerPlugin(ScrollTrigger);
+
 	export let images = [];
 	export let columns = 6;
 
-	const pattern = ['lg', 'sm', 'md', 'sm', 'tall', 'sm'];
-	const sizes = [];
-	let cursor = 0;
+	const ROW_PATTERNS = [
+		[3, 3],
+		[2, 2, 2],
+		[3, 2, 1],
+		[2, 1, 1, 2],
+		[1, 1, 1, 1, 1, 1]
+	];
 
-	for (let i = 0; i < images.length; i++) {
-		let size = pattern[i % pattern.length];
-		if (size === 'lg' && columns - cursor < 3) size = 'sm';
-		if ((size === 'md' || size === 'tall') && columns - cursor < 2) size = 'sm';
-		sizes.push(size);
+	const HERO_PATTERNS = [
+		[3, 3],
+		[3, 2, 1]
+	];
 
-		let span = size === 'lg' ? 3 : size === 'md' || size === 'tall' ? 2 : 1;
-		cursor += span;
-		if (cursor >= columns) cursor = 0;
+	function spanToSize(span) {
+		if (span === 3) return 'lg';
+		if (span === 2) return Math.random() > 0.7 ? 'tall' : 'md';
+		return 'sm';
 	}
 
+	function generateLayout(images, columns) {
+		const sizes = [];
+		let i = 0;
+		let rowIndex = 0;
+
+		while (i < images.length) {
+			const remaining = images.length - i;
+			let pattern;
+
+			if (rowIndex % 4 === 0 && remaining >= 2) {
+				const validHero = HERO_PATTERNS.filter((p) => p.length <= remaining);
+				pattern = validHero[Math.floor(Math.random() * validHero.length)];
+			} else {
+				const validPatterns = ROW_PATTERNS.filter((p) => p.length <= remaining);
+				pattern = validPatterns[Math.floor(Math.random() * validPatterns.length)];
+			}
+
+			if (!pattern) pattern = Array(Math.min(remaining, columns)).fill(1);
+			for (let span of pattern) {
+				if (i >= images.length) break;
+				sizes.push(spanToSize(span));
+				i++;
+			}
+
+			rowIndex++;
+		}
+
+		return sizes;
+	}
+
+	let sizes = generateLayout(images, columns);
 	let imgEls = [];
+
+	$: sizes = generateLayout(images, columns);
 
 	onMount(() => {
 		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
 		imgEls.forEach((img, i) => {
 			const size = sizes[i];
+
 			let shift = 10;
 			if (size === 'sm') shift = 5;
 			else if (size === 'md') shift = 12;
-			else if (size === 'tall') shift = 16;
 			else if (size === 'lg') shift = 20;
 
 			gsap.fromTo(
@@ -70,7 +109,7 @@
 		grid-template-columns: repeat(6, 1fr);
 		grid-auto-rows: 120px;
 		gap: 0.5rem;
-		grid-auto-flow: dense;
+		grid-auto-flow: row;
 
 		padding: 0 var(--general-px);
 	}
@@ -118,6 +157,15 @@
 		.gallery {
 			grid-template-columns: repeat(2, 1fr);
 			grid-auto-rows: 140px;
+		}
+	}
+
+	/* Bigger than 1920px (ultrawide / 2K / 4K) */
+	@media (min-width: 1921px) {
+		.gallery {
+			min-height: 100%;
+			width: 60%;
+			margin: 0 auto;
 		}
 	}
 

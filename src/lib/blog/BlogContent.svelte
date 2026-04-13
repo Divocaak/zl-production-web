@@ -16,11 +16,16 @@
 					heading={data.hero.label}
 					taglines={[data.hero.tagline]}
 					hasButton={true}
+					parallaxImages={data.hero.parallaxImages}
 				/>
 			</VideoModalButton>
 		</div>
 	{:else}
-		<Hero logoSrc={data.hero.logoSrc} tagline={data.hero.tagline} />
+		<Hero
+			logoSrc={data.hero.logoSrc}
+			tagline={data.hero.tagline}
+			parallaxImages={data.hero.parallaxImages}
+		/>
 	{/if}
 {/if}
 

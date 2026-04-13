@@ -41,6 +41,11 @@
 		'Máme ten nejlepší tým na světě.'
 	]}
 	stageIsOurs={true}
+	parallaxImages={[
+		'/homepage/tst/full.png',
+		'/homepage/tst/uvod1-20.jpg',
+		'/homepage/tst/uvod1-70.jpg'
+	]}
 />
 <StageIsOurs />
 <BlogReferences />

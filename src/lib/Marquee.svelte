@@ -2,13 +2,13 @@
 	import { onMount } from 'svelte';
 
 	export let images = [
-		'/studio/0.jpg',
-		'/studio/1.jpg',
-		'/studio/2.jpg',
-		'/studio/3.jpg',
-		'/studio/4.jpg',
-		'/studio/5.jpg',
-		'/studio/6.jpg'
+		'/reference/studio/12.jpg',
+		'/reference/studio/7.jpg',
+		'/reference/studio/5.jpg',
+		'/reference/studio/4.jpg',
+		'/reference/studio/3.jpg',
+		'/reference/studio/0.jpg',
+		'/reference/studio/11.jpg'
 	];
 
 	let track;
@@ -58,8 +58,8 @@
 
 	.item {
 		flex-shrink: 0;
-		/* width: 300px; */
 		aspect-ratio: 16 / 9;
+		max-width: 1000px;
 		object-fit: cover;
 	}
 

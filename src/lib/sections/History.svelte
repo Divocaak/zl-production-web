@@ -84,7 +84,7 @@
 		</div>
 	</FlexContent>
 	<div class="video-wrapper">
-		<VideoModalButton imageThumbnailSrc="/history/thumbnail.jpg" />
+		<VideoModalButton videoSrc="/homepage/zl20/zl20_master.m3u8" imageThumbnailSrc="/history/thumbnail.jpg" />
 	</div>
 </SectionWrapper>
 
