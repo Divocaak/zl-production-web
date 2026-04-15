@@ -2,7 +2,7 @@
 	import Hero from '$lib/sections/Hero.svelte';
 	import History from '$lib/sections/History.svelte';
 	import Booking from '$lib/sections/Booking.svelte';
-	import Equipment from '$lib/sections/Equipment.svelte';
+	import Equipment from '$lib/sections/EquipmentNew.svelte';
 	import Family from '$lib/sections/Family.svelte';
 	import Studio from '$lib/sections/Studio.svelte';
 	import BlogReferences from '$lib/sections/BlogReferences.svelte';
@@ -54,7 +54,7 @@
 <StageIsOurs />
 <BlogReferences />
 <Studio />
-<!-- <Equipment /> -->
+<Equipment />
 <Booking />
 <Family />
 <History />

@@ -9,6 +9,7 @@
 	export let card;
 </script>
 
+<!-- NOTE del me later -->
 <div class="logo-center-wrapper">
 	<EquipmentLogoImage logo={card.logo} image={card.homepageCard.image} />
 </div>

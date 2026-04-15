@@ -6,6 +6,7 @@
 	import { onDestroy, onMount } from 'svelte';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+	import ExpandableText from '$lib/ExpandableText.svelte';
 
 	export let section;
 
@@ -58,6 +59,11 @@
 
 <LogoHeading src={section.logo} alt="section logo" />
 <div class="equipment-wrapper">
+	<div class="section-text">
+		{#each section.homepageCard.desc as txt}
+			<p>{@html txt}</p>
+		{/each}
+	</div>
 	{#each section.categories as item, i}
 		<div class="gsap-wrapper" bind:this={items[i]}>
 			<FlexContent alternated={i % 2 != 0}>
@@ -90,6 +96,13 @@
 		flex-direction: column;
 		gap: 5rem;
 		margin-top: 5rem;
+	}
+
+	.section-text{
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		padding: 0 10%;
 	}
 
 	h2 {
