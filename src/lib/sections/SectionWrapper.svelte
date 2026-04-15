@@ -2,6 +2,7 @@
 	export let id;
 </script>
 
+<!-- TODO narvat na všechny sekce -->
 <section {id}>
 	<slot></slot>
 </section>

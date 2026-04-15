@@ -25,7 +25,7 @@
 		: splashBgRaw.replace('<svg', '<svg preserveAspectRatio="xMidYMid slice"');
 </script>
 
-<!-- TODO stagsisours -->
+<!-- NOTE del me later -->
 <div class="wrapper" id="technika">
 	<div class="bg-svg" style="--fill: {equipmentCards?.[activeIndex]?.homepageCard.fill ?? ''}">
 		{@html splashBg}

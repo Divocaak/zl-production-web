@@ -2,7 +2,7 @@
 	import Hero from '$lib/sections/Hero.svelte';
 	import History from '$lib/sections/History.svelte';
 	import Booking from '$lib/sections/Booking.svelte';
-	import Equipment from '$lib/sections/Equipment.svelte';
+	import Equipment from '$lib/sections/EquipmentNew.svelte';
 	import Family from '$lib/sections/Family.svelte';
 	import Studio from '$lib/sections/Studio.svelte';
 	import BlogReferences from '$lib/sections/BlogReferences.svelte';
@@ -41,11 +41,20 @@
 		'Máme ten nejlepší tým na světě.'
 	]}
 	stageIsOurs={true}
+	parallaxImages={[
+		'/homepage/uvodky/uvod1.jpg',
+		'/homepage/uvodky/uvod2.jpg',
+		'/homepage/uvodky/uvod3.jpg',
+		'/homepage/uvodky/uvod4.jpg',
+		'/homepage/uvodky/uvod5.jpg',
+		'/homepage/uvodky/uvod6.jpg',
+		'/homepage/uvodky/uvod7.jpg'
+	]}
 />
 <StageIsOurs />
 <BlogReferences />
 <Studio />
-<!-- <Equipment /> -->
+<Equipment />
 <Booking />
 <Family />
 <History />

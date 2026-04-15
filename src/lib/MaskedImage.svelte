@@ -135,8 +135,11 @@
 	.masked-image {
 		position: absolute;
 		inset: 0;
-		width: 100%;
-		height: 100%;
+			width: 120%;
+	height: 120%;
+
+	top: -10%;
+	left: -10%;
 
 		object-fit: cover;
 

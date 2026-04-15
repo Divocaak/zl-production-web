@@ -8,10 +8,11 @@
 	export let taglines;
 	export let hasButton = false;
 	export let stageIsOurs = false;
+	export let parallaxImages = [];
 </script>
 
 <div class="hero-wrapper">
-	<ParallaxLayers maskId="splash-mask" />
+	<ParallaxLayers maskId="splash-mask" {parallaxImages}/>
 	<HeroContent
 		trigger={$loadingDone}
 		image={logoSrc}
