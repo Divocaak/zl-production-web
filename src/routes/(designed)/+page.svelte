@@ -42,9 +42,13 @@
 	]}
 	stageIsOurs={true}
 	parallaxImages={[
-		'/homepage/tst/full.png',
-		'/homepage/tst/uvod1-20.jpg',
-		'/homepage/tst/uvod1-70.jpg'
+		'/homepage/uvodky/uvod1.jpg',
+		'/homepage/uvodky/uvod2.jpg',
+		'/homepage/uvodky/uvod3.jpg',
+		'/homepage/uvodky/uvod4.jpg',
+		'/homepage/uvodky/uvod5.jpg',
+		'/homepage/uvodky/uvod6.jpg',
+		'/homepage/uvodky/uvod7.jpg'
 	]}
 />
 <StageIsOurs />
