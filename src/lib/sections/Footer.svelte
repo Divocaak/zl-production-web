@@ -7,15 +7,17 @@
 	<h2 style="text-align: center;">Powered by</h2>
 	<div class="logos-grid">
 		<img src="/logos/equipment/partners/adamson.svg" class="white" alt="partners logo" />
-		<img src="/logos/equipment/partners/blackmagic.svg" alt="partners logo" />
-		<img src="/logos/equipment/partners/chamsys.svg" class="white" alt="partners logo" />
 		<img src="/logos/equipment/partners/digico.svg" alt="partners logo" />
-		<img src="/logos/equipment/partners/luminex-white.svg" alt="partners logo" />
-		<img src="/logos/equipment/partners/ma-white.svg" alt="partners logo" />
-		<img src="/logos/equipment/partners/novastar.svg" class="white" alt="partners logo" />
-		<img src="/logos/equipment/partners/robe-white.svg" alt="partners logo" />
 		<img src="/logos/equipment/partners/shure.svg" class="white" alt="partners logo" />
 		<img src="/logos/equipment/partners/yamaha.svg" class="white" alt="partners logo" />
+		<img src="/logos/equipment/partners/chamsys.svg" class="white" alt="partners logo" />
+		<img src="/logos/equipment/partners/ma-white.svg" alt="partners logo" />
+		<img src="/logos/equipment/partners/luminex-white.svg" alt="partners logo" />
+		<img src="/logos/equipment/partners/robe-white.svg" alt="partners logo" />
+		<img src="/logos/equipment/partners/novastar.svg" class="white" alt="partners logo" />
+		<img src="/logos/equipment/partners/blackmagic.svg" alt="partners logo" />
+		<img src="/logos/equipment/partners/nivtec.svg" class="white" alt="partners logo" />
+		<img src="/logos/equipment/partners/taf.svg" alt="partners logo" />
 	</div>
 </div>
 <footer id="contact">
@@ -24,9 +26,12 @@
 			<img src="/logos/big-zl-dark.svg" alt="big zl logo" />
 			<img src="/logos/rataj-dark.svg" alt="josef rataj copyright" />
 		</div>
-		<div class="contact-wrapper">
-			<div class="contact-section">
-				<h2>Kontakt</h2>
+		<div class="contacts-group">
+			<div class="contact-wrapper">
+				<div class="head">
+					<h2>Kontakt</h2>
+					<p>Fakturační údaje</p>
+				</div>
 				<IconLink href="mailto:office@zlproduction.cz" svgPath="/icons/email.svg">
 					office@zlproduction.cz
 				</IconLink>
@@ -45,8 +50,11 @@
 					odd.&nbsp;C, složka&nbsp;17733
 				</p>
 			</div>
-			<div class="contact-section">
-				<h2>ZL Base</h2>
+			<div class="contact-wrapper">
+				<div class="head">
+					<h2>ZL Base</h2>
+					<p>Sklad techniky, studio, produkční zázemí</p>
+				</div>
 				<IconLink href="mailto:studio@zlproduction.cz" svgPath="/icons/email.svg">
 					studio@zlproduction.cz
 				</IconLink>
@@ -61,14 +69,12 @@
 			</div>
 		</div>
 		<div class="nav-wrapper">
-			<SubtleLink href="/#stage-is-ours">#STAGEISOURS</SubtleLink>
-			<SubtleLink href="/#reference">Reference</SubtleLink>
-			<SubtleLink href="/#studio">Studio</SubtleLink>
-			<SubtleLink href="/#technika">Rental</SubtleLink>
-			<SubtleLink href="/#booking">Booking</SubtleLink>
-			<SubtleLink href="/#family">Family</SubtleLink>
-			<SubtleLink href="/#historie">Historie</SubtleLink>
-			<SubtleLink href="/kariera">Kariéra</SubtleLink>
+			<SubtleLink href="/">Úvod</SubtleLink>
+			<SubtleLink href="/reference">Reference</SubtleLink>
+			<SubtleLink href="/studio">Studio</SubtleLink>
+			<SubtleLink href="/technika">Technika</SubtleLink>
+			<SubtleLink href="https://www.zlbooking.cz/" target="_blank">Booking</SubtleLink>
+			<SubtleLink href="/family">Family</SubtleLink>
 		</div>
 	</div>
 	<p class="signature">
@@ -85,7 +91,7 @@
 
 	.powered-by .logos-grid {
 		display: grid;
-		grid-template-columns: repeat(5, auto);
+		grid-template-columns: repeat(6, auto);
 		grid-template-rows: repeat(2, auto);
 		gap: 2rem;
 
@@ -112,6 +118,7 @@
 
 	.footer-content {
 		min-height: 100vh;
+		width: 100%;
 
 		background-image: url('/monkey-touch.svg');
 		background-repeat: no-repeat;
@@ -121,21 +128,13 @@
 		background-image:
 			linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url('/monkey-touch.svg');
 
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.footer-content {
-		width: 100%;
-
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		width: 100%;
+		grid-template-columns: 1fr 2fr 1fr;
 
-		justify-content: center;
 		justify-items: center;
+		justify-content: space-evenly;
+
+		align-items: center;
 	}
 
 	.img-wrapper img {
@@ -148,17 +147,32 @@
 		margin: 0 auto;
 	}
 
+	.contacts-group {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		/* gap: 3rem; */
+
+		justify-content: space-between;
+		align-items: start;
+	}
+
 	.img-wrapper,
 	.nav-wrapper,
-	.contact-wrapper,
-	.contact-section {
+	.contact-wrapper {
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
 	}
 
-	.contact-wrapper .contact-section h2 {
+	.head h2,
+	.head p {
 		margin: 0;
+		margin-top: 0;
+	}
+
+	.head p {
+		margin-bottom: 1rem;
+		height: 2em;
 	}
 
 	.signature {
@@ -196,7 +210,7 @@
 			grid-template-columns: 1fr 1fr;
 			grid-template-areas:
 				'logo nav'
-				'contactA contactB';
+				'contactsGroup contactsGroup';
 			column-gap: 2rem;
 			row-gap: 3rem;
 			align-items: start;
@@ -217,20 +231,8 @@
 			margin: 0 auto;
 		}
 
-		.contact-wrapper {
-			display: contents;
-		}
-
-		.contact-wrapper .contact-section {
-			align-items: center;
-		}
-
-		.contact-wrapper .contact-section:first-child {
-			grid-area: contactA;
-		}
-
-		.contact-wrapper .contact-section:last-child {
-			grid-area: contactB;
+		.contacts-group {
+			grid-area: contactsGroup;
 		}
 	}
 
@@ -241,16 +243,21 @@
 			grid-template-areas:
 				'logo'
 				'nav'
-				'contactA'
-				'contactB';
+				'contactsGroup';
 			row-gap: 2rem;
 			justify-items: center;
 		}
 
 		.img-wrapper,
 		.nav-wrapper,
-		.contact-wrapper .contact-section {
-			width: 100%;
+		.contact-wrapper {
+			width: calc(100% - 2 * var(--general-px));
+			padding: 0 var(--general-px);
+		}
+
+		.contacts-group {
+			display: flex;
+			flex-direction: column;
 		}
 
 		.nav-wrapper {

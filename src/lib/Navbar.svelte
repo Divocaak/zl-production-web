@@ -73,14 +73,29 @@
 				out:fade={{ duration: 100 }}>{@html menuSplashSvgRaw}</span
 			>
 			<div class="small-nav">
-				<SubtleLink on:click={toggleMenu} href="/#stage-is-ours">#STAGEISOURS</SubtleLink>
-				<SubtleLink on:click={toggleMenu} href="/#reference">Reference</SubtleLink>
-				<SubtleLink on:click={toggleMenu} href="/#studio">Studio</SubtleLink>
-				<SubtleLink on:click={toggleMenu} href="/#technika">Rental</SubtleLink>
-				<SubtleLink on:click={toggleMenu} href="/#booking">Booking</SubtleLink>
-				<SubtleLink on:click={toggleMenu} href="/#family">Family</SubtleLink>
-				<SubtleLink on:click={toggleMenu} href="/#historie">Historie</SubtleLink>
-				<SubtleLink on:click={toggleMenu} href="/kariera">Kariéra</SubtleLink>
+				<SubtleLink style="font-size: var(--text-24);" on:click={toggleMenu} href="/">
+					Úvod
+				</SubtleLink>
+				<SubtleLink style="font-size: var(--text-24);" on:click={toggleMenu} href="/reference">
+					Reference
+				</SubtleLink>
+				<SubtleLink style="font-size: var(--text-24);" on:click={toggleMenu} href="/studio">
+					Studio
+				</SubtleLink>
+				<SubtleLink style="font-size: var(--text-24);" on:click={toggleMenu} href="/technika">
+					Technika
+				</SubtleLink>
+				<SubtleLink
+					style="font-size: var(--text-24);"
+					on:click={toggleMenu}
+					href="https://www.zlbooking.cz/"
+					target="_blank"
+				>
+					Booking
+				</SubtleLink>
+				<SubtleLink style="font-size: var(--text-24);" on:click={toggleMenu} href="/family">
+					Family
+				</SubtleLink>
 			</div>
 		</div>
 	{/if}
@@ -197,7 +212,6 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		font-size: var(--text-32);
 		pointer-events: auto;
 	}
 </style>

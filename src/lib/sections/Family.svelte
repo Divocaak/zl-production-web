@@ -161,7 +161,7 @@
 						Rychtářem, RockIn a další události, které inspirovaly.
 					</p>
 				</ExpandableText>
-				<HanddrawnLink href="/family">Kontakty</HanddrawnLink>
+				<HanddrawnLink href="/family">Celý tým - kontakty</HanddrawnLink>
 			</div>
 		</FlexContent>
 	</div>
