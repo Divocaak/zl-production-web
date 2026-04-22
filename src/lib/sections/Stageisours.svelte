@@ -37,7 +37,7 @@
 			logoAlt: 'zl rental logo',
 			desc: '<span>ZL TECHNICAL RENTAL</span> &mdash; technická produkce a zajištění <span>audiovizuální techniky</span> pro eventy, špičková indoor i outdoor pódia a pronájem <span>značkového riderového</span> vybavení (zvuk, světla, stage, rigging, video, SFX) včetně realizace s využitím <span>nejmodernějších technologií</span> a vysoce profesionálního technického týmu #zlfamily.',
 			bottom:
-				'Reference: O2 Arena (Kryštof, Jelen, Michal David, Olympic, Millennium Explosion…), O2 Universum (Katerina Marie Tichá, Kool and the gang, Harlej 360…), The Culture, České Hrady, Mostecká Slavnost, Mělnické Vinobraní, Manowar European tour<br/><br/>Značky: Robe, Adamson, TAF, GrandMA, DiGiCo, Yamaha, Shure…'
+			'Reference: O2 Arena (Kryštof, Jelen, Michal David, Olympic, Millennium Explosion…), O2 Universum (Katerina Marie Tichá, Kool and the gang, Harlej 360…), The Culture, České Hrady, Mostecká Slavnost, Mělnické Vinobraní, Manowar European tour<br/><br/>Značky: Robe, Adamson, TAF, GrandMA, DiGiCo, Yamaha, Shure…'
 		},
 		{
 			landingSrc: '/cards/pics/zl-base.jpg',

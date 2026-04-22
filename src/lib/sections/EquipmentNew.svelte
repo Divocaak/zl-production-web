@@ -19,7 +19,7 @@
 
 
 <SectionWrapper id="technika">
-    <LogoHeading src="/hashtags/stage-is-ours-dark.svg" alt="#stage is ours logo"/>
+    <LogoHeading src="/logos/stage-is-ours-dark.svg" alt="#stage is ours logo"/>
     <div class="wrapper">
         {#each equipmentCards as card}
 		<EquipmentCel {card} />
