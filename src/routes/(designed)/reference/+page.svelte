@@ -6,11 +6,14 @@
 	import ReferenceTextOnly from '$lib/reference/ReferenceTextOnly.svelte';
 	import BlogReference from '$lib/reference/BlogReference.svelte';
 
+	gsap.registerPlugin(ScrollTrigger);
+
 	let references = [];
 	let loading = true;
 	let wrapper;
 
 	const highestSpeed = 1.25;
+
 	const columnData = [
 		{ speed: 0.75, direction: 1 },
 		{ speed: highestSpeed, direction: 1 },
@@ -19,30 +22,71 @@
 
 	let columns = [];
 	let numColumns = 3;
+
 	function splitIntoColumns(items, n) {
 		const cols = Array.from({ length: n }, () => []);
-		items.forEach((item, index) => {
-			cols[index % n].push(item);
-		});
+		items.forEach((item, index) =>
+			cols[index % n].push({
+				...item,
+				_speed: columnData[index % n]?.speed ?? 1,
+				_direction: columnData[index % n]?.direction ?? 1
+			})
+		);
 		return cols;
 	}
 
 	function updateNumColumns() {
 		const width = window.innerWidth;
+
 		if (width <= 600) numColumns = 1;
 		else if (width <= 1024) numColumns = 2;
 		else numColumns = 3;
 
-		const visibleReferences = references.filter((r) => r.visible);
-		if (visibleReferences.length) {
-			columns = splitIntoColumns(visibleReferences, numColumns);
-		}
+		const visible = references.filter((r) => r.visible);
+		if (visible.length) columns = splitIntoColumns(visible, numColumns);
 	}
 
-	let columnEls = [];
+	function killAnimations() {
+		ScrollTrigger.getAll().forEach((t) => t.kill());
+		gsap.killTweensOf('.column');
+	}
+
+	async function initAnimations() {
+		await tick();
+
+		if (!wrapper) return;
+		if (window.matchMedia('(pointer: coarse)').matches) return;
+
+		killAnimations();
+
+		const columnEls = wrapper.querySelectorAll('.column');
+
+		let tallest = 0;
+		columnEls.forEach((col) => (tallest = Math.max(tallest, col.scrollHeight)));
+		wrapper.style.height = tallest * highestSpeed + 'px';
+
+		const tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: wrapper,
+				start: 'top top',
+				end: 'bottom top',
+				scrub: 0.3
+			}
+		});
+
+		columnEls.forEach((col) => {
+			const speed = Number(col.dataset.speed || 1);
+			const direction = Number(col.dataset.direction || 1);
+			const travel = (tallest - col.scrollHeight) * speed * direction;
+			tl.to(col, { y: travel, ease: 'none' }, 0);
+		});
+
+		ScrollTrigger.refresh();
+	}
+
 	onMount(async () => {
 		if (typeof window === 'undefined') return;
-		window.addEventListener('resize', updateNumColumns);
+		window.addEventListener('resize', handleResize);
 
 		try {
 			const res = await fetch('/dynamic/jsons/reference.json');
@@ -61,49 +105,37 @@
 			}));
 
 			references = [...blogReferences, ...baseReferences];
+
 			updateNumColumns();
+			await initAnimations();
 		} catch (e) {
 			console.error(e);
 		} finally {
 			loading = false;
 		}
-
-		await tick();
-		if (window.matchMedia('(pointer: coarse)').matches) return;
-
-		let tallest = 0;
-		columnEls.forEach((col) => {
-			tallest = Math.max(tallest, col.scrollHeight);
-		});
-		wrapper.style.height = tallest * highestSpeed + 'px';
-
-		columnEls.forEach((col, i) => {
-			const { speed, direction } = columnData[i] ?? columnData[0];
-			const distance = (tallest - col.scrollHeight) * speed * direction;
-
-			gsap.to(col, {
-				y: distance,
-				ease: 'none',
-				scrollTrigger: {
-					trigger: wrapper,
-					start: 'top top',
-					end: 'bottom top',
-					scrub: 0.3
-				}
-			});
-		});
 	});
+
+	function handleResize() {
+		updateNumColumns();
+		initAnimations();
+	}
 
 	onDestroy(() => {
 		if (typeof window === 'undefined') return;
-		window.removeEventListener('resize', updateNumColumns);
+
+		window.removeEventListener('resize', handleResize);
+		killAnimations();
 	});
 </script>
 
 <section id="reference-gallery">
 	<div class="columns-wrapper" bind:this={wrapper}>
 		{#each columns as column, i}
-			<div class="column" bind:this={columnEls[i]}>
+			<div
+				class="column"
+				data-speed={columnData[i]?.speed ?? 1}
+				data-direction={columnData[i]?.direction ?? 1}
+			>
 				{#each column as item}
 					{#if !item.referenceType}
 						<BlogReference {...item} borderRadius="0" />
