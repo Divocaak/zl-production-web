@@ -1,5 +1,7 @@
 <script>
 	import { cart, cartTotalPrice, cartItemsCount } from '$lib/stores/cart';
+
+	console.log($cartTotalPrice);
 </script>
 
 {#if $cart.length > 0}
@@ -8,6 +10,8 @@
 			<tr>
 				<th>Název</th>
 				<th>Počet</th>
+				<th>Cena za kus</th>
+				<th>Cena celkem</th>
 				<th></th>
 			</tr>
 		</thead>
@@ -25,6 +29,12 @@
 						</button>
 					</td>
 					<td>
+						{item.price} CZK
+					</td>
+					<td>
+						{item.price * item.quantity} CZK
+					</td>
+					<td>
 						<button on:click={() => cart.remove(item._key)} aria-labelledby="cart clear">
 							<img src="/icons/cart-delete.svg" alt="cart clear icon" />
 						</button>
@@ -34,11 +44,11 @@
 		</tbody>
 	</table>
 	<p><b>Celkem položek:</b> {$cartItemsCount}</p>
+	<p><b>Celková cena:</b> {$cartTotalPrice}</p>
 	<div class="actions">
 		<button on:click={cart.clear} aria-labelledby="cart clear">
 			<img src="/icons/cart-delete.svg" alt="cart clear icon" />
 		</button>
-		<button class="checkout">Odeslat poptávku</button>
 	</div>
 {/if}
 

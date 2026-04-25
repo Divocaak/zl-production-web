@@ -1,6 +1,6 @@
 <script>
 	import Cart from '$lib/rental/Cart.svelte';
-	import { cart, cartItemsCount, cartTotalPrice } from '$lib/stores/cart.js';
+	import { cart } from '$lib/stores/cart.js';
 
 	export let data;
 
@@ -60,6 +60,8 @@
 
 <Cart />
 
+<button on:click={() => console.log($cart)}>Odeslat poptávku</button><br/>
+
 {#if sectionLabels.length}
 	<select bind:value={sectionIndex} on:change={resetCategory}>
 		{#each sectionLabels as label, index}
@@ -110,6 +112,7 @@
 							{/if}
 						</li>
 					{/each}
+					<li>Denní sazba: {item.price} CZK</li>
 				</ul>
 				<button on:click={() => cart.add(item)}> Add to cart </button>
 			</li>
