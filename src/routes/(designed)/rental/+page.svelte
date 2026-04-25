@@ -1,5 +1,6 @@
 <script>
-	import { cart } from '$lib/stores/cart.js';
+	import Cart from '$lib/rental/Cart.svelte';
+	import { cart, cartItemsCount, cartTotalPrice } from '$lib/stores/cart.js';
 
 	export let data;
 
@@ -28,6 +29,18 @@
 	$: form = category.form && typeof category.form === 'object' ? category.form : {};
 	$: items = Array.isArray(category.items) ? category.items : [];
 
+	/* ---------- filtering ---------- */
+	$: filteredItems = Array.isArray(items)
+		? items.filter(
+				(item) =>
+					item &&
+					typeof item === 'object' &&
+					Object.entries(filters).every(
+						([key, value]) => value === undefined || item[key] === value
+					)
+			)
+		: [];
+
 	/* ---------- actions ---------- */
 	function resetAll() {
 		sectionIndex = 0;
@@ -43,19 +56,9 @@
 	function resetFilters() {
 		filters = {};
 	}
-
-	/* ---------- filtering ---------- */
-	$: filteredItems = Array.isArray(items)
-		? items.filter(
-				(item) =>
-					item &&
-					typeof item === 'object' &&
-					Object.entries(filters).every(
-						([key, value]) => value === undefined || item[key] === value
-					)
-			)
-		: [];
 </script>
+
+<Cart />
 
 {#if sectionLabels.length}
 	<select bind:value={sectionIndex} on:change={resetCategory}>
@@ -78,10 +81,8 @@
 		{#each Object.entries(form) as [key, field]}
 			<label>
 				{field && typeof field.label === 'string' ? field.label : key}
-
 				<select bind:value={filters[key]}>
 					<option value={undefined}>– any –</option>
-
 					{#each Array.isArray(field?.values) ? field.values : [] as value, index}
 						<option value={typeof value === 'number' ? value : index}>
 							{String(value)}
