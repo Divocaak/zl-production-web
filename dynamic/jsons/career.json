@@ -1,0 +1,23 @@
+[
+  {
+    "label": "Řidič C+E",
+    "description": "návoz materiálu na akce z Chlumce nad Cidlinou, pohoda přes koncert a po něm odvoz zpět nebo pokračování na další štaci",
+    "visible": true,
+    "temp": false,
+    "image": "/dynamic/media/career/ridic-c-e/fa4d4cf997caa35f2f8bca834a8b8f1c.jpeg"
+  },
+  {
+    "label": "Riggers",
+    "description": "stavba ground supportu / věšení v indooru, stavba zastřešení standard / HD / Superbeam outdoor",
+    "visible": true,
+    "temp": false,
+    "image": "/dynamic/media/career/riggers/41f45b5274948541a91a071e871bbf0e.jpeg"
+  },
+  {
+    "label": "Výpomoc se stavbou pódií",
+    "description": "lorem ipsum",
+    "visible": true,
+    "temp": true,
+    "image": "/dynamic/media/career/vypomoc-se-stavbou-podii/7e96269c3bffa3882da6c73ea128c0b7.jpeg"
+  }
+]

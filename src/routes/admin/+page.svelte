@@ -15,3 +15,9 @@
 	apiPath="/api/saveReference"
 	saveButton="reference"
 />
+<AdminForm
+	schemaPath="/admin/career-schema.json"
+	dataPath="/dynamic/jsons/career.json"
+	apiPath="/api/saveCareer"
+	saveButton="nabídky"
+/>
