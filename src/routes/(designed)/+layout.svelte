@@ -193,7 +193,7 @@
 	:global(p, a) {
 		font-size: var(--text-16);
 		line-height: 1.4;
-		letter-spacing: .125rem;
+		letter-spacing: 0.125rem;
 	}
 
 	:global(.zl-text) {

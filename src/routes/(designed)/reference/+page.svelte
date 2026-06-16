@@ -12,10 +12,10 @@
 	let loading = true;
 	let wrapper;
 
-	const highestSpeed = 1.25;
-
+	const fxAmmount = 0.04;
+	const highestSpeed = 1 + fxAmmount;
 	const columnData = [
-		{ speed: 0.75, direction: 1 },
+		{ speed: 1 - fxAmmount, direction: 1 },
 		{ speed: highestSpeed, direction: 1 },
 		{ speed: 1, direction: 1 }
 	];
@@ -23,15 +23,22 @@
 	let columns = [];
 	let numColumns = 3;
 
+	let resizeTimeout;
+	let timeline;
+
 	function splitIntoColumns(items, n) {
 		const cols = Array.from({ length: n }, () => []);
-		items.forEach((item, index) =>
-			cols[index % n].push({
+
+		items.forEach((item, index) => {
+			const columnIndex = index % n;
+
+			cols[columnIndex].push({
 				...item,
-				_speed: columnData[index % n]?.speed ?? 1,
-				_direction: columnData[index % n]?.direction ?? 1
-			})
-		);
+				_speed: columnData[columnIndex]?.speed ?? 1,
+				_direction: columnData[columnIndex]?.direction ?? 1
+			});
+		});
+
 		return cols;
 	}
 
@@ -46,46 +53,105 @@
 		if (visible.length) columns = splitIntoColumns(visible, numColumns);
 	}
 
-	function killAnimations() {
-		ScrollTrigger.getAll().forEach((t) => t.kill());
-		gsap.killTweensOf('.column');
+	function destroyAnimation() {
+		if (timeline) {
+			timeline.scrollTrigger?.kill();
+			timeline.kill();
+			timeline = null;
+		}
+	}
+
+	function resetColumns() {
+		if (!wrapper) return;
+
+		const columnEls = wrapper.querySelectorAll('.column');
+
+		columnEls.forEach((col) => {
+			gsap.set(col, {
+				clearProps: 'all'
+			});
+		});
+
+		wrapper.style.height = '';
+	}
+
+	function shouldDisableAnimation() {
+		return (
+			window.matchMedia('(pointer: coarse)').matches ||
+			window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+			numColumns === 1
+		);
 	}
 
 	async function initAnimations() {
 		await tick();
-
 		if (!wrapper) return;
-		if (window.matchMedia('(pointer: coarse)').matches) return;
 
-		killAnimations();
+		destroyAnimation();
+		resetColumns();
+		if (shouldDisableAnimation()) return;
 
-		const columnEls = wrapper.querySelectorAll('.column');
+		const columnEls = [...wrapper.querySelectorAll('.column')];
+		if (!columnEls.length) return;
 
 		let tallest = 0;
 		columnEls.forEach((col) => (tallest = Math.max(tallest, col.scrollHeight)));
-		wrapper.style.height = tallest * highestSpeed + 'px';
 
-		const tl = gsap.timeline({
+		let maxTravel = 0;
+		columnEls.forEach((col) => {
+			const speed = Number(col.dataset.speed || 1);
+			const travel = Math.abs((tallest - col.scrollHeight) * speed);
+			maxTravel = Math.max(maxTravel, travel);
+		});
+
+		wrapper.style.height = `${tallest + maxTravel}px`;
+
+		timeline = gsap.timeline({
 			scrollTrigger: {
 				trigger: wrapper,
 				start: 'top top',
 				end: 'bottom top',
-				scrub: 0.3
+				scrub: 0.3,
+				invalidateOnRefresh: true
 			}
 		});
 
 		columnEls.forEach((col) => {
 			const speed = Number(col.dataset.speed || 1);
 			const direction = Number(col.dataset.direction || 1);
-			const travel = (tallest - col.scrollHeight) * speed * direction;
-			tl.to(col, { y: travel, ease: 'none' }, 0);
+
+			const deficit = tallest - col.scrollHeight;
+			if (deficit <= 0) return;
+
+			const travel = deficit * speed * direction;
+			timeline.to(
+				col,
+				{
+					y: travel,
+					ease: 'none'
+				},
+				0
+			);
 		});
 
 		ScrollTrigger.refresh();
 	}
 
+	function handleResize() {
+		clearTimeout(resizeTimeout);
+
+		resizeTimeout = setTimeout(async () => {
+			const previousColumns = numColumns;
+			updateNumColumns();
+			if (previousColumns !== numColumns) await tick();
+
+			initAnimations();
+		}, 150);
+	}
+
 	onMount(async () => {
 		if (typeof window === 'undefined') return;
+
 		window.addEventListener('resize', handleResize);
 
 		try {
@@ -107,6 +173,8 @@
 			references = [...blogReferences, ...baseReferences];
 
 			updateNumColumns();
+
+			await tick();
 			await initAnimations();
 		} catch (e) {
 			console.error(e);
@@ -115,16 +183,15 @@
 		}
 	});
 
-	function handleResize() {
-		updateNumColumns();
-		initAnimations();
-	}
-
 	onDestroy(() => {
 		if (typeof window === 'undefined') return;
 
 		window.removeEventListener('resize', handleResize);
-		killAnimations();
+
+		clearTimeout(resizeTimeout);
+
+		destroyAnimation();
+		resetColumns();
 	});
 </script>
 
@@ -157,6 +224,7 @@
 	}
 
 	.columns-wrapper {
+		padding-top: 20%;
 		display: flex;
 		align-items: flex-start;
 		width: 100%;
