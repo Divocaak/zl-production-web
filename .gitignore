@@ -1,6 +1,8 @@
 node_modules
 /static/videos/*/*.mp4
 /dynamic/media/reference/
+/dynamic/media/career/
+/dynamic/static-videos/
 
 # Output
 .output

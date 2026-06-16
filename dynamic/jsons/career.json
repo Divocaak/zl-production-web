@@ -1,0 +1,51 @@
+[
+    {
+        "label": "Řidič C+E",
+        "description": "Zajišťuje přepravu technického a konstrukčního materiálu na koncerty, festivaly a další akce. Vyráží ze skladu v Chlumci nad Cidlinou, převáží vybavení na místo realizace a po skončení akce zajišťuje jeho odvoz zpět nebo přesun na další štaci. Součástí práce je kontrola a zabezpečení nákladu, dodržování harmonogramu a spolupráce s technickým týmem.",
+        "visible": true,
+        "temp": false,
+        "image": "/dynamic/media/career/ridic-c-e/fa4d4cf997caa35f2f8bca834a8b8f1c.jpeg"
+    },
+    {
+        "label": "Riggers",
+        "description": "Podílí se na stavbě a demontáži nosných konstrukcí pro koncerty a další produkce. Zajišťuje stavbu ground supportů, zastřešení (Standard, HD, Superbeam) a zavěšování techniky v indoorových prostorech. Práce vyžaduje technickou zručnost, důsledné dodržování bezpečnostních postupů a schopnost pracovat ve výškách i v týmu.",
+        "visible": true,
+        "temp": false,
+        "image": "/dynamic/media/career/riggers/41f45b5274948541a91a071e871bbf0e.jpeg"
+    },
+    {
+        "label": "Páskování",
+        "description": "Kontrola vstupenek a označování návštěvníků identifikačními páskami při vstupu na koncerty, festivaly a další akce. Náplní práce je komunikace s návštěvníky, usměrňování příchozích a dohled nad plynulým odbavením vstupů.",
+        "visible": true,
+        "temp": true,
+        "image": "/dynamic/media/career/paskovani/1efbabc02fd7d498b31f5844a8047cdd.jpeg"
+    },
+    {
+        "label": "Práce za barem",
+        "description": "Obsluha návštěvníků na barových stanovištích během kulturních a společenských akcí. Náplní práce je příprava a výdej nápojů, práce s pokladním systémem, udržování pořádku na pracovišti a komunikace se zákazníky.",
+        "visible": true,
+        "temp": true,
+        "image": "/dynamic/media/career/prace-za-barem/d2be16583585c424de8bfa9adc11c3a0.jpeg"
+    },
+    {
+        "label": "Točení piva",
+        "description": "Výčepní činnost na koncertech, festivalech a dalších akcích. Práce zahrnuje správné čepování piva, doplňování zásob, udržování čistoty výčepu a rychlou obsluhu návštěvníků i ve špičkách.",
+        "visible": true,
+        "temp": true,
+        "image": "/dynamic/media/career/toceni-piva/271869336ef0d14e274f4aabacaefea7.jpeg"
+    },
+    {
+        "label": "Výpomoc se stavbou pódií",
+        "description": "Pomocné práce při montáži a demontáži pódiových konstrukcí, zábran, zastřešení a dalšího technického vybavení. Práce probíhá před akcí i po jejím skončení a vyžaduje fyzickou zdatnost a spolehlivost.",
+        "visible": true,
+        "temp": true,
+        "image": "/dynamic/media/career/vypomoc-se-stavbou-podii/1698f5728b1778bc21a867b3b35f3efa.jpeg"
+    },
+    {
+        "label": "Backstage a přestavby kapel",
+        "description": "Pomoc technickému týmu v zákulisí během koncertů a festivalů. Náplní práce jsou přestavby pódia mezi jednotlivými vystoupeními, přesuny aparatury a vybavení, asistence technikům a zajištění plynulého průběhu programu.",
+        "visible": true,
+        "temp": true,
+        "image": "/dynamic/media/career/backstage-a-prestavby-kapel/898a3a9aab00ec9974bce666442bba72.jpeg"
+    }
+]

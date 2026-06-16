@@ -1,30 +1,1659 @@
 [
-  {
-    "referenceType": "video",
-    "id": "1773335970903",
-    "label": "adsad",
-    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam id dolor. Phasellus rhoncus. In rutrum. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Nullam rhoncus aliquam metus. Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem. Integer vulputate sem a nibh rutrum consequat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ipsum massa, ullamcorper in, auctor et, scelerisque sed, est. Nulla accumsan, elit sit amet varius semper, nulla mauris mollis quam, tempor suscipit diam nulla vel leo. Mauris elementum mauris vitae tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.",
-    "year": "131",
-    "visible": true,
-    "image": "/dynamic/media/reference/1773335970903/22266c1b13768251aeb37b15d4b89a46.png",
-    "video": "/dynamic/media/reference/1773335970903/1e709e3f46c3681877d4a5d56be37736.mp4"
-  },
-  {
-    "referenceType": "image",
-    "id": "1773335970903",
-    "label": "adsad",
-    "description": "bb",
-    "year": "131",
-    "visible": true,
-    "image": "/dynamic/media/reference/1773335970903/22266c1b13768251aeb37b15d4b89a46.png"
-  },
-  {
-    "referenceType": "person",
-    "id": "1773335970903",
-    "label": "adsad",
-    "description": "bb",
-    "year": "131",
-    "visible": true,
-    "image": "/dynamic/media/reference/1773335970903/22266c1b13768251aeb37b15d4b89a46.png"
-  }
+    {
+        "referenceType": "video",
+        "id": "1773335970903",
+        "label": "adsad",
+        "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam id dolor. Phasellus rhoncus. In rutrum. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Nullam rhoncus aliquam metus. Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem. Integer vulputate sem a nibh rutrum consequat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ipsum massa, ullamcorper in, auctor et, scelerisque sed, est. Nulla accumsan, elit sit amet varius semper, nulla mauris mollis quam, tempor suscipit diam nulla vel leo. Mauris elementum mauris vitae tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.",
+        "year": "131",
+        "visible": true,
+        "image": "/dynamic/media/reference/1773335970903/22266c1b13768251aeb37b15d4b89a46.png",
+        "video": "/dynamic/media/reference/1773335970903/1e709e3f46c3681877d4a5d56be37736.mp4"
+    },
+    {
+        "referenceType": "image",
+        "id": "1773335970903",
+        "label": "reference fotka",
+        "description": "bb",
+        "year": "131",
+        "visible": true,
+        "image": "/dynamic/media/reference/1773335970903/22266c1b13768251aeb37b15d4b89a46.png"
+    },
+    {
+        "referenceType": "person",
+        "id": "1773335970903",
+        "label": "Petr novák",
+        "description": "skvělá práce",
+        "year": "2021",
+        "visible": true,
+        "image": "/dynamic/media/reference/1773335970903/22266c1b13768251aeb37b15d4b89a46.png"
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908870370",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-3-1.jpg",
+        "label": "Majáles 2025",
+        "year": "2025",
+        "description": " V roce 2025 jsme desetiletou technickou spolupráci s Majálesy rozšířili o kompletní produkční zajištění turné pěti největších open air festivalů a uvedli ve světové open air premiéře revoluční ozvučovací systém Adamson VGt.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908979199",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/mp-logo.jpg",
+        "label": "Martina Pártlová",
+        "year": "",
+        "description": "Spolupráci s Martinou Pártlovou jsme odstartovali vyprodaným koncertem ve Foru Karlín. Na svém prvním samostatném koncertu předvedla skvělou a velice pozitivně hodnocenou show.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908911497",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/kme-logo-2.jpg",
+        "label": "Millennium Explosion",
+        "year": "",
+        "description": "S Radiem Kiss jsme realizovali druhý ročník jedné z největších akcí v O2 areně s největšími hity 2000s.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908988552",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/mm-logo-1.jpg",
+        "label": "Mega Monster O2 arena",
+        "year": "",
+        "description": "Úspěšné letní turné Dymytry a Traktor jsme zakončili show světových rozměrů v O2 areně.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908970220",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/olympic-logo-1.jpg",
+        "label": "Olympic Trilogy",
+        "year": "",
+        "description": "Rok 2024 jsme strávili na turné s kapelou Olympic a na speciálním turné zaměřeném na vizuální zážitek spojený s tematickými deskami.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908972761",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/lm_logo.jpg",
+        "label": "Leoš Mareš tour",
+        "year": "",
+        "description": "V rámci naší spolupráce s Leošem Marešem jsme nechyběli ani u jeho prvního turné napříč celou republikou.Jak u něj bývá zvykem, nešlo o běžné koncerty, ale o rozsáhlou výpravnou show.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908993380",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/vinobrani-logo.jpg",
+        "label": "Vinobraní Mělník",
+        "year": "",
+        "description": "Pro tradiční slavnosti vína na mělníckém náměstí a přilehlých prostorech jsme dodali kompletní technické řešení.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908914282",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_mm.jpg",
+        "label": "Monster Meeting Tour",
+        "year": "",
+        "description": "Unikátní show předních českých kapel Dymytry a Traktor v jeden čas na jednom podiu naplnila amfiteátry napříč českou republikou.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908952192",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_himl.jpg",
+        "label": "Himlhergotfest 2024",
+        "year": "2024",
+        "description": "Velkopanská trachtace jemnostpána Trautenberka přivedla za plzeňskou Plazu další kapely jako Horkýže Slíže, Cocotte Minute a Morčata na útěku.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908974784",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/kemp-logo-1.jpg",
+        "label": "Kryštof Kemp 2024",
+        "year": "2024",
+        "description": "Uzavřeli jsme desetiletí festivalu, který svými pěti ročníky významně ovlivnil mnohé a inspiroval další interprety k pořádání fanouškovských festivalů a tematických turné.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908999147",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/helena-logo.jpg",
+        "label": "Helena 77 v O2 areně",
+        "year": "",
+        "description": "Výroční koncert k 77. narozeninám přední české zpěvačky za doprovodu symfonického orchestru a stepařů.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908970571",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-masarycka-black.jpg",
+        "label": "Opening party",
+        "year": "",
+        "description": "Nová budova Masaryčky na Novém Městě v Praze byla slavnostně otevřena. Stěžejní částí programu bylo nasvícení unikátní fasády a odbavení vystoupení Morcheeba na netradiční místě na netradičním podiu. Výzva, které jsme se rádi zhostili.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908955643",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-90s.jpg",
+        "label": "90s Explosion 2024",
+        "year": "2024",
+        "description": "Retrospektivní festival 90s Explosion oslavil své páté výročí jedním z nejhezčích ročníků ve své historii. Ideální počasí už jen podtrhlo pohodovou a zároveň strhující atmosféru plnou hitů z devadesátých let.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908999399",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/majales-logo.jpg",
+        "label": "Majáles 2024",
+        "year": "2024",
+        "description": "Opět o trošku větší a náročnější byla realizace největších českých festivalů Majáles. Ve čtyřech různých městech o čtyřech následujících víkendech jsme postavili tři podia pro festivaly s celkovou návštěvností téměř 150 tisíc lidí.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908929847",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/krystof-logo.jpg",
+        "label": "Kryštof tour 2024",
+        "year": "2024",
+        "description": "<i>Naši</i> kluci v čele s Richardem Krajčem vyrazili na jaře na klubové turné. Vrátil se tak do míst, kde v historii začínali a ochutnávali první velké úspěchy. I když šlo o minimalistické prostory, postarali jsme se o techniku, netradiční vizuální scénu a organizaci tour.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908949038",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/vanoce_logo.jpg",
+        "label": "Vánoce v O2 areně",
+        "year": "",
+        "description": "V úžasné vánoční atmosféře vánoční O2 areny se odehrál hudební příběh plný písní interpretů jako Richard Krajčo, Adam Plachetka, Dasha, Kateřina Marie Tichá, Ondřej Ruml nebo Pokáč z doprovodu hradecké filharmonie a pěveckého sboru",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908991405",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/tshs-logo.jpg",
+        "label": "TS &amp; HS O2 Arena",
+        "year": "",
+        "description": "Prosincový trojboj v podobě bezprostředně následujících akcí doplnila zastávka celorepublikového turné skupin Tři Sestry a Horkýže Slíže. Samozřejmě s naší produkční pomocí a kompletní technikou, jak uz bývá u této spolupráce zvykem.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908910700",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/olympic-logo.jpg",
+        "label": "Olympic 60",
+        "year": "",
+        "description": "S legendární skupinou kolem Petra Jandy jsme se vrátili do O2 arény po pěti letech od jejich posledního výročí. Stejně jako tehdy spadalo do naší plné kompetence technické řešení - ozvučení Adamson, scéna převážně z Robe portfolia a téměř dvěstě metrů čtverečních led obrazovek.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908937027",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/pilous-logo.jpg",
+        "label": "30 let Pilous Packaging",
+        "year": "",
+        "description": "Portfolio společností, které nám svěřují své největší interní akce, se rozšířilo o celosvětově úspěšnou technologickou obalovou firmu. Připravili jsme kompletní řešení a realizaci oslav ve Forum Karlín po organizační, technické, programové i obsahové stránce.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908911912",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/ppo-logo.jpg",
+        "label": "Prague Playoffs 2023",
+        "year": "2023",
+        "description": "Největší událost ve světovém parkuru a zřejmě i největší událost v O2 areně má za sebou čtvrtý ročník s technikou a produkcí od ZL Production. Po pěti letech zkušeností a inteznivní týmové práce se nám akce stala doslova rodinnou a přes náročnost závodního i doprovodného programu je i pro nás vrcholovým zážitkem, který zřejmě už máloco překoná.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908937890",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/kme-logo.jpg",
+        "label": "Kiss Millennium Explosion",
+        "year": "",
+        "description": "Vyzkoušený koncept, známí místo, ale nový projekt. Výběr toho nejlepšího z přelomu milénia zcela naplnil O2 arenu a dopřál jedinečný zážitek, který doposud neměl v aréně obdoby. Více než deset interpretů v kontinuální show dostalo O2 arenu do euforie.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908986244",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/dm3-logo2.jpg",
+        "label": "DYMYTRY 20 let v 02 Arena",
+        "year": "",
+        "description": "Naše pětiletá spolupráce s metalovou kapelou Dymytry nás společně dovedla až do vyprodané O2 areny! Spojily se tak všechny oblasti naší činnosti - booking, technika, produkce i organizace a marketing v další úspěšný projekt.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908997124",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/metronome_logo.jpg",
+        "label": "Metronome Festival",
+        "year": "",
+        "description": "Do našeho portfolia technického zajištění jsme přidali jeden z největších festivalů - pražský Metronome. Do nám známého prostředí Na Výstavišti jsme dovezli Park Stage pro Moderat, Tovelo, J.I.D. nebo Annet X.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908994074",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/hrady23_logo.jpg",
+        "label": "České Hrady",
+        "year": "",
+        "description": "Naši desetiletou spolupráci s Českými hrady jsme uzavřeli osmi zastávkami s HD podiem, zvukem Adamson a světly Robe pro kapely Kryštof, Dymytry nebo Mirai.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908973925",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/btloket_logo-1.jpg",
+        "label": "Billy Talent Loket",
+        "year": "",
+        "description": "Naše oblíbená kanadská partička dorazila tentokrát na Loket. Po koncertech v Hradci Králové a Praze jsme se postarali i o jejich open air show.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "1777026159089697",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/90slogojpg-1.jpg",
+        "label": "90s Explosion",
+        "year": "",
+        "description": "Největší devadesátkový festival přivezl na pražské Výstaviště kromě naší stage i jména jako Aqua, Eiffel 65, 24/7, East 17 nebo London Beat. Bylo to opět legendární a plné výjimečných chvil, které máte možnost zažít jen párkrát za život...",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908932621",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/zamek_logo.jpg",
+        "label": "Kryštof Zámky",
+        "year": "",
+        "description": "Kapela kolem Richarda Krajča si na léto připravila opět něco unikátního. Do nádherných prostředí zámeckých nádvoří a zahrad přivezla speciální koncert s cimbálovkou Grajcar.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908995382",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_sazava.jpg",
+        "label": "Sázavafest 2023",
+        "year": "2023",
+        "description": "Kompletní technické zajištění dvou pódií, koncerty Kryštof, Dymytry a Traktor v lineupu. To byl náš tradiční Sázavafest v nádherném zámeckém parku ve Světlé nad Sázavou.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908991649",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-demo.jpg",
+        "label": "O2A Kapitán Demo",
+        "year": "",
+        "description": "Spíše než velkolepým koncertem překvapil Kapitán Demo show plnou satiry, kontroverze, momentu překvapení a hlavně osobitého humoru, ostatně tak jak je nastavena jeho filozofie. Nicméně i pro takový zážitek je v O2 aréně potřeba naše technika v plném rozsahu.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908989359",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-pso.jpg",
+        "label": "KCP PSO",
+        "year": "",
+        "description": "Před mnoha lety jsme začali společnou cestu za slávou a úspěchem s nenápadným amatérským orchestrem Police Symphonic orchestra. Jejich talent a nasazení z nich však udělaly jeden z nejkvalitnějších souborů v ČR a po vyprodané Lucerně a Kongresovém centrum míří dál!",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908983808",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-skap.jpg",
+        "label": "Ska-P v Praze",
+        "year": "",
+        "description": "Kolegové a kamarádi z Mighty sounds nám svěřili technické odbavení koncertu SKA-P v malé sportovní hale v Holešovicích. Postarali jsme se o technický advancing, ozvučení, osvětlení a led obrazovku. Bylo nám ctí být pracovně u koncertu, na jakém jsme historicky vyrůstali.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908972523",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-mjls23.jpg",
+        "label": "Majáles 2023",
+        "year": "2023",
+        "description": "Letošní studentské festivaly Majáles s headlinery jako Kryštof, Rybičky 48, Calin a mnoho dalších opět dokázaly, že patří mezi největší české akce. Proběhly tradičně v Praze, Brně, Hradci a nově také v Ostravě. Na všechny zastávky dodáváme všechna tři podia!",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "17770261590891196",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-zebrik-1.jpg",
+        "label": "Anketa Žebřík",
+        "year": "",
+        "description": "Už tradičně jsme se postarali o produkční odbavení a technické zajištění akce, kde se setkává většina našich kolegů a interpretů. Jedny z posledních v realitní organizovaných hudebních cen se rozdávaly v našem domácím Depo2015.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908925029",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-club.jpg",
+        "label": "Klubové turné",
+        "year": "",
+        "description": "Z evropských hal s Manowar jsme se přesunuli v březnu do klubů a kulturáků a haliček na domácím půdě. Byl to intenzivní měsíc, na turné totiž vyrazily hned tři naše kapely - Traktor, Dymytry a Kryštof. S ostatními akcemi jsme během měsíce kompletně odbavili přes 50 akcí!",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908952829",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/kozub-logo.jpg",
+        "label": "O2A Štěpán Kozub",
+        "year": "",
+        "description": "Stand up v O2 aréně? Jeden komik versus patnáctitisícová hala? Ano! I to je možné. A hned rovnou naplno a Bez urážky! Sílou a popularitou svojí osobnosti, humorem na hranici všech hranic a ostravské bezprostřednosti dokázal Štěpán Kozub hned dvakrát mezi svátky zaplnit největší halu.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908911213",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/images-5.png",
+        "label": "MANOWAR Europe tour",
+        "year": "",
+        "description": "Heavy metalová legenda MANOWAR si nás vybrala jako dodavatele technického zajištění turné 2023. Ozvučení Adamson a světla Robe nás tak přivedly do hal a stadionů napříč Evropou s day2day touringem.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908972428",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-korn.jpg",
+        "label": "KORNCERT",
+        "year": "",
+        "description": "Jiří Korn na svém první turné v 73 letech? Nic exkluzivnějšího asi letošní rok nenabídne. Fenomenální představení legendy českého showbyznysu nabízí v sálech a divadlech nepopsatelnou show s podporou naší techniky.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908969267",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-arakain.jpg",
+        "label": "O2U Arakain",
+        "year": "",
+        "description": "Naši metalové přátelé Arakain se konečně dočkali odložené oslavy 40 let! Velkolepý koncert nabídl speciální scénu, playlist, hosty a nezapomenutelný zážitek pro jejich fanoušky ve vyprodaném O2 Universum naší technikou.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908927578",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-margita-1.jpg",
+        "label": "O2A Štefan Margita",
+        "year": "",
+        "description": "Štefan Margita připravil vzpomínkový koncert pro Hanku Zagorovou, na kterém nechyběli jejich blízcí přátelé a hosté jako Lucie Bílá nebo Vojta Dyk. Byl to večer plný emocí, hudby a vzpomínek v úžasné atmosféře.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908927725",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/traktor20-1.jpg",
+        "label": "Traktor 20 let",
+        "year": "",
+        "description": "Jedna z naši blízkých kapel oslavila v letošním roce 20 let velkolepým koncertem v Ostravar aréně. U této významné události jsme samozřejmě nesměli chybě a postarali jsme se o kompletní techniku i organizaci.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "1777026159089166",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/ppo_logo-2-2.jpg",
+        "label": "Prague Playoffs 2022",
+        "year": "2022",
+        "description": "Největší událost v parkurovém sportu, v O2 aréně a i pro ZL production &amp; technical je za námi! A opět úspěšně! S každým dalším ročníkem sportovní i doprovodný program přináší větší a větší zážitky.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908928428",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_vesmirna_party.jpg",
+        "label": "Elfetex 30 LET",
+        "year": "",
+        "description": "Naši přátelé ze společnosti Elfetex mám stejně jako před lety svěřili svoji výroční akci. Tentokráte jsme společně oslavili 30 let velkolepou vesmírnou párty ve Fóru Karlín, se kterou jsme společně zamířili ke hvězdám s naší technikou i produkcí.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908999879",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_peklo.jpg",
+        "label": "Pekelný Ostrov 2022",
+        "year": "2022",
+        "description": "Jedna z nejdelších a nejtradičnějších spoluprací na technickém zajištění pokračovala i v letošním roce. Holýšovský festival se vypracoval na špičku hudební domácí scény a s důvěrou využívá od začátku ZL pódia s naší kompletní technikou.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908992297",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_sazava.jpg",
+        "label": "Sázavafest 2022",
+        "year": "2022",
+        "description": " Spolupráce s naším nejoblíbenějším českým letním festivalem <i>Sázavou</i> pokračovala i v letošním roce. Kompletní technické zajištění dvou pódií připravilo technické zázemí pro koncerty Marka Ztraceného, Mirai, Rybičky 48, Lucii a nebo zahraničního headlinera Nicos Santos.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908992549",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_vyskov.jpg",
+        "label": "Koncert pro Vyškov",
+        "year": "",
+        "description": " Po loňské premiéře s koncertem Kryštof pro Vyškov jsme na fotbalovém stadionu zajistili techniku pro další velké koncerty. První patřil rocku s Dymytry a Škwor no a ten druhý pokračoval v popové tradici s Mirai a Desmod. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908926635",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_lsr.jpg",
+        "label": "Léto s Rychtářem 2022",
+        "year": "2022",
+        "description": " Devatenáctý ročník série koncertů v amfiteátru pivovaru Rychtář nabídl koncerty interpretů jako Divokej Bill, Mirai, Škwor, Rybičky 48, Traktor, Harlej a mnoho dalších. Unikátní prostředí, špičková technika, zázemí a kvalitní program udělali z Hlinska jedno z nejvyhledávanějších míst pro kulturu v regionu. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908934165",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_melnik.jpg",
+        "label": "Léto na zámku Mělník",
+        "year": "",
+        "description": " Jedno z našich pódií s ozvučením i osvětlením jsme na dva měsíce postavili na nádvoří zámku Mělník, aby zde mohla proběhnou řada divadelních představení a poté série muzikálu Noc na Karlštejně. Ve spojení s unikátním prostorem jsme napomohli k úžasným zážitkům pro tisíce lidí. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908935578",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_lucie.jpg",
+        "label": "Lucie tour 2022",
+        "year": "2022",
+        "description": " Už podruhé jsme vyrazili na letní turné se skupinou Lucie po amfiteátrech a letních prostorech. Více než deset zastávek a k tomu několik festivalů proběhlo s naší podporou a naší kompletní technikou. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908946506",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_kemp.jpg",
+        "label": "Kryštof Kemp 2022",
+        "year": "2022",
+        "description": " Po čtyřech letech čekání a odkládání se vrátil výjimečný festival kapely Kryštof, který boří hranice mezi fanoušky a kapelou. Festival, který přináší unikátní zážitky během třech společných dnů a nocí. Čtvrtý ročník této přelomové akce nabídl osm zastávek po celé léto. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908981903",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/90s_weblogo.jpg",
+        "label": "90s Explosion 2022",
+        "year": "2022",
+        "description": " We are back in game and back in 90s! Po třech letech čekání se odehrál třetí ročník největšího festivalu možná už v Evropě tohoto žánru. Dvanáct nejslavnějších interpretů a na závěr fenomenální DJ Bobo. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908979523",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/mjls_weblogo.jpg",
+        "label": "Majálesy 2022",
+        "year": "2022",
+        "description": " Jako první festivaly se po covidovém období vrátily Majálesy. Jejich květnové období je zařadilo mezi průkopníky návratu velkých akcí do běžných životů. A návrat to byl velkolepý, <i>naše</i> města Praha, Hradec Králové, Brno, Praha, Pardubice i Plzeň proběhly jako kdyby k žádnému přerušení nedošlo.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908944916",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-krystof-cover-2022-2.jpg",
+        "label": "Kryštof O2 aréna",
+        "year": "",
+        "description": " Napotřetí to vyšlo! Vánoce v O2 aréně s Kryštof, sice v květnu, ale o to větší nadílka plná překvapení, dárků a vánoční atmosféry to byla. Za nás nejkrásnější dny, které jsme kdy v O2A strávili. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908911984",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_pf.png",
+        "label": "Přednášky a vzdělávání",
+        "year": "",
+        "description": " Tentokrát na druhé straně barikády. Kromě aktuálních projektů #zlfamily jsme se začali věnovat předávání zkušeností a vzdělávání potenciální nastupující generace produkčních či technických pracovníků. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908995499",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-blik.jpg",
+        "label": "Blik Blik 2022",
+        "year": "2022",
+        "description": " Díky přátelům z plzeňského DEPO2015 jsme se zapojili do technického zajištění festivalu světla a umění. Podíleli jsme se na světelné show a mappingu v Katedrále sv. Bartoloměje. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908946822",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-traktor.jpg",
+        "label": "Traktor tour 2022",
+        "year": "2022",
+        "description": " Velké koncerty a produkce jsou zpět! Na konci března jsme zahájili velkolepé turné Traktor k nové desce v pražské sportovní hale. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908971939",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/kostel-logo.jpg",
+        "label": "Vánoční koncert a mše",
+        "year": "",
+        "description": " Na závěr roku Richard s Karin a pomocí od Zbigniewa Czendlika připravili unikátní akci na podporu kostela v Chotěvicích. Koncert a mši kromě vyprodaného hlediště sledovaly tisíce lidí ve streamu. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908979142",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/divadla-logo.jpg",
+        "label": "JenomPísničky 2021",
+        "year": "2021",
+        "description": " Přeložené akustické turné Kryštof po divadlech z roku 2020 se konečně dočkalo realizace. Všechny slíbené vyprodané zastávky oblíbených představení se odehrály s rok a půl zpožděním kvůli předcházejícím opatřením. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908968748",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-dymytry.jpg",
+        "label": "Remastered tour 2021",
+        "year": "2021",
+        "description": " Po open air tour Monster Meeting vyrazili Dymytry na klubové turné k remasterovaným deskám, které z větší části úspěšně proběhlo. Bohužel poslední koncerty zastavilo vládní opatření. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908985117",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_ppo2021.jpg",
+        "label": "Prague Playoffs 2021",
+        "year": "2021",
+        "description": " Pět dnů příprav, čtyři dny parkurových závodů a multimediálních show, tři dny likvidace v O2 aréně... Po roční pauze se vrátila největší událost koňského sportu a největší výzva pro nás produkční a technický tým. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908912790",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/cmi_o2_1322x623_2021-1322x621.jpg",
+        "label": "ČMI O2ARENA 2021",
+        "year": "2021",
+        "description": " Další letošní O2 arena je za námi! Tentokráte maraton vystoupení Chinaski, Mirai, Marie Rottrová, Jelen, Xindl X, Michal Hrůza a Olympic v rámci programu tradičního Českého Mejdanu s Impulsem a jeho pětihodinové kontinuální show. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908951236",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/795-2.jpg",
+        "label": "Restart 2021",
+        "year": "2021",
+        "description": " Je to až neuvěřitelné, ale v září a říjnu 2021 jsme objeli Českou republiku po těch největších zimních stadionech s Markem Ztracený včetně dvou vyprodaných show v O2 Arena Praha. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908923097",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/lucie.jpg",
+        "label": "Dotkni se Lucie",
+        "year": "",
+        "description": " Po mnoha letech vyrazila nejoblíbenější legenda české poprockové scény za svými fanoušky. V místech k tomu letos nejvhodnějších, letních kinech a amfiteátrech. A poprvé s naší technikou, což pro nás bylo milým letošním překvapením. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "17770261590894478",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/6179941b-f192-4bdd-80e7-4fe69dfface3_1373831_retina_portrait_16_9.jpg",
+        "label": "Anketa Žebřík",
+        "year": "",
+        "description": " I na hudební ceny Žebřík jsme si poprvé od roku 1992 museli dva roky počkat. Ale klaplo to a v září 2021 proběhly hned dva ročníky najednou, v našem <i>domácím</i> plzeňském Depo2015.",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908959857",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/mmlogo.jpg",
+        "label": "Monster Meeting 2021",
+        "year": "2021",
+        "description": " Protože se v loňském roce nepovedlo odehrát všechny koncerty této rockmetalové show, přesunula se jich část na letošek. Opět s kapelami Traktor a Dymytry, opět s kontinuálním programem, velkolepou výpravou a obří výpravnou scénou. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908915114",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/starypecky.jpg",
+        "label": "Starý Pecky 2021",
+        "year": "2021",
+        "description": " V loňském roce se nečekaně zrodil projekt Leoše Mareše navazující na jeho legendární diskotéky. Program plný speciálních hostů a Leošovo jedinečnou show získal prvenství mezi všemi akcemi 2020. A byla by škoda jej 2021 nezopakovat! ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908921686",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/krystof-leto2021-diky-kopie.jpg",
+        "label": "Kryštof léto 2021",
+        "year": "2021",
+        "description": " Devět krásných míst, devět koncertů, devět neplánovaných zážitků ve skvělé atmosféře. To bylo improvizované turné Kryštof po amfiteátrech v letošním post-covid létě. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908966681",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/krystof_logo.jpg",
+        "label": "Kryštof Vyškov",
+        "year": "",
+        "description": " Tak se nám povedl zřejmě největší open air koncert roku 2021! Dvakrát odložený stadionový koncert Kryštof ve Vyškově pro více než 10.000 lidí jak za starých časů! ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908954446",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/sp_logo.png",
+        "label": "Staré Pecky stream",
+        "year": "",
+        "description": " Leoš Mareš pokračuje ve své online jízdě s živým vysíláním show Staré Pecky. Čtvrtá edice nás o Velikonocích vrátila na premiérové místo tour pod širým nebem! ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908971769",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/md_logo.jpg",
+        "label": "Michal David online",
+        "year": "",
+        "description": " Další z našich interpretů potěšil své fanoušky streamovaným vystoupením. Tentokráte se zaměřením na co nejvěrohodnější koncertní zážitek plný nesmrtelných hitů. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908956565",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/jenompisnicky-1.jpg",
+        "label": "JenomPísničky online",
+        "year": "",
+        "description": " Improvizované TV studio a divadelní podium, akustický koncert, povídání s hosty a fanoušky. To byl jedinečný Kryštof JenomPísničky live stream, tříhodinová produkce plně naživo. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908953741",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_allianz_konference.jpg",
+        "label": "Virtuální KOS 2021",
+        "year": "2021",
+        "description": " Tradiční konference našeho dlouholetého klienta letos jinak, se stejnými parametry, jen ve virtuálním prostředí ze streamovacího studia. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908914974",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_krystof_leto.png",
+        "label": "Kryštof léto 2020",
+        "year": "2020",
+        "description": " Improvizované letní koncerty jako náhrada za odložené KryštofKempy v podobě uceleného turné po amfiteátrech ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908924012",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_1.jpg",
+        "label": "Livestreamy #zlfamily",
+        "year": "",
+        "description": " Jarní online koncertní náplast na první koronavirovou vlnu v podání halových koncertů #zlfamily ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908981179",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/ostravar_stream_01.jpg",
+        "label": "Ostravar a Kryštof pro Ostravu",
+        "year": "",
+        "description": " Open air livestream? Proč ne, když se navíc spojí naši kamarádi z pivovaru Ostravar a Kryštof, tak u toho rozhodně nesmíme chybět. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908972703",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_pecky.png",
+        "label": "Staré Pecky 2020",
+        "year": "2020",
+        "description": " V roce 1997 uspořádal Leoš Mareš v Berouně celkem třikrát akci, kterou nazval STARÉ PECKY. Zrodila se legenda. A letošní rok napsal její pokračování. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908974602",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/letokruh_logo.png",
+        "label": "Letokruh 2020",
+        "year": "2020",
+        "description": " Náhrada velkých majálesů, nový hudební festival Letokruh. To byly 4 dny, 3 hudební žánry a špička české a slovenské hudební scény společně se #zlfamily v Brně, Praze a Hradci Králové. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908969442",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/mm-event-uzbrzy-02-2.png",
+        "label": "Monster Meeting 2020",
+        "year": "2020",
+        "description": " Koncertní turné pro fanoušky rockové a metalové hudby napříč Českou republikou! Jedinečná událost pro fanoušky tvrdší hudby vidět v roce 2020 naživo Dymytry a Traktor. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908956467",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logox.jpg",
+        "label": "Ztracený v O2 areně",
+        "year": "",
+        "description": " Poprvé a hned dvakrát! Rostoucí hvězda české popmusic Marek Ztracený pokračuje v cestě na vrchol přes dva vyprodané koncerty s naší technikou. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908927697",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/ppo_logo-1.jpg",
+        "label": "Prague Playoffs 2019",
+        "year": "2019",
+        "description": " Téměř dvoutýdenní pobyt celé naší zlfamily v 02 aréně, to byl již třetí ročník světového parkurového finále Prague Playoffs, kde jsme součástí organizačního výboru a dodavatelem technické produkce a vybavení. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "17770261590895430",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/kapka.jpg",
+        "label": "Galakoncert 2019",
+        "year": "2019",
+        "description": " S velkou radostí jsme pomohli nadaci Kapka naděje s galakoncertem na závěr roku 2019 v krásném prostředí paláce Žofín. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "1777026159089873",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_fixa.jpg",
+        "label": "Vypsaná Fixa",
+        "year": "",
+        "description": " Další kapelou, kterou jsme provedli Fórem Karlín, byla na podzim 2019 Vypsaná Fixa! A hned velkolepým vyprodaným punk-rockovým večírkem, jaký Fórum snad do té doby snad ani nezažilo:). ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908999435",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_tesco.png",
+        "label": "Tesco 2020",
+        "year": "2020",
+        "description": " Pro více než kolegy z agentury Skalin &amp; Layout jsme odbavili již třetí společnou konferenci spol. Tesco, která patří k největším akcím na poli zahraničních korporátních eventů organizovaných na domácí půdě. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908958204",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/dm3_logo.jpg",
+        "label": "Dymytry Revolter tour",
+        "year": "",
+        "description": " Oblíbená rock-metalová skupina vydala skvěle přijaté album Revolter a my jsme u této příležitosti připravili a kompletně odbavili podzimní turné s vyvrcholením v podobě monstrózních show ve třech halách včetně naší premiéry v 02 Universum. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908926898",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/cmi_logo.jpg",
+        "label": "ČMI O2 Arena",
+        "year": "",
+        "description": " Už potřetí jsme se stali součástí realizačního týmu a kompletním technickým dodavatelem jednoho z největších eventů v O2 aréně - kontinuální koncertní show v podobě výběru interpretů radia Impuls. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908976780",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/ncm.jpg",
+        "label": "NČM O2 Arena",
+        "year": "",
+        "description": " Novým projektem výběru toho nejlepšího z českých muzikálů jsme zahájili další sezónu koncertů s naší technikou v 02 areně, a hned vyprodanou a skvěle hodnocenou show. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908941739",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logos-marques_adamson.png",
+        "label": "ADAMSON CZ",
+        "year": "",
+        "description": " Naši přátelé ze značky audio systémů, kterou od začátku využíváme, vstupují na český trh. Ode dnes oficiálně Adamson v portfoliu Basys. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908995746",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_gatsby.png",
+        "label": "VIP party",
+        "year": "",
+        "description": " Další korporátní akce nás přivedla zpět do našeho oblíbeného prostoru - Fórum Karlín. Tentokrát opět stylově... ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908972662",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_hrady-1.png",
+        "label": "Hrady CZ 2019",
+        "year": "2019",
+        "description": " Posedmé jsme vyrazili na osm zastávek putovního festivalu s technikou, navíc letos s našimi kapelami Kryštof a Dymytry. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908951915",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_rfo_2019.jpg",
+        "label": "RfP2019",
+        "year": "",
+        "description": " Ani letos jsme nechyběli v setupu tradičního festivalu Rock for People, kde jsme se postarali o hlavní podium, kde vystoupily hvězdy jako Bring me the horizon, Rudimental, Manic Street Preachers nebo Franz Ferdinand. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908981487",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_holysov2019.jpg",
+        "label": "Pekelný Ostrov 2019",
+        "year": "2019",
+        "description": " Holýšovský open air se v posledních letech vypracoval na vrchol festivalové rockové scény, což potvrdilo i letošní vyprodání dlouho dopředu. Od prvních ročníků jsme technickým dodavatelem, a tak tento progres prožíváme s ním. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908939888",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_90_2019.jpg",
+        "label": "90s Explosion 2019",
+        "year": "2019",
+        "description": " Po loňském úspěšném prvním ročníku jsme připravili pokračování největšího domácího 90s festivalu hned ve dvou městech! A tak jsme během týdne do Čech dovezli třicet nejúspěšnějších interpretů devadesátých let. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908975950",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_dm3_2019.jpg",
+        "label": ">S Nadějí tour 2019",
+        "year": "2019",
+        "description": " S našimi kamarády z DM3 jsme vyrazili na velkolepé jarní turné, jež začalo v sálech a halách po celé republice a vyvrcholilo dvěma velkolepými open air koncerty, kam si kapela pozvala speciální hosty. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908967406",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_mjls_2019.jpg",
+        "label": "Majálesy 2019",
+        "year": "2019",
+        "description": " Festivalovou open air sezónu jsme zahájili tradičními studentskými slavnostmi Majáles v Praze, Brně, Hradci a Plzni, kde jsme kompletně odbavili všechna podia pro přední české a slovenské interprety. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "17770261590899075",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-zebrik.jpg",
+        "label": "Anketa Žebřík 2018",
+        "year": "2018",
+        "description": " Tradiční předávání hudebních cen patří k naším stálým eventům, takže jsme ani letos nechyběli u akce, kde se potkává buď v zázemí nebo na podiu nebo ve vip většina české hudební branže:). ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908970094",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_allianz.jpg",
+        "label": "KOS 2019",
+        "year": "2019",
+        "description": " I do letošní eventové sezóny jsme vstoupili hned zostra. Tradiční konferenci našeho dlouhodobého klienta a snad i nejoblíbenějšího partnera jsme v oblíbeném Fóru Karlín opět převlékli do jiného kabátu. Nejen díky tomu se povedlo překonat předchozí úspěšné ročníky. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908986833",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_traktor_web.jpg",
+        "label": "Šachoffnice tour 2019",
+        "year": "2019",
+        "description": " Z kraje letošního roku jsme vyrazili s hard&amp;heavy kapelou Traktor na jejich přelomové turné k nové desce Šachoffnice. Premiérová spolupráce se ukázala jako přínosná a odměnou jsou vyprodané haly s nadšenými ohlasy fanoušků i odborné veřejnosti. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908948123",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_monstrum_praha.jpg",
+        "label": "Forum Karlín",
+        "year": "",
+        "description": " Projektem Monstrum od přední rockmetalové kapely Dymytry jsme zakončili sérii letošních koncertů (produkce, technika) v našem oblíbeném prostoru Fórum Karlín. Co se týče scény a show je tento projekt opravdu výjimečný, mrkněte. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908919428",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/ppo_logo.jpg",
+        "label": "Prague Playoffs 2018",
+        "year": "2018",
+        "description": " Nejnáročnější letošní event plný skvělých sportovních okamžiků a strhujících show je za námi! Krásné zakončení akcí roku 2018 v 02 aréně se zapojením produkce a techniky od #zlfamily. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908989034",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_cmi.jpg",
+        "label": "ČMI 2018",
+        "year": "2018",
+        "description": " Opět jsme postarali o kompletní technické zajištění Českého Mejdanu s Impulsem v O2 Aréně, který jako jeden z nejnáročnějších live eventů na českém hudebním trhu pro nás připravil nelehké výzvy ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908937482",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_festivalu_sa-zavafest-2.png",
+        "label": "SázavaFest2018",
+        "year": "",
+        "description": " Mezi stálice našeho exkluzivního festivalového portfolia se zařadila také jedna z nejtradičnějších letních akcí - SázavaFest. Ten se zabydlel v novém, krásném areálu zámeckého parku a jak se zdá, i s naší technikou:). ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908917194",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-rfp.png",
+        "label": "RFP 2018",
+        "year": "2018",
+        "description": " Opět jsme vyprázdnili sklady a odbavili jsme dvě hlavní podia jednoho z největších domácích festivalů, tentokráte s The Prodigy nebo Volbeat ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908990042",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/512x512bb.jpg",
+        "label": "Majálesy 2018",
+        "year": "2018",
+        "description": " Tři největší open air festivaly v Hradci Králové, Praze, Brně a bonus v podobě plzeňsko-pardubického dvojboje... To byl náš majálesový měsíc se všemi třemi ZL podii exkluzivně na těchto festivalech. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908915144",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/90s_logo.png",
+        "label": "90s Explosion",
+        "year": "",
+        "description": " Ti nejlepší z devadesátkových hvězdných interpretů se sešli v jeden den na jednom (ZL) podiu před vyprodaným holešovickým Výstavištěm. Byla to jedna velká čtyřhodinová retro jízda. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908998164",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/marpologo.png",
+        "label": "Marpo Aréna",
+        "year": "",
+        "description": " Odvážný kousek vyšel rapperovi Marpovi - nejen, že vyprodal O2 arenu, ale zrealizoval v ní jedinečnou nezapomenutelnou show. A my byli se vší naší technikou u toho. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908987594",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logoei.png",
+        "label": "Enrique Iglesias",
+        "year": "",
+        "description": " Španělská popová hvězda vyrazila na krátké evropské tour, na kterém jsme se technicky podíleli a v pražské O2 areně jsme se postarali o kompletní technické odbavení hned pro dvě show. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908922072",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_wonderland.png",
+        "label": "IGY WONDERLAND",
+        "year": "",
+        "description": " Slavnostní párty v nové části českobudějovického obchodního centra proběhlo v duchu magického wonderlandu za podpory našeho technického řešení, které změnilo obchodní prostory k nepoznání. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908999212",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-zebrik-2017.png",
+        "label": "Anketa Žebřík 2017",
+        "year": "2017",
+        "description": " I pošesté si nás vybrali organizátoři předávání hudebních cen pro produkční a technické odbavení akce, na které se scházejí interpreti, promotéři a další výzmaní lidé domácího hudebního i filmového trhu. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908988507",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_dymytry.jpg",
+        "label": "DM3 Monstrum",
+        "year": "",
+        "description": " Metaloví Dymytry se odvážně pustili do výzvy v podobě monstrózního halového koncertu. S radostí jsme tuto výzvu přijali s nimi a po boku designéra Martina Hruška jsme snad klukům pomohli splnit si sen. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "17770261590898309",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-emeli.png",
+        "label": "Emeli Sandé",
+        "year": "",
+        "description": " Do pražské O2 arény zavítala v únoru jedna z předních světových zpěvaček - Emeli Sandé. A my jsme u této exkluzivní události byli také - s technickou produkcí, světly, zvukem i led obrazovkami. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908926857",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_kos2018.jpg",
+        "label": "Allianz KOS 2018",
+        "year": "2018",
+        "description": " Náš oblíbený klient a náš oblíbený prostor - již ověřená kombinace zafungovala i na úvod letošního roku, kdy nám přátelé z Allianz opět svěřili produkci a technické zajištění jejich nejdůležitější konference. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908923569",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logoryby.jpg",
+        "label": "Rybičky 48",
+        "year": "",
+        "description": " Stále populárnější česká punkrocková partička připravila pro svoje fanoušky výroční koncert ve Fóru Karlín, aby před vyprodaným sálem oslavili společně 15 let existence velkolepou show, pro kterou jsme dodali kompletní techniku. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908922425",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logotrvalky.jpg",
+        "label": "TRVALKY 2017",
+        "year": "2017",
+        "description": " Dva koncerty k výročí 50 let spolupráce přivedly na podium v 02 areně společně Jaroslava Uhlíře a Zdeňka Svěráka. Toto jedinečné spojení přineslo české hudební scéně přes 400 písniček, přibližně polovinu pro televizní pořad Hodina zpěvu, který byl inspirací pro tento koncert. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908941325",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logocmi.jpg",
+        "label": "ČMI 2017 v O2 areně",
+        "year": "2017",
+        "description": " Vyprodaná O2 arena už podruhé hostovala unikátní akci s nabitým programem složeným z nejoblíbenějších interpretů nejposlouchanějšího českého rádia Impuls. A letos bylo svěřeno složité technické řešení nám. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908932519",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-2.jpg",
+        "label": "Olympic 55",
+        "year": "",
+        "description": " Úctyhodných 55 let na české hudební scéně oslavila bigbeatová legenda Olympic a pozvání k technické i produkční spolupráci končící vyprodanou O2 arénou jsme s úctou a radostí přijali. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908992750",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-1.jpg",
+        "label": "Marek Ztracený",
+        "year": "",
+        "description": " Deset let od debutového singlu Ztrácíš uteklo jako voda a z Marka se stal jeden z nejaktuálnějších poprockových interpretů, což patřičně oslavil na výročním koncertu ve Fóru Karlín, s naší technikou i produkcí ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908990170",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/mm_logo_male.jpg",
+        "label": "M&amp;M summit 2017",
+        "year": "2017",
+        "description": " Pro naše dlouholeté partnery z M&amp;M reality jsme připravili technické a produkční řešení jejich nejvýznamnější konference v pražském kongresovém centru pro 2500 hostů. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908995149",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_tesco.png",
+        "label": "Tesco Event 2017",
+        "year": "2017",
+        "description": " Pro přátele z agentury Skalin jsme se stali exkluzivním dodavatelem techniky náročného a v mnoha směrech výjimečného dvoudenního eventu pro spol. Tesco ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908974243",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logi.jpg",
+        "label": "Adamson na Strahově",
+        "year": "",
+        "description": " Nezbytnou roli v realizaci stadionového koncertu Kryštof k výročí 25 let sehráli naši kamarádi z firem kolem kanadské značky Adamson, jejichž produkty exkluzivně využíváme od našeho prvního malého PA před mnoha lety. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908978025",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-strahopv.png",
+        "label": "Kryštof na Strahově",
+        "year": "",
+        "description": " Společně s kapelou kolem Richarda Krajča jsme si splnili sen o stadionovém koncertu. Kryštof oslavil 25 let před sedmdesáti tisíci fanoušky a s naší produkcí i technikou. Děkujeme za úžasný a zřejmě neopakovatelný zážitek! ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908974888",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/forum_karlin.jpg",
+        "label": "Firemní party",
+        "year": "",
+        "description": " Přátelům z eventové agentury Skalin &amp; Layout jsme technicky pomohli k realizaci další úspěšné korporátní akce v našem oblíbeném Fóru Karlín ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "17770261590899352",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/billy-talent.jpg",
+        "label": "koncert Billy Talent",
+        "year": "",
+        "description": " Kamarádi z RfP dovezli do unikátního prostředí pivovaru Staropramen další skvělý koncet a my jsme byli u toho s kompletní technikou ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908952794",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/hrady.jpg",
+        "label": "Hrady CZ 2017",
+        "year": "2017",
+        "description": " Už popáté jsme vyrazili s naší technikou na osm zastávek putovního festivalu po česko-moravských hradech a opět s oběmi pódii ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908940417",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_rockforpeople.jpg",
+        "label": "Rock for People 2017",
+        "year": "2017",
+        "description": " Dvanáctiletá produkční spolupráce s festivalem Rock for People letos vyvrcholila exkluzivním odbavením všech tří open air pódií od nás ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908919852",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/unnamed-2.png",
+        "label": "Majáles 2017",
+        "year": "2017",
+        "description": " Letos jsme se stali exkluzivním dodavatelem všech tří pódií na majálesovém turné Hradec-Praha-Brno ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908929899",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_lucerna_alkehol.jpg",
+        "label": "Výroční koncert",
+        "year": "",
+        "description": " Kde jinde uspořádat výroční koncert, než v Lucerně... A když už v Lucerně, tak ve vyprodané a s námi:) ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908952604",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-allianz-kos.png",
+        "label": "Konference 2017",
+        "year": "2017",
+        "description": " Allianz Pojišťovna opět svěřila svůj největší event našemu produkčnímu a technickému teamu ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908969896",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/o2_arena.gif",
+        "label": "Petr Hapka žije!",
+        "year": "",
+        "description": " bylo nám ctí technicky odbavit další výjimečnou akci v 02 aréně, tentokráte s unikátním obsazením a designem ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "17770261590898439",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-allianzt.png",
+        "label": "Allianz Eventy",
+        "year": "",
+        "description": " Připravili jsme pro Allianz několik podzimních korporátních eventů včetně vytvoření reklamního videa ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "17770261590892103",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/7001820.png",
+        "label": "Dny Marianne 2016",
+        "year": "2016",
+        "description": " technicky a produkčně jsme se podíleli na několika rozmanitých akcích najednou ve spřátelených OC v Ostravě a Hradci ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908995550",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_majales_hradec.jpg",
+        "label": "Majáles 2016",
+        "year": "2016",
+        "description": " Pro největší studentské festivaly v Hradci, Plzni, Praze a Brně jsme dodávali kompletní technické zajištění hlavního podia a v některých i vedlějších ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908934797",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/rfp_logo2016.jpg",
+        "label": "Rock for People 2016",
+        "year": "2016",
+        "description": " I v roce 2016 jsme se podíleli produkčně a dodávali kompletní techniku pro jeden z nejvýznamnějších českých festivalů. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908996490",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_elektroparty.jpg",
+        "label": "Elektroparty 2016",
+        "year": "2016",
+        "description": " Společnost Elfetex slaví v letošním roce 25 let a nám bylo ctí kompletně realizovat narozeninový event pro jejich hosty z celé republiky. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908915661",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-allianzt.jpg",
+        "label": "Konference 2016",
+        "year": "2016",
+        "description": " Rok 2016 jsme odstartovali jedním z nejnáročnějších eventových projektů na českém trhu - odbavením celostátní konference společnosti Allianz pojišťovna, a.s.. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "17770261590899832",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/plzen2015_logo-1.jpg",
+        "label": "HF City Jib, DEPO2015",
+        "year": "",
+        "description": " Nechyběli jsme u závěrečných akcí Hlavního města evropské kultury 2015, ať už šlo o speciální koncert Plzeňské Filharmonie nebo snowboardovou show Horsefeathers City Jib ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908993763",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/harlej_logo.gif",
+        "label": "Harlej Lucerna",
+        "year": "",
+        "description": " Realizovali jsme a technicky zajišťovali vyprodaný koncert Harleje v rámci narozeninového turné 20 let v pražské Lucerně, velkém sále. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "1777026159089646",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_crop_1447430166.jpg",
+        "label": "Srdcebeat tour 2015",
+        "year": "2015",
+        "description": " Naše spolupráce s přední českou kapelou Kryštof vyvrcholila společně připraveným tour po pěti nějvětších domácích halách k poslednímu albu Srdcebeat. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908992318",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_benatska.gif",
+        "label": "Benátská! 2015",
+        "year": "2015",
+        "description": " Jeden z nejstarších domácích festivalů nás oslovil ke spolupráci na 23. ročníku v podobě zajištění dvou hlavních pódií. Mezi hlavní headlinery patřili Helloween či Village People. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908912716",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/avon-pochod.jpg",
+        "label": "Avon pochod 2015",
+        "year": "2015",
+        "description": " Složité technické řešení si vyžádala tradiční akce Avon pochod proti rakovině prsu v roce 2015 díky náročnému programu a velké návštěvnosti. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908982028",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_rfp15.gif",
+        "label": "Rock for People 2015",
+        "year": "2015",
+        "description": " Produkční a technické zajištění předního českého festivalu se letos rozrostlo na 2 festivaly a kompetní zajištění hlavního podia pro Motorhead. Parov Stelar nebo Guano Apes. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908988754",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/o2_arena.gif",
+        "label": "Bláznivá noc - technika",
+        "year": "",
+        "description": " Pokořili jsme další milník našeho oboru v ČR, máme za sebou kompletní zajištění techniky v největší domácí hale - 02 Areně. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908992955",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/fcb_harlej.jpg",
+        "label": "Harlej 20 LET",
+        "year": "",
+        "description": " pořádali jsme a technicky zajišťovali velký výroční koncert přední české rockové kapely Harlej v Plzni, amfiteátru Plzeň Plaza ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908953241",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_majales_hradec.jpg",
+        "label": "Majáles 2015",
+        "year": "2015",
+        "description": " poprvé jsme byli osloveni ke spolupráci při technickém řešení jednoho z největších festivalů v České Republice a hned jsme získali možnost realizace hlavní stage A ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908956268",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/tmobile.png",
+        "label": "Zaměstnanecká párty",
+        "year": "",
+        "description": " i v roce 2015 jsme u našeho největšího klienta získali důvěru a realizovali jsme tradiční zaměstnencký večírek pro jeho zaměstnance ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908932026",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/ano_logo.png",
+        "label": "Konference ANO",
+        "year": "",
+        "description": " pro technické zajištění III. sněmu hnutí ANO jsme byli vybráni jako kompletní dodavatel audio i video techniky a podíleli jsme se na výrobě speciální scény ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908931228",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/technika_logo2.png",
+        "label": "Adamson Energia",
+        "year": "",
+        "description": " mnohaletá spolupráce s kanadským výrobcem ozvučení Adamson dostala nový rozměr vstupem do oficiální rentalové sítě a získáním nejmodernějšího dvanáctipalcového ozvučovacího systému ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908964011",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/plzen2015_logo.jpg",
+        "label": "Slavnostní zahájení",
+        "year": "",
+        "description": " nový rok jsme zahájili technicky nejnáročnější akcí v historii naší agentury, zároveň jsme zde poprvé použili zbrusu nový PA systém Adamson E12 ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908946807",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/souboj_titanu_logo.jpg",
+        "label": "Souboj Titánů Pyramida",
+        "year": "",
+        "description": " po jedenácti letech existence mezinárodního turnaje Souboj Titánů jsme získali důvěru podílet se na technické produkci této prestižní akce ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908965488",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/gajdy_dudy.png",
+        "label": "Gajdy &amp; Dudy tour",
+        "year": "",
+        "description": " oblíbené kapely Horkýže Slíže a Pipes &amp; Pints vyrazily na společné turné s naší produkcí a technikou, poprvé jsme si také vyzkoušeli organizaci koncertu ve Fóru Karlín ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908950773",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/reference_hrady.png",
+        "label": "Technika HRADY.CZ",
+        "year": "",
+        "description": " již druhým rokem jsme se stali dodavatelem kompletní techniky pro osm letních festivalů České a Moravské hrady.cz ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908970088",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/reference_kemp.png",
+        "label": "KryštofKemp2014",
+        "year": "",
+        "description": " s kapelou Kryštof jsme si vysnili ideální festival pro všechny generace, jehož první ročník přinesl spoustu pozitivních reakcí návštěvníků i médií a také ocenění BestCoolFest ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908926082",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_evropa2.png",
+        "label": "Technika Nightwork",
+        "year": "",
+        "description": " jedno z prvních turné s naší technikou proběhlo v rámci Evropa2 Ranní show live ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908913073",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_axe.png",
+        "label": "Axe Party Station",
+        "year": "",
+        "description": " netradiční festivalová prezentace ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908965512",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/",
+        "label": "Kryštoff/on",
+        "year": "",
+        "description": " Skupina Kryštof v rámci svých netradičních turné tentokráte zamířila do kin, a s vlastním filmem kombinovaným s koncertem ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908950429",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_pfw.png",
+        "label": "Prague Fashion Weekend",
+        "year": "",
+        "description": " pro tuto vyjímečnou akci jsme dodávali technické zajištění ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908968641",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_bfw.png",
+        "label": "Bratislava Fashion Weekend",
+        "year": "",
+        "description": " pro tuto vyjímečnou akci jsme dodávali technické zajištění ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908949664",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/reference_majales.png",
+        "label": "Plzeňský Majáles 2014",
+        "year": "2014",
+        "description": " dvacáté narozeniny největšího západočeského festivalu jsme oslavili s Mig21, Chinaski a zcela novou střechou z HD ground supportu ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908956523",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_amundsen.png",
+        "label": "Amundsen Arctic Zone 2011",
+        "year": "2011",
+        "description": " značka Amundsen dostala vlastní promo zónu ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908911071",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/reference_stock.png",
+        "label": "Novoroční večírek 2011",
+        "year": "2011",
+        "description": " banditská novoroční párty pro zaměstnance našeho významného klienta ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908977743",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_tmusic.png",
+        "label": "Back to School 2011",
+        "year": "2011",
+        "description": " na zadání společnosti T-Mobile jsme připravili hudební projekt zacílený na studenty ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908989181",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/reference_bozkov.png",
+        "label": "Prezentace RFP2012",
+        "year": "",
+        "description": " zajišťovali jsme prezentaci pro naše klienty T-Mobile a Stock, jejichž značky se sešly na nejlepším českém open air festivalu ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908941646",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/reference_tmcz.png",
+        "label": "VIP fotbalový stan",
+        "year": "",
+        "description": " Zajišťujeme VIP servis pro hosty partnera české fotbalové reprezentace při domácích utkáních. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908910320",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/reference_tmcz.png",
+        "label": "Prezentace na RfP2014",
+        "year": "",
+        "description": "<i>Našim to lítá nejrychleji</i> bylo letošní motto námi realizované prezentace T-Mobile na festivalu",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "17770261590895390",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/rock-for-people-detail.png",
+        "label": "Technika RfP2014",
+        "year": "",
+        "description": " v roce 2014 jsme naši již zaběhlou produkční a technickou činnost z přechozích let rozšířili o zajištění Staropramen stage ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908989170",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_horkyze.png",
+        "label": "Technika HS tour",
+        "year": "",
+        "description": " pro oslavu výročí 20 let jsme pro Horkýže Slíže připravili turné a speciální koncert v pražské Incheba Areně ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908985475",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/reference_tmcz.png",
+        "label": "Zaměstnanecká párty",
+        "year": "",
+        "description": " po mnoha letech spolupráce se společností T-Mobile jsme získali důvěru pro realizaci snad nejnáročnější akce - večírku pro jejich zaměstnance 2013 ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908992241",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_trnkobrani.png",
+        "label": "Technika TRNK2014",
+        "year": "",
+        "description": " poprvné jsme byli osloveni k realizaci obou pódií Vizovického Trnkobraní - a takto to dopadlo ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908938830",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/rock-for-people-detail.png",
+        "label": "Rock for People 2013",
+        "year": "2013",
+        "description": " na přelomu června a července jsme se jako již tradičně přesunuli do Festivalparku Hradce Králové ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908922981",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo_tmusic.png",
+        "label": "Back to School 2013",
+        "year": "2013",
+        "description": " čtvrtý ročník projektu t-music Back to School objel šest měst v čele s kapelami Horkýže Slíže nebo Charlie Straight ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908918",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/reference_zebrik.png",
+        "label": "Technika Žebřík 2013",
+        "year": "2013",
+        "description": " v novém prostředí haly FUD v Plzni jsme realizovali kompletní technické odbavení předávání hudebních cen ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908980302",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/reference_stock.png",
+        "label": "Novoroční večírek 2013",
+        "year": "2013",
+        "description": " potřetí za sebou nám svěřil výrobce a distributor s nejvěším podílem na trhu alkoholických nápojů svoji tradiční novoroční párty ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908985859",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/logo-krystof.png",
+        "label": "Kryštof club tour 2014",
+        "year": "2014",
+        "description": " na úspěšné a dopředu vyprodané halové turnénaší kapely Kryštof jsme navázali menšími prostory, do kterých jsme se snažili přenést co nejvíce ze stadiónové show ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908995432",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/staropramen.gif",
+        "label": "Staropramen Open Air 2013",
+        "year": "2013",
+        "description": " pro pivovar Staropramen jsme realizovali několik ročníků akce přimo v areálu na Smíchově a na uzavřené ulici Svornosti ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908962792",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/reference_letosrychtarem.png",
+        "label": "Léto s Rychtářem",
+        "year": "",
+        "description": " od roku 2003 každoročně pořádáme koncerty v oblíbeném amfiteátru hlineckého pivovaru Rychtář ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908921417",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/sen_letni_noci.png",
+        "label": "Sen Letní Noci",
+        "year": "",
+        "description": " produkovali jsme netradiční akci přímo na Vltavě s Emilem Kusturicou a dalšími hvězdami ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908952723",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/majales.png",
+        "label": "Plzeňský Majáles 2013",
+        "year": "2013",
+        "description": " od roku 2005 pořádáme nejvýznamnější západočeský open-air festival v největším evropském přírodním amfiteátru ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908966659",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/technika_logo.jpg",
+        "label": "Technika 2013",
+        "year": "2013",
+        "description": " použití naší techniky (ozvučení, osvětlení, podium, ground support) v letech 2012 a 2013 ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908943221",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/bozkov.png",
+        "label": "Promo značek 2013",
+        "year": "2013",
+        "description": " pro značku Božkov jsme vytvořili unikátní festivalovou hospodu a pro značku Amundsen velice úspěšnou Arctic Zone a s nimi spojené nové promo na letních festivalech 2013 ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908969753",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/stock.png",
+        "label": "Firemní akce",
+        "year": "",
+        "description": " realizovali zaměstnanecké večírky firmy Stock Plzeň-Božkov nebo 180 let Vítkovic. ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908923848",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/reference_krystof.png",
+        "label": "Halové turné 2013",
+        "year": "2013",
+        "description": " pro kapelu Kryštof jsme realizovali měsíc dopředu vyprodané halové turné Kryštof Afrofert Inzerát tour ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908988602",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/tmobile.png",
+        "label": "Hudební sponzoring",
+        "year": "",
+        "description": " pro společnost T-Mobile aktivujeme hudební sponzoring společnými dlouhodobými koncertními projekty t-music tour či t-music Back to School ",
+        "visible": false
+    },
+    {
+        "referenceType": "image",
+        "id": "177702615908996188",
+        "image": "https://www.zlproduction.cz/runtime/cache/images/resize172x65fit/rock-for-people-detail.png",
+        "label": "Rock for People 2011",
+        "year": "2011",
+        "description": " od roku 2007 máme nastarosti produkci jednoho z největší český hudební festivalů (člen evropské asociace Yourope).",
+        "visible": false
+    }
 ]

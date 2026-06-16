@@ -41,17 +41,18 @@ function createCart() {
 
         add(item) {
             update(items => {
-                const existing = items.find(i => i.id === item.id);
+                const key = getItemKey(item);
+                const existing = items.find(i => i._key === key);
 
                 let updated;
                 if (existing) {
                     updated = items.map(i =>
-                        i.id === item.id
+                        i._key === key
                             ? { ...i, quantity: i.quantity + 1 }
                             : i
                     );
                 } else {
-                    updated = [...items, { ...item, quantity: 1 }];
+                    updated = [...items, { ...item, _key: key, quantity: 1 }];
                 }
 
                 saveCart(updated);
@@ -59,31 +60,19 @@ function createCart() {
             });
         },
 
-        remove(id) {
+        remove(key) {
             update(items => {
-                const updated = items.filter(i => i.id !== id);
+                const updated = items.filter(i => i._key !== key);
                 saveCart(updated);
                 return updated;
             });
         },
 
-        increment(id) {
-            update(items => {
-                const updated = items.map(i =>
-                    i.id === id
-                        ? { ...i, quantity: i.quantity + 1 }
-                        : i
-                );
-                saveCart(updated);
-                return updated;
-            });
-        },
-
-        decrement(id) {
+        decrement(key) {
             update(items => {
                 const updated = items
                     .map(i =>
-                        i.id === id
+                        i._key === key
                             ? { ...i, quantity: i.quantity - 1 }
                             : i
                     )
@@ -99,6 +88,17 @@ function createCart() {
             set([]);
         }
     };
+}
+
+function getItemKey(item) {
+    if (!item?.label) return '';
+    return item.label
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-zA-Z0-9 ]/g, '')
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, '_');
 }
 
 export const cart = createCart();

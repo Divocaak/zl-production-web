@@ -1,0 +1,61 @@
+{
+    "type": "array",
+    "title": "Kariéra",
+    "description": "Seznam nabídek",
+    "options": {
+        "collapsed": true
+    },
+    "items": {
+        "type": "object",
+        "description": "Nastavení nabídky reference",
+        "title": "Nabídka",
+        "headerTemplate": "{{self.label}}",
+        "options": {
+            "collapsed": true
+        },
+        "properties": {
+            "label": {
+                "type": "string",
+                "format": "text",
+                "title": "Název"
+            },
+            "description": {
+                "type": "string",
+                "format": "textarea",
+                "title": "Popis/text",
+                "description": "Stylování pomocí HTML značek",
+                "options": {
+                    "expand_height": true
+                }
+            },
+            "visible": {
+                "type": "boolean",
+                "format": "checkbox",
+                "default": true,
+                "title": "viditelná"
+            },
+            "temp": {
+                "type": "boolean",
+                "format": "checkbox",
+                "default": false,
+                "title": "brigáda"
+            },
+            "image": {
+                "type": "string",
+                "title": "Obrázek/fotka/náhledovka (u videa)",
+                "description": ".jpeg, .png",
+                "media": {
+                    "binaryEncoding": "base64",
+                    "type": "img/png"
+                }
+            }
+        },
+        "required": [
+            "label",
+            "description",
+            "visible",
+            "temp",
+            "image"
+        ]
+    }
+}
