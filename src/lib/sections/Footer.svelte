@@ -74,7 +74,7 @@
 			<SubtleLink href="/studio">Studio</SubtleLink>
 			<SubtleLink href="/technika">Technika</SubtleLink>
 			<SubtleLink href="https://www.zlbooking.cz/" target="_blank">Booking</SubtleLink>
-			<SubtleLink href="/family">Family</SubtleLink>
+			<SubtleLink href="/zlfamily">ZL Family</SubtleLink>
 			<SubtleLink href="/kariera">Kariéra</SubtleLink>
 		</div>
 	</div>

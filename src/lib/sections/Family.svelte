@@ -129,7 +129,7 @@
 			</div>
 
 			<div slot="right" class="content" bind:this={contentEl}>
-				<LogoHeading src="/logos/zl-family-dark.svg" alt="#zlfamily logo" href="/family" />
+				<LogoHeading src="/logos/zl-family-dark.svg" alt="#zlfamily logo" href="/zlfamily" />
 				<ExpandableText>
 					<p>
 						ZL family dnes tvoří více než 50 nadšenců, kteří pracují v zaměstnaneckém nebo výhradním
@@ -161,7 +161,7 @@
 						Rychtářem, RockIn a další události, které inspirovaly.
 					</p>
 				</ExpandableText>
-				<HanddrawnLink href="/family">Celý tým - kontakty</HanddrawnLink>
+				<HanddrawnLink href="/zlfamily">Celý tým - kontakty</HanddrawnLink>
 			</div>
 		</FlexContent>
 	</div>

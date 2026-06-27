@@ -93,8 +93,8 @@
 				>
 					Booking
 				</SubtleLink>
-				<SubtleLink style="font-size: var(--text-24);" on:click={toggleMenu} href="/family">
-					Family
+				<SubtleLink style="font-size: var(--text-24);" on:click={toggleMenu} href="/zlfamily">
+					ZL Family
 				</SubtleLink>
 				<SubtleLink style="font-size: var(--text-24);" on:click={toggleMenu} href="/kariera">
 					Kariéra

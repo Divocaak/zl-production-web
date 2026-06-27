@@ -32,8 +32,8 @@
 		<div slot="left" class="content grid">
 			<StatsGrid
 				items={[
-					{ value: 20, label: 'zkušeností v oboru', unit: 'let' },
-					{ value: 50, label: 'stálých zaměstnanců' },
+					{ value: 25, label: 'zkušeností v oboru', unit: 'let' },
+					{ value: 36, label: 'stálých zaměstnanců' },
 					{ value: 3500, label: 'skladu moderní techniky', unit: 'm<sup>2</sup>' },
 					{ value: 100, label: 'designového studia', unit: 'm<sup>2</sup>' }
 				]}
